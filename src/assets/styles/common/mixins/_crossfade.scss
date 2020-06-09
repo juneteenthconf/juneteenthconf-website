@@ -1,0 +1,52 @@
+//
+// SASS mixin for crossfading elements
+//
+// Usage:
+//
+// .element {
+//   @include crossfade($num: 2, $fade: 5, $visible: 0);
+//
+//   left: 0;
+//   opacity: 0;
+//   position: absolute;
+//   top: 0;
+// }
+//
+// Source: https://snook.ca/archives/html_and_css/simplest-css-slideshow
+//
+
+@mixin crossfade($num: 1, $fade: 1, $visible: 2) {
+  $a: 100 / (($fade + $visible) * $num);
+
+  @keyframes crossfade {
+    0% {
+      opacity: 0;
+    }
+
+    #{$a * $fade}% {
+      opacity: 1;
+    }
+
+    #{$a *($fade + $visible)}% {
+      opacity: 1;
+    }
+
+    #{$a *($fade + $visible + $fade)}% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  animation-name: crossfade;
+  animation-duration: (($fade + $visible) * $num) + s;
+  animation-iteration-count: infinite;
+
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) {
+      animation-delay: #{($fade + $visible) * ($i - 1) + s};
+    }
+  }
+}

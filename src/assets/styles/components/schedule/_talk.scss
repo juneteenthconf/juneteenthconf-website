@@ -1,0 +1,100 @@
+.schedule-talk {
+  height: $talk-height;
+  overflow: hidden; // DEBUG
+  position: relative;
+
+  @include schedule-cell;
+
+  &-item {
+    background-color: rgba($track1-bg, 0.5);
+    border: 1px solid $track1-border;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-width: 4px;
+    border-radius: 0 6px 6px 0;
+    color: $june-black;
+    display: flex;
+    flex-direction: column;
+    font-size: 12 / 16 + rem;
+    height: calc(100% - #{$schedule-cell-spacing} - #{2 * $schedule-talk-spacing});
+    margin: #{$schedule-cell-spacing + $schedule-talk-spacing} $schedule-talk-spacing #{$schedule-cell-spacing + $schedule-talk-spacing}
+      #{$schedule-cell-spacing + $schedule-talk-spacing};
+      padding: 14px 6px 14px 14px;
+    position: relative;
+    transition: background-color ease 0.28s, border-color ease 0.28s;
+    z-index: 2;
+
+    h3 {
+      color: darken($track1-border, 10%);
+      font-size: 14 / 16 + rem;
+      min-height: 3rem;
+      overflow: hidden;
+      padding-right: 16px;
+    }
+
+    .smallTitle {
+      margin-top:-7px;
+    }
+
+    .smallTitle h3 {
+      height: 100%;
+      min-height: 100%;
+      display: inline-block;
+      vertical-align:middle;
+    }
+
+    .timeframe {
+      color: darken($track1-border, 10%);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .speaker {
+      margin-bottom: 0.2rem;
+    }
+
+    .speaker-avatar {
+      height: 30px;
+      width: 30px;
+    }
+
+    .speaker-body {
+      font-size: 12 / 16 + rem;
+
+      margin-left: 0.5rem;
+
+      strong {
+        font-size: 14 / 16 + rem;
+      }
+    }
+  }
+}
+
+a.schedule-talk-item {
+  &:hover {
+    border-top-color: $track1-border;
+    border-right-color: $track1-border;
+    border-bottom-color: $track1-border;
+    background-color: rgba($track1-bg, 1);
+    color: $oxford-blue;
+    text-decoration: none;
+
+    h3 {
+      text-decoration: underline;
+    }
+  }
+  &::after {
+    background-color: $track1-border;
+    background-image: url('../images/next.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 3px 0 3px 0;
+    bottom: -1px;
+    content: '';
+    height: 20px;
+    position: absolute;
+    right: -1px;
+    width: 20px;
+  }
+}

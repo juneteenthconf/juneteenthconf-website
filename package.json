@@ -1,0 +1,52 @@
+{
+  "name": "vacd2",
+  "version": "2.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.com:lemone-com/thursday-cloud/virtual-azure-community-day-2.git",
+  "author": "Rutger <rutger@lemone.com>",
+  "license": "MIT",
+  "stylelint": {
+    "plugins": [
+      "stylelint-prettier"
+    ],
+    "rules": {
+      "prettier/prettier": true
+    }
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 120
+  },
+  "staticFiles": {
+    "staticPath": "src",
+    "watcherGlob": "**/*.json"
+  },
+  "scripts": {
+    "start": "parcel src/*.html --no-cache",
+    "build": "parcel build src/*.html --no-source-maps --detailed-report"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.5",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.3.1",
+    "posthtml-include": "^1.4.3",
+    "prettier": "^2.0.4",
+    "sass": "^1.26.3",
+    "stylelint": "^12.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-prettier": "^1.1.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.6",
+    "bootstrap": "4.5.0",
+    "handlebars": "^4.7.6",
+    "jquery": "3.4.1",
+    "moment": "^2.25.3",
+    "moment-timezone": "^0.5.28",
+    "popper.js": "^1.16.1",
+    "slick-carousel": "^1.8.1"
+  }
+}

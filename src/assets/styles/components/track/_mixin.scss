@@ -1,0 +1,30 @@
+@mixin track-item($child) {
+  $border: $track1-border;
+  $bg: $track1-bg;
+
+  @if $child == 2 {
+    $border: $track2-border;
+    $bg: $track2-bg;
+  } @else if $child == 3 {
+    $border: $track3-border;
+    $bg: $track3-bg;
+  } @else if $child == 4 {
+    $border: $track4-border;
+    $bg: $track4-bg;
+  } @else if $child == 5 {
+    $border: $track5-border;
+    $bg: $track5-bg;
+  }
+
+  // .track-item {
+  background-color: rgba($bg, 0.5);
+
+  &.active {
+    border-color: $border;
+  }
+
+  &:hover {
+    box-shadow: 0 49px 44px -20px rgba($border, 0.4);
+  }
+  // }
+}

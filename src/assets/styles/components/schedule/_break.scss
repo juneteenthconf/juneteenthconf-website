@@ -1,0 +1,6 @@
+.schedule-break {
+  height: $talk-height;
+  position: relative;
+
+  @include schedule-cell;
+}

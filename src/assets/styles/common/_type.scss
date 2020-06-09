@@ -1,0 +1,16 @@
+//
+// Common: type
+//
+// @author: Rutger Laurman - lemone.com
+//
+
+@import '~bootstrap/scss/type';
+
+h1,
+.h1,
+.h2,
+h2 {
+  @include media-breakpoint-down(md) {
+    font-size: $h3-font-size;
+  }
+}

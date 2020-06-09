@@ -1,0 +1,37 @@
+.speaker {
+  align-items: flex-start;
+  display: flex;
+  font-size: 14 / 16 + rem;
+  margin-bottom: 1rem;
+
+  &-avatar {
+    border-radius: 50%;
+
+    + img {
+      border: 1px solid transparent;
+      margin-right: -15px;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-body {
+    align-self: center;
+    flex: 1;
+    line-height: 1.2;
+    margin-left: 1rem;
+    max-width: calc(100% - 0.5rem - 30px);
+
+    span {
+      display: block;
+      height: 1rem;
+      max-width: 260px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    strong {
+      font-size: 24 / 16 + rem;
+    }
+  }
+}

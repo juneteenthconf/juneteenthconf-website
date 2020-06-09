@@ -1,0 +1,25 @@
+@import 'variables';
+@import 'mixin';
+@import 'view';
+@import 'timeline';
+@import 'tracks';
+@import 'track';
+@import 'talk';
+@import 'break';
+
+.schedule {
+  &__title {
+    margin: 2rem 0 0.5rem;
+    text-align: center;
+  }
+
+  &__header {
+    // position: relative;
+    margin-bottom: 2rem;
+
+    .schedule-timezone {
+      max-width: 450px;
+      margin: 0 auto;
+    }
+  }
+}

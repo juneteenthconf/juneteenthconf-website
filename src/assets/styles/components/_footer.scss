@@ -1,0 +1,30 @@
+.footer {
+  color: rgba($white, 0.6);
+  text-align: center;
+  padding: 80px 0;
+  background-color: $june-black;
+  margin-top: 10rem;
+
+  &-sponsor {
+    margin-bottom: 3rem;
+
+    strong {
+      display: block;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &-socials {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    a {
+      margin: 0 0.5rem;
+    }
+  }
+
+  a {
+    color: rgba($white, 0.8);
+  }
+}

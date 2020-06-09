@@ -1,0 +1,38 @@
+.schedule-timeline {
+  left: 0;
+  padding-top: $track-title-height;
+  position: absolute;
+  width: 100%;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    height: $talk-height;
+
+    &:last-child::after {
+      display: none;
+    }
+
+    &::after {
+      background-color: #eaeaea;
+      bottom: 0;
+      content: '';
+      height: 1px;
+      left: 55px;
+      position: absolute;
+      right: 0;
+    }
+
+    .time {
+      color: rgba($oxford-blue, 0.5);
+      display: block;
+      font-size: 14 / 16 + rem;
+      transform: translateY(-50%);
+    }
+  }
+}

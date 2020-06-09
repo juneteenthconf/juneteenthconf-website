@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1140" height="376" viewBox="0 0 1140 376">
+  <defs>
+    <path id="content-bg-a" d="M747.49134,7.11859909 C863.612352,21.7184899 1022.71518,100.635087 1074.97649,140.535986 C1127.2378,180.436884 1190.51386,276.357552 1074.97649,338.670069 C959.439116,400.982586 782.935303,372.511702 673.355656,344.871208 C563.776009,317.230715 360.310319,363.78569 246.564515,296.569684 C132.818711,229.353678 0.714336189,246.708459 0.0120266401,168.609487 C-0.690282909,90.5105147 89.9056303,66.0593353 214.370115,49.4409997 C338.8346,32.9305754 428.725552,61.4180679 481.605756,30.8820718 C534.485961,0.346075642 631.370329,-7.48129175 747.49134,7.11859909 Z"/>
+    <filter id="content-bg-b" width="100.4%" height="101.1%" x="-.2%" y="-.5%" filterUnits="objectBoundingBox">
+      <feOffset dx="-4" dy="4" in="SourceAlpha" result="shadowOffsetInner1"/>
+      <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+      <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0.0645905755   0 0 0 0 0.162691427   0 0 0 0 0.258067255  0 0 0 0.0629370629 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 1140 0)">
+    <use fill="#FEF0D9" xlink:href="#content-bg-a"/>
+    <use fill="#000" filter="url(#content-bg-b)" xlink:href="#content-bg-a"/>
+  </g>
+</svg>

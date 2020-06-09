@@ -1,0 +1,26 @@
+.sponsor {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin-bottom: 1rem;
+  opacity: 0.2;
+  transition: ease opacity 0.28s;
+
+  &:focus,
+  &:hover {
+    opacity: 1;
+  }
+
+  img {
+    @include img-fluid;
+
+    @include media-breakpoint-down(sm) {
+      max-width: 114px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-width: 135px;
+    }
+  }
+}

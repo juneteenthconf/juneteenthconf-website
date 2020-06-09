@@ -1,0 +1,100 @@
+//
+// Component: modal
+//
+// @author: Rutger Laurman - lemone.com
+//
+
+@import '~bootstrap/scss/modal';
+@import '~bootstrap/scss/close';
+
+.modal {
+  .modal-content {
+    position: relative;
+
+    .modal-body {
+      position: relative;
+      z-index: 2;
+    }
+
+    &::after {
+      @include media-breakpoint-up(lg) {
+        background-color: transparent;
+        border-radius: 0 $modal-content-border-radius $modal-content-border-radius 0;
+        bottom: 0;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 39%;
+        z-index: 1;
+      }
+    }
+  }
+
+  .bio {
+    font-size: 14 / 16 + rem;
+    font-weight: 300;
+    border-bottom: 1px solid $body-color;
+    padding-bottom: 1rem;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .description {
+    margin-bottom: 2rem;
+  }
+
+  .timeframe {
+    align-items: center;
+    background-color: $oxford-blue;
+    border-radius: 20px;
+    color: $white;
+    display: inline-flex;
+    font-weight: 700;
+    margin: 1rem 0;
+    padding: 0 15px 0 5px;
+
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .close {
+    opacity: 0.9;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 5;
+  }
+
+  .speaker {
+    img {
+      height: 60px;
+      width: 60px;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 2px solid $white;
+    }
+  }
+}
+
+.modal-track1 {
+  @include modal-track(1);
+}
+.modal-track2 {
+  @include modal-track(2);
+}
+.modal-track3 {
+  @include modal-track(3);
+}
+.modal-track4 {
+  @include modal-track(4);
+}
+.modal-track5 {
+  @include modal-track(5);
+}

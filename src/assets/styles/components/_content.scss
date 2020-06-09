@@ -1,0 +1,13 @@
+.content {
+  background-image: url('../images/content-bg.svg');
+  background-size: cover;
+  @include media-breakpoint-up(lg) {
+    background-size: contain;
+  }
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  font-weight: 300;
+  text-align: center;
+  margin: 70px 0;
+}

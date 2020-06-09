@@ -1,0 +1,23 @@
+.player {
+  max-width: 1920px;
+  margin:auto;
+  margin-top:22px;
+  
+  &__video {
+    // border: 2px solid purple;
+  }
+
+  &__chat {
+    display: flex;
+    height: 100%;
+
+    iframe {
+      display: flex;
+      height: 100%;
+
+      @include media-breakpoint-down(md) {
+        height: 350px;
+      }
+    }
+  }
+}

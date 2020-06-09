@@ -1,0 +1,58 @@
+//
+// Common: variables: colors
+//
+// @author: Rutger Laurman - lemone.com
+//
+
+$white: #fff;
+
+// $brand-primary: $outrageous-orange;
+// $brand-success: $medium-sea-green;
+
+$medium-turquoise: #59c8df;
+$topaz: #fdc568;
+$boysenberry: #922b68;
+$dark-electric-blue: #644f79;
+$purple-taupe: #544058;
+$tufts-blue: #2f77bd;
+$oxford-blue: #102942;
+$anti-flash-white: #eaf1f8;
+$chestnut: #df5959;
+$gainsboro: #e9d4e0;
+$peach: #fee2b3;
+$light-cyan: #ddf4f9;
+$lavender: #d5e3f2;
+$harvest-gold: #ce8000;
+$blue: #0d8aa5;
+$alice-blue: #eef9fc;
+$bleu-de-france: #3388da;
+
+$june-red: #8c0d18;
+$june-red-light: #d98c94;
+$june-green: #013b09;
+$june-green-light: #abe4b1;
+
+$june-black: #1b1b1b;
+
+$theme-colors: (
+  'primary': $june-red,
+  'secondary': $june-black,
+  'dark': $june-black,
+);
+
+$body-color: $june-black;
+
+$track1-border: $june-red;
+$track1-bg: $june-red-light;
+
+$track2-border: $june-green;
+$track2-bg: $june-green-light;
+
+$track3-border: $medium-turquoise;
+$track3-bg: $light-cyan;
+
+$track4-border: $tufts-blue;
+$track4-bg: $lavender;
+
+$track5-border: $june-green;
+$track5-bg: $june-green-light;

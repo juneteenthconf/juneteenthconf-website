@@ -1,0 +1,27 @@
+//
+// Common: variables: forms
+//
+// @author: Rutger Laurman - lemone.com
+//
+
+// $input-border-radius:    6px;
+// $input-border-color:     $desert-sand;
+// $input-btn-border-width: 2px;
+// $input-bg-color: $white-smoke;
+//
+// $input-padding-x:    .75rem;
+// $input-padding-y:    .75rem;
+//
+// $input-color-placeholder: $body-color;
+
+$custom-select-color: $white;
+$custom-select-bg: $june-red;
+$custom-select-indicator-color: $white;
+
+$custom-select-bg-size: 10px 6px;
+$custom-select-border-color: $june-red;
+
+$custom-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><polyline fill='none' stroke='#{$custom-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' points='1 1 5 5 9 1'/></svg>");
+
+$custom-select-background: escape-svg($custom-select-indicator) no-repeat right $custom-select-padding-x center /
+  $custom-select-bg-size;

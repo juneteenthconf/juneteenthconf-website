@@ -1,0 +1,120 @@
+@mixin schedule-cell {
+  // Two white shapes in background on each half hour
+  &::before,
+  &::after {
+    background-color: $white;
+    border-radius: 6px;
+    content: '';
+    left: $schedule-cell-spacing;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+
+  &::before {
+    top: $schedule-cell-spacing;
+    bottom: 0%;
+  }
+
+  &::after {
+    top: calc(50% + #{$schedule-cell-spacing});
+    bottom: 0;
+  }
+}
+
+@mixin track-color($child) {
+  $border: $track1-border;
+  $bg: $track1-bg;
+
+  @if $child == 2 {
+    $border: $track2-border;
+    $bg: $track2-bg;
+  } @else if $child == 3 {
+    $border: $track3-border;
+    $bg: $track3-bg;
+  } @else if $child == 4 {
+    $border: $track4-border;
+    $bg: $track4-bg;
+  } @else if $child == 5 {
+    $border: $track5-border;
+    $bg: $track5-bg;
+  }
+
+  .schedule-talk-item {
+    background-color: rgba($bg, 0.5);
+    border-color: $border;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+
+    &::after {
+      background-color: $border;
+    }
+    h3,
+    .timeframe {
+      color: darken($border, 10%);
+    }
+    .speaker-avatar + img {
+      border-color: $bg;
+    }
+  }
+
+  a.schedule-talk-item {
+    &:hover {
+      border-top-color: $border;
+      border-right-color: $border;
+      border-bottom-color: $border;
+      background-color: rgba($bg, 1);
+    }
+  }
+}
+
+@mixin modal-track($child) {
+  $border: $track1-border;
+  $bg: $track1-bg;
+
+  @if $child == 2 {
+    $border: $track2-border;
+    $bg: $track2-bg;
+  } @else if $child == 3 {
+    $border: $track3-border;
+    $bg: $track3-bg;
+  } @else if $child == 4 {
+    $border: $track4-border;
+    $bg: $track4-bg;
+  } @else if $child == 5 {
+    $border: $track5-border;
+    $bg: $track5-bg;
+  }
+
+  .modal-content {
+    background-color: $bg;
+
+    &::after {
+      background-color: $border;
+    }
+  }
+
+  .speaker {
+    border-top-color: $border;
+    @include media-breakpoint-up(lg) {
+      color: color-yiq($border);
+    }
+  }
+
+  .timeframe {
+    background-color: $border;
+    color: color-yiq($border);
+
+    path {
+      fill: color-yiq($border);
+    }
+  }
+
+  .bio {
+    border-bottom-color: $bg;
+    @include media-breakpoint-up(lg) {
+      color: color-yiq($border);
+    }
+  }
+}

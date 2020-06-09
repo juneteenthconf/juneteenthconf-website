@@ -1,0 +1,23 @@
+//
+// Component: button
+//
+// @author: Rutger Laurman - lemone.com
+//
+
+@import '~bootstrap/scss/buttons';
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-next {
+  &::after {
+    background-image: url('../images/arrow.svg');
+    content: '';
+    display: inline-flex;
+    height: 9px;
+    margin-left: 0.5rem;
+    width: 6px;
+  }
+}

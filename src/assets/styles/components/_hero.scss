@@ -1,0 +1,59 @@
+.hero {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  &__image {
+    img {
+      @include img-fluid;
+      text-align: center;
+    }
+
+    @include media-breakpoint-down(sm) {
+      overflow: hidden;
+
+      $overflow: 40;
+      img {
+        margin-left: -#{$overflow}vw;
+        margin-right: -#{$overflow}vw;
+        max-width: 100 + $overflow * 2 + vw;
+      }
+    }
+  }
+
+  &__cta {
+    text-align: center;
+    margin: 2rem 0;
+
+    .btn + .btn {
+      margin-left: 1rem;
+    }
+  }
+
+  &__copy {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+
+    .h2 {
+      text-align: center;
+
+      @include media-breakpoint-up(lg) {
+        text-align: right;
+
+        &::after {
+          background-color: $anti-flash-white;
+          content: '';
+          display: inline-flex;
+          height: 20px;
+          margin-left: 20px;
+          margin-right: 20px;
+          width: 2px;
+        }
+      }
+    }
+  }
+}

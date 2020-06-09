@@ -1,0 +1,10 @@
+.header {
+  border-bottom: 1px solid $anti-flash-white;
+
+  &-wrap {
+    padding: 15px 0;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}

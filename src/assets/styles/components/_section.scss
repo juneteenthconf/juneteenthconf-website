@@ -1,0 +1,14 @@
+.section {
+  margin: 3rem 0;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__title_left {
+    text-align: left;
+    margin-bottom: 4rem;
+  }
+}
+

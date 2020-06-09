@@ -1,0 +1,7 @@
+.brand {
+  // border: 1px solid red;
+  @include media-breakpoint-down(sm) {
+    width: 50px;
+    overflow: hidden;
+  }
+}

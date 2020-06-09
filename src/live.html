@@ -1,0 +1,113 @@
+<include src="partials/head.html" locals='{"pagetitle": "Join us live! - JuneteenthConf - June 19th and 20th 2020"}'>
+</include>
+
+<body>
+
+  <include src="partials/header-live.html"></include>
+
+  <main>
+
+    <section class="player">
+      <div class="container-fluid">
+
+        <div class="row">
+
+          <div class=" col-lg-8">
+            <div class="player__video">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe id="video" width="560" height="315" class="embed-responsive-item" src="" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+
+          <div class=" col-lg-4">
+            <div class="player__chat">
+              <iframe id="chat" src='' style='border: 0; width: 100%; '></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="track-browser" id="browser-wrapper"></section>
+
+    <script id="browser-template" type="text/x-handlebars-template">
+      <div class="container">
+        <div class="row">
+          {{#each tracks}}
+          <div class="col-md-6 col-lg-6 mb-6 mb-lg-0">
+            <div class="track-item track{{id}}">
+              <div class="track-item__title">
+                <em>Track:</em>
+                <h2>{{title}}</h2>
+              </div>
+              <div class="row">
+                <div class="col-xl-6">
+                  <div class="track-item__now">
+                    <strong>Now playing:</strong>
+                    <h3>
+                      <a href="#talk-{{now.id}}" data-toggle="modal">
+                      {{now.title}}
+                      </a>
+                    </h3>
+                    {{#each now.speakers}}
+                    <div class="speaker">
+                      <img src="{{profilePicture}}" alt="{{fullName}}" class="speaker-avatar">
+                      <div class="speaker-body">
+                        <strong>{{fullName}}</strong>
+                      </div>
+                    </div>
+                    {{/each}}
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <div class="track-item__next">
+                    <strong>Up next in</strong>
+                    <time title="Talk starts at" datetime="{{next.startsAt}}" data-talk-duration-diff="hours"></time>
+                    <h3>
+                      {{#if next.id}}
+                      <a href="#talk-{{next.id}}" data-toggle="modal">
+                        {{next.title}}
+                      </a>
+                      {{else}}
+                      {{next.title}}
+                      {{/if}}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <a href="#" data-toggle-track="{{id}}" class="track-item__state">
+                <strong class="active">
+                  <div class="play-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  Now watching
+                </strong>
+                <strong class="btn btn-sm btn-primary selectable">Play <span class="d-none d-lg-inline">this track</span></strong>
+              </a>
+              {{#if translationCode}}
+              <a href="https://translate.it/{{translationCode}}" class="btn btn-outline-primary btn-sm track-item__subtitles" target="_blank">Subtitles</a>
+              {{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </script>
+
+    <include src="partials/schedule.html"></include>
+
+    <include src="partials/sponsors.html"></include>
+
+  </main>
+
+  <include src="partials/footer.html"></include>
+
+  <script src="assets/scripts/main.js"></script>
+</body>
+
+</html>

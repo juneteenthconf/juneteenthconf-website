@@ -1,0 +1,69 @@
+.schedule-track {
+  flex: 1;
+  padding-top: $track-title-height;
+  padding-bottom: $schedule-talk-spacing;
+  position: relative;
+  min-width: 260px;
+
+  // Theme for track columns
+  &:nth-child(2) {
+    @include track-color(2);
+  }
+  &:nth-child(3) {
+    @include track-color(3);
+  }
+  &:nth-child(4) {
+    @include track-color(4);
+  }
+  &:nth-child(5) {
+    @include track-color(5);
+  }
+
+  // Remove divider for last schedule-track title
+  &:last-child {
+    .schedule-track__title {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 12 / 16 + rem;
+    font-weight: 200;
+    height: $track-title-height;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-align: center;
+    top: 0;
+
+    em {
+      font-style: normal;
+      font-weight: bold;
+      display: block;
+      font-size: 16 / 16 + rem;
+    }
+
+    &::after {
+      background-color: $white;
+      border-radius: 2px;
+      content: '';
+      height: 50px;
+      position: absolute;
+      right: -3px;
+      width: 3px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
