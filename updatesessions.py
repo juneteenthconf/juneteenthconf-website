@@ -15,7 +15,7 @@ with open('src/talks.json', 'wb') as f:
 print('Beginning file download with requests > live.json')
     
 url = 'https://sessionize-schedule-api.azurewebsites.net/api/live?code=AO5ZY8a0eLldyvPlKhy0pHkK6CNcVsBqs/osxa8amsPahwlwLAWEzA==&clientId=default&url=https://sessionize.com/api/v2/95ixt6b1/view/All'
-r = requests.get(url)
+rl = requests.get(url)
 
 with open('src/live.json', 'wb') as f:
     f.write(rl.content)    
