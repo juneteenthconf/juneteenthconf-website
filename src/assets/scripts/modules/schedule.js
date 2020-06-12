@@ -7,7 +7,7 @@ const schedule = {
   defaultTimezone: 'Europe/Amsterdam',
   talksObject: {},
   genericData: {},
-  availableTracks: ['track1', 'lightningtalks'],
+  availableTracks: ['track1', 'track2','track3'],
   talksUrl: '/talks.json',
   talksPollingInterval: 300 * 1000,
 
