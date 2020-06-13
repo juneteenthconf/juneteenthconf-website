@@ -14,7 +14,7 @@
     &-photo {
       width: 200px;
       border-radius: 50%;
-      border: solid 5px $june-black;
+      border: solid 0.5em $june-black;
     }
     &-name {
       color: $june-red-light;
@@ -24,6 +24,8 @@
       padding: 0.5em 1em;
       transform: translateY(-2em);
       max-width: 300px;
+      position: relative;
+      border-radius: 0.5em;
     }
   }
 }
