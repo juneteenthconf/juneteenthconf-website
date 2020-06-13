@@ -23,7 +23,7 @@
     "watcherGlob": "**/*.json"
   },
   "scripts": {
-    "start": "parcel src/*.html --no-cache",
+    "start": "parcel src/index.html --no-cache",
     "build": "parcel build src/*.html --no-source-maps --detailed-report"
   },
   "devDependencies": {
