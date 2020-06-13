@@ -1,0 +1,29 @@
+.keynote-speakers {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+
+  .keynote-speaker {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1rem;
+    text-align: center;
+    margin: 2em 0;
+    &-photo {
+      width: 200px;
+      border-radius: 50%;
+      border: solid 5px $june-black;
+    }
+    &-name {
+      color: $june-red-light;
+      background-color: $june-black;
+      display: inline-block;
+      text-transform: uppercase;
+      padding: 0.5em 1em;
+      transform: translateY(-2em);
+      max-width: 300px;
+    }
+  }
+}
