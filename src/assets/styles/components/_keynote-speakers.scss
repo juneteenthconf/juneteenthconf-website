@@ -6,15 +6,19 @@
   text-align: center;
 
   .keynote-speaker {
-    width: 50%;
-    display: inline-block;
-    vertical-align: top;
     font-size: 1rem;
-    margin: 2em 0;
+    padding: 2em 1em;
+    @media (min-width: 610px) {
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+    }
     &-photo {
       width: 200px;
       border-radius: 50%;
       border: solid 0.5em $june-black;
+      display: block;
+      margin: auto;
     }
     &-name {
       color: $june-red-light;
