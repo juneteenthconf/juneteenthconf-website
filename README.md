@@ -1,23 +1,31 @@
-## Static site for Virtual Azure Community Day 2.0
+# Static site for Juneteenth Conference
+
+**[Read the license](LICENCE)**
+
+| Master | Develop | 
+| --- | --- |
+| [![Build Status](https://dev.azure.com/heboelma/VACD/_apis/build/status/Juneteenth%20Conf?branchName=master)](https://dev.azure.com/heboelma/VACD/_build/latest?definitionId=4&branchName=master) | [![Build Status](https://dev.azure.com/heboelma/VACD/_apis/build/status/Juneteenth%20Conf?branchName=develop)](https://dev.azure.com/heboelma/VACD/_build/latest?definitionId=4&branchName=develop)
+
+
+## Get started
 
 _Site is build with Parcel a zero configuration web application builder._
 
-# Get started
 
-## Install dependencies
+### Install dependencies
 
 `yarn install`
 
-## Start development site
+### Start development site
 
 `yarn start`
 
-## Build production site
+### Build production site
 
 `yarn build`
 
 _This command is run on build servers automatically and doesn't need to be used when developing locally._
 
-# Viewing website
+### Viewing website
 
-When Parcel is started the website can be shown on http://localhost:1234.
+When Parcel is started the website can be shown on http://localhost:1234/index.html.
