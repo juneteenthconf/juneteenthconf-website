@@ -30,7 +30,6 @@
   }
 
   &__image {
-    padding-top:1rem;
     img {
       max-width: 100%;
     }
@@ -45,7 +44,7 @@
   }
 
   &__copy {
-    padding-top:3rem;
+    padding-top:4.5rem;
     padding-bottom: 2rem;
 
     @include media-breakpoint-down(md) {
