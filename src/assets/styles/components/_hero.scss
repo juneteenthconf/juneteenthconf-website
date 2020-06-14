@@ -1,7 +1,8 @@
 .hero {
   max-width: 900px;
   margin: 0 auto;
-
+  padding-top:2rem;
+  
   &__image {
     img {
       @include img-fluid;
@@ -25,7 +26,7 @@
     margin: 2rem 0;
 
     .btn + .btn {
-      margin-left: 1rem;
+      margin: 1rem;
     }
   }
 
@@ -33,6 +34,8 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    padding-top:2rem;
+    padding-bottom: 2rem;
 
     @include media-breakpoint-down(md) {
       flex-direction: column;
