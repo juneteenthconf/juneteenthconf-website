@@ -1,7 +1,6 @@
 .hero {
   max-width: 900px;
   margin: 0 auto;
-  padding-top:2rem;
   
   &__image {
     img {
@@ -23,40 +22,47 @@
 
   &__cta {
     text-align: center;
-    margin: 2rem 0;
+    margin: 1rem 0;
 
     .btn + .btn {
       margin: 1rem;
     }
   }
 
+  &__image {
+    img {
+      max-width: 100%;
+    }
+
+    @include media-breakpoint-down(md) {
+      text-align: center;
+
+      img {
+        max-width: 75%;
+      }
+    }    
+  }
+
   &__copy {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding-top:2rem;
+    padding-top:4.5rem;
     padding-bottom: 2rem;
 
     @include media-breakpoint-down(md) {
-      flex-direction: column;
+      text-align: center;
+      padding-top:2rem;
+      padding-bottom: 0rem;      
     }
 
     .h2 {
-      text-align: center;
-
       @include media-breakpoint-up(lg) {
-        text-align: right;
-
-        &::after {
-          background-color: $anti-flash-white;
-          content: '';
-          display: inline-flex;
-          height: 20px;
-          margin-left: 20px;
-          margin-right: 20px;
-          width: 2px;
-        }
+        text-align: left;
       }
     }
+
+    .h6 {
+      padding-bottom: 2rem;
+      font-size: 1.2rem;
+    }
+
   }
 }
