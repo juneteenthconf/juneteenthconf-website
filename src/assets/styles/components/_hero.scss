@@ -3,6 +3,8 @@
   margin: 0 auto;
   
   &__image {
+    padding-top: 1rem;
+    
     img {
       @include img-fluid;
       text-align: center;
@@ -44,7 +46,7 @@
   }
 
   &__copy {
-    padding-top:4.5rem;
+    padding-top:3rem;
     padding-bottom: 2rem;
 
     @include media-breakpoint-down(md) {
