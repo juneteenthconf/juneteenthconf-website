@@ -3,6 +3,8 @@
   margin: 0 auto;
   
   &__image {
+    padding-top: 1rem;
+    
     img {
       @include img-fluid;
       text-align: center;
@@ -30,7 +32,6 @@
   }
 
   &__image {
-    padding-top:1rem;
     img {
       max-width: 100%;
     }
