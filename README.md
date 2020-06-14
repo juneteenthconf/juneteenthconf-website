@@ -1,6 +1,6 @@
 # Static site for Juneteenth Conference
 
-**[Read the license](LICENCE)**
+**[Read the license](LICENSE)**
 
 | Master | Develop | 
 | --- | --- |
