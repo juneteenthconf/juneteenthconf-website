@@ -1,5 +1,6 @@
 import schedule from './modules/schedule';
 import tracks from './modules/tracks';
+import persons from './modules/persons';
 
 import 'bootstrap/js/src/util';
 import 'bootstrap/js/src/modal';
@@ -11,4 +12,5 @@ $ = window.$ = window.jQuery = jquery;
 document.addEventListener('DOMContentLoaded', () => {
   schedule.init();
   tracks.init();
+  persons.init();
 });

@@ -1,0 +1,47 @@
+[
+    {
+        "image": "assets/images/people/michael.jpg",
+        "name": "Michael Brown",
+        "title": "",
+        "description": "",
+        "twitter":"browniepoints",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/valerie.jpg",
+        "name": "Valerie Phoenix",
+        "title": "Founder of TechByChoiceOrg",
+        "description": "",
+        "twitter":"DigitalBlkHippy",
+        "facebook":"",
+        "linkedin":""        
+    },        
+    {
+        "image": "assets/images/people/tess.jpg",
+        "name": "Tess DiStefano",
+        "title": "",
+        "description": "",
+        "twitter":"Tess_distefano",
+        "facebook":"",
+        "linkedin":""        
+    },
+    {
+        "image": "assets/images/people/lilian.jpg",
+        "name": "Lilian Kasem",
+        "title": "",
+        "description": "",
+        "twitter":"liliankasem",
+        "facebook":"",
+        "linkedin":""        
+    },    
+    {
+        "name": "Henk Boelman",
+        "image": "assets/images/people/henk.jpg",
+        "title": "Cloud advocate",
+        "about": "A small text",
+        "facebook": "henk.boelman",
+        "twitter": "hboelman",
+        "linkedin": "henkboelman"
+    }
+]
