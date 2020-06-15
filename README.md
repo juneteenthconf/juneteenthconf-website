@@ -2,9 +2,9 @@
 
 **[Read the license](LICENSE)**
 
-| Master | Develop | 
+| Production | Develop |
 | --- | --- |
-| [![Build Status](https://dev.azure.com/heboelma/VACD/_apis/build/status/Juneteenth%20Conf?branchName=master)](https://dev.azure.com/heboelma/VACD/_build/latest?definitionId=4&branchName=master) | [![Build Status](https://dev.azure.com/heboelma/VACD/_apis/build/status/Juneteenth%20Conf?branchName=develop)](https://dev.azure.com/heboelma/VACD/_build/latest?definitionId=4&branchName=develop)
+| [![Build Status](https://dev.azure.com/heboelma/VACD/_apis/build/status/Juneteenth%20Conf?branchName=production)](https://dev.azure.com/heboelma/VACD/_build/latest?definitionId=4&branchName=production) | [![Build Status](https://dev.azure.com/heboelma/VACD/_apis/build/status/Juneteenth%20Conf?branchName=develop)](https://dev.azure.com/heboelma/VACD/_build/latest?definitionId=4&branchName=develop)
 
 
 ## Get started
