@@ -2,6 +2,9 @@
 </include>
 
 <body>
+  <include src="partials/skipnavigationlinks.html"></include>
+  <a href="#chatnav" class="invisibleskipnav">Skip to chat</a>
+  <a href="#schedulenav" class="invisibleskipnav">Skip to schedule</a>
 
   <include src="partials/header-live.html"></include>
 
@@ -15,6 +18,7 @@
           <div class=" col-lg-8">
             <div class="player__video">
               <div class="embed-responsive embed-responsive-16by9">
+                <a name="maincontentnav" id="maincontentnav"></a>
                 <iframe id="video" width="560" height="315" class="embed-responsive-item" src="" frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen></iframe>
@@ -24,6 +28,7 @@
 
           <div class=" col-lg-4">
             <div class="player__chat">
+              <a name="chatnav" id="chatnav"></a>
               <iframe id="chat" src='' style='border: 0; width: 100%; '></iframe>
             </div>
           </div>
@@ -33,6 +38,7 @@
 
     <section class="track-browser" id="browser-wrapper"></section>
 
+    <a name="schedulenav" id="schedulenav"></a>
     <script id="browser-template" type="text/x-handlebars-template">
       <div class="container">
         <div class="row">
