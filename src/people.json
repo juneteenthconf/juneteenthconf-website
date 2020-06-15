@@ -43,5 +43,14 @@
         "facebook": "henk.boelman",
         "twitter": "hboelman",
         "linkedin": "henkboelman"
+    },
+    {
+        "name": "Bismarck Odoom",
+         "image": "assets/images/people/bismarck.jpg",
+         "title": "BS/Research Student",
+         "about": "CE Major",
+         "facebook": "bismarckbamfoodoom",
+         "twitter": "BismarckBamfo",
+         "linkedin": "bbodoom"
     }
 ]
