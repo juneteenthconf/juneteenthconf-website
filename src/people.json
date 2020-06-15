@@ -15,16 +15,16 @@
         "description": "",
         "twitter":"DigitalBlkHippy",
         "facebook":"",
-        "linkedin":""        
-    },        
+        "linkedin":""
+    },
     {
         "image": "assets/images/people/tess.jpg",
         "name": "Tess DiStefano",
         "title": "",
         "description": "",
         "twitter":"Tess_distefano",
-        "facebook":"",
-        "linkedin":""        
+        "facebook":"tess.distefano",
+        "linkedin":"tessdistefano"
     },
     {
         "image": "assets/images/people/lilian.jpg",
@@ -33,15 +33,141 @@
         "description": "",
         "twitter":"liliankasem",
         "facebook":"",
-        "linkedin":""        
+        "linkedin":""
     },    
     {
         "name": "Henk Boelman",
         "image": "assets/images/people/henk.jpg",
         "title": "Cloud advocate",
-        "about": "A small text",
+        "description": "",
         "facebook": "henk.boelman",
         "twitter": "hboelman",
         "linkedin": "henkboelman"
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Cotishea Anderson",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Almicia Dunson",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Bismarck Bamfo",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Etienne Margraff",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Melody Miller",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Violet Peña",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Victoria Guido",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Wilson Lee",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Robert Jordan",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Kimeka Campbell",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Katie Friesema",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Jo-Elle Husband",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Valerie Sharp",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "LaBrina Loving",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
     }
 ]
