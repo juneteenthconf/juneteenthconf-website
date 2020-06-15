@@ -1,18 +1,31 @@
 <section class="schedule">
   <div class="container">
-    <div class="schedule__header">
-      <h2 class="schedule__title">Schedule</h2>
-      <div class="schedule-timezone">
-        <select name="timezone-select" id="timezone-select" class="custom-select"></select>
-      </div>
 
+    <div class="schedule-timezone">
+      <select name="timezone-select" id="timezone-select" class="custom-select"></select>
     </div>
-    <div class="schedule-view">
-      <div class="schedule-timeline" id="timeline-wrapper"></div>
-      <div class="schedule-tracks" id="schedule-wrapper"></div>
-    </div>
+
+    <div id="schedule-container"></div>
+    
   </div>
 </section>
+
+
+<script id="schedule-template" type="text/x-handlebars-template">
+  {{#each Days}}
+    <div class="schedule__header">
+      <h2 class="schedule__title">{{title}}</h2>
+    </div>
+
+    <div class="schedule-view">
+      <div class="schedule-timeline" id="timeline-wrapper-{{id}}"></div>
+      <div class="schedule-tracks" id="schedule-wrapper-{{id}}"></div>
+    </div>
+
+  {{/each}}
+</script>
+
+
 
 <script id="track-template" type="text/x-handlebars-template">
 
