@@ -1,84 +1,71 @@
 <include src="partials/head.html" locals='{"pagetitle": "About Us - Who are we?"}'></include>
 <body>
+
     <include src="partials/header.html"></include>
+
     <main>
 
-        <section class="section">
-            <div class="about">
-                <div class="container">
-                    <h2>Who Are We?</h2>
-                
-                    <div class="col-md-8 offset-md-2">
-                        <p> We are a group of individuals more text more txt </p>
-                    </div><br>
-                    <include src="partials/aboutpage.html" locals='{"Name" : "Person", "Role": "Role","Description" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos blanditiis autem molestias nobis ad, accusantium",
-                                                                "image" : "Juneteenthconf-illustration.png", "facebook" : "fb", "twitter" : "tt", "linkedin" : "linkedin"
-                                                                
-                                                                }'
-                    
-                    ></include>
-                    <include src="partials/aboutpage.html" locals='{"Name" : "Person", "Role": "Role","Description" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos blanditiis autem molestias nobis ad, accusantium",
-                                                                "image" : "Juneteenthconf-illustration.png", "facebook" : "fb", "twitter" : "tt", "linkedin" : "linkedin"
-                                                                
-                                                                }'
-                    
-                    ></include>
-                    <include src="partials/aboutpage.html" locals='{"Name" : "Person", "Role": "Role","Description" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos blanditiis autem molestias nobis ad, accusantium",
-                                                                "image" : "Juneteenthconf-illustration.png", "facebook" : "fb", "twitter" : "tt", "linkedin" : "linkedin"
-                                                                
-                                                                }'
-                    
-                    ></include>
-                    <include src="partials/aboutpage.html" locals='{"Name" : "Person", "Role": "Role","Description" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos blanditiis autem molestias nobis ad, accusantium",
-                                                                "image" : "Juneteenthconf-illustration.png", "facebook" : "fb", "twitter" : "tt", "linkedin" : "linkedin"
-                                                                
-                                                                }'
-                    
-                    ></include>
-                    <include src="partials/aboutpage.html" locals='{"Name" : "Person", "Role": "Role","Description" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos blanditiis autem molestias nobis ad, accusantium",
-                                                                "image" : "Juneteenthconf-illustration.png", "facebook" : "fb", "twitter" : "tt", "linkedin" : "linkedin"
-                                                                
-                                                                }'
-                    
-                    ></include>
-                    <include src="partials/aboutpage.html" locals='{"Name" : "Person", "Role": "Role","Description" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos blanditiis autem molestias nobis ad, accusantium",
-                                                                "image" : "Juneteenthconf-illustration.png", "facebook" : "fb", "twitter" : "tt", "linkedin" : "linkedin"
-                                                                
-                                                                }'
-                    
-                    ></include>
-                    <include src="partials/aboutpage.html" locals='{"Name" : "Person", "Role": "Role","Description" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos blanditiis autem molestias nobis ad, accusantium",
-                                                                "image" : "Juneteenthconf-illustration.png", "facebook" : "fb", "twitter" : "tt", "linkedin" : "linkedin"
-                                                                
-                                                                }'
-                    
-                    ></include>
-                    <include src="partials/aboutpage.html" locals='{"Name" : "Person", "Role": "Role","Description" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos blanditiis autem molestias nobis ad, accusantium",
-                                                                "image" : "Juneteenthconf-illustration.png", "facebook" : "fb", "twitter" : "tt", "linkedin" : "linkedin"
-                                                                
-                                                                }'
-                    
-                    ></include>
-                    <include src="partials/aboutpage.html" locals='{"Name" : "Person", "Role": "Role","Description" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos blanditiis autem molestias nobis ad, accusantium",
-                                                                "image" : "Juneteenthconf-illustration.png", "facebook" : "fb", "twitter" : "tt", "linkedin" : "linkedin"
-                                                                
-                                                                }'
-                    
-                    ></include>
-                    <include src="partials/aboutpage.html" locals='{"Name" : "Person", "Role": "Role","Description" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos blanditiis autem molestias nobis ad, accusantium",
-                                                                "image" : "Juneteenthconf-illustration.png", "facebook" : "fb", "twitter" : "tt", "linkedin" : "linkedin"
-                                                                
-                                                                }'
-                    
-                    ></include>
-                    <include src="partials/aboutpage.html" locals='{"Name" : "Person", "Role": "Role","Description" : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos blanditiis autem molestias nobis ad, accusantium",
-                                                                "image" : "Juneteenthconf-illustration.png", "facebook" : "fb", "twitter" : "tt", "linkedin" : "linkedin"
-                                                                
-                                                                }'
-                    
-                    ></include>
+        <section class="about">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="about__title">Who Are We?</h1>
+                    <p class="about__sub__title">
+                        Meet the team behind Juneteenth Conference.
+                    </p>
                 </div>
             </div>
+
+            <div class="row" id="persons-template-output"></div>
+
+            <script id="persons-template" type="text/x-handlebars-template">        
+                {{#each persons}}
+                <div class="col-md-3">
+                    <div class="about__card">
+
+                        {{#if image}}
+                        <div class="about__card__image">
+                            <img src="{{image}}" alt="" />
+                        </div>
+                        {{else}}
+                        <div class="about__card__image">
+                            <img src="assets/images/Juneteenthconf-illustration.png" alt="" />
+                        </div>
+                        {{/if}}
+                        <div class="about__card__content">
+
+                            <h3 class="h4">{{name}}</h3>
+                            <h4 class="h6">{{title}}</h4> 
+                            <p>
+                                {{about}}
+                            </p>
+
+                            <div class="about__card__socials">
+                                {{#if facebook}}
+                                <a href="https://www.facebook.com/{{facebook}}" title="Facebook" target="_blank" aria-label="link text - new window">
+                                    <img src="assets/images/facebook1.svg" />
+                                </a>
+                                {{/if}}
+                                {{#if twitter}}
+                                <a href="https://twitter.com/{{twitter}}"  title="Twitter" target="_blank" aria-label="link text - new window">
+                                    <img src="assets/images/twitter1.svg" />
+                                </a>
+                                {{/if}}
+                                {{#if linkedin}}
+                                <a href="https://www.linkedin.com/in/{{linkedin}}" title="LinkedIn" target="_blank" aria-label="link text - new window">
+                                    <img src="assets/images/linkedin.svg" />
+                                </a>
+                                {{/if}}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </script>
+
         </section>
     </main>
     

@@ -1,4 +1,45 @@
 .about {
   margin: 3rem 0;
-  text-align: center;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__title_left {
+    text-align: left;
+    margin-bottom: 4rem;
+  }
+
+  &__sub__title {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 1.2rem;
+  }
+
+  &__card {
+    margin-bottom: 3rem;
+    text-align: center;
+    
+    &__image {
+      text-align: center;
+      margin-bottom: 1rem;
+
+      img {
+        max-height: 300px;
+        max-width: 100%;
+        border-radius: 5%;
+      }
+    }
+
+    &__socials {
+      text-align: center;
+
+      a:hover {
+        text-decoration: none;
+      }
+    }
+
+  }
 }
+
