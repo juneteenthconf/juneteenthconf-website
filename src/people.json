@@ -34,7 +34,7 @@
         "twitter":"liliankasem",
         "facebook":"",
         "linkedin":""
-    },    
+    },
     {
         "name": "Henk Boelman",
         "image": "assets/images/people/henk.jpg",
@@ -43,6 +43,15 @@
         "facebook": "henk.boelman",
         "twitter": "hboelman",
         "linkedin": "henkboelman"
+    },
+    {
+        "name": "Bismarck Odoom",
+         "image": "assets/images/people/bismarck.jpg",
+         "title": "BS/Research Student",
+         "about": "CE Major",
+         "facebook": "bismarckbamfoodoom",
+         "twitter": "BismarckBamfo",
+         "linkedin": "bbodoom"
     },
     {
         "image": "assets/images/people/cotishea.jpg",
@@ -59,15 +68,6 @@
         "title": "Software Engineer at Microsoft",
         "description": "",
         "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/bismarck.jpg",
-        "name": "Bismarck Bamfo",
-        "title": "",
-        "description": "",
-        "twitter":"BismarckBamfo",
         "facebook":"",
         "linkedin":""
     },
