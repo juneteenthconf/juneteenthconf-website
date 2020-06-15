@@ -11,10 +11,10 @@
     {
         "image": "assets/images/people/valerie.jpg",
         "name": "Valerie Phoenix",
-        "title": "Founder of TechByChoiceOrg",
+        "title": "Founder of Tech By Choice",
         "description": "",
         "twitter":"DigitalBlkHippy",
-        "facebook":"",
+        "facebook":"TechByChoiceOrg",
         "linkedin":""
     },
     {
@@ -149,15 +149,6 @@
         "title": "",
         "description": "",
         "twitter":"headofhouseco",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/_.jpg",
-        "name": "Valerie Sharp",
-        "title": "",
-        "description": "",
-        "twitter":"",
         "facebook":"",
         "linkedin":""
     },
