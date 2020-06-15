@@ -1,535 +1,318 @@
 {
-    "generic": {
-        "eventStartsAt": "2020-07-28T01:00:00Z",
-        "eventEndsAt": "2020-07-28T12:00:00Z"
-    },
-    "track1": {
-        "id": 1,
-        "title": "English",
-        "talks": [
-            {
-                "id": "202134",
-                "title": "21st Century Background Services with Azure Logic Apps and Azure Functions",
-                "description": "How do you handle \"background tasks\" in your applications?  Maybe you build a cronjob or a Windows service to execute some code on a schedule?  Maybe you have a background task in your web application?  <br/><br/>No matter what you're doing, you are probably building infrastructure to support these background tasks.  That can be costly, unreliable, and difficult to debug.<br/><br/>In this presentation, you will be offered an alternative approach to building background services by taking advantage of Azure Logic Apps and Azure Functions.  You see real-world scenarios that were implemented and that are running right now!",
-                "startsAt": "2020-07-28T01:00:00Z",
-                "endsAt": "2020-07-28T02:00:00Z",
-                "roomId": "13791",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
-                    {
-                        "fullName": "Kevin Griffin",
-                        "bio": "Kevin Griffin is an author, teacher, mentor, and consultant focusing in software development.  He is also a 10-time Microsoft MVP, specializing in ASP.NET and web development.  As the owner of Swift Kick, a software training and services company, Kevin specializes in helping businesses push their technology stacks into the 21st century.   You can often find Kevin speaking at conferences and user groups across the country or blogging at http://kevgriffin.com.  In his spare time, Kevin is the co-host of the popular 2 Frugal Dudes podcast.",
-                        "tagLine": "Owner of Swift Kick, Microsoft MVP",
-                        "profilePicture": "https://sessionize.com/image?f=18962e6983335f4b763579e25a82ecd9,400,400,1,0,69-11ae-4245-93b3-e6e60d5d187c.8d6d9927-2dd8-4e29-82b7-eaf585033c6a.jpg",
-                        "twitter": "https://twitter.com/1kevgriff",
-                        "id": "37313769-11ae-4245-93b3-e6e60d5d187c"
-                    }
-                ],
-                "multipleSpeakers": false
+    "Days": [
+        {
+            "generic": {
+                "eventStartsAt": "2020-06-19T17:00:00Z",
+                "eventEndsAt": "2020-06-19T23:00:00Z"
             },
-            {
-                "id": "200935",
-                "title": "Options to refresh our Tabular Models",
-                "description": "In this session we are going to show options to refresh our Azure Analysis Services models with Logic Apps and Azure Data Factory",
-                "startsAt": "2020-07-28T02:00:00Z",
-                "endsAt": "2020-07-28T03:00:00Z",
-                "roomId": "13791",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
+            "track1": {
+                "id": 3385,
+                "title": "Track 1",
+                "talks": [
                     {
-                        "fullName": "Gaston Cruz",
-                        "bio": "Microsoft Most Valuable Professional (MVP) in Data Platform.<br/><br/>Specialties: Business Intelligence Solution / Technical Architect , SSIS , SSRS ,SSAS, SQL Server 2008 R2, 2012 , 2014, Power BI, Power View, Office 365, SharePoint 2013, Power View, Power Pivot ,Power Query, Power Map<br/><br/>Latest Microsoft Technology Expert :<br/>Power BI, Power View, Power Pivot, Power Query, Power Map<br/><br/>Specialize implementing innovative Business Intelligence Solutions with a passion for designing and executing wide-reaching solutions and teams to solve problems. ",
-                        "tagLine": "MVP Data Platform / Data Analytics Technical Manager",
-                        "profilePicture": "https://sessionize.com/image?f=1054d77e0373ffcc1bd9554e5bbe0c3a,400,400,1,0,a620e3fe-7283-4ae4-8a4d-7171c353b56a.jpg",
-                        "twitter": "https://twitter.com/GastonFCruz",
-                        "id": "31051170-6a47-4699-8df8-87090b3d14fe"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "201606",
-                "title": "Infrastructure as Code (IaC) on Microsoft Azure with Terraform",
-                "description": "This session will highlight what is Infrastructure as Code, why is it important. Then the session will move forward with talking about Terraform as a tool and its benefit that we get. We will see how to build infrastructure with Terraform in Microsoft Azure and how to integrate it into CI/CD pipeline. This session will give an eagle-eye view of IaC, Microsoft Azure, and Terraform to the audience.  ",
-                "startsAt": "2020-07-28T03:00:00Z",
-                "endsAt": "2020-07-28T04:00:00Z",
-                "roomId": "13791",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
-                    {
-                        "fullName": "Ravi Mandal",
-                        "bio": "Ravi Mandal works as Cloud Engineer at Xamariners, Singapore focusing on developing and designing cloud-based solutions. He is a Microsoft MVP on Azure and Microsoft Certified: Azure Developer Associate. He has years of experience in developing scalable and reliable solutions utilizing Microsoft technologies backed by Azure. He helps to drive ASPNet Community back in Nepal where he organizes and delivers sessions at different events, meetups, and workshops.  ",
-                        "tagLine": "Cloud Engineer at Xamariners | Microsoft MVP on Azure",
-                        "profilePicture": "https://sessionize.com/image?f=4f45a1ebd0f7e8d407b2a4595a0cff30,400,400,1,0,59-698c-4a41-9a59-a35a8b3d1d85.4e510aec-d9db-4e29-9614-1ff8363dc5fa.jpg",
-                        "twitter": "https://twitter.com/ravimandal47",
-                        "id": "a1820d59-698c-4a41-9a59-a35a8b3d1d85"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "201456",
-                "title": "Using LUIS and Q A maker to build an enterprise bot",
-                "description": "Using Azure Cognitive services ( text analytics, Luis, Q and A maker) and Bot framework, we built an enterprise bot that can easily understand the requests of Portfolio Managers and Analysts and can service FAQs, thus helping DEVs save time replying to questions like why cannot I access this menu item or what is the exchange rate used in this calculation or did the daily jobs succeed or doing routine tasks like downloading and mailing reports. The bot can also recognize the sentiment and use it to personalize and group requests for key users. ",
-                "startsAt": "2020-07-28T04:00:00Z",
-                "endsAt": "2020-07-28T05:00:00Z",
-                "roomId": "13791",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
-                    {
-                        "fullName": "Priyanka Shah",
-                        "bio": "Solution Architect for Data Science, Artificial Intelligence/Machine learning developer, Innovation Lead, public speaker/blogger for AI/ML specially with respect to Microsoft technology stack, full stack development experience across variety of programming languages and platforms.",
-                        "tagLine": "Solution Architect, Franklin Templeton",
-                        "profilePicture": "https://sessionize.com/image?f=b5ec78ec99041cab952bd6b123cd3483,400,400,1,0,ce-b20d-4d62-83cd-7ec9f1d9c37b.b8fd64af-4d9b-495f-830e-9a7fc720cff1.jpg",
-                        "twitter": "https://twitter.com/fuzzymind1",
-                        "id": "2b4273ce-b20d-4d62-83cd-7ec9f1d9c37b"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "201079",
-                "title": "Containers and You: The Azure Edition",
-                "description": "Many applications are moving towards a container-based approach and with good reason: containers allow us to separate our applications’ environmental concerns from the application itself.<br/><br/>Instead of worrying about how to configure our application to run on different target environments, we can explicitly state those needs in code and have that environment automatically created for us!<br/><br/>Azure provides four container services to help us adopt the container-based approach for our own applications:<br/><br/>- Azure Container Instances<br/>- Azure Web App for Containers<br/>- Azure Container Registry<br/>- Azure Kubernetes Service<br/><br/>In this talk, we'll go over what each of these services are, how they are (and aren't!) related to and work with each other, and how you can get started building your own containerized applications.<br/><br/>You'll leave with a better understanding of the services Azure provides to create and deploy containerized applications and be excited to start building your own once you're back at your computer!",
-                "startsAt": "2020-07-28T05:00:00Z",
-                "endsAt": "2020-07-28T06:00:00Z",
-                "roomId": "13791",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
-                    {
-                        "fullName": "Adrienne Tacke",
-                        "bio": "Adrienne Braganza Tacke is a Filipina software engineer, international speaker, and published author of the book Coding for Kids: Python. She is also a LinkedIn Learning instructor who specializes in Azure and Cloud Development courses. Currently, she is a Senior Developer Advocate for MongoDB where she happily educates and empowers developers to become great ones (perhaps using MongoDB in the process 😉). She takes great delight in solving complex problems, creating awesome things, and using the right tools for the problem at hand. Most of all, she relishes the opportunity to connect with developers from around the world.<br/><br/>Bonus Fun Facts: her favorite PC/video games are Age of Empires II, RollerCoaster Tycoon 2, and the Borderlands series; her favorite lipstick color is Bite's Aubergine; her favorite movies are Inception (really, anything be Christopher Nolan) and The Matrix.",
-                        "tagLine": "Senior Developer Advocate at MongoDB",
-                        "profilePicture": "https://sessionize.com/image?f=8e2276a6a941518f77fa8c7a7387d83a,400,400,1,0,80-baef-4c58-a9b3-589139c88159.70a38ce0-d334-45ba-a3c3-1dd6673af07c.jpg",
-                        "twitter": "https://twitter.com/AdrienneTacke",
-                        "id": "a378b580-baef-4c58-a9b3-589139c88159"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "201588",
-                "title": "How to handle hybrid cloud security problems like Ninja!",
-                "description": "Security has always been a fundamental concern of IT admins and now more than ever, in the age of the cloud computing. Being hybrid cloud, this make another layer of additional headache to your concern list. Nevertheless, IT administrator, Security administrators need to face these challenges. This is where Azure Security Center coming into the rescue. In this webinar we’ll explore how Azure Security Center,<br/>•\tMake server security easy with whitelisting and automated recommendations<br/>•\tGet instant insight into security of your Azure deployments and workloads<br/>•\tProvide just in time access for remote administration<br/>•\tProactively limit risk by locking down access and applications<br/>•\tQuickly find and fix security vulnerabilities and configurations<br/>•\tDetect and respond to active threats across your entire IT infrastructure<br/>•\tExplore network security issues and resolve them like a Ninja<br/>You'll also see a demo that covers Security Center’s advanced analytics, which will help you identify attacks that might otherwise go undetected.<br/>",
-                "startsAt": "2020-07-28T06:00:00Z",
-                "endsAt": "2020-07-28T07:00:00Z",
-                "roomId": "13791",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
-                    {
-                        "fullName": "Susantha Silva",
-                        "bio": "Susantha Silva works as a Senior Consultant and Technology Lead at Infront Consulting LK, a consulting and managed service providing company located in APAC region (Sri Lanka, Singapore, Malaysia, Indonesia & Australia). Susantha helps companies to transform their business to the Cloud and on their digital transformation journey. Susantha is focused on Microsoft Technologies, especially Microsoft Cloud Platform based on Microsoft Azure, System Center, Microsoft Virtualization and Microsoft Datacenter Solutions. In 2010 Susantha Silva was awarded the first time by Microsoft with the Microsoft MVP (Most Valuable Professional) Award for his expertise in Cloud and Datacenter Management. He has been MVP for the past 7 years’ time (2010 -2016). He also an active Microsoft Certified Trainer (MCT)for more than 10 years. <br/><br/>Susantha is very much passionate about IT Pro community work and has been guest speaker on several local events as well as the Cloud Summit and Experts Live events in Singapore and Malaysia. <br/>",
-                        "tagLine": "Infront Consulting | Senior Technology Consultant",
-                        "profilePicture": "https://sessionize.com/image?f=92ec8dc5c80f73c8992bb3e8005a74ec,400,400,1,0,8b-a029-4128-be8a-2d568ef6a317.e9edf961-6355-484b-99b7-d14d044c5d03.jpg",
-                        "twitter": "https://twitter.com/susanthasilva",
-                        "id": "e141398b-a029-4128-be8a-2d568ef6a317"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "201953",
-                "title": "Extending Search Capability using Azure Search and Power BI",
-                "description": "How to configure Azure search with Power bi to bring visibility and custom Analysis.",
-                "startsAt": "2020-07-28T07:00:00Z",
-                "endsAt": "2020-07-28T08:00:00Z",
-                "roomId": "13791",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
-                    {
-                        "fullName": "Oluwaseyi Oluwawumiju",
-                        "bio": "Oluwawumiju Oluwaseyi is a Technical consultant, Public Speaker, Author with Convenant Technologies Certified Partner with Microsoft in Lagos, Nigeria. He is also a senior consulting partner for Covenant Technologies on Microsoft infrastructure. He is a Microsoft certified trainer, MVP on Office Services &Apps and MCT regional lead for Nigeria, He is also Manager on Data &AI for Wragbysolutions &Technologies Limited with over 17 years’ experience and also, he is fellow of the institute of information Management Africa one of the highest honor for Management of data. Prior to joining Convenant Technologies, Seyi was a senior technical consultant and support manager for 1st Intellit solution, where he led outsourcing team development and new client systems. It is in view of the evolving market for IT in Africa, that he deemed it highly necessary honing his traditional product knowledge expertise to meet this current trend suffice it to say, that championing campaign for SharePoint, Yammer, office 365, Azure ,Microsoft Teams, Microsoft Server AI and cloud technology strictly from value point of view in medium and large organizations is the mainstay of his business interest in WECA and the response as well as prospect from the Nigerian marketplace for instance, is no doubt a boost for his business outlook in Africa.",
-                        "tagLine": "Convenant Technologies -MD/CEO",
-                        "profilePicture": "https://sessionize.com/image?f=50b47151187b9ac20d0e8d5bfb232bae,400,400,1,0,21-d383-457d-8d0b-c5f39b749f7b.d6860bde-b43b-4e2e-b5fb-a549d64cf6ba.jpg",
-                        "twitter": "https://twitter.com/soluwawumiju",
-                        "id": "d0019f21-d383-457d-8d0b-c5f39b749f7b"
+                        "id": "205395",
+                        "title": "Henks test session",
+                        "description": "This is an amazing session to show how sessionize works.",
+                        "startsAt": "2020-06-19T17:00:00Z",
+                        "endsAt": "2020-06-19T17:30:00Z",
+                        "roomId": "14062",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": false,
+                        "duration": 30,
+                        "speakers": [
+                            {
+                                "fullName": "Henk Boelman",
+                                "bio": "Henk is a Cloud Advocate specializing in Artificial intelligence and Azure with a background in application development. He is currently part of the regional cloud advocate team in the Netherlands. Before joining Microsoft, he was a Microsoft AI MVP and worked as a software developer and architect building lots of AI powered platforms on Azure.<br/><br/>He loves to share his knowledge about topics such as DevOps, Azure and Artificial Intelligence by providing training courses and he is a regular speaker at user groups and international conferences.",
+                                "tagLine": "Cloud Advocate at Microsoft",
+                                "profilePicture": "https://sessionize.com/image?f=24a7a7e564938f61e4cae8af111a4025,400,400,1,0,2a-4204-42f0-9ba8-d7b9c6f67226.60416965-5577-49af-91f0-786fec73cf9d.jpg",
+                                "twitter": "https://twitter.com/hboelman",
+                                "id": "36a25c2a-4204-42f0-9ba8-d7b9c6f67226"
+                            }
+                        ],
+                        "multipleSpeakers": false
                     },
                     {
-                        "fullName": "Ayodeji Folarin",
-                        "bio": "Ayodeji is a Microsoft Certified Trainer, BI Developer, Data Platform Evangelist, Data warehouse and Dashboard/Business Reporting Expert. He was awarded Microsoft Most Valuable Professional",
-                        "tagLine": "Managing Partner at Jireh Computer Solutions",
-                        "profilePicture": "https://sessionize.com/image?f=ebbd166394a93a99f35df8158d58ab5f,400,400,1,0,e0-582f-4c46-89f1-d4e8409edbc2.e1e9a98f-030d-4995-a5f6-fd8a7597d027.png",
-                        "twitter": "https://twitter.com/Deji_Folarin",
-                        "id": "b96fc7e0-582f-4c46-89f1-d4e8409edbc2"
+                        "id": "a6564463-0029-46bb-b6ed-b204cc71f22d",
+                        "title": "Break",
+                        "description": "Generated break",
+                        "startsAt": "2020-06-19T17:30:00Z",
+                        "endsAt": "2020-06-19T23:00:00Z",
+                        "roomId": "14062",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": true,
+                        "duration": 330,
+                        "speakers": [],
+                        "multipleSpeakers": false
                     }
-                ],
-                "multipleSpeakers": true
+                ]
             },
-            {
-                "id": "201798",
-                "title": "Azure automation fun with ARM templates & Powershell - my DevOps Cloud adventure",
-                "description": "I will take you along, on my journey into the world of Azure Automation, where my Infrastructure as Code adventure taught me all the automation possibilities of Azure. It's an adventure where I:<br/><br/>- Started as a n00b with building custom ARM templates<br/>- Still felt a rookie with automatic deployments with the Az PowerShell Module<br/>- Felt comfortable using Azure Automation RunBooks (PowerShell FTW!)<br/>- To finally make that leap to Azure DevOps and build my first Pipeline :-)<br/><br/>All jokes aside, my adventure is not about sharing just a 'pretty' story, but offers a practical guide to develop your own DevOps strategy for Azure. The demo's support and visualize every step of the way to be combined into a practical kit, complete with scripts and templates, that will get you started right after the presentation and become a DevOps pro in no time!",
-                "startsAt": "2020-07-28T08:00:00Z",
-                "endsAt": "2020-07-28T09:00:00Z",
-                "roomId": "13791",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
+            "track2": {
+                "id": 1803,
+                "title": "Track 2",
+                "talks": [
                     {
-                        "fullName": "Esther Barthel",
-                        "bio": "Esther Barthel has worked in different roles and functions as an IT consultant after she finished her Master’s degree in Computer Science in 1997. She soon discovered that Server-Based Computing combined servers, desktops, and user experience in one solution and specialized in virtualization solutions, like Microsoft Remote Desktop Services, Citrix Virtual Apps & Desktop, Microsoft App-V, Microsoft PowerShell and Citrix ADC.<br/><br/>Esther works as a Solutions Architect at cognition IT, where she combines her passion for designing and implementing Citrix solutions with her newfound love for DevOps automation, using PowerShell, REST APIs and JSON payloads to automate both on-premises and Cloud Infrastructure as Code solutions.<br/><br/>Ever since she hosted introduction days for technical female student candidates Esther has shared her passion and knowledge for IT. As well as her experience in the CUGC Women in Tech mentorship program, founded by her and the other female CTPs.<br/><br/>In addition to her MVP award for Cloud and Datacenter Management, Esther is also awarded as a Citrix Technology Professional (CTP).",
-                        "tagLine": "Solutions Architect at cognition IT",
-                        "profilePicture": "https://sessionize.com/image?f=de3ff4fab1d62c240dc88f288713cc9b,400,400,1,0,3d-b859-4031-a414-8191d4e00f14.9fc0b371-c562-4e08-a54a-1ed117192d33.jpg",
-                        "twitter": "https://twitter.com/virtuEs_IT",
-                        "id": "4e8b733d-b859-4031-a414-8191d4e00f14"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "201797",
-                "title": "The steps to effective Azure governance",
-                "description": "Many companies fail to understand and implement Azure governance. This can result in many unwanted results, like accidentally deleting resources in your Azure environment, non-compliance with external regulations, deploying costly resources, or deploying resources in the wrong Azure regions. The solution to this is Azure governance, the ongoing process of managing, monitoring, and auditing the use of Azure resources to meet the goals and requirements of your organization. <br/><br/>In this session we are going to look at Azure Blueprints, Azure Policy, Management Groups and the Resource Graph to effectively manage your Azure environment.",
-                "startsAt": "2020-07-28T09:00:00Z",
-                "endsAt": "2020-07-28T10:00:00Z",
-                "roomId": "13791",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
+                        "id": "8b1303d0-f6b1-4d57-8796-3f1880ef7686",
+                        "title": "Break",
+                        "description": "Generated break",
+                        "startsAt": "2020-06-19T17:00:00Z",
+                        "endsAt": "2020-06-19T22:00:00Z",
+                        "roomId": "14063",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": true,
+                        "duration": 300,
+                        "speakers": [],
+                        "multipleSpeakers": false
+                    },
                     {
-                        "fullName": "Sjoukje Zaal",
-                        "bio": "Sjoukje Zaal is a CTO Microsoft and Azure MVP with over 15 years of experience providing architecture, development, consultancy and design expertise. She works at Capgemini, a global leader in consulting, technology services and digital transformation.<br/><br/>She loves to share her knowledge and is active in the Microsoft community as a co-founder of the Dutch user groups SP&C NL and MixUG. She is also a board member of Azure Thursdays. Sjoukje is a public speaker and involved in organizing events. She wrote several books, writes blogs and is active on the Microsoft Tech Community. Sjoukje is also part of the Diversity and Inclusion Advisory Board.",
-                        "tagLine": "CTO Microsoft | Azure MVP",
-                        "profilePicture": "https://sessionize.com/image?f=7284879db47a601309ba136227545e11,400,400,1,0,1a-4340-4685-a98e-2859b28cb8f5.2852241f-a4d4-4621-98e6-39f50174f72a.jpg",
-                        "twitter": "https://twitter.com/sjoukjezaal",
-                        "id": "be3b6f1a-4340-4685-a98e-2859b28cb8f5"
+                        "id": "205400",
+                        "title": "Another amazing session",
+                        "description": "About nothing",
+                        "startsAt": "2020-06-19T22:00:00Z",
+                        "endsAt": "2020-06-19T23:00:00Z",
+                        "roomId": "14063",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": false,
+                        "duration": 60,
+                        "speakers": [
+                            {
+                                "fullName": "Henk Boelman",
+                                "bio": "Henk is a Cloud Advocate specializing in Artificial intelligence and Azure with a background in application development. He is currently part of the regional cloud advocate team in the Netherlands. Before joining Microsoft, he was a Microsoft AI MVP and worked as a software developer and architect building lots of AI powered platforms on Azure.<br/><br/>He loves to share his knowledge about topics such as DevOps, Azure and Artificial Intelligence by providing training courses and he is a regular speaker at user groups and international conferences.",
+                                "tagLine": "Cloud Advocate at Microsoft",
+                                "profilePicture": "https://sessionize.com/image?f=24a7a7e564938f61e4cae8af111a4025,400,400,1,0,2a-4204-42f0-9ba8-d7b9c6f67226.60416965-5577-49af-91f0-786fec73cf9d.jpg",
+                                "twitter": "https://twitter.com/hboelman",
+                                "id": "36a25c2a-4204-42f0-9ba8-d7b9c6f67226"
+                            }
+                        ],
+                        "multipleSpeakers": false
                     }
-                ],
-                "multipleSpeakers": false
+                ]
             },
-            {
-                "id": "200039",
-                "title": "Accessibility for All",
-                "description": "Accessibility has been especially difficult in a Waterfall world. But how do you adapt what was previously an afterthought as more and more companies are moving towards a continuous model? <br/><br/>Join me as we look at an effective Agile approach to creating an accessible DevOps pipelines starting with the fundamental understanding that an application or website must be functional and usable for all users, regardless of ability.",
-                "startsAt": "2020-07-28T10:00:00Z",
-                "endsAt": "2020-07-28T11:00:00Z",
-                "roomId": "13791",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
+            "track3": {
+                "id": 4511,
+                "title": "Track 3",
+                "talks": [
                     {
-                        "fullName": "Rory Preddy",
-                        "bio": "Rory works in Developer relations for Microsoft and focuses on speaking and empowering everyone in every organisation to achieve more. <br/>Rory’s focus for the last few years has been research and development (R&D) with a focus on cloud research, consulting and training. Working in research has allowed him unparalleled insights into industry movements, trends, and news. <br/>Rory heads up the Middle East and Africa Accessibility pillar for Microsoft, Speaking and inspiring on how to empower everyone in every organization to achieve more.",
-                        "tagLine": "Developer Advocate, Microsoft",
-                        "profilePicture": "https://sessionize.com/image?f=4cdba57f01dbb70290a26d829a6c4d69,400,400,1,0,e6-5b07-4fb2-a4cc-fdb3b3012e2e.2cdfcaa5-5d60-4bfa-ab70-03f0a77e598d.jpg",
-                        "twitter": "https://twitter.com/rorypreddy",
-                        "id": "577905e6-5b07-4fb2-a4cc-fdb3b3012e2e"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "9fb3cdf1-a2de-49fb-b5ec-85af7a980a5c",
-                "title": "Break",
-                "description": "Generated break",
-                "startsAt": "2020-07-28T11:00:00Z",
-                "endsAt": "2020-07-28T13:00:00Z",
-                "roomId": "13791",
-                "language": null,
-                "youtube": null,
-                "isBreak": true,
-                "duration": 120,
-                "speakers": [],
-                "multipleSpeakers": false
-            }
-           
-        ]
-    },
-    "lightningtalks": {
-        "id": 5,
-        "title": "lightning",
-        "talks": [
-            {
-                "id": "cb7b5ba0-08a4-4118-b54a-348413beaeb2",
-                "title": "Break",
-                "description": "Generated break",
-                "startsAt": "2020-07-28T01:00:00Z",
-                "endsAt": "2020-07-28T06:00:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": true,
-                "duration": 300,
-                "speakers": [],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "200493",
-                "title": "5 Azure Tips and Tricks in 5 minutes",
-                "description": "Become more productive with Azure. Learn quick Azure Tips and Tricks in 5 minutes. ",
-                "startsAt": "2020-07-28T06:00:00Z",
-                "endsAt": "2020-07-28T06:20:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 20,
-                "speakers": [
+                        "id": "24f86f6b-1f75-4fc8-8f33-e6d9857a305a",
+                        "title": "Break",
+                        "description": "Generated break",
+                        "startsAt": "2020-06-19T17:00:00Z",
+                        "endsAt": "2020-06-19T18:30:00Z",
+                        "roomId": "14064",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": true,
+                        "duration": 90,
+                        "speakers": [],
+                        "multipleSpeakers": false
+                    },
                     {
-                        "fullName": "Tariq Younas",
-                        "bio": "Tariq Younas (Azure MVP) is a senior technology specialist holding 14+ years experience in Microsoft technologies particularly Azure/ Azure Stack Hub (Hybrid Cloud)/ SharePoint / Office 365/ DevOps Automation and cloud-native architectures.<br/><br/>His areas of interest include Public/ Hybrid Cloud, IoT, Edge computing and Enterprise Architecture. He worked on application modernization and several IaaS/ PaaS migrations successfully. He is an international speaker/ author and member of (IASA Global) an Association for All IT Architects and AEA (Association of Enterprise Architects).<br/><br/>Recently he has been awarded by Microsoft (MVP) award for Azure. You can find his Geeky Adventures at https://TariqYounas.net.<br/><br/>MVP public profile: https://mvp.microsoft.com/en-us/PublicProfile/5003659",
-                        "tagLine": "Cloud Solutions Architect",
-                        "profilePicture": "https://sessionize.com/image?f=a68127b75dd8fc5106c371bd6239c655,400,400,1,0,0c-6c1e-4da7-a354-c783f3318e5b.e5e77c45-722e-42c5-8a08-af0b8f2a6b73.jpg",
-                        "twitter": "https://twitter.com/tariq_younas",
-                        "id": "212b740c-6c1e-4da7-a354-c783f3318e5b"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "202137",
-                "title": "When and How to use Azure Hybrid Connections",
-                "description": "Learn about the use of Azure Hybrid Connections to connect to on premises resources from Azure App Service without enabling additional ports in corporate firewall",
-                "startsAt": "2020-07-28T06:20:00Z",
-                "endsAt": "2020-07-28T06:40:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 20,
-                "speakers": [
+                        "id": "205401",
+                        "title": "Super awesome session",
+                        "description": "This is super awesome",
+                        "startsAt": "2020-06-19T18:30:00Z",
+                        "endsAt": "2020-06-19T19:30:00Z",
+                        "roomId": "14064",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": false,
+                        "duration": 60,
+                        "speakers": [
+                            {
+                                "fullName": "Henk Boelman",
+                                "bio": "Henk is a Cloud Advocate specializing in Artificial intelligence and Azure with a background in application development. He is currently part of the regional cloud advocate team in the Netherlands. Before joining Microsoft, he was a Microsoft AI MVP and worked as a software developer and architect building lots of AI powered platforms on Azure.<br/><br/>He loves to share his knowledge about topics such as DevOps, Azure and Artificial Intelligence by providing training courses and he is a regular speaker at user groups and international conferences.",
+                                "tagLine": "Cloud Advocate at Microsoft",
+                                "profilePicture": "https://sessionize.com/image?f=24a7a7e564938f61e4cae8af111a4025,400,400,1,0,2a-4204-42f0-9ba8-d7b9c6f67226.60416965-5577-49af-91f0-786fec73cf9d.jpg",
+                                "twitter": "https://twitter.com/hboelman",
+                                "id": "36a25c2a-4204-42f0-9ba8-d7b9c6f67226"
+                            }
+                        ],
+                        "multipleSpeakers": false
+                    },
                     {
-                        "fullName": "Manikandan Ramaswami",
-                        "bio": ".net Developer, Microsoft Certified Azure Solutions Architect Expert",
-                        "tagLine": "Cloud Architect",
-                        "profilePicture": "https://sessionize.com/image?f=180c5a3d9aee5a71a27e5cada6b80fbc,400,400,1,0,88eff6ca-9a98-41e5-80d6-8de14b625b9c.jpg",
-                        "twitter": null,
-                        "id": "1183861a-4619-44e2-b1a6-dd30ee269f8f"
+                        "id": "49b61cc8-b2ac-4abd-8ee0-fbbcdf25466b",
+                        "title": "Break",
+                        "description": "Generated break",
+                        "startsAt": "2020-06-19T19:30:00Z",
+                        "endsAt": "2020-06-19T23:00:00Z",
+                        "roomId": "14064",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": true,
+                        "duration": 210,
+                        "speakers": [],
+                        "multipleSpeakers": false
                     }
-                ],
-                "multipleSpeakers": false
+                ]
             },
-            {
-                "id": "203155",
-                "title": "Why every developer should start a CoderDojo",
-                "description": "Five years ago I first came in touch with CoderDojos while visiting a conference in Belgium. Giving kids a possibility to learn about coding fascinated me immediately. Back in Austria, I founded Austria's first regular CoderDojo in my hometown Linz. Today, we have regular CoderDojo in five major cities and CoderDojo has become an important part of my live. Come to this talk if you want to know how CoderDojos work, how we keep CoderDojo alive during these different times, and why it is so rewarding to teach kids how to code.",
-                "startsAt": "2020-07-28T06:40:00Z",
-                "endsAt": "2020-07-28T07:00:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 20,
-                "speakers": [
+            "track4": {
+                "id": 0,
+                "title": null,
+                "talks": []
+            },
+            "sessions": null,
+            "id": 9093,
+            "title": "Day 1"
+        },
+        {
+            "generic": {
+                "eventStartsAt": "2020-06-20T17:00:00Z",
+                "eventEndsAt": "2020-06-20T23:00:00Z"
+            },
+            "track1": {
+                "id": 2283,
+                "title": "Track 1",
+                "talks": [
                     {
-                        "fullName": "Rainer Stropek",
-                        "bio": "Rainer Stropek is co-founder and CEO of the company software architects and has been serving this role since 2008. At software architects Rainer and his team are developing the award-winning SaaS time tracking solution “time cockpit”. Previously, Rainer founded and led two IT consulting firms that worked in the area of developing software solution based on the Microsoft technology stack.<br/><br/>Rainer is recognized as an expert concerning .NET development, software architecture and databases. He has written numerous books and articles on C#, database development, Microsoft Azure, XAML, and web development. Additionally he regularly speaks at conferences, workshops and trainings in Europe and the US. In 2010 Rainer has become one of the first MVPs for the Microsoft Windows Azure platform. In 2015, Rainer also became a Microsoft Regional Director. 2016, Rainer also got the MVP award for Visual Studio and Developer Technologies.<br/><br/>Rainer graduated the Higher Technical School Leonding (AT) for MIS with honors and holds a BSc (Hons) Computer Studies of the University of Derby (UK).",
-                        "tagLine": "software architects",
-                        "profilePicture": "https://sessionize.com/image?f=7a974cba48bced882477c3f9766430b9,400,400,1,0,5f624d70-16ff-4000-ac65-7789834a1189.jpg",
-                        "twitter": "https://twitter.com/rstropek",
-                        "id": "7d6ddad1-fc5e-4fb8-b882-c3878168e8c7"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "4007f0c5-8680-4571-8ae2-dd71421542f8",
-                "title": "Break",
-                "description": "Generated break",
-                "startsAt": "2020-07-28T07:00:00Z",
-                "endsAt": "2020-07-28T07:30:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": true,
-                "duration": 30,
-                "speakers": [],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "202135",
-                "title": "OWASP Dependency-Check | Detect Risky Applications",
-                "description": "Quick introduction to the OWASP Dependency-Check Azure DevOps Pipeline component to scan your dependencies. From the implementation to the reporting of the findings.",
-                "startsAt": "2020-07-28T07:30:00Z",
-                "endsAt": "2020-07-28T08:00:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 30,
-                "speakers": [
+                        "id": "205643",
+                        "title": "Henks session the next day",
+                        "description": "YEs ",
+                        "startsAt": "2020-06-20T17:00:00Z",
+                        "endsAt": "2020-06-20T18:00:00Z",
+                        "roomId": "14062",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": false,
+                        "duration": 60,
+                        "speakers": [
+                            {
+                                "fullName": "Henk Boelman",
+                                "bio": "Henk is a Cloud Advocate specializing in Artificial intelligence and Azure with a background in application development. He is currently part of the regional cloud advocate team in the Netherlands. Before joining Microsoft, he was a Microsoft AI MVP and worked as a software developer and architect building lots of AI powered platforms on Azure.<br/><br/>He loves to share his knowledge about topics such as DevOps, Azure and Artificial Intelligence by providing training courses and he is a regular speaker at user groups and international conferences.",
+                                "tagLine": "Cloud Advocate at Microsoft",
+                                "profilePicture": "https://sessionize.com/image?f=24a7a7e564938f61e4cae8af111a4025,400,400,1,0,2a-4204-42f0-9ba8-d7b9c6f67226.60416965-5577-49af-91f0-786fec73cf9d.jpg",
+                                "twitter": "https://twitter.com/hboelman",
+                                "id": "36a25c2a-4204-42f0-9ba8-d7b9c6f67226"
+                            }
+                        ],
+                        "multipleSpeakers": false
+                    },
                     {
-                        "fullName": "Joël  Hébert",
-                        "bio": "Joel Hebert is the Principal Consultant and Director at Opulent ASP Development Inc. He is passionate about API's, Integration and Software Architecture. He is an 12 time Microsoft MVP (Azure) and is one of the User Group Leaders in Ottawa,Canada. Specializing in Enterprise Application Integration / SOA , he has build large scale distributed systems for various companies and government organizations.",
-                        "tagLine": "Opulent ASP Development Inc.",
-                        "profilePicture": "https://sessionize.com/image?f=864b894b3efdade1e64842dd5b79a1b2,400,400,1,0,32-ced6-4b7c-be26-ca052ea76959.8a1a5198-5e1e-4ca7-ab24-cdc6eed88776.jpg",
-                        "twitter": "https://twitter.com/JoelHebert",
-                        "id": "ea8c3d32-ced6-4b7c-be26-ca052ea76959"
+                        "id": "eccd196b-dc30-4da5-b68a-48b23a7bcb97",
+                        "title": "Break",
+                        "description": "Generated break",
+                        "startsAt": "2020-06-20T18:00:00Z",
+                        "endsAt": "2020-06-20T23:00:00Z",
+                        "roomId": "14062",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": true,
+                        "duration": 300,
+                        "speakers": [],
+                        "multipleSpeakers": false
                     }
-                ],
-                "multipleSpeakers": false
+                ]
             },
-            {
-                "id": "202131",
-                "title": "Defying the Divide - Finding daring ways to work together, even apart",
-                "description": "If home is where the heart is, mine is broken into two. I'm from the Philippines, and I've been living in Denmark for a decade. I love both countries. That's why I chose to build a tech company in Copenhagen & Manila, and even volunteered to run the Azure User Groups for my two cities.  If I was an Azure resource, I would turn on geo-replication in an instant. At times I wish I could auto-scale. Travel with zero latency. Load-balance. I've learned a lot, and I want to share it in this short talk. I learned that despite the distance that keeps us apart, making our jobs more difficult, our goals harder to achieve, we are still under the same cloud. We can make it work.",
-                "startsAt": "2020-07-28T08:00:00Z",
-                "endsAt": "2020-07-28T08:40:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 40,
-                "speakers": [
+            "track2": {
+                "id": 4635,
+                "title": "Track 2",
+                "talks": [
                     {
-                        "fullName": "Marilag Dimatulac",
-                        "bio": "Marilag is a solution architect who puts the building blocks together to solve problems through software. She is the co-owner of Dewise, a development company based in Copenhagen and Manila, delivering web and mobile apps for the enterprise. To give back to the tech community, she has started Azure User Group Manila and speaks regularly at meetups and conferences. She lives two lives on each side of the planet, defying distance, abolishing cross-cultural barriers and scaling walls, to work, play and spend time with wonderfully diverse people.",
-                        "tagLine": "Solutions Architect - Dewise",
-                        "profilePicture": "https://sessionize.com/image?f=9b9c5d08afe183e9e344960250e35c83,400,400,1,0,05-fee7-4530-8de5-c4cf8b22e8e2.87d5ac2d-e28b-457a-beda-8183f42250d3.jpg",
-                        "twitter": "https://twitter.com/marilag",
-                        "id": "a71b0605-fee7-4530-8de5-c4cf8b22e8e2"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "201892",
-                "title": "Headless CMS and Decoupled CMS in .NET Core",
-                "description": "Let's explore .NET Core-based Headless CMSs. A Headless CMS is a back-end only content management system (CMS) built from the ground up as a content repository that makes content accessible via a RESTful API for display on any device.",
-                "startsAt": "2020-07-28T08:40:00Z",
-                "endsAt": "2020-07-28T08:55:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 15,
-                "speakers": [
+                        "id": "d3e09120-b857-4507-a2e0-067e98b38a69",
+                        "title": "Break",
+                        "description": "Generated break",
+                        "startsAt": "2020-06-20T17:00:00Z",
+                        "endsAt": "2020-06-20T22:00:00Z",
+                        "roomId": "14063",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": true,
+                        "duration": 300,
+                        "speakers": [],
+                        "multipleSpeakers": false
+                    },
                     {
-                        "fullName": "Ruby Jane Cabagnot",
-                        "bio": "A serendipitous software developer from the Philippines with a wanderlust heart and currently living in Norway. She believes that one can still teach old dogs new tricks, even coding. ",
-                        "tagLine": "A serendipitous Filipina software developer with a wanderlust heart but currently living in Norway. ",
-                        "profilePicture": "https://sessionize.com/image?f=75b1a53cf38f8d068f8df560088633ae,400,400,1,0,92-5023-4ce4-83b1-48faf9a85fdb.3e18fcb5-da90-40b0-9824-5e9bb01d986a.jpg",
-                        "twitter": "https://twitter.com/rubyjane88",
-                        "id": "e714e692-5023-4ce4-83b1-48faf9a85fdb"
+                        "id": "205658",
+                        "title": "Henks other amazing session on day 2",
+                        "description": "Day 2 test",
+                        "startsAt": "2020-06-20T22:00:00Z",
+                        "endsAt": "2020-06-20T23:00:00Z",
+                        "roomId": "14063",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": false,
+                        "duration": 60,
+                        "speakers": [
+                            {
+                                "fullName": "Henk Boelman",
+                                "bio": "Henk is a Cloud Advocate specializing in Artificial intelligence and Azure with a background in application development. He is currently part of the regional cloud advocate team in the Netherlands. Before joining Microsoft, he was a Microsoft AI MVP and worked as a software developer and architect building lots of AI powered platforms on Azure.<br/><br/>He loves to share his knowledge about topics such as DevOps, Azure and Artificial Intelligence by providing training courses and he is a regular speaker at user groups and international conferences.",
+                                "tagLine": "Cloud Advocate at Microsoft",
+                                "profilePicture": "https://sessionize.com/image?f=24a7a7e564938f61e4cae8af111a4025,400,400,1,0,2a-4204-42f0-9ba8-d7b9c6f67226.60416965-5577-49af-91f0-786fec73cf9d.jpg",
+                                "twitter": "https://twitter.com/hboelman",
+                                "id": "36a25c2a-4204-42f0-9ba8-d7b9c6f67226"
+                            }
+                        ],
+                        "multipleSpeakers": false
                     }
-                ],
-                "multipleSpeakers": false
+                ]
             },
-            {
-                "id": "7ce43388-3249-48b0-8733-e903fe2c2a2a",
-                "title": "Break",
-                "description": "Generated break",
-                "startsAt": "2020-07-28T08:55:00Z",
-                "endsAt": "2020-07-28T09:20:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": true,
-                "duration": 25,
-                "speakers": [],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "201886",
-                "title": "Provision your whole infrastructure resources using TypeScript",
-                "description": "Systems Administrators and DevOps Engineers have always been charged to do more with less. Defining infrastructure in code and automating its deployment helps improve operational efficiency and lower administrative overhead.<br/><br/>In this lightning, you'll learn foundational knowledge of Pulumi, an open-source toolset for infrastructure automation. First, you'll discover how open source tools, such as Pulumi can be leveraged to implement Infrastructure as Code (IaC). Finally, you'll learn how to automate your infrastructure deployments in the Azure using TypeScript.",
-                "startsAt": "2020-07-28T09:20:00Z",
-                "endsAt": "2020-07-28T10:10:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 50,
-                "speakers": [
+            "track3": {
+                "id": 8811,
+                "title": "Track 3",
+                "talks": [
                     {
-                        "fullName": "Devlin Duldulao",
-                        "bio": "Devlin Duldulao is a Filipino full-stack cloud engineer based in Norway. He is a Microsoft MVP, an Auth0 Ambassador, a trainer, an international conference speaker, and a senior consultant at Inmeta. He loves going to universities and user groups to share his expertise.",
-                        "tagLine": "Microsoft MVP, Senior Consultant at Inmeta",
-                        "profilePicture": "https://sessionize.com/image?f=dce5e2a4caf000389171617f51cce034,400,400,1,0,53378d1f-064c-46f3-bef3-af4e3301127d.jpg",
-                        "twitter": "https://twitter.com/DevlinDuldulao",
-                        "id": "ca350f30-7945-4b1c-8a23-663346e39e88"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "52ef662b-4e66-4668-8521-9a7442a41cfb",
-                "title": "Break",
-                "description": "Generated break",
-                "startsAt": "2020-07-28T10:10:00Z",
-                "endsAt": "2020-07-28T11:00:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": true,
-                "duration": 50,
-                "speakers": [],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "201819",
-                "title": "These tools are not just for Developers!",
-                "description": "There are a lot of tools out there that are often classed as \"Developer tools\" and IT Pro's tend to stay away from them.  In this session I will take you through some of those tools and show you how they should be used by IT Pro's and Developer's alike. ",
-                "startsAt": "2020-07-28T11:00:00Z",
-                "endsAt": "2020-07-28T12:00:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
+                        "id": "9426e2ea-ebc0-4c72-9ccf-72bd055fade6",
+                        "title": "Break",
+                        "description": "Generated break",
+                        "startsAt": "2020-06-20T17:00:00Z",
+                        "endsAt": "2020-06-20T20:00:00Z",
+                        "roomId": "14064",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": true,
+                        "duration": 180,
+                        "speakers": [],
+                        "multipleSpeakers": false
+                    },
                     {
-                        "fullName": "Sarah Lean",
-                        "bio": "Sarah has over 14 years experience within the IT industry, currently she is a Cloud Advocate  for Microsoft based in the UK.  With experience of both on premise and cloud solutions Sarah is able to understand the big picture and help businesses implement the right IT strategy for the future.  Involved in the IT community she founded the Glasgow Azure User Group in May 2017. ",
-                        "tagLine": "Cloud Advocate with Microsoft",
-                        "profilePicture": "https://sessionize.com/image?f=54644a6cbc2029513c1b2ced78497ab6,400,400,1,0,a3-4d3e-4699-847c-63124850fb0c.e8bfd47d-6c40-42c3-8d62-83e1dc051174.jpg",
-                        "twitter": "https://www.twitter.com/TechieLass",
-                        "id": "dfd224a3-4d3e-4699-847c-63124850fb0c"
-                    }
-                ],
-                "multipleSpeakers": false
-            },
-            {
-                "id": "200928",
-                "title": "Visio! So what has Visio got to do with Data?",
-                "description": "A demonstration on how you can embed interactive visio diagrams into PowerBI. Gain insight into your processes via the diagrams you use to describe those processes.",
-                "startsAt": "2020-07-28T12:00:00Z",
-                "endsAt": "2020-07-28T13:00:00Z",
-                "roomId": "13929",
-                "language": null,
-                "youtube": null,
-                "isBreak": false,
-                "duration": 60,
-                "speakers": [
+                        "id": "205659",
+                        "title": "Henks boring session on day 2",
+                        "description": "Just don't watch it .. ",
+                        "startsAt": "2020-06-20T20:00:00Z",
+                        "endsAt": "2020-06-20T21:00:00Z",
+                        "roomId": "14064",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": false,
+                        "duration": 60,
+                        "speakers": [
+                            {
+                                "fullName": "Henk Boelman",
+                                "bio": "Henk is a Cloud Advocate specializing in Artificial intelligence and Azure with a background in application development. He is currently part of the regional cloud advocate team in the Netherlands. Before joining Microsoft, he was a Microsoft AI MVP and worked as a software developer and architect building lots of AI powered platforms on Azure.<br/><br/>He loves to share his knowledge about topics such as DevOps, Azure and Artificial Intelligence by providing training courses and he is a regular speaker at user groups and international conferences.",
+                                "tagLine": "Cloud Advocate at Microsoft",
+                                "profilePicture": "https://sessionize.com/image?f=24a7a7e564938f61e4cae8af111a4025,400,400,1,0,2a-4204-42f0-9ba8-d7b9c6f67226.60416965-5577-49af-91f0-786fec73cf9d.jpg",
+                                "twitter": "https://twitter.com/hboelman",
+                                "id": "36a25c2a-4204-42f0-9ba8-d7b9c6f67226"
+                            }
+                        ],
+                        "multipleSpeakers": false
+                    },
                     {
-                        "fullName": "Mark Hayes",
-                        "bio": "Mark (Certified Business Intelligence Professional (CBIP), MPP - Data Science, MPP - Big Data) is a Microsoft Data Platform consultant and has worked with Microsoft data technologies since 2000. He has worked on hundreds of projects working with the MS SQL DB Engine, Analysis Services, SSIS, SSRS, PowerBI. Tabular, Flow and more.  He is a regular speaker on Microsoft Data Platform topics and co-leader of the Cork SQL User Group, Cork PowerBI User Group, the Cork SQL Saturday and Data Céilí 2020. ",
-                        "tagLine": "Data & Power Platform Consultant",
-                        "profilePicture": "https://sessionize.com/image?f=17c3f80f12cb6c3fba6fbbeec3a0770d,400,400,1,0,f6-12fa-4ea1-949d-82192abeb07d.47ea7925-fb7e-4c08-afa2-306087c284a2.jpg",
-                        "twitter": "https://twitter.com/MarkDataGuy",
-                        "id": "699607f6-12fa-4ea1-949d-82192abeb07d"
+                        "id": "a9958695-b42f-4a44-a2f8-2bb8ca9c8676",
+                        "title": "Break",
+                        "description": "Generated break",
+                        "startsAt": "2020-06-20T21:00:00Z",
+                        "endsAt": "2020-06-20T23:00:00Z",
+                        "roomId": "14064",
+                        "language": null,
+                        "youtube": null,
+                        "isBreak": true,
+                        "duration": 120,
+                        "speakers": [],
+                        "multipleSpeakers": false
                     }
-                ],
-                "multipleSpeakers": false
-            }
-
-        ]
-    }
+                ]
+            },
+            "track4": {
+                "id": 0,
+                "title": null,
+                "talks": []
+            },
+            "sessions": null,
+            "id": 2592,
+            "title": "Day 2"
+        }
+    ]
 }

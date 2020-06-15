@@ -13,7 +13,7 @@ const schedule = {
 
   init() {
     // console.log('init()');
-    if (!document.querySelector('#schedule-wrapper')) {
+    if (!document.querySelector('#schedule-container')) {
       console.log('No schedule available');
       return;
     }
@@ -38,8 +38,13 @@ const schedule = {
       });
   },
 
-  buildSchedule() {
-    // console.log('buildSchedule()');
+  buildSchedule(daydata) {
+    console.log('buildSchedule() '+daydata.id);
+    //console.log(daydata)
+
+    this.genericData = daydata.generic;
+    this.talksObject = daydata;
+
 
     this.genericData.eventStartsAtTimestamp = moment
       .tz(this.genericData.eventStartsAt, this.defaultTimezone)
@@ -51,10 +56,14 @@ const schedule = {
     this.genericData.eventStartsAtHour = parseInt(this.genericData.eventStartsAtTimestamp.format('k'));
     this.genericData.eventEndsAtHour = parseInt(this.genericData.eventEndsAtTimestamp.format('k'));
 
+
+    
+
     this.createTracks();
     this.createTimeline();
-    this.formatDates();
+    this.formatDates(); 
 
+    
     this.renderTimezoneSelect();
     this.bindTimezoneSelect();
 
@@ -73,16 +82,37 @@ const schedule = {
   fetchData() {
     // Wait for talks data to load
     this.loadTalks().then((data) => {
-      this.talksObject = data;
-      this.genericData = data.generic;
-      this.buildSchedule();
+
+      this.createDaySchedule(data);
+
+      data.Days.forEach((day) => {
+        //this.talksObject = day;
+        //this.genericData = day.generic;
+        this.buildSchedule(day);
+      });
+
+
     });
   },
+
+  createDaySchedule(data) {
+    console.log("Createing schedule holders")
+    var source   = document.querySelector('#schedule-template').innerHTML;
+    var target =  document.querySelector('#schedule-container');
+    
+    var template = Handlebars.compile(source);
+    var wrapper  = {Days: data.Days};
+    
+    target.innerHTML = template(wrapper);
+
+  },
+
+
 
   createTracks() {
     // console.log('createTracks()');
 
-    const targetElement = document.querySelector('#schedule-wrapper');
+    const targetElement = document.querySelector('#schedule-wrapper-'+this.talksObject.id);
     targetElement.innerHTML = '';
 
     this.availableTracks.forEach((track) => {
@@ -149,8 +179,8 @@ const schedule = {
     const data = {
       item: timelineArray,
     };
-
-    const targetElement = document.querySelector('#timeline-wrapper');
+    //console.log('#timeline-wrapper-'+this.talksObject.id)
+    const targetElement = document.querySelector('#timeline-wrapper-'+this.talksObject.id);
     const source = document.querySelector('#timeline-template').innerHTML;
 
     const template = Handlebars.compile(source);
