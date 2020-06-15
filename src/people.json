@@ -2,7 +2,7 @@
     {
         "image": "assets/images/people/michael.jpg",
         "name": "Michael Brown",
-        "title": "",
+        "title": "Software Engineer at Microsoft",
         "description": "",
         "twitter":"browniepoints",
         "facebook":"",
@@ -20,7 +20,7 @@
     {
         "image": "assets/images/people/tess.jpg",
         "name": "Tess DiStefano",
-        "title": "",
+        "title": "Software Engineer at Microsoft",
         "description": "",
         "twitter":"Tess_distefano",
         "facebook":"tess.distefano",
@@ -29,7 +29,7 @@
     {
         "image": "assets/images/people/lilian.jpg",
         "name": "Lilian Kasem",
-        "title": "",
+        "title": "Software Engineer at Microsoft",
         "description": "",
         "twitter":"liliankasem",
         "facebook":"",
@@ -38,45 +38,45 @@
     {
         "name": "Henk Boelman",
         "image": "assets/images/people/henk.jpg",
-        "title": "Cloud advocate",
+        "title": "Cloud Advocate at Microsoft",
         "description": "",
         "facebook": "henk.boelman",
         "twitter": "hboelman",
         "linkedin": "henkboelman"
     },
     {
-        "image": "assets/images/people/_.jpg",
+        "image": "assets/images/people/cotishea.jpg",
         "name": "Cotishea Anderson",
-        "title": "",
+        "title": "Software Engineer Manager at Microsoft",
         "description": "",
         "twitter":"",
         "facebook":"",
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
+        "image": "assets/images/people/almicia.jpg",
         "name": "Almicia Dunson",
-        "title": "",
+        "title": "Software Engineer at Microsoft",
         "description": "",
         "twitter":"",
         "facebook":"",
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
+        "image": "assets/images/people/bismarck.jpg",
         "name": "Bismarck Bamfo",
         "title": "",
         "description": "",
-        "twitter":"",
+        "twitter":"BismarckBamfo",
         "facebook":"",
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
+        "image": "assets/images/people/etienne.jpg",
         "name": "Etienne Margraff",
-        "title": "",
+        "title": "Software Engineer Manager at Microsoft",
         "description": "",
-        "twitter":"",
+        "twitter":"meulta",
         "facebook":"",
         "linkedin":""
     },
@@ -108,18 +108,18 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
+        "image": "assets/images/people/wilson.jpg",
         "name": "Wilson Lee",
-        "title": "",
+        "title": "Software Engineer at Microsoft",
         "description": "",
         "twitter":"",
         "facebook":"",
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
+        "image": "assets/images/people/robert.jpg",
         "name": "Robert Jordan",
-        "title": "",
+        "title": "Engineer at Microsoft",
         "description": "",
         "twitter":"",
         "facebook":"",
@@ -135,20 +135,20 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
+        "image": "assets/images/people/katie.jpg",
         "name": "Katie Friesema",
         "title": "",
         "description": "",
-        "twitter":"",
+        "twitter":"katiefrank",
         "facebook":"",
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
+        "image": "assets/images/people/jo-elle.jpg",
         "name": "Jo-Elle Husband",
         "title": "",
         "description": "",
-        "twitter":"",
+        "twitter":"headofhouseco",
         "facebook":"",
         "linkedin":""
     },
@@ -162,11 +162,11 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
+        "image": "assets/images/people/labrina.jpg",
         "name": "LaBrina Loving",
-        "title": "",
+        "title": "Software Engineer at Microsoft",
         "description": "",
-        "twitter":"",
+        "twitter":"chixcancode",
         "facebook":"",
         "linkedin":""
     }
