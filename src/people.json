@@ -11,9 +11,18 @@
     {
         "image": "assets/images/people/valerie.jpg",
         "name": "Valerie Phoenix",
-        "title": "Founder of TechByChoiceOrg",
+        "title": "Founder of Tech By Choice",
         "description": "",
         "twitter":"DigitalBlkHippy",
+        "facebook":"TechByChoiceOrg",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/labrina.jpg",
+        "name": "LaBrina Loving",
+        "title": "Software Engineer at Microsoft",
+        "description": "",
+        "twitter":"chixcancode",
         "facebook":"",
         "linkedin":""
     },
@@ -36,8 +45,8 @@
         "linkedin":""
     },
     {
-        "name": "Henk Boelman",
         "image": "assets/images/people/henk.jpg",
+        "name": "Henk Boelman",
         "title": "Cloud Advocate at Microsoft",
         "description": "",
         "facebook": "henk.boelman",
@@ -45,13 +54,13 @@
         "linkedin": "henkboelman"
     },
     {
+        "image": "assets/images/people/bismarck.jpg",
         "name": "Bismarck Odoom",
-         "image": "assets/images/people/bismarck.jpg",
-         "title": "BS/Research Student",
-         "about": "CE Major",
-         "facebook": "bismarckbamfoodoom",
-         "twitter": "BismarckBamfo",
-         "linkedin": "bbodoom"
+        "title": "BS/Research Student at KNUST",
+        "description": "CE Major",
+        "facebook": "bismarckbamfoodoom",
+        "twitter": "BismarckBamfo",
+        "linkedin": "bbodoom"
     },
     {
         "image": "assets/images/people/cotishea.jpg",
@@ -77,6 +86,15 @@
         "title": "Software Engineer Manager at Microsoft",
         "description": "",
         "twitter":"meulta",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/katie.jpg",
+        "name": "Katie Friesema",
+        "title": "",
+        "description": "",
+        "twitter":"katiefrank",
         "facebook":"",
         "linkedin":""
     },
@@ -108,15 +126,6 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/wilson.jpg",
-        "name": "Wilson Lee",
-        "title": "Software Engineer at Microsoft",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
         "image": "assets/images/people/robert.jpg",
         "name": "Robert Jordan",
         "title": "Engineer at Microsoft",
@@ -135,15 +144,6 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/katie.jpg",
-        "name": "Katie Friesema",
-        "title": "",
-        "description": "",
-        "twitter":"katiefrank",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
         "image": "assets/images/people/jo-elle.jpg",
         "name": "Jo-Elle Husband",
         "title": "",
@@ -153,20 +153,11 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
-        "name": "Valerie Sharp",
-        "title": "",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/labrina.jpg",
-        "name": "LaBrina Loving",
+        "image": "assets/images/people/wilson.jpg",
+        "name": "Wilson Lee",
         "title": "Software Engineer at Microsoft",
         "description": "",
-        "twitter":"chixcancode",
+        "twitter":"",
         "facebook":"",
         "linkedin":""
     }
