@@ -8,18 +8,27 @@
 @import 'break';
 
 .schedule {
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+
+
   &__title {
-    margin: 2rem 0 0.5rem;
+    margin: 4rem 0 0.5rem;
     text-align: center;
   }
 
   &__header {
-    // position: relative;
+    margin-top: 6rem;
     margin-bottom: 2rem;
-
-    .schedule-timezone {
-      max-width: 450px;
-      margin: 0 auto;
-    }
   }
+
+  .h1 {
+    margin-bottom: 2rem;
+  }
+
+}
+.schedule-timezone {
+  max-width: 450px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 }

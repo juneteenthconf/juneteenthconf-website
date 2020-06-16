@@ -63,7 +63,7 @@ const schedule = {
     this.createTimeline();
     this.formatDates(); 
 
-    
+
     this.renderTimezoneSelect();
     this.bindTimezoneSelect();
 
@@ -135,15 +135,15 @@ const schedule = {
       if (talk.isBreak) {
         talkArrays[i] = {
           isBreak: true,
-          height: (120/60*talk.duration),
+          height: (160/60*talk.duration),
         };
       } else {
         talkArrays[i] = {
           ...talk,
           trackid: trackid,
           isBreak: false,
-          height: (120/60*talk.duration),
-          smallBlock:  ((120/60*talk.duration) < 120)
+          height: (160/60*talk.duration),
+          smallBlock:  ((160/60*talk.duration) < 160)
         };
       }
     });
