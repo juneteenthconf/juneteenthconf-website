@@ -2,12 +2,15 @@
 
 <body>
 
+  <include src="partials/skipnavigationlinks.html"></include>
+  <a href="#registrationnav" class="invisibleskipnav">Skip to registration and donations buttons</a>
+
   <include src="partials/header.html"></include>
 
   <main>
 
     <section class="hero">
-      
+
       <div class="container">
 
         <div class="row">
@@ -20,11 +23,12 @@
 
           <div class="col-md-6">
             <div class="hero__copy">
+              <a name="maincontentnav" id="maincontentnav"></a>
               <h1 class="h2">June 19th &amp; 20th 2020</h1>
               <h2 class="h6">Streaming to you wherever you are!</h2>
               <p>
                 <strong>The Mission of JuneteenthConf is to provide a judgement free space for underrepresented people in
-                  tech to learn 
+                  tech to learn
                   and grow and to amplify their voices. To be a counterbalance to the biases, implicit or otherwise, that
                   hold our
                   industry and our society back.</strong>
@@ -43,15 +47,16 @@
         </div>
 
         <div class="hero__cta">
+          <a name="registrationnav" id="registrationnav"></a>
           <a href="register.html" class="btn btn-primary btn-next">Register as attendee</a>
-          <a href="https://www.eventbrite.com/e/juneteenthconf-tickets-109415067412" target="_blank" class="btn btn-primary btn-next">Sponsor the event</a>
+          <a href="https://www.eventbrite.com/e/juneteenthconf-tickets-109415067412" target="_blank" class="btn btn-primary btn-next">Donate</a>
         </div>
 
       </div>
-      
+
     </section>
-    
-    <include src="partials/sponsors.html"></include> 
+
+    <include src="partials/sponsors.html"></include>
   </main>
 
   <include src="partials/footer.html"></include>
