@@ -63,15 +63,6 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
-        "name": "Kimeka Campbell",
-        "title": "",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
         "image": "assets/images/people/labrina.jpg",
         "name": "LaBrina Loving",
         "title": "Software Engineer at Microsoft",
@@ -134,31 +125,4 @@
         "facebook":"TechByChoiceOrg",
         "linkedin":""
     },
-    {
-        "image": "assets/images/people/_.jpg",
-        "name": "Victoria Guido",
-        "title": "",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/_.jpg",
-        "name": "Violet Peña",
-        "title": "",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },  
-    {
-        "image": "assets/images/people/wilson.jpg",
-        "name": "Wilson Lee",
-        "title": "Software Engineer at Microsoft",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    }
 ]
