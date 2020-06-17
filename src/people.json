@@ -1,5 +1,14 @@
 [
     {
+        "image": "assets/images/people/michael.jpg",
+        "name": "Michael Brown",
+        "title": "Software Engineer at Microsoft",
+        "description": "",
+        "twitter":"browniepoints",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
         "image": "assets/images/people/almicia.jpg",
         "name": "Almicia Dunson",
         "title": "Software Engineer at Microsoft",
@@ -9,13 +18,11 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/bismarck.jpg",
-        "name": "Bismarck Odoom",
-        "title": "BS/Research Student at KNUST",
-        "description": "CE Major",
-        "facebook": "bismarckbamfoodoom",
-        "twitter": "BismarckBamfo",
-        "linkedin": "bbodoom"
+        "image": "assets/images/people/angelaRiggs.png",
+        "name": "Angela Riggs",
+        "title": "QA Manager at Instrument",
+        "twitter":"https://twitter.com/AngelaRiggs_",
+        "linkedin":"https://www.linkedin.com/in/angelariggs/"
     },
     {
         "image": "assets/images/people/cotishea.jpg",
@@ -27,15 +34,6 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/etienne.jpg",
-        "name": "Etienne Margraff",
-        "title": "Software Engineer Manager at Microsoft",
-        "description": "",
-        "twitter":"meulta",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
         "image": "assets/images/people/henk.jpg",
         "name": "Henk Boelman",
         "title": "Cloud Advocate at Microsoft",
@@ -43,24 +41,6 @@
         "facebook": "henk.boelman",
         "twitter": "hboelman",
         "linkedin": "henkboelman"
-    },
-    {
-        "image": "assets/images/people/jo-elle.jpg",
-        "name": "Jo-Elle Husband",
-        "title": "",
-        "description": "",
-        "twitter":"headofhouseco",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/katie.jpg",
-        "name": "Katie Friesema",
-        "title": "",
-        "description": "",
-        "twitter":"katiefrank",
-        "facebook":"",
-        "linkedin":""
     },
     {
         "image": "assets/images/people/labrina.jpg",
@@ -77,33 +57,6 @@
         "title": "Software Engineer at Microsoft",
         "description": "",
         "twitter":"liliankasem",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/_.jpg",
-        "name": "Melody Miller",
-        "title": "",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/michael.jpg",
-        "name": "Michael Brown",
-        "title": "Software Engineer at Microsoft",
-        "description": "",
-        "twitter":"browniepoints",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/robert.jpg",
-        "name": "Robert Jordan",
-        "title": "Engineer at Microsoft",
-        "description": "",
-        "twitter":"",
         "facebook":"",
         "linkedin":""
     },
@@ -125,4 +78,59 @@
         "facebook":"TechByChoiceOrg",
         "linkedin":""
     },
+
+    {
+        "image": "assets/images/people/bismarck.jpg",
+        "name": "Bismarck Odoom",
+        "title": "BS/Research Student at KNUST",
+        "description": "CE Major",
+        "facebook": "bismarckbamfoodoom",
+        "twitter": "BismarckBamfo",
+        "linkedin": "bbodoom"
+    },
+    {
+        "image": "assets/images/people/etienne.jpg",
+        "name": "Etienne Margraff",
+        "title": "Software Engineer Manager at Microsoft",
+        "description": "",
+        "twitter":"meulta",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/jo-elle.jpg",
+        "name": "Jo-Elle Husband",
+        "title": "",
+        "description": "",
+        "twitter":"headofhouseco",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/katie.jpg",
+        "name": "Katie Friesema",
+        "title": "",
+        "description": "",
+        "twitter":"katiefrank",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Melody Miller",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/robert.jpg",
+        "name": "Robert Jordan",
+        "title": "Engineer at Microsoft",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    }
 ]
