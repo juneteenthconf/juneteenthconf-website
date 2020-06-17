@@ -1,11 +1,17 @@
 .player {
-  max-width: 1920px;
-  margin:auto;
-  margin-top:22px;
+  background-color: #f0f0f0;
   
+
   &__video {
     // border: 2px solid purple;
   }
+
+  &__container {
+    max-width: 1920px;
+    margin:auto;
+    padding-top:1rem;
+    padding-bottom:1rem;
+  } 
 
   &__chat {
     display: flex;

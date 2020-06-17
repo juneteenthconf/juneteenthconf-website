@@ -11,34 +11,36 @@
   <main>
 
     <section class="player">
-      <div class="container-fluid">
+      <div class="player__container">
+        <div class="container-fluid">
 
-        <div class="row">
+          <div class="row">
 
-          <div class=" col-lg-8">
-            <div class="player__video">
-              <div class="embed-responsive embed-responsive-16by9">
-                <a name="maincontentnav" id="maincontentnav"></a>
-                <iframe id="video" width="560" height="315" class="embed-responsive-item" src="" frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
+            <div class="col-lg-8">
+              <div class="player__video">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <a name="maincontentnav" id="maincontentnav"></a>
+                  <iframe id="video" src="" width="560" height="315" class="embed-responsive-item" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>                
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class=" col-lg-4">
-            <div class="player__chat">
-              <a name="chatnav" id="chatnav"></a>
-              <iframe id="chat" src='' style='border: 0; width: 100%; '></iframe>
+            <div class="col-lg-4">
+              <div class="player__chat">
+                <a name="chatnav" id="chatnav"></a>
+                <iframe id="chat" src='' style='border: 0; width: 100%; '></iframe>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="track-browser" id="browser-wrapper"></section>
 
     <a name="schedulenav" id="schedulenav"></a>
+    <section class="track-browser" id="browser-wrapper"></section>
+
+    
     <script id="browser-template" type="text/x-handlebars-template">
       <div class="container">
         <div class="row">
@@ -46,7 +48,6 @@
           <div class="col-md-6 col-lg-6 mb-4 mb-lg-0">
             <div class="track-item track{{id}}">
               <div class="track-item__title">
-                <em>Track:</em>
                 <h2>{{title}}</h2>
               </div>
               <div class="row">

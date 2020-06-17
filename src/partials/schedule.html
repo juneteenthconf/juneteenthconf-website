@@ -22,12 +22,10 @@
     <div class="schedule__header">
       <h2 class="schedule__title">{{title}}</h2>
     </div>
-
     <div class="schedule-view">
       <div class="schedule-timeline" id="timeline-wrapper-{{id}}"></div>
       <div class="schedule-tracks" id="schedule-wrapper-{{id}}"></div>
     </div>
-
   {{/each}}
 </script>
 
@@ -37,7 +35,7 @@
 
   <div class="schedule-track" data-schedule-track="{{id}}">
 
-    <h2 class="schedule-track__title"><em>{{title}}</em></h2>
+    <h2 class="schedule-track__title">Track<em>{{title}}</em></h2>
     <ul class="schedule-track__list">
     {{#each talks}}
       {{#if isBreak}}
