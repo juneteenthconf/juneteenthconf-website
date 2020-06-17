@@ -115,15 +115,6 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
-        "name": "Melody Miller",
-        "title": "",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
         "image": "assets/images/people/robert.jpg",
         "name": "Robert Jordan",
         "title": "Engineer at Microsoft",
@@ -133,7 +124,7 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/suzanne.jpg",
+        "image": "assets/images/people/suzanne.jpeg",
         "name": "Suzanne Daniels",
         "title": "Azure Developer Engagement Lead at Microsoft",
         "description": "",
@@ -158,5 +149,14 @@
         "twitter":"narmathabala",
         "facebook":"",
         "linkedin":"narmathabala"
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Melody Miller",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
     }
 ]
