@@ -56,9 +56,6 @@ const schedule = {
     this.genericData.eventStartsAtHour = parseInt(this.genericData.eventStartsAtTimestamp.format('k'));
     this.genericData.eventEndsAtHour = parseInt(this.genericData.eventEndsAtTimestamp.format('k'));
 
-
-    
-
     this.createTracks();
     this.createTimeline();
     this.formatDates(); 
@@ -135,15 +132,15 @@ const schedule = {
       if (talk.isBreak) {
         talkArrays[i] = {
           isBreak: true,
-          height: (160/60*talk.duration),
+          height: (200/60*talk.duration),
         };
       } else {
         talkArrays[i] = {
           ...talk,
           trackid: trackid,
           isBreak: false,
-          height: (160/60*talk.duration),
-          smallBlock:  ((160/60*talk.duration) < 160)
+          height: (200/60*talk.duration),
+          smallBlock:  false //((200/60*talk.duration) < 200)
         };
       }
     });
