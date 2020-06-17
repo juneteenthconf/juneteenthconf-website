@@ -9,38 +9,27 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/valerie.jpg",
-        "name": "Valerie Phoenix",
-        "title": "Founder of Tech By Choice",
-        "description": "",
-        "twitter":"DigitalBlkHippy",
-        "facebook":"TechByChoiceOrg",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/labrina.jpg",
-        "name": "LaBrina Loving",
+        "image": "assets/images/people/almicia.jpg",
+        "name": "Almicia Dunson",
         "title": "Software Engineer at Microsoft",
         "description": "",
-        "twitter":"chixcancode",
+        "twitter":"",
         "facebook":"",
         "linkedin":""
     },
     {
-        "image": "assets/images/people/tess.jpg",
-        "name": "Tess DiStefano",
-        "title": "Software Engineer at Microsoft",
-        "description": "",
-        "twitter":"Tess_distefano",
-        "facebook":"tess.distefano",
-        "linkedin":"tessdistefano"
+        "image": "assets/images/people/angelaRiggs.png",
+        "name": "Angela Riggs",
+        "title": "QA Manager at Instrument",
+        "twitter":"https://twitter.com/AngelaRiggs_",
+        "linkedin":"https://www.linkedin.com/in/angelariggs/"
     },
     {
-        "image": "assets/images/people/lilian.jpg",
-        "name": "Lilian Kasem",
-        "title": "Software Engineer at Microsoft",
+        "image": "assets/images/people/cotishea.jpg",
+        "name": "Cotishea Anderson",
+        "title": "Software Engineer Manager at Microsoft",
         "description": "",
-        "twitter":"liliankasem",
+        "twitter":"",
         "facebook":"",
         "linkedin":""
     },
@@ -54,6 +43,43 @@
         "linkedin": "henkboelman"
     },
     {
+        "image": "assets/images/people/labrina.jpg",
+        "name": "LaBrina Loving",
+        "title": "Software Engineer at Microsoft",
+        "description": "",
+        "twitter":"chixcancode",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/lilian.jpg",
+        "name": "Lilian Kasem",
+        "title": "Software Engineer at Microsoft",
+        "description": "",
+        "twitter":"liliankasem",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/tess.jpg",
+        "name": "Tess DiStefano",
+        "title": "Software Engineer at Microsoft",
+        "description": "",
+        "twitter":"Tess_distefano",
+        "facebook":"tess.distefano",
+        "linkedin":"tessdistefano"
+    },
+    {
+        "image": "assets/images/people/valerie.jpg",
+        "name": "Valerie Phoenix",
+        "title": "Founder of Tech By Choice",
+        "description": "",
+        "twitter":"DigitalBlkHippy",
+        "facebook":"TechByChoiceOrg",
+        "linkedin":""
+    },
+
+    {
         "image": "assets/images/people/bismarck.jpg",
         "name": "Bismarck Odoom",
         "title": "BS/Research Student at KNUST",
@@ -63,29 +89,20 @@
         "linkedin": "bbodoom"
     },
     {
-        "image": "assets/images/people/cotishea.jpg",
-        "name": "Cotishea Anderson",
-        "title": "Software Engineer Manager at Microsoft",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/almicia.jpg",
-        "name": "Almicia Dunson",
-        "title": "Software Engineer at Microsoft",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
         "image": "assets/images/people/etienne.jpg",
         "name": "Etienne Margraff",
         "title": "Software Engineer Manager at Microsoft",
         "description": "",
         "twitter":"meulta",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/jo-elle.jpg",
+        "name": "Jo-Elle Husband",
+        "title": "",
+        "description": "",
+        "twitter":"headofhouseco",
         "facebook":"",
         "linkedin":""
     },
@@ -108,54 +125,9 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/_.jpg",
-        "name": "Violet Peña",
-        "title": "",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/_.jpg",
-        "name": "Victoria Guido",
-        "title": "",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
         "image": "assets/images/people/robert.jpg",
         "name": "Robert Jordan",
         "title": "Engineer at Microsoft",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/_.jpg",
-        "name": "Kimeka Campbell",
-        "title": "",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/jo-elle.jpg",
-        "name": "Jo-Elle Husband",
-        "title": "",
-        "description": "",
-        "twitter":"headofhouseco",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/wilson.jpg",
-        "name": "Wilson Lee",
-        "title": "Software Engineer at Microsoft",
         "description": "",
         "twitter":"",
         "facebook":"",
