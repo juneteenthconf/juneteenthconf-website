@@ -2,8 +2,8 @@
     {
         "image": "assets/images/people/michael.jpg",
         "name": "Michael Brown",
-        "title": "Software Engineer at Microsoft",
-        "description": "",
+        "title": "Founder of JuneteenthConf",
+        "description": "Software Engineer at Microsoft",
         "twitter":"browniepoints",
         "facebook":"",
         "linkedin":""
@@ -58,14 +58,14 @@
         "description": "",
         "twitter":"liliankasem",
         "facebook":"",
-        "linkedin":""
+        "linkedin":"liliankasem"
     },
     {
         "image": "assets/images/people/tess.jpg",
         "name": "Tess DiStefano",
         "title": "Software Engineer at Microsoft",
         "description": "",
-        "twitter":"Tess_distefano",
+        "twitter":"tess_distefano",
         "facebook":"tess.distefano",
         "linkedin":"tessdistefano"
     },
@@ -78,12 +78,11 @@
         "facebook":"TechByChoiceOrg",
         "linkedin":""
     },
-
     {
         "image": "assets/images/people/bismarck.jpg",
         "name": "Bismarck Odoom",
         "title": "BS/Research Student at KNUST",
-        "description": "CE Major",
+        "description": "",
         "facebook": "bismarckbamfoodoom",
         "twitter": "BismarckBamfo",
         "linkedin": "bbodoom"
@@ -100,7 +99,7 @@
     {
         "image": "assets/images/people/jo-elle.jpg",
         "name": "Jo-Elle Husband",
-        "title": "",
+        "title": "Founder and Web Designer at Head of House",
         "description": "",
         "twitter":"headofhouseco",
         "facebook":"",
@@ -109,18 +108,9 @@
     {
         "image": "assets/images/people/katie.jpg",
         "name": "Katie Friesema",
-        "title": "",
+        "title": "Digital Portfolio Planning and Communications Manager at Best Buy",
         "description": "",
         "twitter":"katiefrank",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/_.jpg",
-        "name": "Melody Miller",
-        "title": "",
-        "description": "",
-        "twitter":"",
         "facebook":"",
         "linkedin":""
     },
@@ -128,6 +118,42 @@
         "image": "assets/images/people/robert.jpg",
         "name": "Robert Jordan",
         "title": "Engineer at Microsoft",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/suzanne.jpeg",
+        "name": "Suzanne Daniels",
+        "title": "Azure Developer Engagement Lead at Microsoft",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":"suzannedaniels"
+    },
+    {
+        "image": "assets/images/people/josh.jpg",
+        "name": "Josh Holmes",
+        "title": "Software Engineer Manager at Microsoft",
+        "description": "",
+        "twitter":"joshholmes",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/narmatha.jpg",
+        "name": "Narmatha Balasundaram",
+        "title": "Software Engineer at Microsoft",
+        "description": "",
+        "twitter":"narmathabala",
+        "facebook":"",
+        "linkedin":"narmathabala"
+    },
+    {
+        "image": "assets/images/people/_.jpg",
+        "name": "Melody Miller",
+        "title": "",
         "description": "",
         "twitter":"",
         "facebook":"",
