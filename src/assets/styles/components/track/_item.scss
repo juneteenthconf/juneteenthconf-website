@@ -1,13 +1,14 @@
 .track-item {
-  border: 1px solid transparent;
-  background-color: rgba($track1-bg, 0.5);
+  border: 0px solid transparent;
+  background-color: rgba($track2-bg, 0.5);
   border-radius: 3px;
   display: flex;
   flex-direction: column;
   height: 100%;
   font-size: 14 / 16 + rem;
-  color: $june-black;
+  color: #1a2d19;
   padding: 12px;
+  padding-top: 0px;
   position: relative;
   text-align: left;
 
@@ -16,13 +17,14 @@
   }
 
   &:hover {
-    color: $june-black;
-    box-shadow: 0 49px 44px -20px rgba($track1-border, 0.4);
+    color: #1a2d19;
     text-decoration: none;
+    box-shadow: none !important;
+
   }
 
   &.active {
-    border-color: $track1-border;
+    border-left:4px solid #1a2d19;
 
     &:hover {
       box-shadow: none !important;
@@ -30,9 +32,13 @@
   }
 
   &__title {
-    padding-right: 50px;
+    
+
     @include media-breakpoint-up(lg) {
-      padding-right: 0;
+       float:left;
+       display: inline;
+       width: 50%;
+       margin-top:-18px;
     }
     em {
       font-style: normal;
@@ -40,7 +46,7 @@
     }
     h2 {
       display: inline-flex;
-      font-size: 18 / 16 + rem;
+      font-size: 18 / 12 + rem;
     }
   }
 
@@ -55,7 +61,7 @@
       font-size: 14 / 16 + rem;
 
       a {
-        color: $body-color;
+        color: #1a2d19;
       }
     }
   }
@@ -73,7 +79,7 @@
   }
 
   &__state {
-    color: $body-color;
+    color: #1a2d19;
     position: absolute;
     right: 8px;
     top: 5px;
@@ -141,18 +147,7 @@
   }
 
   // Theme for track columns
-  &.track1 {
-    @include track-item(1);
-  }
-  &.track2 {
-    @include track-item(2);
-  }
-  &.track3 {
-    @include track-item(3);
-  }
-  &.track4 {
-    @include track-item(4);
-  }
+ 
 }
 
 .circleG {
