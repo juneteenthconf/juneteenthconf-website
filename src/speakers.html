@@ -1,0 +1,78 @@
+<include src="partials/head.html" locals='{"pagetitle": "Speakers - Who are we?"}'></include>
+<body>
+
+    <include src="partials/header.html"></include>
+
+    <main>
+
+        <section class="about">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="about__title">Who Are The Speakers?</h1>
+                    <p class="about__sub__title">
+                        Meet the speakers behind Juneteenth Conference.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row" id="speaker-template-output"></div>
+
+            <script id="speaker-template" type="text/x-handlebars-template">        
+                {{#each speakers}}
+                <div class="col-md-3">
+                    <div class="about__card">
+
+                        {{#if profilePicture}}
+                        <div class="about__card__image">
+                            <img src="{{profilePicture}}" alt="" />
+                        </div>
+                        {{else}}
+                        <div class="about__card__image">
+                            <img src="assets/images/Juneteenthconf-illustration.png" alt="" />
+                        </div>
+                        {{/if}}
+                        <div class="about__card__content">
+
+                            <h3 class="h4">{{fullName}}</h3>
+                            <h4 class="h6">{{tagLine}}</h4> 
+                            <!-- <p>
+                                {{bio}}
+                            </p> -->
+
+                            <div class="about__card__socials">
+                                {{#if facebook}}
+                                <a href="https://www.facebook.com/{{facebook}}" title="Facebook" target="_blank" aria-label="link text - new window">
+                                    <img src="assets/images/facebook1.svg" />
+                                </a>
+                                {{/if}}
+                                {{#if twitter}}
+                                <a href="https://twitter.com/{{twitter}}"  title="Twitter" target="_blank" aria-label="link text - new window">
+                                    <img src="assets/images/twitter1.svg" />
+                                </a>
+                                {{/if}}
+                                {{#if linkedin}}
+                                <a href="https://www.linkedin.com/in/{{linkedin}}" title="LinkedIn" target="_blank" aria-label="link text - new window">
+                                    <img src="assets/images/linkedin.svg" />
+                                </a>
+                                {{/if}}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </script>
+
+        </section>
+    </main>
+    
+    <include src="partials/footer.html"></include>
+
+    <script src="assets/scripts/main.js"></script>
+
+</body>
+
+</html>
