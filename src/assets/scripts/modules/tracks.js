@@ -91,7 +91,7 @@ const tracks = {
 
       // Update iframe attributes
       // autoplay=1&controls=0
-      video.setAttribute('src', 'https://www.youtube.com/embed/' + data.youtubeCode + '?autoplay=1&controls=0');
+      video.setAttribute('src', data.youtubeCode);
       chat.setAttribute('src', data.chat);
 
       this.currentlyPlaying = trackId;
