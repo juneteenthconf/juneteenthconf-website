@@ -150,4 +150,13 @@
         "facebook":"",
         "linkedin":""
     }
+    {
+        "image": "assets/images/people/narmatha.jpg",
+        "name": "Narmatha Balasundaram",
+        "title": "Engineer at Microsoft",
+        "description": "",
+        "twitter":"narmathabala",
+        "facebook":"",
+        "linkedin":"narmathabala"
+    }
 ]
