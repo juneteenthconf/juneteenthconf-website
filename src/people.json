@@ -2,8 +2,8 @@
     {
         "image": "assets/images/people/michael.jpg",
         "name": "Michael Brown",
-        "title": "Founder of JuneteenthConf",
-        "description": "Software Engineer at Microsoft",
+        "title": "Software Engineer at Microsoft",
+        "description": "Founder of JuneteenthConf",
         "twitter":"browniepoints",
         "facebook":"",
         "linkedin":""
@@ -21,6 +21,7 @@
         "image": "assets/images/people/angelaRiggs.png",
         "name": "Angela Riggs",
         "title": "QA Manager at Instrument",
+        "description":"",
         "twitter":"https://twitter.com/AngelaRiggs_",
         "linkedin":"https://www.linkedin.com/in/angelariggs/"
     },
@@ -106,31 +107,13 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/katie.jpg",
-        "name": "Katie Friesema",
-        "title": "Digital Portfolio Planning and Communications Manager at Best Buy",
+        "image": "assets/images/people/jordan.jpg",
+        "name": "Jordan Matthiesen",
+        "title": "Senior Program Manager at Microsoft",
         "description": "",
-        "twitter":"katiefrank",
+        "twitter":"jmatthiesen",
         "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/robert.jpg",
-        "name": "Robert Jordan",
-        "title": "Engineer at Microsoft",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":""
-    },
-    {
-        "image": "assets/images/people/suzanne.jpeg",
-        "name": "Suzanne Daniels",
-        "title": "Azure Developer Engagement Lead at Microsoft",
-        "description": "",
-        "twitter":"",
-        "facebook":"",
-        "linkedin":"suzannedaniels"
+        "linkedin":"jordanmatthiesen"
     },
     {
         "image": "assets/images/people/josh.jpg",
@@ -142,6 +125,24 @@
         "linkedin":""
     },
     {
+        "image": "assets/images/people/katie.jpg",
+        "name": "Katie Friesema",
+        "title": "Digital Portfolio Planning and Communications Manager at Best Buy",
+        "description": "",
+        "twitter":"katiefrank",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
+        "image": "assets/images/people/melody.jpg",
+        "name": "Melody Miller",
+        "title": "Owner, SoulWork Innovations, LLC",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },    
+    {
         "image": "assets/images/people/narmatha.jpg",
         "name": "Narmatha Balasundaram",
         "title": "Software Engineer at Microsoft",
@@ -151,12 +152,21 @@
         "linkedin":"narmathabala"
     },
     {
-        "image": "assets/images/people/_.jpg",
-        "name": "Melody Miller",
-        "title": "",
+        "image": "assets/images/people/robert.jpg",
+        "name": "Robert Jordan",
+        "title": "Engineer at Microsoft",
         "description": "",
         "twitter":"",
         "facebook":"",
         "linkedin":""
+    },
+    {
+        "image": "assets/images/people/suzanne.jpg",
+        "name": "Suzanne Daniels",
+        "title": "Azure Developer Engagement Lead at Microsoft",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":"suzannedaniels"
     }
 ]
