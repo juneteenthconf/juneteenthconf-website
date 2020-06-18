@@ -115,6 +115,15 @@
         "linkedin":""
     },
     {
+        "image": "assets/images/people/_.jpg",
+        "name": "Melody Miller",
+        "title": "",
+        "description": "",
+        "twitter":"",
+        "facebook":"",
+        "linkedin":""
+    },
+    {
         "image": "assets/images/people/robert.jpg",
         "name": "Robert Jordan",
         "title": "Engineer at Microsoft",
@@ -124,7 +133,7 @@
         "linkedin":""
     },
     {
-        "image": "assets/images/people/suzanne.jpeg",
+        "image": "assets/images/people/suzanne.jpg",
         "name": "Suzanne Daniels",
         "title": "Azure Developer Engagement Lead at Microsoft",
         "description": "",
@@ -151,12 +160,12 @@
         "linkedin":"narmathabala"
     },
     {
-        "image": "assets/images/people/_.jpg",
-        "name": "Melody Miller",
-        "title": "",
+        "image": "assets/images/people/jordan.jpg",
+        "name": "Jordan Matthiesen",
+        "title": "Program Manager at Microsoft",
         "description": "",
-        "twitter":"",
+        "twitter":"jmatthiesen",
         "facebook":"",
-        "linkedin":""
+        "linkedin":"jordanmatthiesen"
     }
 ]
