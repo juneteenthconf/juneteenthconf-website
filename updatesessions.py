@@ -24,8 +24,8 @@ print('Beginning file download images')
 
 data = json.loads(r.content)
 
-#os.mkdir("speaker")
-#os.mkdir("speakerimages")
+os.mkdir("speaker")
+os.mkdir("speakerimages")
 
 for session in data['sessions']:
     for speaker in session['speakers']:
