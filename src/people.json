@@ -12,7 +12,7 @@
         "image": "assets/images/people/almicia.jpg",
         "name": "Almicia Dunson",
         "title": "Software Engineer at Microsoft",
-        "description": "JuneteenthConf Planning Committee member",
+        "description": "",
         "twitter":"",
         "facebook":"",
         "linkedin":""
@@ -21,7 +21,7 @@
         "image": "assets/images/people/angelaRiggs.png",
         "name": "Angela Riggs",
         "title": "QA Manager at Instrument",
-        "description":"JuneteenthConf Planning Committee member",
+        "description":"",
         "twitter":"https://twitter.com/AngelaRiggs_",
         "linkedin":"https://www.linkedin.com/in/angelariggs/"
     },
@@ -29,7 +29,7 @@
         "image": "assets/images/people/cotishea.jpg",
         "name": "Cotishea Anderson",
         "title": "Software Engineer Manager at Microsoft",
-        "description": "JuneteenthConf Planning Committee member",
+        "description": "",
         "twitter":"",
         "facebook":"",
         "linkedin":""
@@ -38,7 +38,7 @@
         "image": "assets/images/people/henk.jpg",
         "name": "Henk Boelman",
         "title": "Cloud Advocate at Microsoft",
-        "description": "JuneteenthConf Planning Committee member",
+        "description": "",
         "facebook": "henk.boelman",
         "twitter": "hboelman",
         "linkedin": "henkboelman"
@@ -47,7 +47,7 @@
         "image": "assets/images/people/labrina.jpg",
         "name": "LaBrina Loving",
         "title": "Software Engineer at Microsoft",
-        "description": "JuneteenthConf Planning Committee member",
+        "description": "",
         "twitter":"chixcancode",
         "facebook":"",
         "linkedin":""
@@ -56,7 +56,7 @@
         "image": "assets/images/people/lilian.jpg",
         "name": "Lilian Kasem",
         "title": "Software Engineer at Microsoft",
-        "description": "JuneteenthConf Planning Committee member",
+        "description": "",
         "twitter":"liliankasem",
         "facebook":"",
         "linkedin":"liliankasem"
@@ -65,7 +65,7 @@
         "image": "assets/images/people/tess.jpg",
         "name": "Tess DiStefano",
         "title": "Software Engineer at Microsoft",
-        "description": "JuneteenthConf Planning Committee member",
+        "description": "",
         "twitter":"tess_distefano",
         "facebook":"tess.distefano",
         "linkedin":"tessdistefano"
@@ -74,7 +74,7 @@
         "image": "assets/images/people/valerie.jpg",
         "name": "Valerie Phoenix",
         "title": "Founder of Tech By Choice",
-        "description": "JuneteenthConf Planning Committee member",
+        "description": "",
         "twitter":"DigitalBlkHippy",
         "facebook":"TechByChoiceOrg",
         "linkedin":""
