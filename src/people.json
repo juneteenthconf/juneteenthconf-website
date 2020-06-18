@@ -107,6 +107,15 @@
         "linkedin":""
     },
     {
+        "image": "assets/images/people/jon.jpg",
+        "name": "Jon Galloway",
+        "title": "Senior Program Manager at Microsoft",
+        "description": "",
+        "twitter":"jongalloway",
+        "facebook":"",
+        "linkedin":"jongalloway"
+    },
+    {
         "image": "assets/images/people/jordan.jpg",
         "name": "Jordan Matthiesen",
         "title": "Senior Program Manager at Microsoft",
@@ -127,11 +136,11 @@
     {
         "image": "assets/images/people/katie.jpg",
         "name": "Katie Friesema",
-        "title": "Digital Portfolio Planning and Communications Manager at Best Buy",
+        "title": "Technology Transformation Manager at Best Buy",
         "description": "",
         "twitter":"katiefrank",
         "facebook":"",
-        "linkedin":""
+        "linkedin":"kafrank"
     },
     {
         "image": "assets/images/people/melody.jpg",
