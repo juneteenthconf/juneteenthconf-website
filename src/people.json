@@ -107,6 +107,15 @@
         "linkedin":""
     },
     {
+        "image": "assets/images/people/jon.jpg",
+        "name": "Jon Galloway",
+        "title": "Senior Program Manager at Microsoft",
+        "description": "",
+        "twitter":"jongalloway",
+        "facebook":"",
+        "linkedin":"jongalloway"
+    },
+    {
         "image": "assets/images/people/jordan.jpg",
         "name": "Jordan Matthiesen",
         "title": "Senior Program Manager at Microsoft",
