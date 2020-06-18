@@ -177,5 +177,13 @@
         "twitter":"",
         "facebook":"",
         "linkedin":"suzannedaniels"
+    },
+    {
+        "image": "assets/images/people/hannah.jpg",
+        "name": "Hannah Kennedy",
+        "title": "Software Engineer at Microsoft",
+        "description": "",
+        "twitter":"@mindlessroman",
+        "linkedin":"https://www.linkedin.com/in/hannah-kennedy/"
     }
 ]
