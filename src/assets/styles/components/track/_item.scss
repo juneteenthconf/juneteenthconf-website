@@ -1,4 +1,5 @@
 .track-item {
+  background-color: rgba($track2-bg, 0.5);
   border: 0px solid transparent;
   border-radius: 3px;
   display: flex;
@@ -176,7 +177,7 @@
 }
 
 .track1 {
-  background-color: $track1-bg;
+  background-color: $track2-bg;
 }
 
 .track2 {

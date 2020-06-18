@@ -11,7 +11,7 @@
                     "id": null,
                     "title": "Event not started.",
                     "description": "",
-                    "startsAt": "2020-06-16T21:05:39.080144Z",
+                    "startsAt": "2020-06-17T19:46:07.4759582Z",
                     "endsAt": "0001-01-01T00:00:00",
                     "roomId": null,
                     "language": null,
@@ -22,7 +22,7 @@
                     "multipleSpeakers": false
                 },
                 "next": {
-                    "id": "2",
+                    "id": "205778",
                     "title": "Keynote: From Frying Chicken To Software Engineer",
                     "description": "",
                     "startsAt": "2020-06-19T16:00:00Z",
@@ -55,7 +55,7 @@
                     "id": null,
                     "title": "Event not started.",
                     "description": "",
-                    "startsAt": "2020-06-16T21:05:39.080144Z",
+                    "startsAt": "2020-06-17T19:46:07.4759582Z",
                     "endsAt": "0001-01-01T00:00:00",
                     "roomId": null,
                     "language": null,
