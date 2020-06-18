@@ -27,11 +27,11 @@
 
                         {{#if profilePicture}}
                         <div class="about__card__image">
-                            <img src="{{profilePicture}}" alt="" />
+                            <img src="/assets/images/{{id}}.jpg" alt="{{fullName}}" >
                         </div>
                         {{else}}
                         <div class="about__card__image">
-                            <img src="assets/images/Juneteenthconf-illustration.png" alt="" />
+                            <img src="assets/images/Juneteenthconf-illustration.png" alt="">
                         </div>
                         {{/if}}
                         <div class="about__card__content">
@@ -46,7 +46,7 @@
                                 </a>
                                 {{/if}}
                                 {{#if twitter}}
-                                <a href="https://twitter.com/{{twitter}}"  title="Twitter" target="_blank" aria-label="link text - new window">
+                                <a href="{{twitter}}"  title="Twitter" target="_blank" aria-label="link text - new window">
                                     <img src="assets/images/twitter1.svg" />
                                 </a>
                                 {{/if}}

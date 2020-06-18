@@ -67,4 +67,26 @@
     }
 
   }
+
+  &__copy-center {
+    text-align: center;
+    padding-bottom:0rem;
+
+    .h2 {
+      text-align: center;
+      @include media-breakpoint-up(lg) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__cta-live {
+    text-align: center;
+    margin: 1rem 0;
+    margin-bottom: 4rem;
+    
+    .btn + .btn {
+      margin: 1rem;
+    }
+  }
 }
