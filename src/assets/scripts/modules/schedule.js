@@ -144,7 +144,6 @@ const schedule = {
         };
       }
     });
-    console.log(talkArrays)
     trackData.talks = talkArrays;
     return trackData;
   },
