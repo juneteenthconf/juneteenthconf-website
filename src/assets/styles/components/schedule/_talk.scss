@@ -26,7 +26,7 @@
     z-index: 2;
 
     h3 {
-      color: darken($track1-border, 10%);
+      color: darken($track1-border, 20%);
       font-size: 14 / 16 + rem;
       min-height: 1.6rem;
       padding-right: 16px;
@@ -44,7 +44,7 @@
     }
 
     .timeframe {
-      color: darken($track1-border, 10%);
+      color: darken($track1-border, 20%);
       display: block;
       margin-bottom: 0.2rem;
     }
