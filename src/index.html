@@ -1,13 +1,114 @@
-<include src="partials/head.html" locals='{"pagetitle": "JuneteenthConf - June 19th and 20th 2020"}'></include>
+<include src="partials/head.html" locals='{"pagetitle": "Join us live! - JuneteenthConf - June 19th and 20th 2020"}'>
+</include>
 
 <body>
-
   <include src="partials/skipnavigationlinks.html"></include>
-  <a href="#registrationnav" class="invisibleskipnav">Skip to registration and donations buttons</a>
+  <a href="#chatnav" class="invisibleskipnav">Skip to chat</a>
+  <a href="#schedulenav" class="invisibleskipnav">Skip to schedule</a>
 
-  <include src="partials/header.html"></include>
+  <include src="partials/header-live.html"></include>
 
   <main>
+
+    <section class="player">
+      <div class="player__container">
+        <div class="container-fluid">
+
+          <div class="row">
+
+            <div class="col-lg-8">
+              <div class="player__video">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <a name="maincontentnav" id="maincontentnav"></a>
+                  <iframe id="video" src="" width="560" height="315" class="embed-responsive-item" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="player__chat">
+                <a name="chatnav" id="chatnav"></a>
+                <iframe id="chat" src='' style='border: 0; width: 100%; '></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <a name="schedulenav" id="schedulenav"></a>
+    <section class="track-browser" id="browser-wrapper"></section>
+
+
+
+
+    <script id="browser-template" type="text/x-handlebars-template">
+      <div class="container">
+        <div class="row">
+          {{#each tracks}}
+          <div class="col-md-6 col-lg-6 mb-4 mb-lg-0">
+            <div class="track-item track{{id}}">
+              <div class="track-item__title">
+                <h2>{{title}}</h2>
+              </div>
+              <div class="row">
+                <div class="col-xl-6">
+                  <div class="track-item__now">
+                    <strong>Now playing:</strong>
+                    <h3>
+                      <a href="#talk-{{now.id}}" data-toggle="modal">
+                      {{now.title}}
+                      </a>
+                    </h3>
+                    {{#each now.speakers}}
+                    <div class="speaker">
+                      <img src="{{profilePicture}}" alt="{{fullName}}" class="speaker-avatar">
+                      <div class="speaker-body">
+                        <strong>{{fullName}}</strong>
+                      </div>
+                    </div>
+                    {{/each}}
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <div class="track-item__next">
+                    <strong>Up next in</strong>
+                    <time title="Talk starts at" datetime="{{next.startsAt}}" data-talk-duration-diff="hours"></time>
+                    <h3>
+                      {{#if next.id}}
+                      <a href="#talk-{{next.id}}" data-toggle="modal">
+                        {{next.title}}
+                      </a>
+                      {{else}}
+                      {{next.title}}
+                      {{/if}}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <a href="#" data-toggle-track="{{id}}" class="track-item__state">
+                <strong class="active">
+                  <div class="play-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  Now watching
+                </strong>
+                <strong class="btn btn-sm btn-primary selectable">Play <span class="d-none d-lg-inline">this track</span></strong>
+              </a>
+              {{#if translationCode}}
+              <a href="https://translate.it/{{translationCode}}" class="btn btn-outline-primary btn-sm track-item__subtitles" target="_blank" aria-label="link text - new window">Subtitles</a>
+              {{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </script>
+
+
 
     <section class="hero">
       
@@ -15,46 +116,42 @@
 
         <div class="row">
 
-          <div class="col-md-6">
-            <div class="hero__image">
-              <img src="assets/images/Juneteenthconf-illustration.png" alt="Juneteenth Conference Header, containing conference illustration"/>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="hero__copy">
-              <a name="maincontentnav" id="maincontentnav"></a>
-              <h1 class="h2">June 19th &amp; 20th 2020</h1>
-              <h2 class="h6">Streaming to you wherever you are!</h2>
-              <p>
-                <strong>The Mission of JuneteenthConf, Unl. is to provide a space that celebrates Black Excellence in technology 
-                  for Black people in tech to learn and grow and to amplify their voices. We aim to be a counterbalance to
-                  the biases, implicit or otherwise, that hold our industry and our society back.</strong>
-              </p>
-              <p>
-                Juneteenth Conference is a free virtual tech conference made for and featuring Black people in Technology. The conference celebrates Black Excellence and promotes community for Black people who are severely underrepresented, overlooked, and underutilized in the tech industry. We welcome anyone and everyone aligned with this goal to come and listen to the conversation.
+          <div class="col-md-12">
+            <div class="hero__copy hero__copy-center">
+              <h1 class="h2">JuneteenthConf 19-20 June 2020</h1>
+              <p><strong>
+                Juneteenth Conference is a free virtual tech conference made for and featuring Black people in technology. 
+                The conference celebrates Black Excellence and promotes community for Black people who are severely 
+                underrepresented in the tech industry. We welcome anyone and everyone aligned with this goal to come and
+                listen to the conversation.</strong>
               </p>
             </div>
           </div>
 
         </div>
-
-        <div class="hero__cta">
+        <div class="hero__cta hero__cta-live">
           <a name="registrationnav" id="registrationnav"></a>
-          <a href="register.html" class="btn btn-primary btn-next">Register as attendee</a>
+          <a href="juneteenth.html" class="btn btn-primary btn-next">Read about Juneteenth</a>
           <a href="https://www.eventbrite.com/e/juneteenthconf-tickets-109415067412" target="_blank" class="btn btn-primary btn-next">Sponsor the event</a>
         </div>
-
       </div>
-      
-    </section>
+
+    </div>
+
+
+      </section>
+
+      <hr/>
+
     <include src="partials/schedule.html"></include>
-    <include src="partials/sponsors.html"></include> 
+
+    <include src="partials/sponsors.html"></include>
+
   </main>
 
   <include src="partials/footer.html"></include>
-  <script src="assets/scripts/main.js"></script>
 
+  <script src="assets/scripts/main.js"></script>
 </body>
 
 </html>
