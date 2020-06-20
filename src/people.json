@@ -22,8 +22,8 @@
         "name": "Angela Riggs",
         "title": "QA Manager at Instrument",
         "description":"",
-        "twitter":"https://twitter.com/AngelaRiggs_",
-        "linkedin":"https://www.linkedin.com/in/angelariggs/"
+        "twitter":"AngelaRiggs_",
+        "linkedin":"angelariggs"
     },
     {
         "image": "assets/images/people/cotishea.jpg",
@@ -183,7 +183,7 @@
         "name": "Hannah Kennedy",
         "title": "Software Engineer at Microsoft",
         "description": "",
-        "twitter":"@mindlessroman",
-        "linkedin":"https://www.linkedin.com/in/hannah-kennedy/"
+        "twitter":"mindlessroman",
+        "linkedin":"hannah-kennedy"
     }
 ]
