@@ -2,7 +2,6 @@ import schedule from './modules/schedule';
 import tracks from './modules/tracks';
 import persons from './modules/persons';
 import speakers from './modules/speakers';
-import stalks from './modules/stalks';
 
 import 'bootstrap/js/src/util';
 import 'bootstrap/js/src/modal';

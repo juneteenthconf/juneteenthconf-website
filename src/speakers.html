@@ -27,7 +27,7 @@
 
                         {{#if profilePicture}}
                         <div class="about__card__image">
-                            <img src="/assets/images/{{id}}.jpg" alt="{{fullName}}" >
+                            <img src="{{profilePicture}}" alt="{{fullName}}" >
                         </div>
                         {{else}}
                         <div class="about__card__image">
@@ -62,10 +62,6 @@
                 </div>
                 {{/each}}
             </script>
-            <div class="col-md-8 offset-md-4">
-                <a href="/supportingtalks.html" class="btn btn-primary btn-next">
-                  Watch talks from our Supporting Speakers</a>
-              </div>
         </section>
     </main>
 
