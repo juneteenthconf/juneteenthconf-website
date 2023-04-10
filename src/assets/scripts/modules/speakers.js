@@ -8,7 +8,7 @@ const speakers = {
   talksObject: {},
   genericData: {},
   availableTracks: ['track1', 'track2'],
-  talksUrl: '/talks.json',
+  talksUrl: '/speakers.json',
   talksPollingInterval: 300 * 1000,
 
   init() {
@@ -54,28 +54,23 @@ const speakers = {
   parseSpeakers(data) {
     let speakersCollection = {};
 
-    if (data.sessions) {
-      data.sessions.forEach((session) => {
-        if (session.speakers) {
-          session.speakers.forEach((speaker) => {
-            speakersCollection[speaker.fullName] = speaker;
-          })
-        }
-        
-        var sortedList = {};
-        Object.keys(speakersCollection).sort().forEach((key) => {
-          sortedList[key] = speakersCollection[key];
-        });
-        speakersCollection = sortedList;
-      });
-  
-      var source   = document.querySelector('#speaker-template').innerHTML;
-      var target =  document.querySelector('#speaker-template-output');
-      
-      var template = Handlebars.compile(source);
-      var wrapper  = {speakers: speakersCollection};
-      
-      target.innerHTML = template(wrapper);
+    if (data) {
+	    data.forEach((speaker) => {
+		    speakersCollection[speaker.fullName] = speaker;
+	    })
+	    var sortedList = {};
+	    Object.keys(speakersCollection).sort().forEach((key) => {
+		    sortedList[key] = speakersCollection[key];
+	    });
+	    speakersCollection = sortedList;
+
+	    var source   = document.querySelector('#speaker-template').innerHTML;
+	    var target =  document.querySelector('#speaker-template-output');
+
+	    var template = Handlebars.compile(source);
+	    var wrapper  = {speakers: speakersCollection};
+
+	    target.innerHTML = template(wrapper);
 
     }
 
