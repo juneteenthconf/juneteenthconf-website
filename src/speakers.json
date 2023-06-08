@@ -13,26 +13,7 @@
         "name": "Intro to Web Accessibility for Web developers and Designers"
       }
     ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "46d17ddc-1a74-4d59-8906-d6246ac498d4",
-    "firstName": "Ajuna",
-    "lastName": "Kyaruzi",
-    "fullName": "Ajuna Kyaruzi",
-    "bio": "Ajuna Kyaruzi works in Developer Relations at Datadog and cares about using software to help people sustainably run large-scale systems, focusing on Incident Managements and SLOs. She loves community building and volunteers with multiple mentorship programs aimed at helping early career folks break into tech, and ensuring they have successful careers. Previously she worked at Google as a Software Engineer on Google Maps and as a Site Reliability Engineer on Google Cloud.",
-    "tagLine": "SRE & DevOps Advocate",
-    "profilePicture": "https://sessionize.com/image/57cc-400o400o2-TwmcAYuwCHzji6m2hLjgRT.jpg",
-    "sessions": [
-      {
-        "id": 418351,
-        "name": "From Zero to Monitored"
-      }
-    ],
-    "isTopSpeaker": false,
+    "isTopSpeaker": true,
     "links": [],
     "questionAnswers": [],
     "categories": []
@@ -70,7 +51,7 @@
         "name": "Data Engineering Demystified"
       }
     ],
-    "isTopSpeaker": false,
+    "isTopSpeaker": true,
     "links": [],
     "questionAnswers": [],
     "categories": []
@@ -87,101 +68,6 @@
       {
         "id": 427002,
         "name": "4 Steps to Becoming a UX/UI Designer"
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "a166b774-f4f7-47a5-918c-2a8152172a88",
-    "firstName": "Astrid",
-    "lastName": "Landeau",
-    "fullName": "Astrid Landeau",
-    "bio": "Astrid is a Project Manager with experience across different industries. She supports teams throughout the life cycle of a project by first framing suitable, realistic projects, adding value beyond cost and schedule and making a project collaborative, exciting and fulfilling for the team.",
-    "tagLine": "Project Manager",
-    "profilePicture": "https://sessionize.com/image/61ef-400o400o2-7Tmi9iTHfcowzCW3sUsg82.jpg",
-    "sessions": [
-      {
-        "id": 431135,
-        "name": "PM vs SWE/SRE wars"
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "252c2379-b93b-4109-a0d1-d96fae88f42e",
-    "firstName": "Athena ",
-    "lastName": "Sayaka",
-    "fullName": "Athena Sayaka",
-    "bio": "Athena marries neuroscience and spirituality to bring embodied yet practical insight to the stage. She is passionate about showing neurodivergent creators how to develop supportive practices that help them navigate uncertainty with confidence.\r\n\r\nAthena hosts the What Happens In Between podcast which highlights the unsexy middle bits of creating something meaningful.\r\n\r\nShe earned her degree from the Wharton School at University of Pennsylvania and utilizes a variety of modalities in her work. \r\n\r\nYou can learn more about Athena at athenasayaka.com !",
-    "tagLine": "Speaker | Writer | Neurodivergent Mystic",
-    "profilePicture": "https://sessionize.com/image/3b4b-400o400o2-7y2NfzRrQRPkq9Jei19yq5.jpg",
-    "sessions": [
-      {
-        "id": 425399,
-        "name": "How To Leverage Your Neurodivergence At Work"
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "bb853545-8f66-4f6c-a72d-d9c2fb289c08",
-    "firstName": "B.",
-    "lastName": "Pagels-Minor",
-    "fullName": "B. Pagels-Minor",
-    "bio": "B. is an award-winning product strategist, podcast host, startup advisor and investor, and executive coach, as well as a respected thought leader in agile technologies who approaches every problem with strategy, curiosity, and genuine authenticity. As a dedicated enthusiast of sustainable processes, great products, and culture development, B.’s fierce drive to promote diversity in tech and impact real authentic change continues to define both their work and life outside of their work. B. is a proud graduate of Northwestern University with a deep background in history, in addition to an MBA and master of information systems from Robert Morris University. B. gives back to various organizations by being the Vice Chair & Secretary on the Board of Directors at Howard Brown Health, one of the top 3 largest LGBTQ community health centers in the country, Vice President & Secretary on the Board of Directors at the YWCA of Metropolitan Chicago, and Board of Directors of the Northwestern Alumni Association. In 2022, B. Was honored as one of the Queer 50 from Fast Company, 35 Hero Advocate Executives by Involve People and Yahoo Finance UK, and a finalist for 2022 LGBTQNation heroes of the year.",
-    "tagLine": "Founder, Investor, Advisor",
-    "profilePicture": "https://sessionize.com/image/ae50-400o400o2-N1R7tFkTLHV73iLVrd1Y5M.jpg",
-    "sessions": [
-      {
-        "id": 407864,
-        "name": "When to pivot: the hunt for product-market fit"
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "577c0fbe-6f78-4965-a805-f23e046451d7",
-    "firstName": "Beth",
-    "lastName": "Ruffin",
-    "fullName": "Beth Ruffin",
-    "bio": "Leader, Educator, Author, TEDx speaker, and Cultural Disruptor, Beth Ruffin is the CEO of The Everyday Inclusionist, a boutique consulting firm focused on teaching leaders how to include themselves and others.  She spent 20 years in Corporate America before realizing her dream of entrepreneurship. Committed to making our world more inclusive, Beth is host of the “You Belong Here with Beth Ruffin” podcast, focused on helping women realize their true potential.  Beth is also a published author.  Her first book, Get Up, details her journey to self-acceptance.  Her second book, You Belong Here, explores the topic of Self Inclusion.  She is the Chair of the Women’s Rights & Empowerment Network (WREN) Board of Directors and Co-Chair of the Economic Impact Committee of the Richland County Alumnae Chapter of Delta Sigma Theta Incorporated.  Beth lives in South Carolina with her daughter and cat.",
-    "tagLine": "CEO, The Everyday Inclusionist",
-    "profilePicture": "https://sessionize.com/image/d6cc-400o400o2-KBFQAkqb3qkPV8WRhpneP7.jpg",
-    "sessions": [
-      {
-        "id": 424774,
-        "name": "You Belong Here"
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "0f9ca762-0045-421c-bab4-b621b555174c",
-    "firstName": "Chelsea",
-    "lastName": "Hinds-Charles",
-    "fullName": "Chelsea Hinds-Charles",
-    "bio": "Chelsea Hinds-Charles is a Platform Site Reliability Engineer (SRE), who firmly believes that everyone is capable of being an engineer. She specializes in enhancing the reliability, scalability and performance of iOS, Android and Web development environments across hybrid on-prem and cloud Continuous Integration and Continuous Deployment production infrastructure. After immigrating to New York City from Guyana, South America, her interest in understanding how things worked was piqued as she was fascinated by the subway trains. This was the foundation of what led to a problem solving career in systems engineering. Chelsea had the opportunity to work at many companies in various industries, such as Twitter,  Southwest Airlines, Walt Disney World and National Grid Utilities. Through these experiences, Chelsea continues to build and transform technical teams for success. However, her true passion is to fulfill her legacy of making engineering available to our people through volunteering and teaching tech in her local community. And, encouraging underrepresented engineers to be at the table, and not just in the building. ",
-    "tagLine": "Site Reliability Engineer",
-    "profilePicture": "https://sessionize.com/image/9669-400o400o2-49kVN6r2evR7Sx2BeUmvhR.jpg",
-    "sessions": [
-      {
-        "id": 431135,
-        "name": "PM vs SWE/SRE wars"
       }
     ],
     "isTopSpeaker": false,
@@ -209,55 +95,17 @@
     "categories": []
   },
   {
-    "id": "5dd9c635-7d97-4b1f-b21c-1df75d69d320",
-    "firstName": "Fonz",
-    "lastName": "Morris",
-    "fullName": "Fonz Morris",
-    "bio": "Fonz Morris is a fierce advocate of the self-taught designer and entrepreneur.\r\n\r\nSince 2020, Fonz Morris has been the Lead Product Designer for Global Conversion at Netflix. Before joining Netflix, he led a design team at Coursera. His previous roles have covered design positions at large corporations, including Comcast, and he is the founder of two innovative tech start-ups, including MyChannel and MyArtistDNA. \r\n\r\nFonz has spoken at AfroTech, How Design Live, and Event Apart. He mentors design students through various organizations, including California College of the Arts and General Assembly’s UX Design Bootcamp. Fonz has contributed his knowledge to conferences, including AfroTech, UX Fest, UXDX, Rethink, Made In the Future, and State of Black Design. He is on the Design Thinking board and the strategic planning committee at [school name]. He is an advising partner or consulting with venture capital firms First Round, Floodgate, and Signalfire, helping guide the up and coming designers and self-starters.\r\n\r\nHe has continued his education in the VC sector with recent certifications from Stanford University Graduate School of Business, Black VC, UC Berkeley Extension, and VC University, of which he was a 2022 Cohort 11 Scholarship recipient.\r\n\r\nFonz was born in Brooklyn. He has worked in tech and design on both coasts of the United States, in Philadelphia, New York, Atlanta, Washington D.C., and California. ",
-    "tagLine": "Lead Product Designer, Global Conversion Netflix",
-    "profilePicture": "https://sessionize.com/image/c269-400o400o2-RC94wq2DuKoyJTEVQq4dxp.jpg",
+    "id": "6f23fc3a-c488-4260-962b-871b76bf0d0e",
+    "firstName": "Dolly",
+    "lastName": "Desir",
+    "fullName": "Dolly Desir",
+    "bio": "Dolly is a Solutions Engineer at Datadog that specializes in Cloud services. Before transitioning into tech, Dolly was an Assistant Merchandiser at Bergdorf Goodman and after 10 years, challenged herself to move into a different career that will always keep her learning. When Dolly is not working, the Brooklyn native is likely traveling, gaming, or becoming better versed in beauty, fashion, health, fitness & so much more!",
+    "tagLine": "Solutions Engineer",
+    "profilePicture": "https://sessionize.com/image/65a8-400o400o2-4XHTvKSuaeA4MaaXAijbYE.jpg",
     "sessions": [
       {
-        "id": 409798,
-        "name": "The Importance of DEI in Product Design"
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "01ff066b-b8d6-424d-963e-09f98d2021ee",
-    "firstName": "Janackeh",
-    "lastName": "Blackwell",
-    "fullName": "Janackeh Blackwell",
-    "bio": "Janackeh Blackwell is an open source fellow with Sauce Labs. Previously she has completed bootcamps with General Assembly, Generation USA and Bitwise Industries. She is also the organizer and founder of Black Tech Denver, a tech networking incubator for underrepresented communities in the Denver & Boulder Colorado areas.",
-    "tagLine": "Sauce Labs Open Source Fellow ",
-    "profilePicture": "https://sessionize.com/image/f5b1-400o400o2-MFYnGghLi9V5v7hdsHvFdE.png",
-    "sessions": [
-      {
-        "id": 431017,
-        "name": "Navigating Your Non-Traditional Tech Journey"
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "bc02ca0c-bc06-4fd6-ba4e-e70b8194d6de",
-    "firstName": "Jay",
-    "lastName": "Miller",
-    "fullName": "Jay Miller",
-    "bio": "Jay Miller is a Senior Cloud Advocate at Microsoft based out of San Diego, California. Jay has spent the last decade podcasting and advocating for career changers, mental-health, and historically excluded folks in tech.",
-    "tagLine": "Senior Cloud Advocate - Microsoft",
-    "profilePicture": "https://sessionize.com/image/78f3-400o400o2-3Z128SRqKoizDhqAwik6Ys.jpg",
-    "sessions": [
-      {
-        "id": 430829,
-        "name": "Mic Check: What Developers can learn from Hip Hop"
+        "id": 418351,
+        "name": "From Zero to Monitored"
       }
     ],
     "isTopSpeaker": false,
@@ -277,44 +125,6 @@
       {
         "id": 412049,
         "name": "How to Build a GPT-3 App with Nextjs, React and GitHub Copilot"
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "2c8ad497-ca7d-4821-9745-86a090095a4a",
-    "firstName": "Lola",
-    "lastName": "Adeyemo",
-    "fullName": "Lola Adeyemo",
-    "bio": "Lola Adeyemo is a TEDx speaker, workshop facilitator, consultant, and resourceful leader who believes in and actively promotes inclusive leadership and advocates for employee engagement in the workforce. A scientist by discipline with over 13+ years working across global organizations in the biotechnology and life sciences industries, she is working towards her business doctorate with a dissertation focus on inclusive leadership strategies. Adeyemo is the founder and CEO of EQI Mindset, a management consulting company focused on Team and Employee Resource Group optimization, and the founder of the non-profit Immigrants in Corporate Inc. Her podcast “The Immigrants in Corporate Podcast” and her recent book “Thriving in Intersectionality: Immigrants, Belonging, and Corporate America” supports the non-profit mission and explores being an immigrant and its intersection with other under-represented identities within the corporate work culture in America. Adeyemo serves on the board of Girls Inc. of San Diego County and supports a few other organizations aligned with her passion.\r\n",
-    "tagLine": "Elevating Underrepresented Voices in the Corporate workplace",
-    "profilePicture": "https://sessionize.com/image/0075-400o400o2-QRvUEopyFU3fmCXZwQg4T8.jpg",
-    "sessions": [
-      {
-        "id": 408295,
-        "name": "Beyond the buzzwords: Turning “DEI” into action"
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "8a8ea193-7063-476d-a5aa-3577bcf6d6d7",
-    "firstName": "Lyn",
-    "lastName": "Muldrow",
-    "fullName": "Lyn Muldrow",
-    "bio": "Lyn Muldrow is a Senior Maintainer Advocate at Tidelift, helping open source maintainers get paid for their contribution to the community. She previously contributed to building projects as an engineer at LinkedIn, educated new generations of technologists as Lead Instructor at Flatiron School, and maintained open source projects through her work at DigitalOcean. Lyn is passionate about increasing diversity in the open source community, and volunteers with organizations like Out In Tech to increase opportunities for all. In her free time, Lyn enjoys gardening, hanging with her Maine Coon, and going on travel adventures across the country with her family.",
-    "tagLine": "Senior Developer Advocate at Tidelift",
-    "profilePicture": "https://sessionize.com/image/8b54-400o400o2-VYnVY4ozuF2PLH1xNq2GDT.jpg",
-    "sessions": [
-      {
-        "id": 407666,
-        "name": "Open Source for Purpose and Profit"
       }
     ],
     "isTopSpeaker": false,
@@ -361,44 +171,6 @@
     "categories": []
   },
   {
-    "id": "e56a3ad1-0d02-4655-9ed3-fbcd7d9f30ed",
-    "firstName": "Rizel",
-    "lastName": "Scarlett",
-    "fullName": "Rizel Scarlett",
-    "bio": " Rizel is a Junior Developer Advocate at GitHub. She moonlights as an Advisor at G{Code} House, an organization aimed at teaching women of color and non-binary people of color to code. Rizel believes in leveraging vulnerability, honesty, and kindness as means to educate early-career developers.\r\n",
-    "tagLine": "Junior Developer Advocate",
-    "profilePicture": "https://sessionize.com/image/2e36-400o400o2-EH6UB57GUrcp4gFyyzRZC4.jpg",
-    "sessions": [
-      {
-        "id": 419278,
-        "name": "Why are people developing inside containers? How Codespaces takes containerization to the next leve"
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "fc155d84-7dfb-462c-af10-99386d2ea1e3",
-    "firstName": "Tamara",
-    "lastName": "Beckford MD",
-    "fullName": "Tamara Beckford MD",
-    "bio": "Dr. Tamara Beckford is a board-certified emergency physician, wife, and mom. She is the CEO of UR Caring Docs, where she helps help companies create amazing cultures and reduce employee burnout through curated self-care workshops. She hosts the Dr. Tamara Beckford Show, where she has interviewed over 165 physicians about self-care, wellness, and the fantastic things they are doing inside and outside clinical medicine. The podcast named after the show is ranked in the top 5% of all podcasts globally.  Dr. Beckford has been a guest on dozens of podcasts and has discussed the importance of wellness on many platforms, including Power to Fly, Scale Your Business Summit, The Grants Professionals Association, CenterPoint Energy, Physician Coach Support, and the Blaze Virtual Summit. She is also a Success Mentor at the EntreMD Business School (EBS), the largest school for physician entrepreneurs in the United States. Dr. Beckford was recognized as a COVID-19 Hero by the New Jersey Academy of Sciences for her work during the pandemic.\r\n",
-    "tagLine": "Emergency Physician, Wellness Coach, and CEO of UR Caring Docs",
-    "profilePicture": "https://sessionize.com/image/25ad-400o400o2-T1C4f99y8KnZh6pdishbou.png",
-    "sessions": [
-      {
-        "id": 407883,
-        "name": "Using self-care to tackle burnout and stress."
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
     "id": "5993951d-cd59-48b4-80b0-6f1c80e88de2",
     "firstName": "Tim",
     "lastName": "Banks",
@@ -410,6 +182,25 @@
       {
         "id": 461319,
         "name": "The Solace of You"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "5e8c6f6c-8208-4a1b-aa95-9e10db77ae96",
+    "firstName": "Wesley",
+    "lastName": "Faulkner",
+    "fullName": "Wesley Faulkner",
+    "bio": "Wesley Faulkner is a first-generation American, public speaker, and podcaster. He is a founding member of the government transparency group Open Austin and a staunch supporter of racial justice, workplace equity, and neurodiversity. His professional experience spans technology from AMD, Atlassian, Dell, IBM, and MongoDB. Wesley co-hosts the developer relations focused podcast Community Pulse and serves on the board for SXSW.",
+    "tagLine": "Developer Relations Professional",
+    "profilePicture": "https://sessionize.com/image/7256-400o400o2-XxXY9NZJCzDpa1WnTwRXZk.jpg",
+    "sessions": [
+      {
+        "id": 407869,
+        "name": "Doing Due Diligence On Your Next Employer"
       }
     ],
     "isTopSpeaker": false,
