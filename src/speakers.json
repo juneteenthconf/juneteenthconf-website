@@ -13,7 +13,7 @@
         "name": "Intro to Web Accessibility for Web developers and Designers"
       }
     ],
-    "isTopSpeaker": true,
+    "isTopSpeaker": false,
     "links": [],
     "questionAnswers": [],
     "categories": []
@@ -51,7 +51,7 @@
         "name": "Data Engineering Demystified"
       }
     ],
-    "isTopSpeaker": true,
+    "isTopSpeaker": false,
     "links": [],
     "questionAnswers": [],
     "categories": []
@@ -68,6 +68,25 @@
       {
         "id": 427002,
         "name": "4 Steps to Becoming a UX/UI Designer"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
+    "id": "35ef0809-19b6-400a-8e54-bed0feb41181",
+    "firstName": "Brandi",
+    "lastName": "Brown",
+    "fullName": "Brandi Brown",
+    "bio": "After taking a hiatus to raise three children, Brandi Brown re-entered the corporate world with a vengeance. Co-founding Juneteenth Conference with her husband and leading the local and national chapters of Black Excellence, Brandi is focused on DE&I in her workplace and beyond.",
+    "tagLine": "JuneteenthConf Cofounder and DEI Leader",
+    "profilePicture": "https://sessionize.com/image/60b9-400o400o2-LjFLmuzNsidWX5DyguP14b.jpeg",
+    "sessions": [
+      {
+        "id": 451027,
+        "name": "Right Within: A Discussion with Minda Harts"
       }
     ],
     "isTopSpeaker": false,
@@ -125,25 +144,6 @@
       {
         "id": 412049,
         "name": "How to Build a GPT-3 App with Nextjs, React and GitHub Copilot"
-      }
-    ],
-    "isTopSpeaker": false,
-    "links": [],
-    "questionAnswers": [],
-    "categories": []
-  },
-  {
-    "id": "48dde28b-9cbe-4acc-befb-e0ced1ff9ff8",
-    "firstName": "Michael",
-    "lastName": "Brown",
-    "fullName": "Michael Brown",
-    "bio": "Michael Brown has 25 years of software development experience primarily as a consultant. He has designed and developed solutions for a multitude of organizations both public and private from small startups to fortune five hundred companies across an array of industries. He has recently joined Microsoft where he brings his experience and expertise to help customers leverage Azure services to create solutions.",
-    "tagLine": "Senior Software Engineer at Microsoft",
-    "profilePicture": "https://sessionize.com/image/644c-400o400o2-8b-9cbe-4acc-befb-e0ced1ff9ff8.13239c46-b1fa-4f54-8282-d184c77eacb8.jpg",
-    "sessions": [
-      {
-        "id": 451027,
-        "name": "Right Within: A Discussion with Minda Harts"
       }
     ],
     "isTopSpeaker": false,
