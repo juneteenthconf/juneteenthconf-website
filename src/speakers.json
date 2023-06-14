@@ -76,11 +76,30 @@
     "categories": []
   },
   {
+    "id": "252c2379-b93b-4109-a0d1-d96fae88f42e",
+    "firstName": "Athena ",
+    "lastName": "Sayaka",
+    "fullName": "Athena Sayaka",
+    "bio": "Athena marries neuroscience and spirituality to bring embodied yet practical insight to the stage. She is passionate about showing neurodivergent creators how to develop supportive practices that help them navigate uncertainty with confidence.\r\n\r\nAthena hosts the What Happens In Between podcast which highlights the unsexy middle bits of creating something meaningful.\r\n\r\nShe earned her degree from the Wharton School at University of Pennsylvania and utilizes a variety of modalities in her work. \r\n\r\nYou can learn more about Athena at athenasayaka.com !",
+    "tagLine": "Speaker | Writer | Neurodivergent Mystic",
+    "profilePicture": "https://sessionize.com/image/3b4b-400o400o2-7y2NfzRrQRPkq9Jei19yq5.jpg",
+    "sessions": [
+      {
+        "id": 425399,
+        "name": "How To Leverage Your Neurodivergence At Work"
+      }
+    ],
+    "isTopSpeaker": false,
+    "links": [],
+    "questionAnswers": [],
+    "categories": []
+  },
+  {
     "id": "35ef0809-19b6-400a-8e54-bed0feb41181",
     "firstName": "Brandi",
     "lastName": "Brown",
     "fullName": "Brandi Brown",
-    "bio": "After taking a hiatus to raise three children, Brandi Brown re-entered the corporate world with a vengeance. Co-founding Juneteenth Conference with her husband and leading the local and national chapters of Black Excellence, Brandi is focused on DE&I in her workplace and beyond.",
+    "bio": "After a corporate hiatus dedicated to family and acting, Brandi re-entered the business world with a renewed purpose. Co-founder of Juneteenth Conference, she leverages her expertise in customer service, community engagement, and human resources to drive positive change. Brandi's unwavering focus is on Diversity, Equity, and Inclusion (DEI) in and beyond her workplace. She is dedicated to fostering an inclusive society.",
     "tagLine": "JuneteenthConf Cofounder and DEI Leader",
     "profilePicture": "https://sessionize.com/image/60b9-400o400o2-LjFLmuzNsidWX5DyguP14b.jpeg",
     "sessions": [
