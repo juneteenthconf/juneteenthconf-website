@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InteriorNav from '../../components/InteriorNav.astro';
+import PageHero from '../../components/PageHero.astro';
+import InteriorFooter from '../../components/InteriorFooter.astro';
+import RevealObserver from '../../components/RevealObserver.astro';
+
+const milestones = [
+  { year: '2020', title: 'The Spark', color: '#c84342', text: 'In June 2020, a pandemic had the world at home and the murder of George Floyd forced a national reckoning on race. Michael Brown, a software engineer at Microsoft, channeled grief into action — organizing the first Juneteenth Conference in just 16 days.' },
+  { year: '2020', title: '20,000+ Viewers', color: '#D4A843', text: 'The inaugural virtual event drew over 20,000 live viewers, proving the demand for a space that centers Black technologists. Business Insider covered the story, amplifying the movement.' },
+  { year: '2021', title: 'Year Two', color: '#55ac64', text: 'The conference returned with an expanded lineup, deeper community engagement, and the launch of mentorship programming to support Black professionals beyond the event.' },
+  { year: '2023', title: 'Building the Table', color: '#c84342', text: 'JuneteenthConf grew into a full nonprofit with three programs — Conference, Accelerator, and Mentorship — and a board of directors committed to long-term impact. The theme "Addressing the Digital Divide" anchored two days of sessions.' },
+  { year: '2026', title: 'The Return', color: '#D4A843', text: 'After a strategic pause, JuneteenthConf returns to Chicago for its most ambitious event yet. Two days, 20 sessions, a keynote by Madison Butler, and a community dinner cruise. The theme: Building Our Own Table.' },
+];
+---
+
+<BaseLayout
+  title="Our Mission — Juneteenth Conference 2026"
+  description="How a pandemic and a reckoning led to a movement. The founding story of JuneteenthConf."
+>
+  <InteriorNav current="About" />
+
+  <main id="main-content">
+    <PageHero
+      title="Our Mission"
+      subtitle="How a pandemic and a reckoning led to a movement."
+      accent="#c84342"
+    />
+
+    <section style="background: #231c2d; padding: 80px 24px 100px;">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <p class="reveal mission-intro">
+          JuneteenthConf exists because Black technologists deserve more than a seat at someone else's table. We're building our own — with the sessions, mentorship, and community to make it permanent.
+        </p>
+
+        <div class="mission-timeline">
+          {milestones.map(m => (
+            <div class="reveal timeline-item">
+              <div class="timeline-marker" style={`background: ${m.color};`}>
+                <span class="timeline-year">{m.year}</span>
+              </div>
+              <div class="timeline-content">
+                <h2 class="timeline-title">{m.title}</h2>
+                <p class="timeline-text">{m.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="reveal mission-quote">
+          <blockquote>
+            "I wanted to create something that celebrated us — not as a reaction, but as a declaration."
+          </blockquote>
+          <cite>— Michael Brown, Founder</cite>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <InteriorFooter />
+  <RevealObserver />
+</BaseLayout>
+
+<style>
+  .mission-intro {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(16px, 2vw, 20px);
+    color: rgba(240, 237, 230, 0.6);
+    line-height: 1.8; max-width: 650px;
+    margin-bottom: 72px;
+  }
+
+  .mission-timeline {
+    position: relative;
+    padding-left: 40px;
+  }
+  .mission-timeline::before {
+    content: '';
+    position: absolute; left: 15px; top: 8px; bottom: 8px;
+    width: 1px;
+    background: rgba(240, 237, 230, 0.08);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 48px;
+  }
+  .timeline-item:last-child { margin-bottom: 0; }
+
+  .timeline-marker {
+    position: absolute; left: -40px; top: 4px;
+    width: 30px; height: 30px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .timeline-year {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 9px; font-weight: 700; color: #fff;
+    letter-spacing: 0.5px;
+  }
+
+  .timeline-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 20px;
+    color: #f0ede6; margin-bottom: 8px;
+  }
+  .timeline-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.7;
+    color: rgba(240, 237, 230, 0.5);
+  }
+
+  .mission-quote {
+    margin-top: 80px;
+    border-left: 3px solid #D4A843;
+    padding-left: 24px;
+  }
+  .mission-quote blockquote {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(18px, 2.5vw, 24px);
+    color: rgba(240, 237, 230, 0.8);
+    line-height: 1.6; font-weight: 300;
+    margin: 0;
+  }
+  .mission-quote cite {
+    display: block; margin-top: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; font-style: normal;
+    color: rgba(240, 237, 230, 0.4);
+  }
+</style>

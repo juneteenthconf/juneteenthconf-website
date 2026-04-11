@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InteriorNav from '../../components/InteriorNav.astro';
+import PageHero from '../../components/PageHero.astro';
+import InteriorFooter from '../../components/InteriorFooter.astro';
+import RevealObserver from '../../components/RevealObserver.astro';
+
+const stats = [
+  { value: '20,000+', label: 'Viewers at Inaugural Event', color: '#c84342' },
+  { value: '79', label: 'Videos on YouTube', color: '#55ac64' },
+  { value: '450+', label: 'YouTube Subscribers', color: '#D4A843' },
+  { value: '2,500+', label: 'Newsletter Subscribers', color: '#c84342' },
+  { value: '40%', label: 'Newsletter Open Rate', color: '#55ac64' },
+  { value: '3', label: 'Conferences Held', color: '#D4A843' },
+];
+---
+
+<BaseLayout
+  title="Press & Media — Juneteenth Conference 2026"
+  description="Coverage, stats, and media resources for JuneteenthConf."
+>
+  <InteriorNav current="About" />
+
+  <main id="main-content">
+    <PageHero
+      title="Press & Media"
+      subtitle="Coverage, stats, and media resources."
+      accent="#c84342"
+    />
+
+    <section style="background: #231c2d; padding: 80px 24px 100px;">
+      <div style="max-width: 900px; margin: 0 auto;">
+
+        <!-- Featured Coverage -->
+        <div class="reveal press-featured">
+          <span class="press-label">Featured Coverage</span>
+          <a href="https://www.businessinsider.com/microsoft-engineer-michael-brown-organizes-juneteenthconf-black-tech-2020-6" target="_blank" rel="noopener" class="press-feature-link">
+            <h2 class="press-feature-title">Business Insider</h2>
+            <p class="press-feature-desc">"Microsoft engineer Michael Brown organizes JuneteenthConf to celebrate Black excellence in tech"</p>
+            <span class="press-feature-date">June 2020</span>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="reveal press-stats-section">
+          <h2 class="press-section-title">By the Numbers</h2>
+          <div class="press-stats-grid">
+            {stats.map(stat => (
+              <div class="press-stat">
+                <span class="press-stat-value" style={`color: ${stat.color};`}>{stat.value}</span>
+                <span class="press-stat-label">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Channels -->
+        <div class="reveal press-channels">
+          <h2 class="press-section-title">Find Us</h2>
+          <div class="press-channel-grid">
+            <a href="https://youtube.com/@juneteenthconf" target="_blank" rel="noopener" class="press-channel">
+              <span class="press-channel-name">YouTube</span>
+              <span class="press-channel-detail">79 videos &bull; 450+ subscribers</span>
+            </a>
+            <a href="mailto:info@juneteenthconf.com" class="press-channel">
+              <span class="press-channel-name">Media Inquiries</span>
+              <span class="press-channel-detail">info@juneteenthconf.com</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <InteriorFooter />
+  <RevealObserver />
+</BaseLayout>
+
+<style>
+  .press-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(240, 237, 230, 0.3);
+    display: block; margin-bottom: 20px;
+  }
+
+  .press-featured {
+    margin-bottom: 72px;
+  }
+  .press-feature-link {
+    display: block;
+    background: rgba(45, 36, 56, 0.5);
+    border: 1px solid rgba(240, 237, 230, 0.06);
+    border-left: 3px solid #c84342;
+    border-radius: 12px; padding: 32px;
+    text-decoration: none; color: #f0ede6;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .press-feature-link:hover {
+    border-color: rgba(240, 237, 230, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  }
+  .press-feature-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .press-feature-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.6;
+    color: rgba(240, 237, 230, 0.5);
+    margin-bottom: 12px;
+  }
+  .press-feature-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(240, 237, 230, 0.3);
+  }
+
+  .press-section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 24px;
+    color: #f0ede6; margin-bottom: 32px;
+  }
+
+  .press-stats-section {
+    margin-bottom: 72px;
+  }
+  .press-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .press-stat {
+    text-align: center;
+  }
+  .press-stat-value {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 36px;
+    margin-bottom: 6px;
+  }
+  .press-stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(240, 237, 230, 0.4);
+  }
+
+  .press-channel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .press-channel {
+    display: block;
+    background: rgba(45, 36, 56, 0.5);
+    border: 1px solid rgba(240, 237, 230, 0.06);
+    border-radius: 12px; padding: 24px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .press-channel:hover {
+    border-color: rgba(240, 237, 230, 0.15);
+    transform: translateY(-2px);
+  }
+  .press-channel-name {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 18px;
+    color: #f0ede6; margin-bottom: 6px;
+  }
+  .press-channel-detail {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(240, 237, 230, 0.4);
+  }
+
+  @media (max-width: 768px) {
+    .press-stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .press-channel-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 480px) {
+    .press-stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

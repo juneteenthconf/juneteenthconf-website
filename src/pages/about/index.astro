@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InteriorNav from '../../components/InteriorNav.astro';
+import PageHero from '../../components/PageHero.astro';
+import InteriorFooter from '../../components/InteriorFooter.astro';
+import RevealObserver from '../../components/RevealObserver.astro';
+
+const cards = [
+  {
+    href: '/about/mission/',
+    title: 'Our Mission',
+    desc: 'How a pandemic and a reckoning led to a movement. The founding story of JuneteenthConf.',
+    accent: '#c84342',
+  },
+  {
+    href: '/about/programs/',
+    title: 'Programs',
+    desc: 'Conference. Accelerator. Mentorship. Three programs, one mission.',
+    accent: '#55ac64',
+  },
+  {
+    href: '/about/board/',
+    title: 'Board of Directors',
+    desc: 'Meet the people building the table.',
+    accent: '#D4A843',
+  },
+  {
+    href: '/about/press/',
+    title: 'Press & Media',
+    desc: 'Coverage, stats, and media resources.',
+    accent: '#c84342',
+  },
+];
+---
+
+<BaseLayout
+  title="About — Juneteenth Conference 2026"
+  description="Learn about JuneteenthConf — our mission, programs, leadership, and press coverage."
+>
+  <InteriorNav current="About" />
+
+  <main id="main-content">
+    <PageHero
+      title="About JuneteenthConf"
+      subtitle="Celebrating and elevating Black excellence in technology since 2020."
+    />
+
+    <section style="background: #231c2d; padding: 80px 24px 100px;">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <p class="reveal" style="font-family: 'Inter', sans-serif; font-size: clamp(16px, 2vw, 20px); color: rgba(240,237,230,0.6); line-height: 1.8; max-width: 650px; margin-bottom: 64px;">
+          JuneteenthConf is a nonprofit organization creating space for Black technologists to connect, learn, and grow. What started as a two-week sprint in 2020 has become a movement &mdash; three programs, thousands of community members, and a permanent seat at the table.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+          {cards.map(card => (
+            <a href={card.href} class="reveal about-card" style={`border-left: 3px solid ${card.accent};`}>
+              <h2 class="about-card-title">{card.title}</h2>
+              <p class="about-card-desc">{card.desc}</p>
+              <span class="about-card-arrow" style={`color: ${card.accent};`}>&rarr;</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <InteriorFooter />
+  <RevealObserver />
+</BaseLayout>
+
+<style>
+  .about-card {
+    background: rgba(45, 36, 56, 0.5);
+    border: 1px solid rgba(240, 237, 230, 0.06);
+    border-radius: 12px; padding: 32px;
+    text-decoration: none; color: #f0ede6;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    display: block; position: relative;
+  }
+  .about-card:hover {
+    border-color: rgba(240, 237, 230, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+  .about-card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 20px; margin-bottom: 10px;
+  }
+  .about-card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; line-height: 1.6; opacity: 0.5;
+  }
+  .about-card-arrow {
+    position: absolute; top: 32px; right: 28px;
+    font-size: 20px; opacity: 0.4;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .about-card:hover .about-card-arrow {
+    opacity: 1; transform: translateX(4px);
+  }
+
+  @media (max-width: 768px) {
+    div[style*="grid-template-columns: repeat(2"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

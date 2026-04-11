@@ -1,0 +1,69 @@
+---
+const names = [
+  { name: 'Michael B.', size: 18, color: 'rgba(255,255,255,0.12)' },
+  { name: 'Madison B.', size: 14, color: 'rgba(200,67,66,0.25)' },
+  { name: 'Brandi J.B.', size: 22, color: 'rgba(255,255,255,0.08)' },
+  { name: 'Kimeka C.', size: 12, color: 'rgba(212,168,67,0.2)' },
+  { name: 'Cotishea A.', size: 16, color: 'rgba(85,172,100,0.18)' },
+  { name: 'Courtney G.', size: 20, color: 'rgba(255,255,255,0.1)' },
+  { name: 'Lyn M.', size: 13, color: 'rgba(200,67,66,0.18)' },
+  { name: 'Angie J.', size: 17, color: 'rgba(255,255,255,0.07)' },
+  { name: 'Jerome H.', size: 15, color: 'rgba(212,168,67,0.18)' },
+  { name: 'Tim B.', size: 21, color: 'rgba(85,172,100,0.12)' },
+  { name: 'Minda H.', size: 11, color: 'rgba(255,255,255,0.08)' },
+  { name: 'Wesley F.', size: 19, color: 'rgba(200,67,66,0.2)' },
+  { name: 'Alaxandria F.', size: 14, color: 'rgba(255,255,255,0.1)' },
+];
+---
+
+<section class="scene" style="min-height: auto; background: linear-gradient(180deg, #231c2d, #1a1520);">
+  <div style="text-align: center; max-width: 1000px; margin: 0 auto; position: relative; z-index: 2;">
+    <div class="reveal">
+      <p style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.25); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px;">This table is for everyone</p>
+      <span class="type-massive" style="font-size: clamp(28px, 6vw, 72px); display: block; color: rgba(255,255,255,0.85); margin-bottom: 40px;">Add your name to the table.</span>
+    </div>
+    <div class="reveal name-wall" id="nameWall" aria-label="Community name wall">
+      {names.map((n) => (
+        <span style={`font-size:${n.size}px; color:${n.color};`}>{n.name}</span>
+      ))}
+    </div>
+    <div class="reveal" style="display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
+      <label for="name-input" class="sr-only">Your name</label>
+      <input type="text" id="name-input" class="name-wall-input" placeholder="Your name" maxlength="40" autocomplete="name" />
+      <button type="button" class="name-wall-add" id="addNameBtn">Take your seat</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initNameWall() {
+    const wall = document.getElementById('nameWall');
+    const input = document.getElementById('name-input') as HTMLInputElement;
+    const btn = document.getElementById('addNameBtn');
+    if (!wall || !input || !btn) return;
+
+    const colors = ['rgba(200,67,66,0.35)', 'rgba(212,168,67,0.3)', 'rgba(85,172,100,0.25)', 'rgba(255,255,255,0.18)', 'rgba(255,255,255,0.12)'];
+    const sizes = [13, 15, 17, 19, 21, 23, 25];
+
+    function addName() {
+      const name = input.value.trim();
+      if (!name) return;
+      const span = document.createElement('span');
+      span.textContent = name;
+      span.style.fontSize = sizes[Math.floor(Math.random() * sizes.length)] + 'px';
+      span.style.color = '#D4A843';
+      span.classList.add('name-etch');
+      wall!.appendChild(span);
+      setTimeout(() => {
+        span.style.transition = 'color 1.5s ease';
+        span.style.color = colors[Math.floor(Math.random() * colors.length)];
+      }, 1000);
+      input.value = ''; input.focus();
+    }
+
+    btn.addEventListener('click', addName);
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') addName(); });
+  }
+
+  initNameWall();
+</script>

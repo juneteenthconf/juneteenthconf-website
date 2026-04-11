@@ -1,0 +1,56 @@
+---
+---
+
+<section class="scene" style="min-height: 80vh; background: linear-gradient(180deg, #1a1520, #231c2d);">
+  <div class="chaos-container" id="chaosContainer" style="position: relative; z-index: 2;">
+    <div class="chaos-word" id="cw-building" style="font-size: clamp(40px, 9vw, 110px); color: rgba(255,255,255,0.8);">Building</div>
+    <div class="chaos-word" id="cw-our" style="font-size: clamp(36px, 7vw, 90px); color: rgba(200,67,66,0.9);">Our</div>
+    <div class="chaos-word" id="cw-own" style="font-size: clamp(36px, 7vw, 90px); color: rgba(212,168,67,0.9);">Own</div>
+    <div class="chaos-word" id="cw-table" style="font-size: clamp(52px, 12vw, 150px); color: #c84342;">Table</div>
+  </div>
+</section>
+
+<script>
+  function initChaos() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const container = document.getElementById('chaosContainer');
+    if (!container) return;
+    const words = container.querySelectorAll<HTMLElement>('.chaos-word');
+    const scatter = [
+      { top: '8%', left: '15%', rot: -18, scale: 0.7 },
+      { top: '75%', left: '70%', rot: 12, scale: 0.9 },
+      { top: '20%', left: '72%', rot: -8, scale: 0.6 },
+      { top: '65%', left: '10%', rot: 22, scale: 1.1 },
+    ];
+
+    words.forEach((w, i) => {
+      const p = scatter[i];
+      w.style.top = p.top; w.style.left = p.left;
+      w.style.transform = `rotate(${p.rot}deg) scale(${p.scale})`;
+      w.style.opacity = '0.3';
+    });
+
+    let done = false;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !done) {
+          done = true;
+          setTimeout(() => {
+            words.forEach((w) => {
+              w.style.position = 'relative'; w.style.top = 'auto'; w.style.left = 'auto';
+              w.style.transform = 'rotate(0deg) scale(1)'; w.style.opacity = '1';
+            });
+            container!.style.flexDirection = 'column';
+            container!.style.alignItems = 'center';
+            container!.style.gap = '0px';
+          }, 600);
+        }
+      });
+    }, { threshold: 0.5 });
+    obs.observe(container);
+  }
+
+  initChaos();
+</script>

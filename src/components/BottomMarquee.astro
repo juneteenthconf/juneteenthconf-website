@@ -1,0 +1,10 @@
+---
+const items = ['June 19-20, 2026', 'Chicago', 'Juneteenth Conference', 'Building Our Own Table'];
+const repeated = [...items, ...items, ...items];
+---
+
+<div class="marquee-container" role="marquee" aria-label="Conference details">
+  <div class="marquee-track">
+    {repeated.map((text) => <span>{text}</span>)}
+  </div>
+</div>

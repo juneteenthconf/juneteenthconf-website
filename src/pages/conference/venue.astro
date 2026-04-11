@@ -1,0 +1,157 @@
+---
+import InteriorLayout from '../../layouts/InteriorLayout.astro';
+---
+
+<InteriorLayout
+  title="Venue — Juneteenth Conference 2026"
+  description="Juneteenth Conference 2026 takes place in Chicago, IL. Venue details coming soon."
+  current="Venue"
+  heroTitle="Venue"
+  heroSubtitle="Chicago, IL"
+  heroAccent="green"
+>
+  <section class="interior-section">
+    <div class="interior-content">
+      <div class="reveal-stagger">
+        <div class="reveal coming-soon-block">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <h2 class="coming-soon-title">Venue details coming soon.</h2>
+          <p class="coming-soon-text">
+            We're finalizing the perfect space for Juneteenth Conference 2026 in Chicago. Stay tuned for the full venue announcement.
+          </p>
+        </div>
+
+        <div class="reveal city-block">
+          <h3 class="city-heading">Why Chicago</h3>
+          <p class="city-text">
+            Chicago is home to one of the largest and most vibrant Black communities in the country. From its deep roots in Black culture, music, and innovation to its thriving tech ecosystem, Chicago is the ideal city to host a conference celebrating Black excellence in technology.
+          </p>
+        </div>
+
+        <div class="reveal travel-block">
+          <h3 class="travel-heading">Getting Here</h3>
+          <div class="travel-grid">
+            <div class="travel-card">
+              <span class="travel-label">By Air</span>
+              <p class="travel-text">Chicago is served by two major airports: O'Hare International (ORD) and Midway International (MDW), with direct flights from most major cities.</p>
+            </div>
+            <div class="travel-card">
+              <span class="travel-label">By Train</span>
+              <p class="travel-text">Chicago's Union Station is a major Amtrak hub with service from cities across the Midwest and beyond.</p>
+            </div>
+            <div class="travel-card">
+              <span class="travel-label">Getting Around</span>
+              <p class="travel-text">The CTA (Chicago Transit Authority) offers extensive bus and rail service. Rideshare services are also widely available.</p>
+            </div>
+            <div class="travel-card">
+              <span class="travel-label">Accommodations</span>
+              <p class="travel-text">Hotel block information will be shared once the venue is confirmed. Chicago offers options at every price point.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal newsletter-block">
+          <p class="newsletter-prompt">Get notified when venue details are announced.</p>
+          <form action="https://juneteenthconf.us10.list-manage.com/subscribe/post?u=07ef187a16bc5cd4f2375c824&id=4d06862da4" method="post" class="newsletter-form" aria-label="Newsletter signup">
+            <label for="venue-email" class="sr-only">Email address</label>
+            <input type="email" name="EMAIL" id="venue-email" class="newsletter-input" placeholder="your@email.com" required />
+            <button type="submit" class="newsletter-btn">Notify Me</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</InteriorLayout>
+
+<style>
+  .interior-section {
+    padding: 60px 24px 80px;
+    background: #231c2d;
+  }
+  .interior-content {
+    max-width: 750px; margin: 0 auto;
+  }
+  .coming-soon-block {
+    text-align: center; margin-bottom: 56px;
+  }
+  .coming-soon-badge {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 12px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: #55ac64; border: 1px solid rgba(85, 172, 100, 0.3);
+    padding: 6px 16px; border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  .coming-soon-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: clamp(22px, 4vw, 32px);
+    color: #f0ede6; margin-bottom: 16px;
+  }
+  .coming-soon-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; color: rgba(240, 237, 230, 0.55);
+    line-height: 1.7;
+  }
+  .city-block {
+    margin-bottom: 56px;
+    border-left: 4px solid rgba(85, 172, 100, 0.4);
+    padding-left: 24px;
+  }
+  .city-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 22px;
+    color: #55ac64; margin-bottom: 16px;
+  }
+  .city-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; color: rgba(240, 237, 230, 0.6);
+    line-height: 1.8;
+  }
+  .travel-block {
+    margin-bottom: 48px;
+  }
+  .travel-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 16px;
+    color: rgba(240, 237, 230, 0.4);
+    text-transform: uppercase; letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+  .travel-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .travel-card {
+    background: rgba(45, 36, 56, 0.4);
+    border: 1px solid rgba(240, 237, 230, 0.06);
+    border-radius: 8px; padding: 24px;
+  }
+  .travel-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 14px;
+    color: #f0ede6; display: block; margin-bottom: 8px;
+  }
+  .travel-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; color: rgba(240, 237, 230, 0.5);
+    line-height: 1.6;
+  }
+  .newsletter-block {
+    text-align: center; padding-top: 16px;
+  }
+  .newsletter-prompt {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .newsletter-form {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 12px;
+  }
+
+  @media (max-width: 640px) {
+    .travel-grid { grid-template-columns: 1fr; }
+  }
+</style>

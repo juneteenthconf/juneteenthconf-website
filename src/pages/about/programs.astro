@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InteriorNav from '../../components/InteriorNav.astro';
+import PageHero from '../../components/PageHero.astro';
+import InteriorFooter from '../../components/InteriorFooter.astro';
+import RevealObserver from '../../components/RevealObserver.astro';
+
+const programs = [
+  {
+    name: 'Conference',
+    color: '#c84342',
+    tagline: 'Two days. 20 sessions. One community.',
+    description: 'The Juneteenth Conference is an annual two-day gathering of Black technologists across engineering, data science, security, entrepreneurship, and tech leadership. Curated sessions feature industry leaders sharing hard-won knowledge, with networking and community-building woven throughout.',
+    details: [
+      '20 curated sessions across multiple tracks',
+      'Keynote and fireside chats with industry leaders',
+      'Attendee dinner cruise and networking events',
+      'Past speakers include Angie Jones, Jerome Hardaway, Tim Banks, Minda Harts, and Wesley Faulkner',
+    ],
+  },
+  {
+    name: 'Accelerator',
+    color: '#55ac64',
+    tagline: 'From potential to pipeline.',
+    description: 'The Tech Workforce Accelerator provides hands-on project experience, mentorship, and career pipeline support for Black professionals entering or advancing in tech. Participants work on real-world projects with experienced mentors, building portfolios and professional networks.',
+    details: [
+      'Hands-on project experience with real deliverables',
+      'Mentorship from senior technologists',
+      'Career pipeline support and job placement assistance',
+      'Portfolio building and interview preparation',
+    ],
+  },
+  {
+    name: 'Mentorship',
+    color: '#D4A843',
+    tagline: 'Guidance that compounds.',
+    description: 'The Mentorship Program pairs aspiring technologists with experienced professionals for structured upskilling, portfolio building, and career guidance. Relationships are built to last beyond the program, creating a network of support that grows with each cohort.',
+    details: [
+      'Structured pairing with experienced professionals',
+      'Upskilling and career development focus',
+      'Portfolio building and professional branding',
+      'Long-term relationship building and alumni network',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Programs — Juneteenth Conference 2026"
+  description="Conference. Accelerator. Mentorship. Three programs, one mission — creating space for Black technologists."
+>
+  <InteriorNav current="About" />
+
+  <main id="main-content">
+    <PageHero
+      title="Programs"
+      subtitle="Three programs, one mission — creating space for Black technologists to connect, learn, and grow."
+      accent="#55ac64"
+    />
+
+    <section style="background: #231c2d; padding: 80px 24px 100px;">
+      <div style="max-width: 900px; margin: 0 auto;">
+        {programs.map((prog, i) => (
+          <div class={`reveal program-section ${i < programs.length - 1 ? 'program-section-bordered' : ''}`}>
+            <div class="program-header">
+              <span class="program-dot" style={`background: ${prog.color};`}></span>
+              <h2 class="program-name" style={`color: ${prog.color};`}>{prog.name}</h2>
+            </div>
+            <p class="program-tagline">{prog.tagline}</p>
+            <p class="program-description">{prog.description}</p>
+            <ul class="program-details">
+              {prog.details.map(d => (
+                <li style={`--dot-color: ${prog.color};`}>{d}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <InteriorFooter />
+  <RevealObserver />
+</BaseLayout>
+
+<style>
+  .program-section {
+    padding-bottom: 64px;
+    margin-bottom: 64px;
+  }
+  .program-section-bordered {
+    border-bottom: 1px solid rgba(240, 237, 230, 0.06);
+  }
+
+  .program-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 12px;
+  }
+  .program-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .program-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: clamp(28px, 4vw, 40px);
+  }
+
+  .program-tagline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px; font-weight: 300;
+    color: rgba(240, 237, 230, 0.7);
+    margin-bottom: 20px;
+  }
+  .program-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.8;
+    color: rgba(240, 237, 230, 0.5);
+    max-width: 700px;
+    margin-bottom: 28px;
+  }
+
+  .program-details {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .program-details li {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; line-height: 1.6;
+    color: rgba(240, 237, 230, 0.45);
+    padding: 6px 0 6px 24px;
+    position: relative;
+  }
+  .program-details li::before {
+    content: '';
+    position: absolute; left: 0; top: 14px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--dot-color);
+    opacity: 0.6;
+  }
+</style>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+  <circle cx="30" cy="30" r="30" fill="url(#g)"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#c84342"/>
+      <stop offset="100%" stop-color="#D4A843"/>
+    </linearGradient>
+  </defs>
+  <text x="30" y="38" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="22" fill="#fff">JC</text>
+</svg>

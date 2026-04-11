@@ -1,0 +1,161 @@
+---
+import InteriorLayout from '../../layouts/InteriorLayout.astro';
+---
+
+<InteriorLayout
+  title="Volunteer — Juneteenth Conference 2026"
+  description="Volunteer at Juneteenth Conference 2026. Help us build something special and earn a free conference pass."
+  current="Conference"
+  heroTitle="Volunteer"
+  heroSubtitle="Help us build our table"
+  heroAccent="green"
+>
+  <section class="interior-section">
+    <div class="interior-content">
+      <div class="reveal-stagger">
+        <p class="reveal section-lede">
+          Juneteenth Conference is powered by volunteers who believe in celebrating Black excellence in tech. Join the team and help us deliver an unforgettable experience.
+        </p>
+
+        <div class="reveal perks-block">
+          <h3 class="perks-heading">Volunteer Perks</h3>
+          <div class="perks-grid">
+            <div class="perk-card">
+              <span class="perk-icon">&#9733;</span>
+              <span class="perk-text">Free conference pass</span>
+            </div>
+            <div class="perk-card">
+              <span class="perk-icon">&#9733;</span>
+              <span class="perk-text">Exclusive volunteer t-shirt</span>
+            </div>
+            <div class="perk-card">
+              <span class="perk-icon">&#9733;</span>
+              <span class="perk-text">Networking with speakers &amp; attendees</span>
+            </div>
+            <div class="perk-card">
+              <span class="perk-icon">&#9733;</span>
+              <span class="perk-text">Be part of something meaningful</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal roles-block">
+          <h3 class="roles-heading">Volunteer Roles</h3>
+          <div class="roles-grid">
+            <div class="role-card">
+              <h4 class="role-name">Registration &amp; Check-In</h4>
+              <p class="role-desc">Welcome attendees, manage badge distribution, and ensure a smooth arrival experience.</p>
+            </div>
+            <div class="role-card">
+              <h4 class="role-name">Session Support</h4>
+              <p class="role-desc">Assist speakers with room setup, A/V needs, timekeeping, and audience Q&amp;A.</p>
+            </div>
+            <div class="role-card">
+              <h4 class="role-name">Wayfinding &amp; Hospitality</h4>
+              <p class="role-desc">Guide attendees around the venue and help everyone feel welcome and oriented.</p>
+            </div>
+            <div class="role-card">
+              <h4 class="role-name">Social Media &amp; Content</h4>
+              <p class="role-desc">Capture photos, live-tweet sessions, and help share the conference experience online.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal cta-block">
+          <h3 class="cta-heading">Ready to volunteer?</h3>
+          <p class="cta-text">Send us a note and tell us a bit about yourself and how you'd like to help.</p>
+          <a href="mailto:volunteers@juneteenthconf.com?subject=Volunteer%20Interest" class="cta-primary" style="margin-top: 20px;">Apply to Volunteer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</InteriorLayout>
+
+<style>
+  .interior-section {
+    padding: 60px 24px 80px;
+    background: #231c2d;
+  }
+  .interior-content {
+    max-width: 800px; margin: 0 auto;
+  }
+  .section-lede {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(17px, 2vw, 21px);
+    color: rgba(240, 237, 230, 0.7);
+    line-height: 1.8; margin-bottom: 48px;
+  }
+  .perks-block {
+    margin-bottom: 56px;
+  }
+  .perks-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 16px;
+    color: rgba(240, 237, 230, 0.4);
+    text-transform: uppercase; letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+  .perks-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .perk-card {
+    background: rgba(45, 36, 56, 0.4);
+    border: 1px solid rgba(85, 172, 100, 0.15);
+    border-radius: 8px; padding: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .perk-icon {
+    color: #55ac64; font-size: 16px; flex-shrink: 0;
+  }
+  .perk-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; color: rgba(240, 237, 230, 0.7);
+  }
+  .roles-block {
+    margin-bottom: 56px;
+  }
+  .roles-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 16px;
+    color: rgba(240, 237, 230, 0.4);
+    text-transform: uppercase; letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+  .roles-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .role-card {
+    background: rgba(45, 36, 56, 0.3);
+    border: 1px solid rgba(240, 237, 230, 0.06);
+    border-radius: 8px; padding: 24px;
+  }
+  .role-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 17px;
+    color: #f0ede6; margin-bottom: 8px;
+  }
+  .role-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; color: rgba(240, 237, 230, 0.5);
+    line-height: 1.7;
+  }
+  .cta-block {
+    text-align: center; padding-top: 16px;
+  }
+  .cta-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 24px;
+    color: #f0ede6; margin-bottom: 12px;
+  }
+  .cta-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; color: rgba(240, 237, 230, 0.55);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 640px) {
+    .perks-grid, .roles-grid { grid-template-columns: 1fr; }
+  }
+</style>

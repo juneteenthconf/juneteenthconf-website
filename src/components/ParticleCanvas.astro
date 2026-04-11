@@ -1,0 +1,58 @@
+---
+---
+
+<canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+<script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function initParticles() {
+    if (prefersReducedMotion) return;
+    const canvas = document.getElementById('particleCanvas') as HTMLCanvasElement;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d')!;
+    const particles: Array<{x:number; y:number; vx:number; vy:number; size:number; opacity:number; pulse:number}> = [];
+    const count = 60;
+
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.3, vy: -Math.random() * 0.5 - 0.1,
+        size: Math.random() * 2 + 0.5,
+        opacity: Math.random() * 0.4 + 0.1,
+        pulse: Math.random() * Math.PI * 2
+      });
+    }
+
+    function getColor() {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const p = docH > 0 ? window.scrollY / docH : 0;
+      if (p < 0.3) { const t = p / 0.3; return { r: Math.round(60 + t * 140), g: Math.round(20 + t * 47), b: Math.round(30 + t * 36) }; }
+      else if (p < 0.6) { const t = (p - 0.3) / 0.3; return { r: Math.round(200 - t * 12), g: Math.round(67 + t * 101), b: Math.round(66 - t) }; }
+      else { const t = (p - 0.6) / 0.4; return { r: Math.round(188 - t * 103), g: Math.round(168 + t * 4), b: Math.round(65 + t * 35) }; }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const c = getColor();
+      for (const p of particles) {
+        p.x += p.vx; p.y += p.vy; p.pulse += 0.02;
+        if (p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
+        if (p.x < -10) p.x = canvas.width + 10;
+        if (p.x > canvas.width + 10) p.x = -10;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${c.r},${c.g},${c.b},${p.opacity * (0.5 + 0.5 * Math.sin(p.pulse))})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }
+
+  initParticles();
+</script>

@@ -1,0 +1,44 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  accent?: string;
+}
+const { title, subtitle, accent = '#D4A843' } = Astro.props;
+---
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <h1 class="page-hero-title" style={`border-color: ${accent};`}>{title}</h1>
+    {subtitle && <p class="page-hero-subtitle">{subtitle}</p>}
+  </div>
+</section>
+
+<style>
+  .page-hero {
+    padding: 140px 24px 64px;
+    background: linear-gradient(180deg, #0a0810 0%, #231c2d 100%);
+    position: relative; overflow: hidden;
+  }
+  .page-hero::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+  .page-hero-inner {
+    max-width: 900px; margin: 0 auto; position: relative; z-index: 1;
+  }
+  .page-hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: clamp(36px, 6vw, 64px);
+    color: #f0ede6; line-height: 1.1;
+    border-left: 4px solid; padding-left: 24px;
+  }
+  .page-hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(15px, 1.8vw, 18px);
+    color: rgba(240, 237, 230, 0.5);
+    line-height: 1.7; margin-top: 20px;
+    padding-left: 28px; max-width: 600px;
+  }
+</style>

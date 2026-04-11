@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ParticleCanvas from '../components/ParticleCanvas.astro';
+import ScrollProgress from '../components/ScrollProgress.astro';
+import ScrollNav from '../components/ScrollNav.astro';
+import SocialFloat from '../components/SocialFloat.astro';
+import SpokenWordBtn from '../components/SpokenWordBtn.astro';
+import BottomMarquee from '../components/BottomMarquee.astro';
+import RevealObserver from '../components/RevealObserver.astro';
+
+import HeroInfo from '../components/sections/HeroInfo.astro';
+import HeroTitle from '../components/sections/HeroTitle.astro';
+import ScenePassage from '../components/sections/ScenePassage.astro';
+import SceneDenied from '../components/sections/SceneDenied.astro';
+import SceneFreedom from '../components/sections/SceneFreedom.astro';
+import SceneBuilding from '../components/sections/SceneBuilding.astro';
+import SceneRemember from '../components/sections/SceneRemember.astro';
+import SceneReckoning from '../components/sections/SceneReckoning.astro';
+import Scene2026 from '../components/sections/Scene2026.astro';
+import SceneChaos from '../components/sections/SceneChaos.astro';
+import SpeakerTicker from '../components/sections/SpeakerTicker.astro';
+import Programs from '../components/sections/Programs.astro';
+import NameWall from '../components/sections/NameWall.astro';
+import Registration from '../components/sections/Registration.astro';
+---
+
+<BaseLayout>
+  <!-- Fixed layers -->
+  <ParticleCanvas />
+  <ScrollProgress />
+  <ScrollNav />
+  <SocialFloat />
+  <SpokenWordBtn />
+  <BottomMarquee />
+
+  <main id="main-content">
+    <!-- Part 1: Cinematic Scroll Narrative -->
+    <HeroInfo />
+    <HeroTitle />
+    <ScenePassage />
+    <SceneDenied />
+    <SceneFreedom />
+    <SceneBuilding />
+    <SceneRemember />
+    <SceneReckoning />
+    <Scene2026 />
+
+    <!-- Part 2: Typographic Energy -->
+    <SceneChaos />
+    <SpeakerTicker />
+    <Programs />
+    <NameWall />
+    <Registration />
+  </main>
+
+  <!-- Shared scroll animation observers -->
+  <RevealObserver />
+</BaseLayout>

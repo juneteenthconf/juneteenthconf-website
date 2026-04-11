@@ -1,0 +1,384 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InteriorNav from '../../components/InteriorNav.astro';
+import PageHero from '../../components/PageHero.astro';
+import InteriorFooter from '../../components/InteriorFooter.astro';
+import RevealObserver from '../../components/RevealObserver.astro';
+
+import michaelPhoto from '../../assets/images/michael-brown.jpeg';
+import madisonPhoto from '../../assets/images/madison-butler.jpeg';
+import courtneyPhoto from '../../assets/images/courtney-greer.jpeg';
+import kimekaPhoto from '../../assets/kimeka-campbell.avif';
+import cotisheaPhoto from '../../assets/cotishea-anderson.png';
+import brandiPhoto from '../../assets/brandi-brown.png';
+
+const board = [
+  {
+    name: 'Madison Butler',
+    role: 'Founder, Blue Haired Unicorn & Black Speakers Collection',
+    bio: 'Madison Butler is an unapologetic advocate for authenticity, vulnerability, and building workplaces where people feel safe enough to show up as their full selves. She is on a mission to help organizations embrace human connection and psychological safety as the foundation of thriving, resilient cultures.\n\nMadison is known for building bold, ethical, and authentic brands through storytelling, tough empathy, and data. She facilitates the conversations most people avoid — mental health, trauma, and the real courage it takes to lead with vulnerability.\n\nHer work has been featured in The New York Times, The Wall Street Journal, Business Insider, Yahoo, and Rolling Stone. She was named a LinkedIn Top Black Voice and honored as DivInc\u2019s Austin Rising Star in 2021. Her debut book, Let Them See You: Empowering Change Through Authenticity, drops Fall 2025.',
+    image: madisonPhoto,
+    initials: 'MB',
+    color: '#D4A843',
+  },
+  {
+    name: 'Brandi J. Brown',
+    role: 'Operations Lead & Co-Founder | SAG-AFTRA Actor',
+    bio: 'Brandi J. Brown is the Operations Lead and Co-Founder of JuneteenthConf, and the voice and energy behind every event as the conference\u2019s MC. With deep experience in client services, communication, community development, and training, she is passionate about creating experiences that make others feel seen and valued.\n\nBy day, she serves as a Workplace Experience / Facilities Coordinator for CBRE at Microsoft\u2019s Experience Center One, supporting operations and guest experiences in a high-visibility environment that demands adaptability, storytelling, and real-time problem-solving.\n\nBrandi also brings a creative lens as a SAG-AFTRA Actor and Voiceover Artist, collaborating with creative teams to bring meaningful stories to life across platforms. At her core, she\u2019s a lover of life and people \u2014 at her best in roles that blend service, communication, storytelling, and community engagement.',
+    image: brandiPhoto,
+    initials: 'BB',
+    color: '#55ac64',
+  },
+  {
+    name: 'Kimeka Campbell, PhD',
+    role: 'Executive Consultant | Co-Founder, YPOC Harrisburg',
+    bio: 'Dr. Kimeka G. Campbell is a nationally recognized executive consultant, talk show host, and community builder based in Harrisburg, PA. Her work bridges political strategy, healthcare operations, nonprofit leadership, and cultural organizing. For over a decade, she has been creating spaces of belonging, justice, and impact \u2014 especially for Black and Brown communities in Central Pennsylvania and beyond.\n\nShe co-founded Young Professionals of Color (YPOC) with her husband, Basir Vincent, empowering Black and Brown professionals across the Harrisburg region for over seven years. In 2022, she led the largest Emancipation Day event Central PA had ever seen, and by 2024 expanded Juneteenth HBG into a week-long celebration. YPOC serves as the fiscal sponsor for JuneteenthConf as a 501(c)(3).\n\nDr. Campbell also hosts Black NewsBeat, a Silver Anthem Award-winning live show fusing civic storytelling with local talent. She was honored as a PennLive Trailblazers & Trendsetters honoree (2025), Diversity Influencer of the Year by the Harrisburg Regional Chamber (2024), and Community Engagement Trailblazer by the National Coalition of 100 Black Women (2023).',
+    image: kimekaPhoto,
+    initials: 'KC',
+    color: '#c84342',
+  },
+  {
+    name: 'Cotishea Anderson',
+    role: 'AI Product Leader, Microsoft | Founder, Averecion',
+    bio: 'Cotishea Anderson is an AI Product Leader at Microsoft, driving enterprise-scale adoption of Copilot and Microsoft 365 across Oil, Gas, and Energy \u2014 some of the world\u2019s most complex, mission-critical industries. She leads product strategy for AI solutions tailored to Fortune 500 enterprises navigating digital transformation in high-stakes environments.\n\nPrior to this role, she led large-scale digital transformation initiatives across telecommunications and media, consistently delivering solutions that balance innovation with operational excellence. She is also the founder of Averecion.\n\nCotishea has been part of the JuneteenthConf family since day one, volunteering at the inaugural conference in 2020. Outside of work, she is passionate about expanding access to STEM education and creating pathways for the next generation \u2014 particularly young women \u2014 to pursue careers in technology.',
+    image: cotisheaPhoto,
+    initials: 'CA',
+    color: '#D4A843',
+  },
+  {
+    name: 'Courtney Greer',
+    role: 'Co-Founder, Voxxy | Engineer | Community Builder',
+    bio: 'Courtney Greer is a computer science engineer who spent nearly a decade at Microsoft building enterprise-scale programs across product, security, and innovation \u2014 then left to bet on herself.\n\nThat conviction led to Voxxy, a platform she co-founded to help friends plan outings and help organizations run seamless events. Because the organizers behind art markets, pop-up shops, and recurring community events are building something real \u2014 and they deserve tools that match the work they do.\n\nA longtime advocate for equity in tech, Courtney has taught in Brooklyn classrooms and invested in the next generation of builders from underrepresented communities. The mission has always been the same: build for the people who bring people together.',
+    image: courtneyPhoto,
+    initials: 'CG',
+    color: '#55ac64',
+  },
+  {
+    name: 'Lyn Muldrow',
+    role: 'Software Engineer | Library Associate | Community Educator',
+    bio: 'Lyn Muldrow brings a multidisciplinary background spanning software engineering, technical education, library sciences, and AI-driven content development. She currently serves as a Library Associate at Charlotte Mecklenburg Library, creating community-centered programming and positioning the public library as a vibrant third space for learning and connection.\n\nA career changer who centers heart-led community connections, Lyn leverages skills in technical education, data management, event programming, and customer engagement to foster a love of learning. Her previous work with Mercor honed her expertise in AI language models, collaborating with top AI labs to enhance the precision of generative AI tools.\n\nLyn\u2019s unique blend of tech industry experience and community education empowers her mission: to bridge technology and community, creating accessible, innovative solutions that empower diverse communities.',
+    image: null,
+    initials: 'LM',
+    color: '#c84342',
+  },
+  {
+    name: 'Michael Brown',
+    role: 'Executive Director & Founder, JuneteenthConf | Co-founder & CEO, Synaptic Weave',
+    bio: 'Michael Brown is a software engineer and technology leader with more than 30 years of experience building and scaling software systems. A former Microsoft engineer, he founded JuneteenthConf in June 2020 \u2014 filling a roster of brilliant Black speakers in just 16 days while the industry claimed it couldn\u2019t be done in a year. Over 20,000 people tuned in to that first event.\n\nWhat started as a two-day virtual conference has grown into a movement. Michael now leads JuneteenthConf as it expands beyond the conference into workforce development and mentorship programs designed to increase Black representation in technology.\n\nHe is also Co-founder and CEO of Synaptic Weave, building Arachne \u2014 an AI agent deployment runtime. Michael is based in the Seattle area and believes in building the things you wish existed rather than waiting for an invitation.\n\nFeatured in Business Insider. YouTube channel: 79 videos, 450+ subscribers.',
+    image: michaelPhoto,
+    initials: 'MB',
+    color: '#c84342',
+  },
+];
+---
+
+<BaseLayout
+  title="Board of Directors — Juneteenth Conference 2026"
+  description="Meet the people building the table — the JuneteenthConf Board of Directors."
+>
+  <InteriorNav current="About" />
+
+  <main id="main-content">
+    <PageHero
+      title="Board of Directors"
+      subtitle="Meet the people building the table."
+      accent="#D4A843"
+    />
+
+    <section style="background: #231c2d; padding: 80px 24px 100px;">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div class="board-grid">
+          {board.map((member, i) => (
+            <button class="reveal board-card" data-member={i} type="button" aria-haspopup="dialog">
+              <div class="board-avatar" style={`border-color: ${member.color};`}>
+                {member.image ? (
+                  <Image src={member.image} alt={member.name} width={240} height={240} class="board-photo" />
+                ) : (
+                  <span class="board-initials" style={`color: ${member.color};`}>{member.initials}</span>
+                )}
+              </div>
+              <h2 class="board-name">{member.name}</h2>
+              <p class="board-role">{member.role}</p>
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="board-modal-overlay" id="boardModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="board-modal">
+        <button class="board-modal-close" type="button" aria-label="Close">&times;</button>
+        <div class="board-modal-body">
+          <div class="board-modal-photo-wrap" id="modalPhotoWrap">
+            <!-- photo or initials injected by JS -->
+          </div>
+          <div class="board-modal-info">
+            <h2 class="board-modal-name" id="modalName"></h2>
+            <p class="board-modal-role" id="modalRole"></p>
+            <div class="board-modal-accent" id="modalAccent"></div>
+            <p class="board-modal-bio" id="modalBio"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <InteriorFooter />
+  <RevealObserver />
+</BaseLayout>
+
+<script define:vars={{ board }}>
+  const modal = document.getElementById('boardModal');
+  const modalName = document.getElementById('modalName');
+  const modalRole = document.getElementById('modalRole');
+  const modalBio = document.getElementById('modalBio');
+  const modalAccent = document.getElementById('modalAccent');
+  const modalPhotoWrap = document.getElementById('modalPhotoWrap');
+  const closeBtn = modal.querySelector('.board-modal-close');
+
+  // Build a map of member index → photo src from the rendered card images
+  const photoMap = {};
+  document.querySelectorAll('.board-card').forEach((card) => {
+    const idx = card.dataset.member;
+    const img = card.querySelector('.board-photo');
+    if (img) {
+      photoMap[idx] = img.src;
+    }
+  });
+
+  function openModal(index) {
+    const member = board[index];
+
+    modalName.textContent = member.name;
+    modalRole.textContent = member.role;
+    modalBio.innerHTML = member.bio.split('\n\n').map(function(p) { return '<p>' + p + '</p>'; }).join('');
+    modalAccent.style.background = member.color;
+
+    // Build photo or initials for modal
+    if (photoMap[index]) {
+      modalPhotoWrap.innerHTML = '<img src="' + photoMap[index] + '" alt="' + member.name + '" class="board-modal-photo" />';
+      modalPhotoWrap.classList.remove('board-modal-initials-wrap');
+    } else {
+      modalPhotoWrap.innerHTML = '<span class="board-modal-initials" style="color: ' + member.color + ';">' + member.initials + '</span>';
+      modalPhotoWrap.classList.add('board-modal-initials-wrap');
+    }
+
+    modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Card clicks
+  document.querySelectorAll('.board-card').forEach((card) => {
+    card.addEventListener('click', () => openModal(parseInt(card.dataset.member)));
+  });
+
+  // Close button
+  closeBtn.addEventListener('click', closeModal);
+
+  // Click outside modal content
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+</script>
+
+<style>
+  .board-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 32px;
+  }
+
+  .board-card {
+    text-align: center;
+    background: none; border: none; padding: 20px 12px;
+    cursor: pointer; border-radius: 12px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .board-card:hover {
+    background: rgba(45, 36, 56, 0.5);
+    transform: translateY(-4px);
+  }
+  .board-card:focus-visible {
+    outline: 2px solid #D4A843;
+    outline-offset: 4px;
+  }
+
+  .board-avatar {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 2px solid;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(45, 36, 56, 0.6);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .board-card:hover .board-avatar {
+    box-shadow: 0 0 24px rgba(212, 168, 67, 0.15);
+  }
+  .board-photo {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .board-initials {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 32px;
+    opacity: 0.7;
+  }
+
+  .board-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 18px;
+    color: #f0ede6; margin-bottom: 6px;
+  }
+  .board-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; line-height: 1.5;
+    color: rgba(240, 237, 230, 0.45);
+  }
+
+  /* ── Modal ── */
+  .board-modal-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(10, 8, 16, 0.85);
+    backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.35s ease-out;
+  }
+  .board-modal-overlay.open {
+    opacity: 1; pointer-events: auto;
+  }
+
+  .board-modal {
+    background: #1a1525;
+    border: 1px solid rgba(240, 237, 230, 0.08);
+    border-radius: 16px;
+    max-width: 720px; width: 100%;
+    position: relative;
+    transform: translateY(16px) scale(0.97);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: hidden;
+  }
+  .board-modal-overlay.open .board-modal {
+    transform: translateY(0) scale(1);
+  }
+
+  .board-modal-close {
+    position: absolute; top: 16px; right: 16px; z-index: 2;
+    background: rgba(240, 237, 230, 0.06);
+    border: 1px solid rgba(240, 237, 230, 0.08);
+    color: rgba(240, 237, 230, 0.5);
+    width: 36px; height: 36px; border-radius: 50%;
+    font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, color 0.2s;
+  }
+  .board-modal-close:hover {
+    background: rgba(240, 237, 230, 0.1);
+    color: #f0ede6;
+  }
+  .board-modal-close:focus-visible {
+    outline: 2px solid #D4A843;
+    outline-offset: 2px;
+  }
+
+  .board-modal-body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+  }
+
+  .board-modal-photo-wrap {
+    background: rgba(45, 36, 56, 0.4);
+    display: flex; align-items: center; justify-content: center;
+    min-height: 300px;
+  }
+  .board-modal-photo-wrap.board-modal-initials-wrap {
+    background: rgba(45, 36, 56, 0.6);
+  }
+
+  .board-modal-info {
+    padding: 40px 36px;
+  }
+
+  .board-modal-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 26px;
+    color: #f0ede6; margin-bottom: 6px;
+  }
+  .board-modal-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; line-height: 1.5;
+    color: rgba(240, 237, 230, 0.45);
+    margin-bottom: 20px;
+  }
+  .board-modal-accent {
+    width: 32px; height: 3px; border-radius: 2px;
+    margin-bottom: 20px;
+  }
+  .board-modal-bio {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.8;
+    color: rgba(240, 237, 230, 0.6);
+  }
+  .board-modal-bio :global(p) {
+    margin-bottom: 14px;
+  }
+  .board-modal-bio :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  /* ── Modal photo / initials ── */
+  :global(.board-modal-photo) {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+  :global(.board-modal-initials) {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 64px;
+    opacity: 0.5;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .board-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 24px;
+    }
+    .board-modal-body {
+      grid-template-columns: 1fr;
+    }
+    .board-modal-photo-wrap {
+      min-height: 240px;
+      max-height: 280px;
+    }
+    .board-modal-info {
+      padding: 28px 24px;
+    }
+  }
+  @media (max-width: 480px) {
+    .board-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>

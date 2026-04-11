@@ -1,0 +1,159 @@
+---
+import InteriorLayout from '../../layouts/InteriorLayout.astro';
+---
+
+<InteriorLayout
+  title="Conference — Juneteenth Conference 2026"
+  description="Juneteenth Conference 2026 returns to Chicago, June 19-20. Two days of curated sessions, keynote by Madison Butler, and a celebration of Black excellence in tech."
+  current="Conference"
+  heroTitle="The Conference"
+  heroSubtitle="June 19-20, 2026 &bull; Chicago, IL"
+  heroAccent="gold"
+>
+  <section class="interior-section">
+    <div class="interior-content">
+      <div class="reveal-stagger">
+        <p class="reveal section-lede">
+          <strong style="color: #D4A843;">Building Our Own Table.</strong> Juneteenth Conference returns in 2026 with two days of curated sessions across engineering, data, security, entrepreneurship, and tech leadership.
+        </p>
+
+        <div class="reveal conference-grid">
+          <div class="conference-card">
+            <span class="conference-card-label">Dates</span>
+            <span class="conference-card-value">June 19&ndash;20, 2026</span>
+          </div>
+          <div class="conference-card">
+            <span class="conference-card-label">Location</span>
+            <span class="conference-card-value">Chicago, IL</span>
+          </div>
+          <div class="conference-card">
+            <span class="conference-card-label">Sessions</span>
+            <span class="conference-card-value">20 curated talks</span>
+          </div>
+          <div class="conference-card">
+            <span class="conference-card-label">Format</span>
+            <span class="conference-card-value">In-person</span>
+          </div>
+        </div>
+
+        <div class="reveal keynote-feature">
+          <span class="keynote-label">Keynote Speaker</span>
+          <h2 class="keynote-name">Madison Butler</h2>
+          <p class="keynote-bio">
+            Unapologetic advocate for authenticity and psychological safety. Featured in The New York Times, WSJ, and Rolling Stone. Author of <em>Let Them See You</em> (Fall 2025). LinkedIn Top Black Voice.
+          </p>
+        </div>
+
+        <h2 class="reveal section-heading" style="color: #55ac64;">What to Expect</h2>
+        <div class="reveal expect-grid">
+          <div class="expect-item">
+            <h3>Technical Depth</h3>
+            <p>Sessions spanning engineering, data science, cybersecurity, AI, and cloud architecture.</p>
+          </div>
+          <div class="expect-item">
+            <h3>Leadership</h3>
+            <p>Candid conversations about navigating tech as a Black professional, building teams, and scaling careers.</p>
+          </div>
+          <div class="expect-item">
+            <h3>Entrepreneurship</h3>
+            <p>Founders sharing real stories about building companies, raising capital, and creating opportunity.</p>
+          </div>
+          <div class="expect-item">
+            <h3>Community</h3>
+            <p>Networking with 2,500+ members of the JuneteenthConf community &mdash; professionals, students, and allies.</p>
+          </div>
+        </div>
+
+        <div class="reveal cta-block">
+          <a href="/conference/register/" class="cta-primary">Register</a>
+          <a href="/conference/sponsor/" class="cta-outline">Become a Sponsor</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</InteriorLayout>
+
+<style>
+  .interior-section {
+    padding: 60px 24px 80px;
+    background: #231c2d;
+  }
+  .interior-content {
+    max-width: 800px; margin: 0 auto;
+  }
+  .section-lede {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(17px, 2vw, 21px);
+    color: rgba(240, 237, 230, 0.7);
+    line-height: 1.8; margin-bottom: 48px;
+  }
+  .conference-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 16px; margin-bottom: 56px;
+  }
+  .conference-card {
+    background: rgba(45, 36, 56, 0.5);
+    border: 1px solid rgba(212, 168, 67, 0.1);
+    border-radius: 8px; padding: 24px;
+  }
+  .conference-card-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    display: block; margin-bottom: 8px;
+  }
+  .conference-card-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 20px; color: #f0ede6;
+  }
+  .keynote-feature {
+    background: rgba(45, 36, 56, 0.4);
+    border-left: 4px solid #D4A843;
+    padding: 32px; margin-bottom: 56px;
+    border-radius: 0 8px 8px 0;
+  }
+  .keynote-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    display: block; margin-bottom: 12px;
+  }
+  .keynote-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: clamp(28px, 5vw, 48px);
+    color: #D4A843; margin-bottom: 12px;
+  }
+  .keynote-bio {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; color: rgba(240, 237, 230, 0.6);
+    line-height: 1.7;
+  }
+  .section-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 28px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 32px;
+  }
+  .expect-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 24px; margin-bottom: 56px;
+  }
+  .expect-item h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 17px; color: #f0ede6;
+    margin-bottom: 8px;
+  }
+  .expect-item p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; color: rgba(240, 237, 230, 0.55);
+    line-height: 1.7;
+  }
+  .cta-block {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    justify-content: center; padding-top: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .conference-grid, .expect-grid { grid-template-columns: 1fr; }
+  }
+</style>

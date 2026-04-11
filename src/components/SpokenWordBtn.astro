@@ -1,0 +1,12 @@
+---
+---
+
+<button class="spoken-word-btn" id="spokenWordBtn" aria-label="Listen to the manifesto as spoken word">
+  <span class="play-icon" aria-hidden="true"></span>
+  <span class="label-text">Listen to the manifesto</span>
+</button>
+
+<script>
+  const btn = document.getElementById('spokenWordBtn');
+  if (btn) btn.addEventListener('click', function() { this.classList.toggle('playing'); });
+</script>

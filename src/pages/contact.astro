@@ -1,0 +1,174 @@
+---
+import InteriorLayout from '../layouts/InteriorLayout.astro';
+---
+
+<InteriorLayout
+  title="Contact — Juneteenth Conference 2026"
+  description="Get in touch with the Juneteenth Conference team. Reach us for sponsorship, speaking, volunteering, or general inquiries."
+  current="Conference"
+  heroTitle="Contact"
+  heroSubtitle="We'd love to hear from you"
+  heroAccent="gold"
+>
+  <section class="interior-section">
+    <div class="interior-content">
+      <div class="reveal-stagger">
+        <div class="reveal contact-grid">
+          <div class="contact-card">
+            <span class="contact-label">General Inquiries</span>
+            <a href="mailto:info@juneteenthconf.com" class="contact-value">info@juneteenthconf.com</a>
+          </div>
+          <div class="contact-card">
+            <span class="contact-label">Founder</span>
+            <a href="mailto:michael@juneteenthconf.com" class="contact-value">michael@juneteenthconf.com</a>
+          </div>
+          <div class="contact-card">
+            <span class="contact-label">Volunteering</span>
+            <a href="mailto:volunteers@juneteenthconf.com" class="contact-value">volunteers@juneteenthconf.com</a>
+          </div>
+          <div class="contact-card">
+            <span class="contact-label">Sponsorship</span>
+            <a href="mailto:info@juneteenthconf.com?subject=Sponsorship%20Inquiry" class="contact-value">info@juneteenthconf.com</a>
+          </div>
+        </div>
+
+        <div class="reveal social-block">
+          <h3 class="social-heading">Follow Us</h3>
+          <div class="social-links">
+            <a href="https://twitter.com/juneteenthconf" class="social-link" target="_blank" rel="noopener">
+              <span class="social-name">Twitter</span>
+              <span class="social-handle">@juneteenthconf</span>
+            </a>
+            <a href="https://linkedin.com/company/juneteenthconf" class="social-link" target="_blank" rel="noopener">
+              <span class="social-name">LinkedIn</span>
+              <span class="social-handle">juneteenthconf</span>
+            </a>
+            <a href="https://youtube.com/@juneteenthconf" class="social-link" target="_blank" rel="noopener">
+              <span class="social-name">YouTube</span>
+              <span class="social-handle">@juneteenthconf</span>
+            </a>
+            <a href="https://instagram.com/juneteenthconf" class="social-link" target="_blank" rel="noopener">
+              <span class="social-name">Instagram</span>
+              <span class="social-handle">@juneteenthconf</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal org-block">
+          <h3 class="org-heading">Organization</h3>
+          <p class="org-text">
+            <strong style="color: rgba(240, 237, 230, 0.8);">JuneteenthConf, Unl.</strong><br />
+            Fiscally sponsored by YPOC Harrisburg (501(c)(3))<br />
+            Chicago, IL
+          </p>
+        </div>
+
+        <div class="reveal newsletter-block">
+          <p class="newsletter-prompt">Stay in the loop.</p>
+          <form action="https://juneteenthconf.us10.list-manage.com/subscribe/post?u=07ef187a16bc5cd4f2375c824&id=4d06862da4" method="post" class="newsletter-form" aria-label="Newsletter signup">
+            <label for="contact-email" class="sr-only">Email address</label>
+            <input type="email" name="EMAIL" id="contact-email" class="newsletter-input" placeholder="your@email.com" required />
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</InteriorLayout>
+
+<style>
+  .interior-section {
+    padding: 60px 24px 80px;
+    background: #231c2d;
+  }
+  .interior-content {
+    max-width: 700px; margin: 0 auto;
+  }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-bottom: 56px;
+  }
+  .contact-card {
+    background: rgba(45, 36, 56, 0.5);
+    border: 1px solid rgba(212, 168, 67, 0.1);
+    border-radius: 8px; padding: 24px;
+  }
+  .contact-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    display: block; margin-bottom: 8px;
+  }
+  .contact-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 15px;
+    color: #D4A843; text-decoration: none;
+    transition: color 0.2s; word-break: break-all;
+  }
+  .contact-value:hover { color: #f0ede6; }
+  .social-block {
+    margin-bottom: 56px;
+  }
+  .social-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 16px;
+    color: rgba(240, 237, 230, 0.4);
+    text-transform: uppercase; letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+  .social-links {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .social-link {
+    display: block; text-decoration: none;
+    background: rgba(45, 36, 56, 0.3);
+    border: 1px solid rgba(240, 237, 230, 0.06);
+    border-radius: 8px; padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .social-link:hover { border-color: rgba(212, 168, 67, 0.3); }
+  .social-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 16px;
+    color: #f0ede6; display: block; margin-bottom: 4px;
+  }
+  .social-handle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; color: rgba(240, 237, 230, 0.4);
+  }
+  .org-block {
+    margin-bottom: 48px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 32px;
+  }
+  .org-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 16px;
+    color: rgba(240, 237, 230, 0.4);
+    text-transform: uppercase; letter-spacing: 0.15em;
+    margin-bottom: 16px;
+  }
+  .org-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; color: rgba(240, 237, 230, 0.5);
+    line-height: 1.8;
+  }
+  .newsletter-block {
+    text-align: center; padding-top: 16px;
+  }
+  .newsletter-prompt {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .newsletter-form {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 12px;
+  }
+
+  @media (max-width: 640px) {
+    .contact-grid, .social-links { grid-template-columns: 1fr; }
+  }
+</style>

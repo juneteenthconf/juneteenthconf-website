@@ -1,0 +1,187 @@
+---
+import InteriorLayout from '../layouts/InteriorLayout.astro';
+---
+
+<InteriorLayout
+  title="What is Juneteenth? — Juneteenth Conference 2026"
+  description="Learn the history and significance of Juneteenth, also known as Black Independence Day, and why it matters."
+  current="Juneteenth"
+  heroTitle="What is Juneteenth?"
+  heroSubtitle="A celebration of freedom, resilience, and progress"
+  heroAccent="red"
+>
+  <section class="interior-section">
+    <div class="interior-content">
+      <div class="reveal-stagger">
+        <div class="reveal video-block">
+          <div class="video-container">
+            <iframe
+              title="What is Juneteenth"
+              src="https://www.youtube.com/embed/hh6i_SjfCYI"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="reveal content-block">
+          <h2 class="content-heading">The History of Juneteenth</h2>
+          <p class="content-text">
+            Juneteenth, also known as Black Independence Day, is a celebration of the day (June 19th, 1865)
+            former slaves in Galveston, Texas were informed of their freedom. While the tradition is most
+            richly observed in Galveston and nearby Houston, many Black people observe it as a holiday around
+            the country and even around the world.
+          </p>
+        </div>
+
+        <div class="reveal content-block">
+          <h2 class="content-heading">Free on Paper</h2>
+          <p class="content-text">
+            On September 22, 1862, when President Lincoln delivered the Emancipation Proclamation, an executive
+            order to free slaves in Confederate states, he deliberately limited the applicability of the order
+            as the Union Army was at war with the Confederacy. As such he had the authority to make the
+            declaration as the Commander-in-Chief of the Union Army. His declaration did not apply to
+            slave-holding states still in the Union. Any slave who could cross the lines would be granted
+            permanent freedom. The declaration granted freedom to all slaves in the Confederacy but there was
+            a matter of defeating the Confederacy and enforcing the order.
+          </p>
+        </div>
+
+        <div class="reveal content-block">
+          <h2 class="content-heading">Discovering Freedom</h2>
+          <p class="content-text">
+            Two years and almost nine months after the Emancipation Proclamation, and two months after the
+            Confederate defeat, Union General Gordon Granger arrived in Galveston and read the federal
+            proclamation that slavery was abolished and that all former slaves would now establish a
+            relationship as an employer with their former owners.
+          </p>
+          <p class="content-text">
+            As early as the next year, former slaves gathered to celebrate the day they were told they were
+            free. The celebration continues to this day, over one hundred and sixty years later.
+          </p>
+        </div>
+
+        <div class="reveal content-block">
+          <h2 class="content-heading">Why Juneteenth Conference</h2>
+          <p class="content-text">
+            Holding a conference to celebrate Juneteenth was the brainchild of Michael Brown. Taking a day of
+            reflection on his anniversary at Microsoft, he was frustrated that the commemoration of this
+            moment coincided with the turmoil in the country as Black people are joined by other witnesses and
+            supporters around the world in support of the simple but powerful message: #BlackLivesMatter.
+          </p>
+          <p class="content-text">
+            On reflection he observed that this convergence of moments, this celebration of a personal
+            milestone along with a greater movement to go forward was an opportunity. When former slaves
+            celebrated the first Juneteenth anniversary, they knew there was more to do, but they celebrated
+            anyway.
+          </p>
+          <p class="content-text">
+            Having an affinity for metaphor, Michael wanted to create a celebration of this moment to gather
+            and reflect and rejoice in the progress we&rsquo;ve made while preparing ourselves for the work
+            that remains.
+          </p>
+          <blockquote class="content-quote">
+            <p>&ldquo;It is a time for reflection and rejoicing. It is a time for assessment, self-improvement
+            and for planning the future.&rdquo;</p>
+            <cite>&mdash; Juneteenth.com</cite>
+          </blockquote>
+          <p class="content-text">
+            In other words, Juneteenth is the perfect time for this conference. And this year is the perfect
+            year to gather, celebrate, assess, improve ourselves, and plan for the future.
+          </p>
+        </div>
+
+        <div class="reveal content-block">
+          <h3 class="content-subheading">Further Reading</h3>
+          <a href="https://www.theroot.com/what-is-juneteenth-1790896900" class="further-reading-link" target="_blank" rel="noopener">
+            What is Juneteenth? by Henry Louis Gates Jr. &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</InteriorLayout>
+
+<style>
+  .interior-section {
+    padding: 60px 24px 80px;
+    background: #231c2d;
+  }
+  .interior-content {
+    max-width: 700px; margin: 0 auto;
+  }
+  .video-block {
+    margin-bottom: 48px;
+  }
+  .video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 168, 67, 0.15);
+  }
+  .video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+  .content-block {
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .content-block:last-child { border-bottom: none; }
+  .content-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 22px;
+    color: #f0ede6; margin-bottom: 16px;
+  }
+  .content-subheading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 18px;
+    color: rgba(240, 237, 230, 0.7); margin-bottom: 16px;
+  }
+  .content-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; line-height: 1.8;
+    color: rgba(240, 237, 230, 0.6);
+    margin-bottom: 12px;
+  }
+  .content-quote {
+    border-left: 3px solid #D4A843;
+    padding: 20px 24px;
+    margin: 24px 0;
+    background: rgba(212, 168, 67, 0.05);
+    border-radius: 0 8px 8px 0;
+  }
+  .content-quote p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px; font-style: italic;
+    color: rgba(240, 237, 230, 0.7);
+    line-height: 1.7; margin-bottom: 8px;
+  }
+  .content-quote cite {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-style: normal;
+    color: rgba(240, 237, 230, 0.4);
+  }
+  .further-reading-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 16px;
+    color: #D4A843; text-decoration: none;
+    display: inline-block;
+    padding: 16px 24px;
+    background: rgba(212, 168, 67, 0.08);
+    border: 1px solid rgba(212, 168, 67, 0.2);
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .further-reading-link:hover {
+    background: rgba(212, 168, 67, 0.15);
+    border-color: rgba(212, 168, 67, 0.4);
+  }
+</style>

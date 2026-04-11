@@ -1,0 +1,36 @@
+---
+---
+
+<nav class="scroll-nav" id="scrollNav" aria-label="Primary navigation">
+  <a href="/" style="font-weight: 600; letter-spacing: 2px;">JuneteenthConf</a>
+  <div style="display: flex; gap: 24px; align-items: center;">
+    <a href="/about/" class="hidden md:inline">About</a>
+    <a href="/conference/" class="hidden md:inline">Conference</a>
+    <a href="/conference/speakers/" class="hidden md:inline">Speakers</a>
+    <a href="/juneteenth/" class="hidden md:inline">Juneteenth</a>
+    <a href="/conference/register/" class="nav-cta">Register</a>
+  </div>
+</nav>
+
+<script>
+  const scrollNav = document.getElementById('scrollNav')!;
+  let lastScrollY = 0;
+
+  function updateNav() {
+    const y = window.scrollY;
+    if (y > window.innerHeight * 0.8 && y < lastScrollY - 5) {
+      scrollNav.classList.add('visible');
+    } else if (y < 200 || y > lastScrollY + 5) {
+      scrollNav.classList.remove('visible');
+    }
+    lastScrollY = y;
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => { updateNav(); ticking = false; });
+      ticking = true;
+    }
+  }, { passive: true });
+</script>

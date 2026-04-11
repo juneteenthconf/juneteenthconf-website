@@ -1,0 +1,97 @@
+---
+/**
+ * Shared IntersectionObserver logic for scroll-triggered reveals.
+ * Include once in the page — it handles all .reveal, .legend-card,
+ * .memorial-portrait, .remember-text, .madison-reveal, .stat-explode,
+ * .ken-burns, and .ken-burns-pan elements.
+ */
+---
+
+<script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function animateCounter(el: HTMLElement) {
+    const target = parseInt(el.dataset.count!, 10);
+    const start = performance.now();
+    const suffix = target >= 1000 ? '+' : '';
+    function step(now: number) {
+      const p = Math.min((now - start) / 1800, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(eased * target).toLocaleString() + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function initReveals() {
+    if (prefersReducedMotion) {
+      // Show everything immediately
+      document.querySelectorAll<HTMLElement>('.reveal, .legend-card').forEach(el => el.classList.add('visible'));
+      document.querySelectorAll<HTMLElement>('.memorial-portrait').forEach(el => el.classList.add('visible'));
+      document.querySelectorAll<HTMLElement>('.remember-text').forEach(el => el.classList.add('visible'));
+      document.querySelectorAll<HTMLElement>('.chaos-word').forEach(w => {
+        w.style.position = 'relative'; w.style.top = 'auto'; w.style.left = 'auto';
+        w.style.transform = 'none'; w.style.opacity = '1';
+      });
+      const cc = document.getElementById('chaosContainer');
+      if (cc) { cc.style.flexDirection = 'column'; cc.style.alignItems = 'center'; }
+      const nav = document.getElementById('scrollNav');
+      if (nav) nav.classList.add('visible');
+      return;
+    }
+
+    // General reveals + counter animation
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          const counter = e.target.querySelector<HTMLElement>('[data-count]') ||
+            ((e.target as HTMLElement).dataset.count ? e.target as HTMLElement : null);
+          if (counter && counter.dataset.count && !counter.dataset.counted) {
+            animateCounter(counter);
+            counter.dataset.counted = 'true';
+          }
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Legend cards
+    const legendObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.legend-card').forEach(el => legendObs.observe(el));
+
+    // Memorial portraits
+    const memObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.memorial-portrait').forEach(el => memObs.observe(el));
+
+    // Remember text
+    const remObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.remember-text').forEach(el => remObs.observe(el));
+
+    // Madison reveal
+    const madObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.madison-reveal').forEach(el => madObs.observe(el));
+
+    // Stat explosions
+    const statObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.stat-explode').forEach(el => statObs.observe(el));
+
+    // Ken Burns
+    const kbObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.ken-burns, .ken-burns-pan').forEach(el => kbObs.observe(el));
+  }
+
+  initReveals();
+</script>

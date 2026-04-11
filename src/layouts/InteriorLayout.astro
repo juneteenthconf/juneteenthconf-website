@@ -1,0 +1,176 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import InteriorNav from '../components/InteriorNav.astro';
+import RevealObserver from '../components/RevealObserver.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  current?: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  heroAccent?: 'red' | 'gold' | 'green';
+}
+
+const {
+  title,
+  description,
+  current,
+  heroTitle,
+  heroSubtitle,
+  heroAccent = 'gold',
+} = Astro.props;
+
+const accentColors = {
+  red: '#c84342',
+  gold: '#D4A843',
+  green: '#55ac64',
+};
+const accent = accentColors[heroAccent];
+---
+
+<BaseLayout title={title} description={description}>
+  <InteriorNav current={current} />
+
+  <main id="main-content">
+    <!-- Interior Hero -->
+    <section class="interior-hero">
+      <div class="interior-hero-inner">
+        <div class="scene-divider reveal" style="margin-bottom: 24px;"></div>
+        <h1 class="interior-hero-title reveal" style={`--accent: ${accent};`}>{heroTitle}</h1>
+        {heroSubtitle && (
+          <p class="interior-hero-subtitle reveal">{heroSubtitle}</p>
+        )}
+      </div>
+    </section>
+
+    <!-- Page content -->
+    <slot />
+
+    <!-- Footer -->
+    <footer class="interior-footer">
+      <div class="interior-footer-inner">
+        <div class="footer-nav-grid">
+          <div>
+            <p class="footer-nav-heading">About</p>
+            <a href="/about/">Overview</a>
+            <a href="/about/mission/">Mission</a>
+            <a href="/about/programs/">Programs</a>
+            <a href="/about/board/">Board</a>
+          </div>
+          <div>
+            <p class="footer-nav-heading">Conference</p>
+            <a href="/conference/">Overview</a>
+            <a href="/conference/speakers/">Speakers</a>
+            <a href="/conference/schedule/">Schedule</a>
+            <a href="/conference/sponsor/">Sponsor</a>
+          </div>
+          <div>
+            <p class="footer-nav-heading">Resources</p>
+            <a href="/juneteenth/">Juneteenth</a>
+            <a href="/coc/">Code of Conduct</a>
+            <a href="/past-events/">Past Events</a>
+            <a href="/contact/">Contact</a>
+          </div>
+        </div>
+        <div class="interior-footer-top">
+          <p><strong style="color: rgba(255,255,255,0.8);">June 19&ndash;20, 2026</strong> &bull; Chicago, IL</p>
+          <p>JuneteenthConf, Unl. &mdash; Fiscally sponsored by YPOC Harrisburg (501(c)(3))</p>
+          <p><a href="mailto:info@juneteenthconf.com">info@juneteenthconf.com</a></p>
+        </div>
+        <div class="interior-footer-links">
+          <a href="https://twitter.com/juneteenthconf">Twitter</a>
+          <a href="https://linkedin.com/company/juneteenthconf">LinkedIn</a>
+          <a href="https://youtube.com/@juneteenthconf">YouTube</a>
+          <a href="https://instagram.com/juneteenthconf">Instagram</a>
+        </div>
+        <p class="interior-footer-copy">Artwork by Havana Nguyen &bull; &copy; 2020&ndash;2026 JuneteenthConf</p>
+      </div>
+    </footer>
+  </main>
+
+  <RevealObserver />
+</BaseLayout>
+
+<style>
+  .interior-hero {
+    min-height: 40vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 120px 24px 60px;
+    background: linear-gradient(180deg, #0a0810 0%, #231c2d 100%);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  .interior-hero::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+  .interior-hero-inner {
+    position: relative; z-index: 1; max-width: 900px;
+  }
+  .interior-hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; text-transform: uppercase;
+    font-size: clamp(36px, 8vw, 80px);
+    letter-spacing: -0.02em; line-height: 0.95;
+    color: var(--accent, #D4A843);
+  }
+  .interior-hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+    color: rgba(240, 237, 230, 0.5);
+    margin-top: 20px; letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .interior-footer {
+    background: #0a0810;
+    padding: 64px 24px 48px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color: rgba(255,255,255,0.45);
+    font-size: 14px; line-height: 1.8;
+  }
+  .interior-footer-inner { max-width: 800px; margin: 0 auto; }
+  .footer-nav-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 32px; margin-bottom: 48px;
+    border-bottom: 1px solid rgba(240, 237, 230, 0.06);
+    padding-bottom: 40px; text-align: left;
+  }
+  .footer-nav-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(240, 237, 230, 0.25);
+    margin-bottom: 12px; line-height: 1;
+  }
+  .footer-nav-grid a {
+    display: block; margin-bottom: 8px;
+    color: rgba(240, 237, 230, 0.5); text-decoration: none;
+    font-size: 14px; line-height: 1.6; transition: color 0.2s;
+  }
+  .footer-nav-grid a:hover { color: #D4A843; }
+  .interior-footer-top { text-align: center; }
+  .interior-footer-top p { margin-bottom: 4px; }
+  .interior-footer-top a {
+    color: rgba(255,255,255,0.6); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .interior-footer-top a:hover { color: #c84342; }
+  .interior-footer-links {
+    display: flex; justify-content: center; gap: 24px;
+    margin: 24px 0; flex-wrap: wrap;
+  }
+  .interior-footer-links a {
+    color: rgba(255,255,255,0.5); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .interior-footer-links a:hover { color: #D4A843; }
+  .interior-footer-copy {
+    font-size: 12px; color: rgba(255,255,255,0.2); margin-top: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .footer-nav-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>

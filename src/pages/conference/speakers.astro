@@ -1,0 +1,174 @@
+---
+import InteriorLayout from '../../layouts/InteriorLayout.astro';
+import { Image } from 'astro:assets';
+import madisonPhoto from '../../assets/images/madison-butler.jpeg';
+---
+
+<InteriorLayout
+  title="Speakers — Juneteenth Conference 2026"
+  description="Speaker lineup for Juneteenth Conference 2026. Madison Butler confirmed as keynote. Full lineup coming soon."
+  current="Speakers"
+  heroTitle="Speakers"
+  heroSubtitle="The voices building our table"
+  heroAccent="gold"
+>
+  <section class="interior-section">
+    <div class="interior-content">
+      <div class="reveal-stagger">
+        <!-- Keynote feature -->
+        <div class="reveal keynote-spread">
+          <div class="keynote-photo-wrap">
+            <Image src={madisonPhoto} alt="Madison Butler" width={400} height={500} class="keynote-photo" />
+          </div>
+          <div class="keynote-info">
+            <span class="keynote-label">Keynote Speaker</span>
+            <h2 class="keynote-name">Madison Butler</h2>
+            <p class="keynote-title">Founder, Blue Haired Unicorn &amp; Black Speakers Collection</p>
+            <p class="keynote-bio">
+              Unapologetic advocate for authenticity and psychological safety. Featured in The New York Times, WSJ, and Rolling Stone. Author of <em>Let Them See You</em> (Fall 2025). LinkedIn Top Black Voice.
+            </p>
+          </div>
+        </div>
+
+        <!-- Past speakers -->
+        <div class="reveal past-speakers">
+          <h3 class="past-speakers-heading">Past Speakers</h3>
+          <div class="past-speakers-list">
+            <span>Angie Jones</span>
+            <span>Tim Banks</span>
+            <span>Minda Harts</span>
+            <span>Jerome Hardaway</span>
+            <span>Alaxandria Foreman</span>
+            <span>Wesley Faulkner</span>
+          </div>
+        </div>
+
+        <!-- Coming soon -->
+        <div class="reveal coming-soon-block">
+          <span class="coming-soon-badge">Coming Soon</span>
+          <h2 class="coming-soon-title">Full speaker lineup in progress.</h2>
+          <p class="coming-soon-text">
+            We're assembling a roster of brilliant Black voices in tech. Interested in speaking? We'd love to hear from you.
+          </p>
+          <a href="mailto:info@juneteenthconf.com?subject=Speaker%20Inquiry" class="cta-outline" style="margin-top: 24px;">Submit a Speaker Inquiry</a>
+        </div>
+
+        <div class="reveal newsletter-block">
+          <p class="newsletter-prompt">Get notified when speakers are announced.</p>
+          <form action="https://juneteenthconf.us10.list-manage.com/subscribe/post?u=07ef187a16bc5cd4f2375c824&id=4d06862da4" method="post" class="newsletter-form" aria-label="Newsletter signup">
+            <label for="speakers-email" class="sr-only">Email address</label>
+            <input type="email" name="EMAIL" id="speakers-email" class="newsletter-input" placeholder="your@email.com" required />
+            <button type="submit" class="newsletter-btn">Notify Me</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</InteriorLayout>
+
+<style>
+  .interior-section {
+    padding: 60px 24px 80px;
+    background: #231c2d;
+  }
+  .interior-content {
+    max-width: 900px; margin: 0 auto;
+  }
+  .keynote-spread {
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    gap: 48px; align-items: center;
+    margin-bottom: 64px;
+  }
+  .keynote-photo-wrap {
+    border-left: 4px solid rgba(212, 168, 67, 0.5);
+    overflow: hidden;
+  }
+  .keynote-photo {
+    width: 100%; height: auto;
+    display: block; object-fit: cover; object-position: top;
+    filter: grayscale(0.15);
+  }
+  .keynote-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    display: block; margin-bottom: 12px;
+  }
+  .keynote-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: clamp(32px, 6vw, 56px);
+    color: #D4A843; margin-bottom: 8px; line-height: 1;
+  }
+  .keynote-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; color: rgba(240, 237, 230, 0.5);
+    margin-bottom: 16px;
+  }
+  .keynote-bio {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; color: rgba(240, 237, 230, 0.6);
+    line-height: 1.7;
+  }
+  .past-speakers {
+    margin-bottom: 64px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 40px;
+  }
+  .past-speakers-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 16px;
+    color: rgba(240, 237, 230, 0.4);
+    text-transform: uppercase; letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+  .past-speakers-list {
+    display: flex; flex-wrap: wrap; gap: 12px;
+  }
+  .past-speakers-list span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 18px;
+    color: rgba(240, 237, 230, 0.35);
+    padding: 8px 20px;
+    border: 1px solid rgba(240, 237, 230, 0.1);
+    border-radius: 6px;
+  }
+  .coming-soon-block {
+    text-align: center; margin-bottom: 48px;
+  }
+  .coming-soon-badge {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 12px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: #D4A843; border: 1px solid rgba(212, 168, 67, 0.3);
+    padding: 6px 16px; border-radius: 100px;
+    margin-bottom: 24px;
+  }
+  .coming-soon-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: clamp(22px, 4vw, 32px);
+    color: #f0ede6; margin-bottom: 16px;
+  }
+  .coming-soon-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; color: rgba(240, 237, 230, 0.55);
+    line-height: 1.7; max-width: 500px; margin: 0 auto;
+  }
+  .newsletter-block {
+    text-align: center; padding-top: 16px;
+  }
+  .newsletter-prompt {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .newsletter-form {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .keynote-spread { grid-template-columns: 1fr; }
+  }
+</style>

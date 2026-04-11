@@ -1,0 +1,44 @@
+---
+const speakers = ['Angie Jones', 'Tim Banks', 'Minda Harts', 'Jerome Hardaway', 'Alaxandria Foreman', 'Wesley Faulkner'];
+const doubled = [...speakers, ...speakers];
+---
+
+<section class="scene" style="min-height: auto; padding-top: 40px; padding-bottom: 40px; background: linear-gradient(180deg, #231c2d, #2d2438);">
+  <div style="width: 100%; position: relative; z-index: 2;">
+    <div class="reveal" style="margin-bottom: 48px;">
+      <p style="font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.3); letter-spacing: 0.2em; text-transform: uppercase; text-align: center; margin-bottom: 24px;">Voices who've graced our stage</p>
+      <div class="speaker-ticker" id="speakerTicker" aria-label="Past conference speakers">
+        <div class="speaker-ticker-track" id="speakerTrack">
+          {doubled.map((name) => <span>{name}</span>)}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initTickerAccel() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const ticker = document.getElementById('speakerTicker');
+    const track = document.getElementById('speakerTrack') as HTMLElement;
+    if (!ticker || !track) return;
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const vh = window.innerHeight;
+          window.addEventListener('scroll', () => {
+            const r = ticker.getBoundingClientRect();
+            const p = Math.max(0, Math.min(1, 1 - (r.top / vh)));
+            track.style.animationDuration = Math.max(30 - (p * 26), 4) + 's';
+          }, { passive: true });
+        }
+      });
+    }, { threshold: 0.05 });
+    obs.observe(ticker);
+  }
+
+  initTickerAccel();
+</script>

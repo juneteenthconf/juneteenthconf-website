@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import madisonButler from '../../assets/images/madison-butler.jpeg';
+---
+
+<section class="scene scene-2026" id="twenty26" style="flex-direction: column; min-height: 130vh;">
+  <div class="legend-card right" style="top: 15%;">
+    <div class="legend-portrait placeholder">LG</div>
+    <div class="legend-info">
+      <div class="legend-name">Lisa Gelobter</div>
+      <div class="legend-years">Internet pioneer</div>
+      <div class="legend-desc">Helped develop Shockwave and Flash. Made the early internet move. Literally.</div>
+    </div>
+  </div>
+
+  <div style="max-width: 900px; width: 100%; text-align: center; position: relative; z-index: 1;">
+    <!-- Chicago Skyline -->
+    <div class="reveal scale-in" style="margin-bottom: 48px;">
+      <figure class="scene-image-full img-vibrant">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Chicago_September_2016-23.jpg" alt="Chicago skyline at dusk" loading="lazy" />
+      </figure>
+    </div>
+
+    <div class="scene-divider reveal" style="margin: 0 auto 48px;"></div>
+    <p class="reveal font-display" style="font-size: clamp(16px, 2.5vw, 22px); font-weight: 300; letter-spacing: 4px; text-transform: uppercase; opacity: 0.5; margin-bottom: 24px;">This is not a comeback</p>
+    <p class="reveal font-display" style="font-size: clamp(22px, 3.5vw, 38px); font-weight: 600; color: #c84342; margin-bottom: 48px; line-height: 1.4;">This is an escalation.</p>
+
+    <h2 class="reveal scale-in font-display" style="font-size: clamp(48px, 9vw, 100px); font-weight: 700; line-height: 1; margin-bottom: 16px;">June 19&ndash;20</h2>
+    <h3 class="reveal font-display" style="font-size: clamp(28px, 5vw, 56px); font-weight: 300; color: #D4A843; margin-bottom: 32px;">Chicago, 2026</h3>
+
+    <p class="reveal font-body" style="font-size: 16px; line-height: 2; opacity: 0.55; max-width: 540px; margin: 0 auto 48px;">
+      The table was built in 2020. In 2026, it becomes permanent. Institutional. A movement. No more asking. No more waiting. Building.
+    </p>
+
+    <!-- Keynote Reveal — Cinematic Madison Butler -->
+    <div class="madison-reveal reveal" style="margin-top: 24px;">
+      <p class="font-body" style="font-size: 13px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.4; margin-bottom: 24px;">Keynote Speaker</p>
+      <div style="position: relative; display: flex; justify-content: center; margin-bottom: 24px;">
+        <div class="madison-glow"></div>
+        <div class="madison-photo-wrap">
+          <Image
+            src={madisonButler}
+            alt="Madison Butler — Keynote Speaker"
+            width={440}
+            height={440}
+            style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
+          />
+        </div>
+      </div>
+      <h3 class="font-display" style="font-size: clamp(28px, 4vw, 44px); font-weight: 600; margin-bottom: 8px;">Madison Butler</h3>
+      <p class="font-body" style="font-size: 16px; opacity: 0.6; margin-bottom: 32px;">Unapologetic advocate for authenticity and psychological safety. Featured in The New York Times, WSJ, and Rolling Stone. LinkedIn Top Black Voice.</p>
+    </div>
+
+    <div class="reveal" style="margin-top: 48px; padding: 40px; border: 1px solid rgba(212,168,67,0.2); border-radius: 16px; background: rgba(212,168,67,0.05);">
+      <p class="font-display" style="font-size: clamp(20px, 3vw, 32px); font-weight: 600; color: #D4A843; letter-spacing: 2px;">&ldquo;Building Our Own Table&rdquo;</p>
+      <p class="font-body" style="font-size: 14px; opacity: 0.5; margin-top: 12px;">We will no longer wait for acceptance or approval.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,94 @@
+---
+---
+
+<footer class="interior-footer">
+  <div class="interior-footer-inner">
+    <div class="footer-nav-grid">
+      <div>
+        <p class="footer-nav-heading">About</p>
+        <a href="/about/">Overview</a>
+        <a href="/about/mission/">Mission</a>
+        <a href="/about/programs/">Programs</a>
+        <a href="/about/board/">Board</a>
+      </div>
+      <div>
+        <p class="footer-nav-heading">Conference</p>
+        <a href="/conference/">Overview</a>
+        <a href="/conference/speakers/">Speakers</a>
+        <a href="/conference/schedule/">Schedule</a>
+        <a href="/conference/sponsor/">Sponsor</a>
+      </div>
+      <div>
+        <p class="footer-nav-heading">Resources</p>
+        <a href="/juneteenth/">Juneteenth</a>
+        <a href="/coc/">Code of Conduct</a>
+        <a href="/past-events/">Past Events</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p><strong>June 19&ndash;20, 2026</strong> &bull; Chicago, IL</p>
+      <p>JuneteenthConf, Unl. &mdash; Fiscally sponsored by YPOC Harrisburg (501(c)(3))</p>
+      <p><a href="mailto:info@juneteenthconf.com">info@juneteenthconf.com</a></p>
+      <div class="interior-footer-links">
+        <a href="https://twitter.com/juneteenthconf">Twitter</a>
+        <a href="https://linkedin.com/company/juneteenthconf">LinkedIn</a>
+        <a href="https://youtube.com/@juneteenthconf">YouTube</a>
+        <a href="https://instagram.com/juneteenthconf">Instagram</a>
+      </div>
+      <p class="interior-footer-copy">&copy; 2020&ndash;2026 JuneteenthConf. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .interior-footer {
+    background: #0a0810; padding: 64px 24px 48px;
+    border-top: 1px solid rgba(240, 237, 230, 0.06);
+  }
+  .interior-footer-inner {
+    max-width: 800px; margin: 0 auto;
+    font-family: 'Inter', sans-serif; font-size: 14px;
+    color: rgba(240, 237, 230, 0.4); line-height: 2;
+  }
+  .footer-nav-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 32px; margin-bottom: 48px;
+    border-bottom: 1px solid rgba(240, 237, 230, 0.06);
+    padding-bottom: 40px;
+  }
+  .footer-nav-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(240, 237, 230, 0.25);
+    margin-bottom: 12px; line-height: 1;
+  }
+  .footer-nav-grid a {
+    display: block; margin-bottom: 8px;
+    color: rgba(240, 237, 230, 0.5); text-decoration: none;
+    font-size: 14px; line-height: 1.6; transition: color 0.2s;
+  }
+  .footer-nav-grid a:hover { color: #D4A843; }
+  .footer-bottom { text-align: center; }
+  .interior-footer-inner strong { color: rgba(240, 237, 230, 0.7); }
+  .footer-bottom > a,
+  .footer-bottom p a {
+    color: rgba(240, 237, 230, 0.5); text-decoration: none; transition: color 0.2s;
+  }
+  .footer-bottom > a:hover,
+  .footer-bottom p a:hover { color: #D4A843; }
+  .interior-footer-links {
+    display: flex; gap: 24px; justify-content: center; margin: 16px 0;
+  }
+  .interior-footer-links a {
+    color: rgba(240, 237, 230, 0.5); text-decoration: none; transition: color 0.2s;
+  }
+  .interior-footer-links a:hover { color: #D4A843; }
+  .interior-footer-copy { font-size: 12px; opacity: 0.5; margin-top: 8px; }
+
+  @media (max-width: 640px) {
+    .footer-nav-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>

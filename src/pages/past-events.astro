@@ -1,0 +1,136 @@
+---
+import InteriorLayout from '../layouts/InteriorLayout.astro';
+---
+
+<InteriorLayout
+  title="Past Events — Juneteenth Conference"
+  description="Explore past Juneteenth Conference events from 2020, 2021, and 2023. Watch archived sessions on YouTube."
+  current="Conference"
+  heroTitle="Past Events"
+  heroSubtitle="Three events &bull; 20,000+ viewers &bull; 79 videos"
+  heroAccent="gold"
+>
+  <section class="interior-section">
+    <div class="interior-content">
+      <div class="reveal-stagger">
+        <p class="reveal section-lede">
+          Since 2020, Juneteenth Conference has brought together Black technologists for learning, celebration, and community. Here's a look back at our journey.
+        </p>
+
+        <div class="reveal event-card">
+          <div class="event-header">
+            <span class="event-year">2023</span>
+            <span class="event-format">In-Person &amp; Virtual</span>
+          </div>
+          <h3 class="event-title">Juneteenth Conference 2023</h3>
+          <p class="event-desc">
+            Our first in-person event, streamed to a virtual audience. Featured a keynote by Tim Banks (Developer Advocate, Dell) and a fireside chat with Minda Harts (Author of <em>The Memo</em>). 20 sessions across two days covering engineering, data science, security, and tech leadership.
+          </p>
+          <div class="event-links">
+            <a href="https://2023.juneteenthconf.com" class="event-link" target="_blank" rel="noopener">Visit 2023 Site</a>
+            <a href="https://youtube.com/@juneteenthconf" class="event-link" target="_blank" rel="noopener">Watch on YouTube</a>
+          </div>
+        </div>
+
+        <div class="reveal event-card">
+          <div class="event-header">
+            <span class="event-year">2021</span>
+            <span class="event-format">Virtual</span>
+          </div>
+          <h3 class="event-title">Juneteenth Conference 2021</h3>
+          <p class="event-desc">
+            Our second annual conference continued the momentum with deep technical content and community building, held virtually to ensure broad accessibility.
+          </p>
+          <div class="event-links">
+            <a href="https://youtube.com/@juneteenthconf" class="event-link" target="_blank" rel="noopener">Watch on YouTube</a>
+          </div>
+        </div>
+
+        <div class="reveal event-card">
+          <div class="event-header">
+            <span class="event-year">2020</span>
+            <span class="event-format">Virtual</span>
+          </div>
+          <h3 class="event-title">Juneteenth Conference 2020</h3>
+          <p class="event-desc">
+            The inaugural Juneteenth Conference launched with 20 sessions across two days, drawing over 20,000 live viewers. Conceived and delivered in just two weeks, the event received coverage from Business Insider and showcased the depth and breadth of Black talent in tech.
+          </p>
+          <div class="event-links">
+            <a href="https://2020.juneteenthconf.com" class="event-link" target="_blank" rel="noopener">Visit 2020 Site</a>
+            <a href="https://youtube.com/@juneteenthconf" class="event-link" target="_blank" rel="noopener">Watch on YouTube</a>
+          </div>
+        </div>
+
+        <div class="reveal cta-block">
+          <p class="cta-text">Ready for the next chapter?</p>
+          <a href="/conference/register/" class="cta-primary">Register for 2026</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</InteriorLayout>
+
+<style>
+  .interior-section {
+    padding: 60px 24px 80px;
+    background: #231c2d;
+  }
+  .interior-content {
+    max-width: 750px; margin: 0 auto;
+  }
+  .section-lede {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(17px, 2vw, 21px);
+    color: rgba(240, 237, 230, 0.7);
+    line-height: 1.8; margin-bottom: 48px;
+  }
+  .event-card {
+    background: rgba(45, 36, 56, 0.4);
+    border: 1px solid rgba(240, 237, 230, 0.08);
+    border-radius: 8px; padding: 32px;
+    margin-bottom: 24px;
+  }
+  .event-header {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 12px;
+  }
+  .event-year {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 32px;
+    color: #D4A843;
+  }
+  .event-format {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; color: rgba(255,255,255,0.35);
+    letter-spacing: 0.15em; text-transform: uppercase;
+    border: 1px solid rgba(240, 237, 230, 0.1);
+    padding: 4px 12px; border-radius: 100px;
+  }
+  .event-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 20px;
+    color: #f0ede6; margin-bottom: 12px;
+  }
+  .event-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px; color: rgba(240, 237, 230, 0.55);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+  .event-links {
+    display: flex; gap: 16px; flex-wrap: wrap;
+  }
+  .event-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; color: #D4A843;
+    text-decoration: none; transition: color 0.2s;
+  }
+  .event-link:hover { color: #f0ede6; }
+  .cta-block {
+    text-align: center; padding-top: 32px;
+  }
+  .cta-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; color: rgba(240, 237, 230, 0.5);
+    margin-bottom: 20px;
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+---
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<script>
+  const progressBar = document.getElementById('scrollProgress')!;
+  let ticking = false;
+
+  function updateProgress() {
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (docH > 0 ? (window.scrollY / docH) * 100 : 0) + '%';
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => { updateProgress(); ticking = false; });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateProgress();
+</script>

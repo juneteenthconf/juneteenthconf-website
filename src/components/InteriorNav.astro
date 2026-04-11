@@ -1,0 +1,70 @@
+---
+interface Props {
+  current?: string;
+}
+const { current } = Astro.props;
+
+const links = [
+  { href: '/about/', label: 'About' },
+  { href: '/conference/', label: 'Conference' },
+  { href: '/conference/speakers/', label: 'Speakers' },
+  { href: '/conference/schedule/', label: 'Schedule' },
+  { href: '/conference/sponsor/', label: 'Sponsor' },
+  { href: '/juneteenth/', label: 'Juneteenth' },
+];
+---
+
+<nav class="interior-nav" aria-label="Site navigation">
+  <a href="/" class="interior-nav-brand">JuneteenthConf</a>
+  <div class="interior-nav-links">
+    {links.map(link => (
+      link.label === current
+        ? <span class="interior-nav-current">{link.label}</span>
+        : <a href={link.href}>{link.label}</a>
+    ))}
+    <a href="/conference/register/" class="interior-nav-cta">Register</a>
+  </div>
+</nav>
+
+<style>
+  .interior-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 997;
+    background: rgba(35, 28, 45, 0.95); backdrop-filter: blur(16px);
+    padding: 14px 24px; display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(212, 168, 67, 0.12);
+  }
+  .interior-nav-brand {
+    color: #f0ede6; text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 14px; letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .interior-nav-brand:hover { color: #D4A843; }
+  .interior-nav-links {
+    display: flex; gap: 20px; align-items: center;
+  }
+  .interior-nav-links a {
+    color: rgba(240, 237, 230, 0.5); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 13px;
+    transition: color 0.2s;
+  }
+  .interior-nav-links a:hover { color: #f0ede6; }
+  .interior-nav-current {
+    color: #D4A843; font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 600;
+  }
+  .interior-nav-cta {
+    background: #c84342 !important; color: #fff !important;
+    padding: 6px 16px; border-radius: 4px;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 600 !important; font-size: 12px !important;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .interior-nav-cta:hover { background: #b53a39 !important; }
+
+  @media (max-width: 768px) {
+    .interior-nav-links a:not(.interior-nav-cta),
+    .interior-nav-current { display: none; }
+    .interior-nav-links { gap: 12px; }
+  }
+</style>
