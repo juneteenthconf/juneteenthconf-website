@@ -1,4 +1,6 @@
 ---
+const b = import.meta.env.BASE_URL;
+const base = b.endsWith('/') ? b : b + '/';
 ---
 
 <section class="scene scene-invitation" id="register" style="min-height: 100vh;">
@@ -8,8 +10,8 @@
       <span class="type-massive" style="font-size: clamp(40px, 10vw, 140px); display: block;">is <span style="color: #D4A843;">ready.</span></span>
     </div>
     <div style="margin-top: 64px; display: flex; flex-wrap: wrap; justify-content: center; gap: 32px 64px;">
-      <a href="/conference/register/" class="cta-text reveal" style="font-size: clamp(32px, 6vw, 72px); color: #c84342;">Register</a>
-      <a href="/conference/sponsor/" class="cta-text reveal" style="font-size: clamp(32px, 6vw, 72px); color: #55ac64;">Sponsor</a>
+      <a href={`${base}conference/register/`} class="cta-text reveal" style="font-size: clamp(32px, 6vw, 72px); color: #c84342;">Register</a>
+      <a href={`${base}conference/sponsor/`} class="cta-text reveal" style="font-size: clamp(32px, 6vw, 72px); color: #55ac64;">Sponsor</a>
     </div>
     <div class="line-divider" style="color: #fff; margin: 80px 0 48px;"></div>
 
@@ -26,24 +28,24 @@
       <div class="footer-nav" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; text-align: left; max-width: 700px; margin: 0 auto 48px;">
         <div>
           <p style="font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 600;">About</p>
-          <a href="/about/" style="display: block; margin-bottom: 8px;">Overview</a>
-          <a href="/about/mission/" style="display: block; margin-bottom: 8px;">Mission</a>
-          <a href="/about/programs/" style="display: block; margin-bottom: 8px;">Programs</a>
-          <a href="/about/board/" style="display: block; margin-bottom: 8px;">Board</a>
+          <a href={`${base}about/`} style="display: block; margin-bottom: 8px;">Overview</a>
+          <a href={`${base}about/mission/`} style="display: block; margin-bottom: 8px;">Mission</a>
+          <a href={`${base}about/programs/`} style="display: block; margin-bottom: 8px;">Programs</a>
+          <a href={`${base}about/board/`} style="display: block; margin-bottom: 8px;">Board</a>
         </div>
         <div>
           <p style="font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 600;">Conference</p>
-          <a href="/conference/" style="display: block; margin-bottom: 8px;">Overview</a>
-          <a href="/conference/speakers/" style="display: block; margin-bottom: 8px;">Speakers</a>
-          <a href="/conference/schedule/" style="display: block; margin-bottom: 8px;">Schedule</a>
-          <a href="/conference/sponsor/" style="display: block; margin-bottom: 8px;">Sponsor</a>
+          <a href={`${base}conference/`} style="display: block; margin-bottom: 8px;">Overview</a>
+          <a href={`${base}conference/speakers/`} style="display: block; margin-bottom: 8px;">Speakers</a>
+          <a href={`${base}conference/schedule/`} style="display: block; margin-bottom: 8px;">Schedule</a>
+          <a href={`${base}conference/sponsor/`} style="display: block; margin-bottom: 8px;">Sponsor</a>
         </div>
         <div>
           <p style="font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif; font-weight: 600;">Resources</p>
-          <a href="/juneteenth/" style="display: block; margin-bottom: 8px;">Juneteenth</a>
-          <a href="/coc/" style="display: block; margin-bottom: 8px;">Code of Conduct</a>
-          <a href="/past-events/" style="display: block; margin-bottom: 8px;">Past Events</a>
-          <a href="/contact/" style="display: block; margin-bottom: 8px;">Contact</a>
+          <a href={`${base}juneteenth/`} style="display: block; margin-bottom: 8px;">Juneteenth</a>
+          <a href={`${base}coc/`} style="display: block; margin-bottom: 8px;">Code of Conduct</a>
+          <a href={`${base}past-events/`} style="display: block; margin-bottom: 8px;">Past Events</a>
+          <a href={`${base}contact/`} style="display: block; margin-bottom: 8px;">Contact</a>
         </div>
       </div>
 

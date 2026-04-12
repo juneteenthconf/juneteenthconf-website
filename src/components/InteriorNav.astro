@@ -3,26 +3,28 @@ interface Props {
   current?: string;
 }
 const { current } = Astro.props;
+const b = import.meta.env.BASE_URL;
+const base = b.endsWith('/') ? b : b + '/';
 
 const links = [
-  { href: '/about/', label: 'About' },
-  { href: '/conference/', label: 'Conference' },
-  { href: '/conference/speakers/', label: 'Speakers' },
-  { href: '/conference/schedule/', label: 'Schedule' },
-  { href: '/conference/sponsor/', label: 'Sponsor' },
-  { href: '/juneteenth/', label: 'Juneteenth' },
+  { href: `${base}about/`, label: 'About' },
+  { href: `${base}conference/`, label: 'Conference' },
+  { href: `${base}conference/speakers/`, label: 'Speakers' },
+  { href: `${base}conference/schedule/`, label: 'Schedule' },
+  { href: `${base}conference/sponsor/`, label: 'Sponsor' },
+  { href: `${base}juneteenth/`, label: 'Juneteenth' },
 ];
 ---
 
 <nav class="interior-nav" aria-label="Site navigation">
-  <a href="/" class="interior-nav-brand">JuneteenthConf</a>
+  <a href={base} class="interior-nav-brand">JuneteenthConf</a>
   <div class="interior-nav-links">
     {links.map(link => (
       link.label === current
         ? <span class="interior-nav-current">{link.label}</span>
         : <a href={link.href}>{link.label}</a>
     ))}
-    <a href="/conference/register/" class="interior-nav-cta">Register</a>
+    <a href={`${base}conference/register/`} class="interior-nav-cta">Register</a>
   </div>
 </nav>
 

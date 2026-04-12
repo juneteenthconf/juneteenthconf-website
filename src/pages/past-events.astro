@@ -1,5 +1,7 @@
 ---
 import InteriorLayout from '../layouts/InteriorLayout.astro';
+const b = import.meta.env.BASE_URL;
+const base = b.endsWith('/') ? b : b + '/';
 ---
 
 <InteriorLayout
@@ -63,7 +65,7 @@ import InteriorLayout from '../layouts/InteriorLayout.astro';
 
         <div class="reveal cta-block">
           <p class="cta-text">Ready for the next chapter?</p>
-          <a href="/conference/register/" class="cta-primary">Register for 2026</a>
+          <a href={`${base}conference/register/`} class="cta-primary">Register for 2026</a>
         </div>
       </div>
     </div>

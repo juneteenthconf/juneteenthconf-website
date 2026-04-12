@@ -1,14 +1,16 @@
 ---
+const b = import.meta.env.BASE_URL;
+const base = b.endsWith('/') ? b : b + '/';
 ---
 
 <nav class="scroll-nav" id="scrollNav" aria-label="Primary navigation">
-  <a href="/" style="font-weight: 600; letter-spacing: 2px;">JuneteenthConf</a>
+  <a href={base} style="font-weight: 600; letter-spacing: 2px;">JuneteenthConf</a>
   <div style="display: flex; gap: 24px; align-items: center;">
-    <a href="/about/" class="hidden md:inline">About</a>
-    <a href="/conference/" class="hidden md:inline">Conference</a>
-    <a href="/conference/speakers/" class="hidden md:inline">Speakers</a>
-    <a href="/juneteenth/" class="hidden md:inline">Juneteenth</a>
-    <a href="/conference/register/" class="nav-cta">Register</a>
+    <a href={`${base}about/`} class="hidden md:inline">About</a>
+    <a href={`${base}conference/`} class="hidden md:inline">Conference</a>
+    <a href={`${base}conference/speakers/`} class="hidden md:inline">Speakers</a>
+    <a href={`${base}juneteenth/`} class="hidden md:inline">Juneteenth</a>
+    <a href={`${base}conference/register/`} class="nav-cta">Register</a>
   </div>
 </nav>
 

@@ -4,9 +4,283 @@
 <button class="spoken-word-btn" id="spokenWordBtn" aria-label="Listen to the manifesto as spoken word">
   <span class="play-icon" aria-hidden="true"></span>
   <span class="label-text">Listen to the manifesto</span>
+  <span class="progress-ring" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+      <circle cx="12" cy="12" r="10" fill="none" stroke="#c84342" stroke-width="2"
+        stroke-dasharray="62.83" stroke-dashoffset="62.83" stroke-linecap="round"
+        transform="rotate(-90 12 12)" id="progressCircle" />
+    </svg>
+  </span>
 </button>
 
+<audio id="manifestoAudio" preload="none">
+  <!-- Drop in Brandi's recording: <source src="manifesto.mp3" type="audio/mpeg" /> -->
+</audio>
+
 <script>
-  const btn = document.getElementById('spokenWordBtn');
-  if (btn) btn.addEventListener('click', function() { this.classList.toggle('playing'); });
+  function initManifestoScroll() {
+    const btn = document.getElementById('spokenWordBtn')!;
+    const audio = document.getElementById('manifestoAudio') as HTMLAudioElement;
+    const progressCircle = document.getElementById('progressCircle') as SVGCircleElement;
+    const circumference = 2 * Math.PI * 10; // r=10
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Waypoints: audio timestamp (seconds) → scene element ID
+    // Timings are placeholders — adjust once real audio is available
+    const waypoints = [
+      { time: 0,   target: 'passage' },      // "They crossed an ocean..."
+      { time: 18,  target: 'denied' },        // "Three-fifths of a person..."
+      { time: 30,  target: 'freedom' },       // "June 19th, 1865..."
+      { time: 45,  target: 'building' },      // "From freedom, they built..."
+      { time: 65,  target: 'remember' },      // "Remember them..."
+      { time: 72,  target: 'reckoning' },     // "A pandemic. A reckoning..."
+      { time: 95,  target: 'twenty26' },      // "This is not a comeback..."
+      { time: 115, target: 'chaos' },         // "Building. Our. Own. Table."
+      { time: 125, target: 'table' },         // Programs section
+      { time: 140, target: 'namewall' },      // "Add your name"
+      { time: 155, target: 'register' },      // Final CTA
+    ];
+
+    let isPlaying = false;
+    let userScrolling = false;
+    let userScrollTimer: ReturnType<typeof setTimeout> | null = null;
+    let currentWaypointIndex = -1;
+    let scrollAnimationId: number | null = null;
+
+    // Detect manual user scroll — pause auto-scroll but keep audio playing
+    function onUserScroll() {
+      if (!isPlaying) return;
+      userScrolling = true;
+      if (userScrollTimer) clearTimeout(userScrollTimer);
+      userScrollTimer = setTimeout(() => {
+        userScrolling = false;
+      }, 2000); // Resume auto-scroll 2s after user stops scrolling
+    }
+
+    window.addEventListener('wheel', onUserScroll, { passive: true });
+    window.addEventListener('touchmove', onUserScroll, { passive: true });
+
+    // Smooth scroll using requestAnimationFrame for cinematic feel
+    function smoothScrollTo(targetY: number, duration: number = 1800) {
+      if (scrollAnimationId) cancelAnimationFrame(scrollAnimationId);
+
+      const startY = window.scrollY;
+      const distance = targetY - startY;
+      if (Math.abs(distance) < 2) return;
+
+      const startTime = performance.now();
+
+      function easeInOutCubic(t: number): number {
+        return t < 0.5
+          ? 4 * t * t * t
+          : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function step(currentTime: number) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeInOutCubic(progress);
+
+        window.scrollTo(0, startY + distance * eased);
+
+        if (progress < 1 && isPlaying) {
+          scrollAnimationId = requestAnimationFrame(step);
+        }
+      }
+
+      scrollAnimationId = requestAnimationFrame(step);
+    }
+
+    // Scroll to a scene element with cinematic easing
+    function scrollToScene(elementId: string) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+
+      const rect = el.getBoundingClientRect();
+      const targetY = window.scrollY + rect.top;
+
+      // Longer duration for bigger jumps
+      const distance = Math.abs(targetY - window.scrollY);
+      const duration = Math.min(Math.max(distance * 1.2, 800), 2500);
+
+      smoothScrollTo(targetY, duration);
+    }
+
+    // Update progress ring
+    function updateProgress(fraction: number) {
+      if (!progressCircle) return;
+      const offset = circumference * (1 - fraction);
+      progressCircle.style.strokeDashoffset = String(offset);
+    }
+
+    // Audio timeupdate handler — check waypoints and auto-scroll
+    function onTimeUpdate() {
+      const t = audio.currentTime;
+      const duration = audio.duration || 1;
+
+      // Update progress ring
+      updateProgress(t / duration);
+
+      // Find the current waypoint
+      let wpIndex = -1;
+      for (let i = waypoints.length - 1; i >= 0; i--) {
+        if (t >= waypoints[i].time) {
+          wpIndex = i;
+          break;
+        }
+      }
+
+      // Scroll to new waypoint if crossed and user isn't manually scrolling
+      if (wpIndex !== currentWaypointIndex && wpIndex >= 0) {
+        currentWaypointIndex = wpIndex;
+        if (!userScrolling && !prefersReducedMotion) {
+          scrollToScene(waypoints[wpIndex].target);
+        }
+      }
+    }
+
+    // Play/pause toggle
+    function toggle() {
+      if (!audio.src && audio.querySelectorAll('source').length === 0) {
+        // No audio source yet — run scroll-only demo mode
+        startDemoMode();
+        return;
+      }
+
+      if (isPlaying) {
+        pause();
+      } else {
+        play();
+      }
+    }
+
+    function play() {
+      isPlaying = true;
+      btn.classList.add('playing');
+      btn.setAttribute('aria-label', 'Pause the manifesto');
+      audio.play().catch(() => {
+        // Autoplay blocked — reset state
+        pause();
+      });
+    }
+
+    function pause() {
+      isPlaying = false;
+      btn.classList.remove('playing');
+      btn.setAttribute('aria-label', 'Listen to the manifesto as spoken word');
+      audio.pause();
+      if (scrollAnimationId) {
+        cancelAnimationFrame(scrollAnimationId);
+        scrollAnimationId = null;
+      }
+    }
+
+    function onAudioEnded() {
+      pause();
+      currentWaypointIndex = -1;
+      updateProgress(0);
+    }
+
+    // Demo mode: scroll through waypoints on a timer (no audio file needed)
+    let demoTimer: ReturnType<typeof setInterval> | null = null;
+    let demoIndex = 0;
+    let demoStartTime = 0;
+
+    function startDemoMode() {
+      if (isPlaying) {
+        stopDemoMode();
+        return;
+      }
+
+      isPlaying = true;
+      btn.classList.add('playing');
+      btn.setAttribute('aria-label', 'Pause the manifesto');
+      demoIndex = 0;
+      demoStartTime = performance.now();
+
+      // Scroll to first waypoint
+      if (!prefersReducedMotion) {
+        scrollToScene(waypoints[0].target);
+      }
+
+      // Advance through waypoints using the defined time gaps
+      const totalDuration = waypoints[waypoints.length - 1].time + 15; // extra 15s after last
+
+      demoTimer = setInterval(() => {
+        const elapsed = (performance.now() - demoStartTime) / 1000;
+        updateProgress(elapsed / totalDuration);
+
+        // Find current waypoint
+        let wpIndex = -1;
+        for (let i = waypoints.length - 1; i >= 0; i--) {
+          if (elapsed >= waypoints[i].time) {
+            wpIndex = i;
+            break;
+          }
+        }
+
+        if (wpIndex !== currentWaypointIndex && wpIndex >= 0) {
+          currentWaypointIndex = wpIndex;
+          if (!userScrolling && !prefersReducedMotion) {
+            scrollToScene(waypoints[wpIndex].target);
+          }
+        }
+
+        if (elapsed >= totalDuration) {
+          stopDemoMode();
+        }
+      }, 250);
+    }
+
+    function stopDemoMode() {
+      isPlaying = false;
+      btn.classList.remove('playing');
+      btn.setAttribute('aria-label', 'Listen to the manifesto as spoken word');
+      currentWaypointIndex = -1;
+      updateProgress(0);
+      if (demoTimer) {
+        clearInterval(demoTimer);
+        demoTimer = null;
+      }
+      if (scrollAnimationId) {
+        cancelAnimationFrame(scrollAnimationId);
+        scrollAnimationId = null;
+      }
+    }
+
+    // Wire up events
+    btn.addEventListener('click', toggle);
+    audio.addEventListener('timeupdate', onTimeUpdate);
+    audio.addEventListener('ended', onAudioEnded);
+  }
+
+  initManifestoScroll();
 </script>
+
+<style>
+  .spoken-word-btn .progress-ring {
+    display: none;
+    flex-shrink: 0;
+  }
+  .spoken-word-btn.playing .play-icon { display: none; }
+  .spoken-word-btn.playing .progress-ring { display: flex; }
+  .spoken-word-btn.playing .label-text::before { content: 'Pause'; }
+  .spoken-word-btn.playing .label-text { font-size: 0; }
+  .spoken-word-btn.playing .label-text::before { font-size: 12px; }
+  .spoken-word-btn.playing { border-color: rgba(200, 67, 66, 0.4); }
+
+  /* Pause icon via pseudo-element on button when playing */
+  .spoken-word-btn.playing::before {
+    content: '';
+    width: 10px; height: 12px;
+    border-left: 3px solid currentColor;
+    border-right: 3px solid currentColor;
+    flex-shrink: 0;
+  }
+
+  #progressCircle {
+    transition: stroke-dashoffset 0.3s ease;
+  }
+</style>

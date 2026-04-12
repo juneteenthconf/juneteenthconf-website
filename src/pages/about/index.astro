@@ -5,27 +5,30 @@ import PageHero from '../../components/PageHero.astro';
 import InteriorFooter from '../../components/InteriorFooter.astro';
 import RevealObserver from '../../components/RevealObserver.astro';
 
+const b = import.meta.env.BASE_URL;
+const base = b.endsWith('/') ? b : b + '/';
+
 const cards = [
   {
-    href: '/about/mission/',
+    href: `${base}about/mission/`,
     title: 'Our Mission',
     desc: 'How a pandemic and a reckoning led to a movement. The founding story of JuneteenthConf.',
     accent: '#c84342',
   },
   {
-    href: '/about/programs/',
+    href: `${base}about/programs/`,
     title: 'Programs',
     desc: 'Conference. Accelerator. Mentorship. Three programs, one mission.',
     accent: '#55ac64',
   },
   {
-    href: '/about/board/',
+    href: `${base}about/board/`,
     title: 'Board of Directors',
     desc: 'Meet the people building the table.',
     accent: '#D4A843',
   },
   {
-    href: '/about/press/',
+    href: `${base}about/press/`,
     title: 'Press & Media',
     desc: 'Coverage, stats, and media resources.',
     accent: '#c84342',
