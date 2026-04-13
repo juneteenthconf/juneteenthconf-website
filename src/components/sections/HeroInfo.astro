@@ -5,7 +5,9 @@ const base = b.endsWith('/') ? b : b + '/';
 
 <section class="scene scene-opening" id="conf-info" style="min-height: 100vh; flex-direction: column;">
   <div style="position: absolute; top: 60px; left: 32px;">
-    <div class="illustration-badge reveal" aria-label="JuneteenthConf logo">JC</div>
+    <a href={base} class="reveal" style="display:block;">
+      <img src={`${base}logo-white.png`} alt="JuneteenthConf" style="height:44px; width:auto; display:block;" width="124" height="44" />
+    </a>
   </div>
 
   <div style="text-align: center; max-width: 700px; position: relative; z-index: 1;">

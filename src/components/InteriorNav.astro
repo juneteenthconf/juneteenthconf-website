@@ -17,7 +17,9 @@ const links = [
 ---
 
 <nav class="interior-nav" aria-label="Site navigation">
-  <a href={base} class="interior-nav-brand">JuneteenthConf</a>
+  <a href={base} class="interior-nav-brand" aria-label="JuneteenthConf home">
+    <img src={`${base}logo-white.png`} alt="JuneteenthConf" class="nav-logo" width="140" height="50" />
+  </a>
   <div class="interior-nav-links">
     {links.map(link => (
       link.label === current
@@ -36,12 +38,10 @@ const links = [
     border-bottom: 1px solid rgba(212, 168, 67, 0.12);
   }
   .interior-nav-brand {
-    color: #f0ede6; text-decoration: none;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700; font-size: 14px; letter-spacing: 2px;
-    text-transform: uppercase;
+    color: #f0ede6; text-decoration: none; display: flex; align-items: center;
   }
-  .interior-nav-brand:hover { color: #D4A843; }
+  .nav-logo { height: 36px; width: auto; display: block; }
+  .interior-nav-brand:hover { opacity: 0.85; }
   .interior-nav-links {
     display: flex; gap: 20px; align-items: center;
   }
