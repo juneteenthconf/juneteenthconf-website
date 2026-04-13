@@ -6,10 +6,6 @@ const base = b.endsWith('/') ? b : b + '/';
 <section class="scene scene-opening hero-split" id="conf-info">
   <!-- Left: logo + content -->
   <div class="hero-content">
-    <a href={base} class="reveal hero-logo-link" aria-label="JuneteenthConf home">
-      <img src={`${base}logo-white.png`} alt="JuneteenthConf" class="hero-logo" width="180" height="64" />
-    </a>
-
     <p class="reveal font-display hero-sub">
       Juneteenth Conference returns to Chicago in 2026
     </p>
@@ -60,9 +56,6 @@ const base = b.endsWith('/') ? b : b + '/';
     position: relative;
     z-index: 2;
   }
-
-  .hero-logo-link { display: block; margin-bottom: 48px; }
-  .hero-logo { height: 44px; width: auto; }
 
   .hero-sub {
     font-size: clamp(18px, 2.5vw, 28px);
