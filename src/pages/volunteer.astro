@@ -3,6 +3,7 @@ import InteriorLayout from '../layouts/InteriorLayout.astro';
 ---
 
 <InteriorLayout
+  ogSlug="volunteer"
   title="Volunteer — Juneteenth Conference 2026"
   description="Volunteer at Juneteenth Conference 2026 in Chicago. Be part of the team that makes JuneteenthConf happen. June 19–20, 2026."
   current="Volunteer"
@@ -183,7 +184,7 @@ import InteriorLayout from '../layouts/InteriorLayout.astro';
             { icon: '🎟', label: 'Free Admission', desc: 'Volunteers receive complimentary conference access.' },
             { icon: '👕', label: 'Volunteer Shirt', desc: 'Exclusive JuneteenthConf 2026 volunteer t-shirt.' },
             { icon: '🤝', label: 'Community', desc: 'Build relationships with Black tech professionals and allies.' },
-            { icon: '✨', label: 'Make History', desc: 'Help build the table we've always deserved.' },
+            { icon: '✨', label: 'Make History', desc: "Help build the table we've always deserved." },
           ].map(({ icon, label, desc }) => (
             <div class="perk-card">
               <span class="perk-icon" aria-hidden="true">{icon}</span>

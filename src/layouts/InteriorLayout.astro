@@ -10,6 +10,7 @@ interface Props {
   title?: string;
   description?: string;
   current?: string;
+  ogSlug?: string;
   heroTitle: string;
   heroSubtitle?: string;
   heroAccent?: 'red' | 'gold' | 'green';
@@ -19,6 +20,7 @@ const {
   title,
   description,
   current,
+  ogSlug = 'default',
   heroTitle,
   heroSubtitle,
   heroAccent = 'gold',
@@ -32,7 +34,7 @@ const accentColors = {
 const accent = accentColors[heroAccent];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} ogSlug={ogSlug}>
   <InteriorNav current={current} />
 
   <main id="main-content">
