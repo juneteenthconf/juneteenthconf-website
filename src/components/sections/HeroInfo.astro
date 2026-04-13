@@ -3,29 +3,144 @@ const b = import.meta.env.BASE_URL;
 const base = b.endsWith('/') ? b : b + '/';
 ---
 
-<section class="scene scene-opening" id="conf-info" style="min-height: 100vh; flex-direction: column;">
-  <div style="position: absolute; top: 60px; left: 32px;">
-    <a href={base} class="reveal" style="display:block;">
-      <img src={`${base}logo-white.png`} alt="JuneteenthConf" style="height:44px; width:auto; display:block;" width="124" height="44" />
+<section class="scene scene-opening hero-split" id="conf-info">
+  <!-- Left: logo + content -->
+  <div class="hero-content">
+    <a href={base} class="reveal hero-logo-link" aria-label="JuneteenthConf home">
+      <img src={`${base}logo-white.png`} alt="JuneteenthConf" class="hero-logo" width="180" height="64" />
     </a>
-  </div>
 
-  <div style="text-align: center; max-width: 700px; position: relative; z-index: 1;">
-    <p class="reveal font-display" style="font-size: clamp(22px, 4vw, 36px); font-weight: 400; line-height: 1.5; color: rgba(240, 237, 230, 0.85); letter-spacing: -0.5px;">
+    <p class="reveal font-display hero-sub">
       Juneteenth Conference returns to Chicago in 2026
     </p>
-    <p class="reveal font-display" style="font-size: clamp(28px, 5vw, 48px); font-weight: 700; color: #D4A843; margin-top: 16px; letter-spacing: -1px;">
+    <p class="reveal font-display hero-date">
       June 19th &amp; 20th
     </p>
 
-    <div class="reveal" style="display: flex; gap: 16px; justify-content: center; margin-top: 40px;">
+    <div class="reveal hero-ctas">
       <a href={`${base}conference/register/`} class="cta-primary">Register</a>
       <a href={`${base}conference/sponsor/`} class="cta-outline">Sponsor</a>
     </div>
   </div>
 
-  <div class="scroll-prompt" style="position: absolute; bottom: 40px; text-align: center;">
+  <!-- Right: full-bleed illustration -->
+  <div class="hero-illustration-wrap" aria-hidden="true">
+    <img
+      src={`${base}illustration.png`}
+      alt=""
+      class="hero-illustration"
+      width="541"
+      height="1000"
+    />
+  </div>
+
+  <div class="scroll-prompt">
     <p class="font-body" style="font-size: 12px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.4;">Scroll to begin</p>
     <div style="margin-top: 12px; font-size: 20px; opacity: 0.4;">&#8595;</div>
   </div>
 </section>
+
+<style>
+  .hero-split {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 0;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 48px 80px 64px;
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-logo-link { display: block; margin-bottom: 48px; }
+  .hero-logo { height: 44px; width: auto; }
+
+  .hero-sub {
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(240, 237, 230, 0.8);
+    letter-spacing: -0.3px;
+    margin-bottom: 16px;
+  }
+
+  .hero-date {
+    font-size: clamp(32px, 4.5vw, 60px);
+    font-weight: 700;
+    color: #D4A843;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 48px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-illustration-wrap {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 45%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    pointer-events: none;
+  }
+
+  .hero-illustration {
+    height: 105%;
+    width: auto;
+    object-fit: contain;
+    object-position: bottom right;
+    display: block;
+    filter: drop-shadow(-24px 0 48px rgba(0,0,0,0.5));
+  }
+
+  .scroll-prompt {
+    position: absolute;
+    bottom: 32px;
+    left: 64px;
+    text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    .hero-split {
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 24px 160px;
+    }
+    .hero-content {
+      padding: 0;
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+    .hero-logo-link { margin-bottom: 32px; }
+    .hero-illustration-wrap {
+      position: absolute;
+      right: -60px;
+      bottom: 0;
+      top: auto;
+      width: 280px;
+      height: 400px;
+      opacity: 0.25;
+    }
+    .hero-illustration {
+      height: 100%;
+    }
+    .scroll-prompt { left: 50%; transform: translateX(-50%); text-align: center; }
+  }
+</style>
