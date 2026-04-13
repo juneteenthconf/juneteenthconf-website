@@ -1,0 +1,661 @@
+---
+import InteriorLayout from '../layouts/InteriorLayout.astro';
+---
+
+<InteriorLayout
+  title="Volunteer — Juneteenth Conference 2026"
+  description="Volunteer at Juneteenth Conference 2026 in Chicago. Be part of the team that makes JuneteenthConf happen. June 19–20, 2026."
+  current="Volunteer"
+  heroTitle="Volunteer with Us"
+  heroSubtitle="June 19&ndash;20, 2026 &bull; Chicago, IL"
+  heroAccent="gold"
+>
+  <section class="interior-section">
+    <div class="interior-content">
+      <div class="reveal-stagger">
+
+        <div class="reveal intro-block">
+          <p class="intro-text">
+            JuneteenthConf is powered by a community of dedicated volunteers who believe in what we're building. From welcoming attendees at the door to supporting our speakers backstage, every role matters. If you want to be part of the team that makes this happen, we'd love to have you.
+          </p>
+        </div>
+
+        <div class="reveal form-card">
+          <h2 class="form-heading">Volunteer Application</h2>
+
+          <form id="volunteer-form" class="volunteer-form" novalidate aria-label="Volunteer signup form">
+
+            <!-- Name row -->
+            <div class="field-row">
+              <div class="field-group">
+                <label for="vol-first-name" class="field-label">First Name <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="vol-first-name"
+                  name="firstName"
+                  class="field-input"
+                  autocomplete="given-name"
+                  required
+                  aria-required="true"
+                />
+              </div>
+              <div class="field-group">
+                <label for="vol-last-name" class="field-label">Last Name <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="vol-last-name"
+                  name="lastName"
+                  class="field-input"
+                  autocomplete="family-name"
+                  required
+                  aria-required="true"
+                />
+              </div>
+            </div>
+
+            <!-- Email + Phone row -->
+            <div class="field-row">
+              <div class="field-group">
+                <label for="vol-email" class="field-label">Email <span class="required" aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="vol-email"
+                  name="email"
+                  class="field-input"
+                  autocomplete="email"
+                  required
+                  aria-required="true"
+                />
+              </div>
+              <div class="field-group">
+                <label for="vol-phone" class="field-label">Phone <span class="optional">(optional)</span></label>
+                <input
+                  type="tel"
+                  id="vol-phone"
+                  name="phone"
+                  class="field-input"
+                  autocomplete="tel"
+                />
+              </div>
+            </div>
+
+            <!-- Areas of interest -->
+            <fieldset class="field-fieldset">
+              <legend class="field-legend">Areas of Interest <span class="required" aria-hidden="true">*</span></legend>
+              <p class="field-hint">Select all that apply.</p>
+              <div class="checkbox-grid">
+                {[
+                  { value: 'registration', label: 'Registration & Check-in' },
+                  { value: 'av-tech', label: 'AV & Tech Support' },
+                  { value: 'green-room', label: 'Green Room' },
+                  { value: 'social-media', label: 'Social Media & Photography' },
+                  { value: 'speaker-liaison', label: 'Speaker Liaison' },
+                  { value: 'general', label: 'General Support' },
+                ].map(({ value, label }) => (
+                  <label class="checkbox-label">
+                    <input
+                      type="checkbox"
+                      name="areas"
+                      value={value}
+                      class="checkbox-input"
+                    />
+                    <span class="checkbox-custom" aria-hidden="true"></span>
+                    <span class="checkbox-text">{label}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <!-- Previous volunteer experience -->
+            <fieldset class="field-fieldset">
+              <legend class="field-legend">Have you volunteered with JuneteenthConf before?</legend>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="experience" value="yes" class="radio-input" />
+                  <span class="radio-custom" aria-hidden="true"></span>
+                  <span class="radio-text">Yes</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="experience" value="no" class="radio-input" />
+                  <span class="radio-custom" aria-hidden="true"></span>
+                  <span class="radio-text">No</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- T-shirt size -->
+            <div class="field-group">
+              <label for="vol-shirt" class="field-label">T-Shirt Size</label>
+              <div class="select-wrapper">
+                <select id="vol-shirt" name="shirt_size" class="field-select">
+                  <option value="">Select a size</option>
+                  <option value="XS">XS</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                  <option value="XXXL">XXXL</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">▾</span>
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="field-group">
+              <label for="vol-notes" class="field-label">Anything else you'd like us to know? <span class="optional">(optional)</span></label>
+              <textarea
+                id="vol-notes"
+                name="notes"
+                class="field-textarea"
+                rows="4"
+                placeholder="Skills, availability, questions, or anything else…"
+              ></textarea>
+            </div>
+
+            <!-- Feedback messages -->
+            <div id="vol-success" class="feedback-msg feedback-success" role="status" aria-live="polite" hidden>
+              <span class="feedback-icon" aria-hidden="true">✓</span>
+              <div>
+                <strong>Application received!</strong>
+                <p>Thank you for signing up to volunteer. We'll be in touch with next steps closer to the event.</p>
+              </div>
+            </div>
+            <div id="vol-error" class="feedback-msg feedback-error" role="alert" aria-live="assertive" hidden>
+              <span class="feedback-icon" aria-hidden="true">!</span>
+              <div>
+                <strong>Something went wrong.</strong>
+                <p>Please try again or email us at <a href="mailto:info@juneteenthconf.com">info@juneteenthconf.com</a>.</p>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="vol-submit">
+              <span class="btn-label">Submit Application</span>
+              <span class="btn-loading" hidden aria-hidden="true">Submitting…</span>
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Why volunteer callouts -->
+        <div class="reveal perks-grid">
+          {[
+            { icon: '🎟', label: 'Free Admission', desc: 'Volunteers receive complimentary conference access.' },
+            { icon: '👕', label: 'Volunteer Shirt', desc: 'Exclusive JuneteenthConf 2026 volunteer t-shirt.' },
+            { icon: '🤝', label: 'Community', desc: 'Build relationships with Black tech professionals and allies.' },
+            { icon: '✨', label: 'Make History', desc: 'Help build the table we've always deserved.' },
+          ].map(({ icon, label, desc }) => (
+            <div class="perk-card">
+              <span class="perk-icon" aria-hidden="true">{icon}</span>
+              <strong class="perk-label">{label}</strong>
+              <p class="perk-desc">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="reveal cta-block">
+          <p class="cta-prompt">Questions about volunteering?</p>
+          <a href="mailto:info@juneteenthconf.com" class="cta-outline">Contact Us</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</InteriorLayout>
+
+<style>
+  .interior-section {
+    padding: 60px 24px 80px;
+    background: #231c2d;
+  }
+  .interior-content {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  /* Intro */
+  .intro-block {
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  .intro-text {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: rgba(240, 237, 230, 0.65);
+    line-height: 1.75;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* Form card */
+  .form-card {
+    background: rgba(45, 36, 56, 0.45);
+    border: 1px solid rgba(212, 168, 67, 0.12);
+    border-radius: 12px;
+    padding: 48px 40px;
+    margin-bottom: 48px;
+  }
+  .form-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 3vw, 28px);
+    color: #D4A843;
+    margin-bottom: 32px;
+  }
+
+  /* Fields */
+  .volunteer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .field-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(240, 237, 230, 0.7);
+    letter-spacing: 0.03em;
+  }
+  .required {
+    color: #c84342;
+    margin-left: 2px;
+  }
+  .optional {
+    color: rgba(240, 237, 230, 0.35);
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 4px;
+  }
+  .field-hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(240, 237, 230, 0.35);
+    margin-top: -4px;
+    margin-bottom: 4px;
+  }
+  .field-input,
+  .field-select,
+  .field-textarea {
+    background: rgba(240, 237, 230, 0.05);
+    border: 1px solid rgba(240, 237, 230, 0.12);
+    border-radius: 6px;
+    color: #f0ede6;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    padding: 11px 14px;
+    transition: border-color 0.2s, background 0.2s;
+    width: 100%;
+    appearance: none;
+  }
+  .field-input::placeholder,
+  .field-textarea::placeholder {
+    color: rgba(240, 237, 230, 0.25);
+  }
+  .field-input:focus,
+  .field-select:focus,
+  .field-textarea:focus {
+    outline: none;
+    border-color: #D4A843;
+    background: rgba(212, 168, 67, 0.06);
+  }
+  .field-input:invalid:not(:placeholder-shown),
+  .field-select:invalid:not(:placeholder-shown) {
+    border-color: rgba(200, 67, 66, 0.5);
+  }
+  .field-textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  /* Select */
+  .select-wrapper {
+    position: relative;
+  }
+  .field-select {
+    cursor: pointer;
+    padding-right: 36px;
+  }
+  .field-select option {
+    background: #231c2d;
+    color: #f0ede6;
+  }
+  .select-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(240, 237, 230, 0.4);
+    pointer-events: none;
+    font-size: 14px;
+  }
+
+  /* Fieldsets */
+  .field-fieldset {
+    border: 1px solid rgba(240, 237, 230, 0.08);
+    border-radius: 8px;
+    padding: 20px 20px 20px;
+  }
+  .field-legend {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(240, 237, 230, 0.7);
+    padding: 0 6px;
+    letter-spacing: 0.03em;
+  }
+
+  /* Checkboxes */
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .checkbox-custom {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid rgba(240, 237, 230, 0.25);
+    border-radius: 4px;
+    background: rgba(240, 237, 230, 0.04);
+    flex-shrink: 0;
+    transition: border-color 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .checkbox-input:checked + .checkbox-custom {
+    border-color: #D4A843;
+    background: rgba(212, 168, 67, 0.15);
+  }
+  .checkbox-input:checked + .checkbox-custom::after {
+    content: '';
+    width: 5px;
+    height: 9px;
+    border-right: 2px solid #D4A843;
+    border-bottom: 2px solid #D4A843;
+    transform: rotate(45deg) translate(-1px, -1px);
+    display: block;
+  }
+  .checkbox-input:focus-visible + .checkbox-custom {
+    outline: 2px solid #D4A843;
+    outline-offset: 2px;
+  }
+  .checkbox-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(240, 237, 230, 0.75);
+    line-height: 1.3;
+  }
+
+  /* Radios */
+  .radio-group {
+    display: flex;
+    gap: 28px;
+    margin-top: 14px;
+  }
+  .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .radio-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .radio-custom {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid rgba(240, 237, 230, 0.25);
+    border-radius: 50%;
+    background: rgba(240, 237, 230, 0.04);
+    flex-shrink: 0;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+  }
+  .radio-input:checked + .radio-custom {
+    border-color: #D4A843;
+  }
+  .radio-input:checked + .radio-custom::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #D4A843;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .radio-input:focus-visible + .radio-custom {
+    outline: 2px solid #D4A843;
+    outline-offset: 2px;
+  }
+  .radio-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(240, 237, 230, 0.75);
+  }
+
+  /* Feedback messages */
+  .feedback-msg {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .feedback-msg[hidden] { display: none; }
+  .feedback-success {
+    background: rgba(85, 172, 100, 0.12);
+    border: 1px solid rgba(85, 172, 100, 0.3);
+    color: #55ac64;
+  }
+  .feedback-success strong { color: #7dcb8e; }
+  .feedback-success p { color: rgba(240, 237, 230, 0.6); margin-top: 2px; }
+  .feedback-error {
+    background: rgba(200, 67, 66, 0.1);
+    border: 1px solid rgba(200, 67, 66, 0.3);
+    color: #e07070;
+  }
+  .feedback-error strong { color: #e07070; }
+  .feedback-error p { color: rgba(240, 237, 230, 0.6); margin-top: 2px; }
+  .feedback-error a { color: #D4A843; }
+  .feedback-icon {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+
+  /* Submit button */
+  .submit-btn {
+    background: #c84342;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 32px;
+    cursor: pointer;
+    transition: background 0.2s, opacity 0.2s;
+    align-self: flex-start;
+  }
+  .submit-btn:hover:not(:disabled) { background: #b53a39; }
+  .submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* Perks grid */
+  .perks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .perk-card {
+    background: rgba(45, 36, 56, 0.4);
+    border: 1px solid rgba(212, 168, 67, 0.08);
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .perk-icon {
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .perk-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #f0ede6;
+  }
+  .perk-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(240, 237, 230, 0.5);
+    line-height: 1.6;
+  }
+
+  /* CTA block */
+  .cta-block {
+    text-align: center;
+    padding-top: 8px;
+  }
+  .cta-prompt {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 16px;
+  }
+  .cta-outline {
+    display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #D4A843;
+    border: 1px solid rgba(212, 168, 67, 0.4);
+    padding: 10px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .cta-outline:hover {
+    border-color: #D4A843;
+    background: rgba(212, 168, 67, 0.08);
+  }
+
+  @media (max-width: 640px) {
+    .form-card { padding: 32px 20px; }
+    .field-row { grid-template-columns: 1fr; }
+    .checkbox-grid { grid-template-columns: 1fr; }
+    .perks-grid { grid-template-columns: 1fr; }
+    .submit-btn { width: 100%; text-align: center; }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('volunteer-form') as HTMLFormElement;
+  const successMsg = document.getElementById('vol-success') as HTMLElement;
+  const errorMsg = document.getElementById('vol-error') as HTMLElement;
+  const submitBtn = document.getElementById('vol-submit') as HTMLButtonElement;
+  const btnLabel = submitBtn.querySelector('.btn-label') as HTMLElement;
+  const btnLoading = submitBtn.querySelector('.btn-loading') as HTMLElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // --- Collect values ---
+    const firstName = (form.querySelector('#vol-first-name') as HTMLInputElement).value.trim();
+    const lastName  = (form.querySelector('#vol-last-name')  as HTMLInputElement).value.trim();
+    const email     = (form.querySelector('#vol-email')      as HTMLInputElement).value.trim();
+    const phone     = (form.querySelector('#vol-phone')      as HTMLInputElement).value.trim();
+    const shirt_size = (form.querySelector('#vol-shirt')     as HTMLSelectElement).value;
+    const notes     = (form.querySelector('#vol-notes')      as HTMLTextAreaElement).value.trim();
+
+    const areas: string[] = Array.from(
+      form.querySelectorAll('input[name="areas"]:checked')
+    ).map((el) => (el as HTMLInputElement).value);
+
+    const experienceEl = form.querySelector('input[name="experience"]:checked') as HTMLInputElement | null;
+    const experience = experienceEl ? experienceEl.value : '';
+
+    // --- Loading state ---
+    submitBtn.disabled = true;
+    btnLabel.hidden = true;
+    btnLoading.hidden = false;
+    successMsg.hidden = true;
+    errorMsg.hidden = true;
+
+    try {
+      const res = await fetch('https://mail.juneteenthconf.com/api/public/subscription', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          name: `${firstName} ${lastName}`,
+          list_uuids: ['eac4b207-460a-4435-ab61-1e63ea1f2604'],
+          attribs: {
+            ...(phone       && { phone }),
+            ...(areas.length && { areas }),
+            ...(experience  && { experience }),
+            ...(shirt_size  && { shirt_size }),
+            ...(notes       && { notes }),
+          },
+        }),
+      });
+
+      if (res.ok) {
+        form.reset();
+        successMsg.hidden = false;
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        throw new Error(`Status ${res.status}`);
+      }
+    } catch {
+      errorMsg.hidden = false;
+      errorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } finally {
+      submitBtn.disabled = false;
+      btnLabel.hidden = false;
+      btnLoading.hidden = true;
+    }
+  });
+</script>

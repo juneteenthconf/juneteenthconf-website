@@ -56,8 +56,10 @@ import madisonPhoto from '../../assets/images/madison-butler.jpeg';
         <div class="reveal newsletter-block">
           <p class="newsletter-prompt">Get notified when speakers are announced.</p>
           <form class="newsletter-form" id="newsletter-form-speakers" aria-label="Newsletter signup">
+            <label for="name-speakers" class="sr-only">Your name</label>
+            <input type="text" id="name-speakers" name="name" class="newsletter-input" placeholder="Your name" required autocomplete="name" />
             <label for="email-speakers" class="sr-only">Email address</label>
-            <input type="email" id="email-speakers" name="email" class="newsletter-input" placeholder="your@email.com" required />
+            <input type="email" id="email-speakers" name="email" class="newsletter-input" placeholder="your@email.com" required autocomplete="email" />
             <button type="submit" class="newsletter-btn">Notify Me</button>
             <p class="newsletter-success" style="display:none; color: #55ac64; margin-top: 8px;">You're subscribed!</p>
             <p class="newsletter-error" style="display:none; color: #c84342; margin-top: 8px;">Something went wrong. Please try again.</p>
@@ -179,17 +181,18 @@ import madisonPhoto from '../../assets/images/madison-butler.jpeg';
   document.getElementById('newsletter-form-speakers').addEventListener('submit', async (e) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    const email = (form.querySelector('input[type="email"]') as HTMLInputElement).value;
+    const name = (form.querySelector('input[name="name"]') as HTMLInputElement).value.trim();
+    const email = (form.querySelector('input[type="email"]') as HTMLInputElement).value.trim();
     const success = form.querySelector('.newsletter-success') as HTMLElement;
     const error = form.querySelector('.newsletter-error') as HTMLElement;
     try {
       const res = await fetch('https://mail.juneteenthconf.com/api/public/subscription', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, list_uuids: ['d869c36b-2f10-4872-ad82-13122485dac5', 'cf0242d2-c2d2-4b82-93c4-3fff34ee9d28'] })
+        body: JSON.stringify({ email, name, list_uuids: ['d869c36b-2f10-4872-ad82-13122485dac5', 'cf0242d2-c2d2-4b82-93c4-3fff34ee9d28'] })
       });
       if (res.ok) {
-        (form.querySelector('input[type="email"]') as HTMLInputElement).value = '';
+        form.reset();
         success.style.display = 'block';
         error.style.display = 'none';
       } else { throw new Error(); }
