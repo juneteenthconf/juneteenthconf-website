@@ -3,27 +3,45 @@ const b = import.meta.env.BASE_URL;
 const base = b.endsWith('/') ? b : b + '/';
 ---
 
-<nav class="scroll-nav" id="scrollNav" aria-label="Primary navigation">
-  <a href={base} style="font-weight: 600; letter-spacing: 2px;">JuneteenthConf</a>
-  <div style="display: flex; gap: 24px; align-items: center;">
-    <a href={`${base}about/`} class="hidden md:inline">About</a>
-    <a href={`${base}conference/`} class="hidden md:inline">Conference</a>
-    <a href={`${base}conference/speakers/`} class="hidden md:inline">Speakers</a>
-    <a href={`${base}juneteenth/`} class="hidden md:inline">Juneteenth</a>
+<nav class="scroll-nav visible" id="scrollNav" aria-label="Primary navigation">
+  <a href={base} class="scroll-nav-brand" aria-label="JuneteenthConf home">
+    <img src={`${base}logo-white.png`} alt="JuneteenthConf" class="scroll-nav-logo" width="140" height="50" />
+  </a>
+  <div style="display: flex; gap: 20px; align-items: center;">
+    <a href={`${base}about/`} class="scroll-nav-link">About</a>
+    <a href={`${base}conference/`} class="scroll-nav-link">Conference</a>
+    <a href={`${base}conference/speakers/`} class="scroll-nav-link">Speakers</a>
+    <a href={`${base}juneteenth/`} class="scroll-nav-link">Juneteenth</a>
+    <a href={`${base}volunteer/`} class="scroll-nav-link">Volunteer</a>
     <a href={`${base}conference/register/`} class="nav-cta">Register</a>
   </div>
 </nav>
 
+<style>
+  .scroll-nav-brand { display: flex; align-items: center; text-decoration: none; }
+  .scroll-nav-logo { height: 36px; width: auto; display: block; }
+  .scroll-nav-brand:hover { opacity: 0.85; }
+  .scroll-nav-link { display: none; }
+  @media (min-width: 769px) {
+    .scroll-nav-link { display: inline; }
+  }
+</style>
+
 <script>
   const scrollNav = document.getElementById('scrollNav')!;
-  let lastScrollY = 0;
+  let lastScrollY = window.scrollY;
 
   function updateNav() {
     const y = window.scrollY;
-    if (y > window.innerHeight * 0.8 && y < lastScrollY - 5) {
+    if (y < 80) {
+      // At the top — always show
       scrollNav.classList.add('visible');
-    } else if (y < 200 || y > lastScrollY + 5) {
+    } else if (y > lastScrollY + 4) {
+      // Scrolling down — hide
       scrollNav.classList.remove('visible');
+    } else if (y < lastScrollY - 5) {
+      // Scrolling up — show
+      scrollNav.classList.add('visible');
     }
     lastScrollY = y;
   }
