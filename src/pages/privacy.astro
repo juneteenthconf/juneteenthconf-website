@@ -1,0 +1,208 @@
+---
+import InteriorLayout from '../layouts/InteriorLayout.astro';
+---
+
+<InteriorLayout
+  title="Privacy Policy — Juneteenth Conference 2026"
+  description="Privacy policy for JuneteenthConf. How we collect, use, and protect your information."
+  current=""
+  heroTitle="Privacy Policy"
+  heroSubtitle="How we handle your information"
+  heroAccent="gold"
+>
+  <section class="interior-section">
+    <div class="interior-content">
+      <div class="reveal-stagger">
+
+        <p class="reveal effective-date">Effective date: April 13, 2026</p>
+
+        <div class="reveal policy-block">
+          <p class="policy-intro">
+            JuneteenthConf, Unl. ("JuneteenthConf," "we," "our") operates juneteenthconf.com and
+            related subdomains. This policy explains what information we collect, why we collect it,
+            and your rights regarding it.
+          </p>
+        </div>
+
+        <div class="reveal policy-block">
+          <h2 class="policy-heading">1. Information We Collect</h2>
+
+          <h3 class="policy-subheading">Information you provide</h3>
+          <p class="policy-text">When you sign up for our newsletter, register for the conference, or submit a volunteer or speaker inquiry, we collect:</p>
+          <ul class="policy-list">
+            <li>Name and email address</li>
+            <li>Phone number (volunteer form, optional)</li>
+            <li>Preferences and notes you choose to share</li>
+          </ul>
+
+          <h3 class="policy-subheading">Analytics data</h3>
+          <p class="policy-text">
+            We use <strong>Umami</strong>, a privacy-first analytics platform hosted on our own
+            infrastructure at <code>analytics.juneteenthconf.com</code>. Umami does not use cookies
+            and does not collect personally identifiable information. It collects:
+          </p>
+          <ul class="policy-list">
+            <li>Page URL and referrer</li>
+            <li>Browser type and operating system (aggregated)</li>
+            <li>Country-level location (derived from IP, not stored)</li>
+            <li>Session duration and page interactions</li>
+          </ul>
+          <p class="policy-text">
+            No persistent identifiers are stored on your device. No data is shared with third parties.
+            No cookie consent banner is required.
+          </p>
+        </div>
+
+        <div class="reveal policy-block">
+          <h2 class="policy-heading">2. How We Use Your Information</h2>
+          <ul class="policy-list">
+            <li>Send conference updates, speaker announcements, and registration information</li>
+            <li>Coordinate volunteer participation</li>
+            <li>Improve the website and understand visitor behavior (analytics only)</li>
+            <li>Respond to inquiries</li>
+          </ul>
+          <p class="policy-text">We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+        </div>
+
+        <div class="reveal policy-block">
+          <h2 class="policy-heading">3. Email Communications</h2>
+          <p class="policy-text">
+            We manage our mailing lists using <strong>Listmonk</strong>, self-hosted on our own
+            infrastructure at <code>mail.juneteenthconf.com</code>. Email delivery is handled via
+            Microsoft Azure Communication Services. Your email address is used only for
+            JuneteenthConf communications and is never shared with third parties.
+          </p>
+          <p class="policy-text">
+            Every email includes an unsubscribe link. You may also request removal at any time by
+            emailing <a href="mailto:info@juneteenthconf.com">info@juneteenthconf.com</a>.
+          </p>
+        </div>
+
+        <div class="reveal policy-block">
+          <h2 class="policy-heading">4. Data Retention</h2>
+          <p class="policy-text">
+            Newsletter subscriber data is retained until you unsubscribe or request deletion.
+            Analytics data is retained for 24 months in aggregate form and contains no personal
+            identifiers.
+          </p>
+        </div>
+
+        <div class="reveal policy-block">
+          <h2 class="policy-heading">5. Your Rights</h2>
+          <p class="policy-text">Depending on your location, you may have the right to:</p>
+          <ul class="policy-list">
+            <li>Access the personal data we hold about you</li>
+            <li>Request correction or deletion of your data</li>
+            <li>Opt out of email communications at any time</li>
+            <li>Lodge a complaint with your local data protection authority</li>
+          </ul>
+          <p class="policy-text">To exercise any of these rights, contact us at <a href="mailto:info@juneteenthconf.com">info@juneteenthconf.com</a>.</p>
+        </div>
+
+        <div class="reveal policy-block">
+          <h2 class="policy-heading">6. Third-Party Services</h2>
+          <p class="policy-text">We use the following services in operating this site:</p>
+          <ul class="policy-list">
+            <li><strong>Microsoft Azure</strong> — hosting, email delivery infrastructure</li>
+            <li><strong>GitHub</strong> — static site deployment via GitHub Actions</li>
+            <li><strong>Google Fonts</strong> — font files served locally; no Google requests at runtime</li>
+          </ul>
+        </div>
+
+        <div class="reveal policy-block">
+          <h2 class="policy-heading">7. Changes to This Policy</h2>
+          <p class="policy-text">
+            We may update this policy as our practices change. Material changes will be noted with
+            an updated effective date. Continued use of the site after changes constitutes
+            acceptance of the revised policy.
+          </p>
+        </div>
+
+        <div class="reveal policy-block">
+          <h2 class="policy-heading">8. Contact</h2>
+          <p class="policy-text">
+            JuneteenthConf, Unl.<br />
+            Fiscally sponsored by YPOC Harrisburg (501(c)(3))<br />
+            <a href="mailto:info@juneteenthconf.com">info@juneteenthconf.com</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</InteriorLayout>
+
+<style>
+  .interior-section {
+    padding: 60px 24px 80px;
+    background: #231c2d;
+  }
+  .interior-content {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .effective-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(240, 237, 230, 0.35);
+    letter-spacing: 0.05em;
+    margin-bottom: 32px;
+  }
+  .policy-intro {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    color: rgba(240, 237, 230, 0.65);
+    line-height: 1.75;
+    border-left: 3px solid rgba(212, 168, 67, 0.4);
+    padding-left: 20px;
+  }
+  .policy-block {
+    margin-bottom: 48px;
+  }
+  .policy-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #D4A843;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(212, 168, 67, 0.15);
+  }
+  .policy-subheading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: rgba(240, 237, 230, 0.8);
+    margin: 20px 0 8px;
+  }
+  .policy-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: rgba(240, 237, 230, 0.6);
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+  .policy-text a {
+    color: #D4A843;
+    text-decoration: none;
+  }
+  .policy-text a:hover { text-decoration: underline; }
+  .policy-text code {
+    font-family: monospace;
+    font-size: 13px;
+    background: rgba(240, 237, 230, 0.08);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: rgba(240, 237, 230, 0.7);
+  }
+  .policy-list {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: rgba(240, 237, 230, 0.6);
+    line-height: 1.75;
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+  .policy-list li { margin-bottom: 4px; }
+  .policy-list strong { color: rgba(240, 237, 230, 0.8); }
+</style>
