@@ -120,7 +120,7 @@ const base = b.endsWith('/') ? b : b + '/';
     .hero-split {
       flex-direction: column;
       align-items: center;
-      padding: 80px 24px 160px;
+      padding: 80px 24px 80px;
     }
     .hero-content {
       padding: 0;
@@ -130,16 +130,7 @@ const base = b.endsWith('/') ? b : b + '/';
     }
     .hero-logo-link { margin-bottom: 32px; }
     .hero-illustration-wrap {
-      position: absolute;
-      right: -60px;
-      bottom: 0;
-      top: auto;
-      width: 280px;
-      height: 400px;
-      opacity: 0.25;
-    }
-    .hero-illustration {
-      height: 100%;
+      display: none;
     }
     .scroll-prompt { left: 50%; transform: translateX(-50%); text-align: center; }
   }
