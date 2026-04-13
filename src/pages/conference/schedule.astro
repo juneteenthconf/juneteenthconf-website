@@ -167,7 +167,7 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
       const res = await fetch('https://mail.juneteenthconf.com/api/public/subscription', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, list_uuids: ['LISTMONK_LIST_UUID'] })
+        body: JSON.stringify({ email, list_uuids: ['d869c36b-2f10-4872-ad82-13122485dac5'] })
       });
       if (res.ok) {
         (form.querySelector('input[type="email"]') as HTMLInputElement).value = '';
