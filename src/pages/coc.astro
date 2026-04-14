@@ -13,6 +13,32 @@ import InteriorLayout from '../layouts/InteriorLayout.astro';
   <section class="interior-section">
     <div class="interior-content">
       <div class="reveal-stagger">
+
+        <div class="reveal safety-banner">
+          <div class="safety-banner-inner">
+            <p class="safety-label">Community Safety</p>
+            <p class="safety-statement">
+              JuneteenthConf is a <strong>strongly guarded community</strong>. The safety, dignity, and full
+              belonging of every member — particularly those who have been historically excluded from tech —
+              are paramount above all other concerns.
+            </p>
+            <p class="safety-statement">
+              Bigotry of any kind will not be tolerated here, whether explicit or covert. This includes — but
+              is not limited to — <strong>racism, sexism, misogynoir, homophobia, transphobia, and ableism</strong>,
+              expressed verbally, in writing, or through action. Microaggressions, "ironic" prejudice, and
+              comments that punch down are held to the same standard as overt hostility.
+            </p>
+            <p class="safety-statement">
+              <strong>"It was just a joke"</strong> is not a defense, and will not be treated as one.
+            </p>
+            <p class="safety-consequence">
+              Violations of this policy result in immediate removal from the event and a
+              permanent ban from all JuneteenthConf spaces — online and in person. Depending on
+              severity, violators may be formally trespassed from future events.
+            </p>
+          </div>
+        </div>
+
         <div class="reveal coc-block">
           <h2 class="coc-heading">Our Pledge</h2>
           <p class="coc-text">
@@ -40,12 +66,31 @@ import InteriorLayout from '../layouts/InteriorLayout.astro';
           </ul>
           <p class="coc-text">Examples of unacceptable behavior include:</p>
           <ul class="coc-list">
+            <li>Racism, sexism, misogynoir, homophobia, transphobia, ableism, or any other form of bigotry — overt or covert, verbal or written</li>
             <li>The use of sexualized language or imagery, and sexual attention or advances of any kind</li>
             <li>Trolling, insulting or derogatory comments, and personal or political attacks</li>
-            <li>Public or private harassment</li>
-            <li>Publishing others&rsquo; private information, such as a physical or email address, without their explicit permission</li>
-            <li>Other conduct which could reasonably be considered inappropriate in a professional setting</li>
+            <li>Public or private harassment, including repeated unwanted contact</li>
+            <li>Photography or recording of attendees without explicit consent</li>
+            <li>Publishing others&rsquo; private information — such as physical address, phone number, or social handles — without their explicit permission (doxxing)</li>
+            <li>Retaliation against anyone who reports a violation or assists in an investigation</li>
+            <li>Other conduct which could reasonably be considered harmful, demeaning, or inappropriate</li>
           </ul>
+        </div>
+
+        <div class="reveal coc-block">
+          <h2 class="coc-heading">Reporting an Incident</h2>
+          <p class="coc-text">
+            If you experience or witness a violation of this Code of Conduct, report it immediately:
+          </p>
+          <ul class="coc-list">
+            <li><strong>At the event:</strong> Find any staff member wearing a JuneteenthConf badge and ask for a safety lead.</li>
+            <li><strong>By email:</strong> <a href="mailto:safety@juneteenthconf.com" class="coc-link">safety@juneteenthconf.com</a> — reviewed within 24 hours, faster during events.</li>
+          </ul>
+          <p class="coc-text">
+            All reports are confidential. We will never reveal your identity to the subject of a complaint
+            without your explicit consent. There is no penalty for good-faith reports, even if no formal
+            action results.
+          </p>
         </div>
 
         <div class="reveal coc-block">
@@ -56,64 +101,51 @@ import InteriorLayout from '../layouts/InteriorLayout.astro';
             inappropriate, threatening, offensive, or harmful.
           </p>
           <p class="coc-text">
-            Community leaders have the right and responsibility to remove, edit, or reject comments, commits,
-            code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct,
-            and will communicate reasons for moderation decisions when appropriate.
+            Community leaders have the right and responsibility to remove, edit, or reject comments, posts,
+            and other contributions that are not aligned to this Code of Conduct, and will communicate reasons
+            for moderation decisions when appropriate.
           </p>
         </div>
 
         <div class="reveal coc-block">
           <h2 class="coc-heading">Scope</h2>
           <p class="coc-text">
-            This Code of Conduct applies within all community spaces, and also applies when an individual is
-            officially representing the community in public spaces. Examples of representing our community
-            include using an official e-mail address, posting via an official social media account, or acting
-            as an appointed representative at an online or offline event.
-          </p>
-        </div>
-
-        <div class="reveal coc-block">
-          <h2 class="coc-heading">Enforcement</h2>
-          <p class="coc-text">
-            Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the
-            community leaders responsible for enforcement via email at
-            <a href="mailto:volunteers@juneteenthconf.com" class="coc-link">volunteers@juneteenthconf.com</a>.
-            All complaints will be reviewed and investigated promptly and fairly.
-          </p>
-          <p class="coc-text">
-            All community leaders are obligated to respect the privacy and security of the reporter of any incident.
+            This Code of Conduct applies in all community spaces — conference sessions, workshops, social
+            events, hallway conversations, online channels, and social media — and also when an individual
+            is officially representing the community in public. Conduct outside of JuneteenthConf spaces
+            may be considered when it directly affects the safety or experience of community members.
           </p>
         </div>
 
         <div class="reveal coc-block">
           <h2 class="coc-heading">Enforcement Guidelines</h2>
           <p class="coc-text">
-            Community leaders will follow these Community Impact Guidelines in determining the consequences
-            for any action they deem in violation of this Code of Conduct:
+            Community leaders will follow these impact guidelines in determining the appropriate response to
+            any violation:
           </p>
 
           <div class="enforcement-level">
             <h3 class="enforcement-title">1. Correction</h3>
             <p class="coc-text"><strong>Community Impact:</strong> Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.</p>
-            <p class="coc-text"><strong>Consequence:</strong> A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.</p>
+            <p class="coc-text"><strong>Consequence:</strong> A private, written warning providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.</p>
           </div>
 
           <div class="enforcement-level">
             <h3 class="enforcement-title">2. Warning</h3>
             <p class="coc-text"><strong>Community Impact:</strong> A violation through a single incident or series of actions.</p>
-            <p class="coc-text"><strong>Consequence:</strong> A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.</p>
+            <p class="coc-text"><strong>Consequence:</strong> A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing this Code of Conduct, for a specified period of time. Violating these terms may lead to a temporary or permanent ban.</p>
           </div>
 
           <div class="enforcement-level">
             <h3 class="enforcement-title">3. Temporary Ban</h3>
             <p class="coc-text"><strong>Community Impact:</strong> A serious violation of community standards, including sustained inappropriate behavior.</p>
-            <p class="coc-text"><strong>Consequence:</strong> A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.</p>
+            <p class="coc-text"><strong>Consequence:</strong> A temporary ban from any sort of interaction or public communication with the community for a specified period of time. Violating these terms may lead to a permanent ban.</p>
           </div>
 
-          <div class="enforcement-level">
-            <h3 class="enforcement-title">4. Permanent Ban</h3>
-            <p class="coc-text"><strong>Community Impact:</strong> Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.</p>
-            <p class="coc-text"><strong>Consequence:</strong> A permanent ban from any sort of public interaction within the community.</p>
+          <div class="enforcement-level enforcement-level--severe">
+            <h3 class="enforcement-title">4. Permanent Ban + Trespass</h3>
+            <p class="coc-text"><strong>Community Impact:</strong> Any instance of bigotry, harassment, or targeted harm — including racism, misogynoir, transphobia, homophobia, or ableism — or a pattern of serious violations.</p>
+            <p class="coc-text"><strong>Consequence:</strong> Permanent ban from all JuneteenthConf spaces and events. Depending on severity, a formal trespass notice will be issued prohibiting physical presence at any JuneteenthConf event.</p>
           </div>
         </div>
 
@@ -127,11 +159,8 @@ import InteriorLayout from '../layouts/InteriorLayout.astro';
             Community Impact Guidelines were inspired by
             <a href="https://github.com/mozilla/diversity" class="coc-link" target="_blank" rel="noopener">Mozilla&rsquo;s code of conduct enforcement ladder</a>.
           </p>
-          <p class="coc-text">
-            For answers to common questions about this code of conduct, see the
-            <a href="https://www.contributor-covenant.org/faq" class="coc-link" target="_blank" rel="noopener">FAQ</a>.
-          </p>
         </div>
+
       </div>
     </div>
   </section>
@@ -145,6 +174,48 @@ import InteriorLayout from '../layouts/InteriorLayout.astro';
   .interior-content {
     max-width: 700px; margin: 0 auto;
   }
+
+  /* Safety Banner */
+  .safety-banner {
+    margin-bottom: 56px;
+  }
+  .safety-banner-inner {
+    border: 2px solid #c84342;
+    border-radius: 12px;
+    padding: 36px 40px;
+    background: rgba(200, 67, 66, 0.06);
+    position: relative;
+  }
+  .safety-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c84342;
+    margin-bottom: 16px;
+  }
+  .safety-statement {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(240, 237, 230, 0.75);
+    margin-bottom: 16px;
+  }
+  .safety-statement strong {
+    color: rgba(240, 237, 230, 0.95);
+  }
+  .safety-consequence {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(240, 237, 230, 0.6);
+    border-top: 1px solid rgba(200, 67, 66, 0.2);
+    padding-top: 20px;
+    margin-top: 4px;
+    margin-bottom: 0;
+  }
+
   .coc-block {
     margin-bottom: 48px;
     padding-bottom: 32px;
@@ -187,6 +258,10 @@ import InteriorLayout from '../layouts/InteriorLayout.astro';
     border: 1px solid rgba(240, 237, 230, 0.06);
     border-radius: 8px; padding: 24px;
     margin-bottom: 16px;
+  }
+  .enforcement-level--severe {
+    background: rgba(200, 67, 66, 0.05);
+    border-color: rgba(200, 67, 66, 0.2);
   }
   .enforcement-title {
     font-family: 'Space Grotesk', sans-serif;
