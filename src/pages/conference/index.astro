@@ -70,6 +70,7 @@ const base = b.endsWith('/') ? b : b + '/';
         <div class="reveal cta-block">
           <a href={`${base}conference/register/`} class="cta-primary">Register</a>
           <a href={`${base}conference/sponsor/`} class="cta-outline">Become a Sponsor</a>
+          <a href={`${base}conference/cfp/`} class="cta-outline cta-speak">Submit a Talk</a>
         </div>
       </div>
     </div>
@@ -155,6 +156,8 @@ const base = b.endsWith('/') ? b : b + '/';
     display: flex; gap: 20px; flex-wrap: wrap;
     justify-content: center; padding-top: 16px;
   }
+  .cta-speak { border-color: rgba(212, 168, 67, 0.4); color: #D4A843; }
+  .cta-speak:hover { border-color: #D4A843; color: #f0ede6; }
 
   @media (max-width: 640px) {
     .conference-grid, .expect-grid { grid-template-columns: 1fr; }
