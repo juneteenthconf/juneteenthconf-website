@@ -204,7 +204,10 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
             Thank you for submitting. We review all proposals and will be in touch
             by <strong style="color: #D4A843;">May 28, 2026</strong>.
           </p>
-          <a href="/conference/" class="back-link">Back to Conference</a>
+          <div class="success-actions">
+            <a href="/conference/" class="back-link">Back to Conference</a>
+            <button id="submit-another-btn" class="submit-another-btn">Submit Another Talk</button>
+          </div>
         </div>
 
         <div id="cfp-submit-error" class="submit-error-banner" style="display:none;" role="alert">
@@ -387,6 +390,9 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     font-size: 17px; color: rgba(240, 237, 230, 0.6);
     line-height: 1.7; margin-bottom: 32px;
   }
+  .success-actions {
+    display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+  }
   .back-link {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 600; font-size: 13px;
@@ -397,6 +403,16 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     transition: color 0.2s, border-color 0.2s;
   }
   .back-link:hover { color: #f0ede6; border-color: rgba(240, 237, 230, 0.4); }
+  .submit-another-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 13px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #fff; background: #c84342;
+    border: none; border-radius: 6px;
+    padding: 10px 24px; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .submit-another-btn:hover { background: #b53a39; }
 
   /* Submit error */
   .submit-error-banner {
@@ -427,6 +443,16 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
   const errorMsg = document.getElementById('form-error-msg') as HTMLElement;
   const submitError = document.getElementById('cfp-submit-error') as HTMLElement;
   const successBlock = document.getElementById('cfp-success') as HTMLElement;
+
+  document.getElementById('submit-another-btn').addEventListener('click', () => {
+    form.reset();
+    form.querySelectorAll('.field-error').forEach(el => el.classList.remove('field-error'));
+    successBlock.style.display = 'none';
+    form.style.display = 'block';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Proposal';
+    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 
   // Clear field-error styling on interaction
   document.querySelectorAll('.field-input, .field-textarea, .field-select').forEach(el => {
