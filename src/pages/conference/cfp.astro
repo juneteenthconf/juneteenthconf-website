@@ -172,6 +172,16 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
                 <option value="No">No — first time!</option>
               </select>
             </div>
+
+            <div class="field-group">
+              <label for="submissionType" class="field-label">Submission type <span class="required">*</span></label>
+              <select id="submissionType" name="submissionType" class="field-select" required>
+                <option value="">Select</option>
+                <option value="New submission">New submission</option>
+                <option value="Revision of previous submission">Revision of a previous submission</option>
+                <option value="Second talk for consideration">Second talk for consideration</option>
+              </select>
+            </div>
           </div>
 
           <div class="reveal form-footer">
@@ -472,6 +482,7 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
       keyTakeaways: getValue('keyTakeaways'),
       pastTalks: getValue('pastTalks'),
       spokenAtJtcBefore: getValue('spokenAtJtcBefore'),
+      submissionType: getValue('submissionType'),
     };
 
     try {

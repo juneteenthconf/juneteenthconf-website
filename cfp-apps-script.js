@@ -29,7 +29,7 @@ function doPost(e) {
         'City/State', 'Bio', 'Headshot URL', 'LinkedIn', 'Twitter/X',
         'Session Title', 'Format', 'Track', 'Audience Level',
         'Abstract', 'Key Takeaways', 'Past Talk Links', 'Spoken at JTC Before?',
-        'Status'
+        'Submission Type', 'Status'
       ];
       sheet.appendRow(headers);
       sheet.setFrozenRows(1);
@@ -59,6 +59,7 @@ function doPost(e) {
       data.keyTakeaways || '',
       data.pastTalks || '',
       data.spokenAtJtcBefore || '',
+      data.submissionType || '',
       'Pending'
     ]);
 
