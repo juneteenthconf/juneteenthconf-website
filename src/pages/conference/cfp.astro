@@ -156,22 +156,21 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
               <textarea id="keyTakeaways" name="keyTakeaways" class="field-textarea" rows="4" required placeholder="1. &#10;2. &#10;3. "></textarea>
             </div>
 
-            <div class="field-row">
-              <div class="field-group">
-                <label for="pastTalks" class="field-label">
-                  Links to Past Talks <span class="optional">(optional)</span>
-                  <span class="field-hint">YouTube, conference recordings, slides, etc.</span>
-                </label>
-                <input type="text" id="pastTalks" name="pastTalks" class="field-input" placeholder="https://..." />
-              </div>
-              <div class="field-group">
-                <label for="spokenAtJtcBefore" class="field-label">Spoken at JuneteenthConf before? <span class="required">*</span></label>
-                <select id="spokenAtJtcBefore" name="spokenAtJtcBefore" class="field-select" required>
-                  <option value="">Select</option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No — first time!</option>
-                </select>
-              </div>
+            <div class="field-group">
+              <label for="pastTalks" class="field-label">
+                Links to Past Talks <span class="optional">(optional)</span>
+                <span class="field-hint">YouTube, conference recordings, slides, etc.</span>
+              </label>
+              <input type="text" id="pastTalks" name="pastTalks" class="field-input" placeholder="https://..." />
+            </div>
+
+            <div class="field-group">
+              <label for="spokenAtJtcBefore" class="field-label">Spoken at JuneteenthConf before? <span class="required">*</span></label>
+              <select id="spokenAtJtcBefore" name="spokenAtJtcBefore" class="field-select" required>
+                <option value="">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No — first time!</option>
+              </select>
             </div>
           </div>
 
