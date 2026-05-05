@@ -490,7 +490,7 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     paymentErrorBanner.style.display = 'none';
 
     try {
-      const total = 75 + Math.max(0, Math.floor(contribution));
+      const total = 0.01; // TEST PRICE — swap back to: 75 + Math.max(0, Math.floor(contribution))
 
       const res = await fetch('/api/create-payment-intent', {
         method: 'POST',

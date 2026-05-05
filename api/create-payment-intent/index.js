@@ -8,7 +8,7 @@ module.exports = async function (context, req) {
 
   const { amount, name, email, tshirtSize } = req.body || {};
 
-  if (!amount || amount < 75) {
+  if (!amount || amount < 0.01) {
     context.res = {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
