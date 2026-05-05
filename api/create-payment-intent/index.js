@@ -6,9 +6,9 @@ module.exports = async function (context, req) {
     return;
   }
 
-  const { amount, name, email, tshirtSize } = req.body || {};
+  const { amount, name, email, tshirtSize, scholarshipTickets, contribution } = req.body || {};
 
-  if (!amount || amount < 0.01) {
+  if (!amount || amount < 75) {
     context.res = {
       status: 400,
       headers: { 'Content-Type': 'application/json' },
@@ -27,6 +27,8 @@ module.exports = async function (context, req) {
         name: name || '',
         email: email || '',
         tshirtSize: tshirtSize || '',
+        scholarshipTickets: String(scholarshipTickets || 0),
+        contribution: String(contribution || 0),
         event: 'JuneteenthConf 2026',
       },
     });

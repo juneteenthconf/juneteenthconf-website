@@ -37,6 +37,20 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
               <span class="ticket-price">$75</span>
             </div>
 
+            <div class="scholarship-block">
+              <div class="scholarship-header">
+                <div>
+                  <label class="block-label">Scholarship Tickets <span class="optional">(optional)</span></label>
+                  <p class="contribution-hint">Cover the cost of attendance for someone who can't afford a ticket. $75 each.</p>
+                </div>
+                <div class="qty-control">
+                  <button type="button" class="qty-btn" id="scholarship-minus">&#8722;</button>
+                  <span class="qty-display" id="scholarship-qty">0</span>
+                  <button type="button" class="qty-btn" id="scholarship-plus">&#43;</button>
+                </div>
+              </div>
+            </div>
+
             <div class="contribution-block">
               <label class="block-label">
                 Additional Contribution <span class="optional">(optional)</span>
@@ -196,6 +210,32 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
   .ticket-price {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700; font-size: 28px; color: #f0ede6;
+  }
+
+  /* Scholarship */
+  .scholarship-block {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(240, 237, 230, 0.06);
+    margin-bottom: 24px;
+  }
+  .scholarship-header {
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+  }
+  .qty-control {
+    display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+  }
+  .qty-btn {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px;
+    color: rgba(240, 237, 230, 0.6); background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(240, 237, 230, 0.12); border-radius: 6px;
+    width: 36px; height: 36px; cursor: pointer; transition: all 0.15s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .qty-btn:hover { border-color: #D4A843; color: #D4A843; }
+  .qty-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .qty-display {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: 20px; color: #f0ede6; min-width: 24px; text-align: center;
   }
 
   /* Contribution */
@@ -425,15 +465,36 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     cardErrors.textContent = e.error ? e.error.message : '';
   });
 
-  // Contribution logic
+  // Scholarship + contribution logic
   let contribution = 0;
+  let scholarshipQty = 0;
   const customInput = document.getElementById('custom-amount') as HTMLInputElement;
+  const scholarshipQtyEl = document.getElementById('scholarship-qty') as HTMLElement;
+  const minusBtn = document.getElementById('scholarship-minus') as HTMLButtonElement;
+  const plusBtn = document.getElementById('scholarship-plus') as HTMLButtonElement;
 
   function updateTotal() {
-    const total = 75 + Math.max(0, Math.floor(contribution));
+    const total = 75 + (scholarshipQty * 75) + Math.max(0, Math.floor(contribution));
     document.getElementById('total-display')!.textContent = `$${total}`;
     document.getElementById('btn-total')!.textContent = `$${total}`;
   }
+
+  minusBtn.addEventListener('click', () => {
+    if (scholarshipQty > 0) {
+      scholarshipQty--;
+      scholarshipQtyEl.textContent = String(scholarshipQty);
+      minusBtn.disabled = scholarshipQty === 0;
+      updateTotal();
+    }
+  });
+  minusBtn.disabled = true;
+
+  plusBtn.addEventListener('click', () => {
+    scholarshipQty++;
+    scholarshipQtyEl.textContent = String(scholarshipQty);
+    minusBtn.disabled = false;
+    updateTotal();
+  });
 
   document.querySelectorAll<HTMLButtonElement>('.preset-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -490,7 +551,7 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     paymentErrorBanner.style.display = 'none';
 
     try {
-      const total = 0.50; // TEST PRICE — swap back to: 75 + Math.max(0, Math.floor(contribution))
+      const total = 75 + (scholarshipQty * 75) + Math.max(0, Math.floor(contribution));
 
       const res = await fetch('/api/create-payment-intent', {
         method: 'POST',
@@ -500,6 +561,8 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
           name: nameEl.value.trim(),
           email: emailEl.value.trim(),
           tshirtSize: sizeEl.value,
+          scholarshipTickets: scholarshipQty,
+          contribution: Math.max(0, Math.floor(contribution)),
         }),
       });
 
