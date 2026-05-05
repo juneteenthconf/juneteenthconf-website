@@ -66,9 +66,23 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
               </div>
             </div>
 
-            <div class="field-group">
-              <label for="titleCompany" class="field-label">Title &amp; Company <span class="required">*</span></label>
-              <input type="text" id="titleCompany" name="titleCompany" class="field-input" required placeholder="e.g. Senior Engineer at Acme Corp" />
+            <div class="field-row">
+              <div class="field-group">
+                <label for="titleCompany" class="field-label">Title &amp; Company <span class="required">*</span></label>
+                <input type="text" id="titleCompany" name="titleCompany" class="field-input" required placeholder="e.g. Senior Engineer at Acme Corp" />
+              </div>
+              <div class="field-group">
+                <label for="tshirtSize" class="field-label">T-Shirt Size <span class="required">*</span></label>
+                <select id="tshirtSize" name="tshirtSize" class="field-select" required>
+                  <option value="">Select a size</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="2XL">2XL</option>
+                  <option value="3XL">3XL</option>
+                </select>
+              </div>
             </div>
 
             <div class="field-group">
@@ -495,6 +509,7 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
       email: getValue('email'),
       pronouns: getValue('pronouns'),
       titleCompany: getValue('titleCompany'),
+      tshirtSize: getValue('tshirtSize'),
       cityState: getValue('cityState'),
       bio: getValue('bio'),
       headshotUrl: getValue('headshotUrl'),

@@ -25,7 +25,7 @@ function doPost(e) {
     // Write header row on first submission
     if (sheet.getLastRow() === 0) {
       const headers = [
-        'Submitted At', 'Name', 'Email', 'Pronouns', 'Title & Company',
+        'Submitted At', 'Name', 'Email', 'Pronouns', 'Title & Company', 'T-Shirt Size',
         'City/State', 'Bio', 'Headshot URL', 'LinkedIn', 'Twitter/X',
         'Session Title', 'Format', 'Track', 'Audience Level',
         'Abstract', 'Key Takeaways', 'Past Talk Links', 'Spoken at JTC Before?',
@@ -46,6 +46,7 @@ function doPost(e) {
       data.email || '',
       data.pronouns || '',
       data.titleCompany || '',
+      data.tshirtSize || '',
       data.cityState || '',
       data.bio || '',
       data.headshotUrl || '',
