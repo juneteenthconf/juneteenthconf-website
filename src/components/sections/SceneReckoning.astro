@@ -37,10 +37,26 @@
         <div class="memorial-name">George Floyd</div>
         <div class="memorial-years">1973 &ndash; 2020</div>
       </div>
-      <div class="memorial-portrait reveal">
-        <div class="memorial-photo-placeholder"><span class="memorial-candle">&#x1F56F;</span></div>
+      <div class="memorial-portrait reveal breonna-portrait" id="breonna-trigger" role="button" tabindex="0" aria-label="View Breonna Taylor memorial poster">
+        <div class="memorial-photo breonna-photo">
+          <img src="/breonna-taylor-justice.png" alt="Breonna Taylor — Justice poster by Amira Hb Talbi" loading="lazy" />
+        </div>
         <div class="memorial-name">Breonna Taylor</div>
         <div class="memorial-years">1993 &ndash; 2020</div>
+        <div class="breonna-hint">Click to view</div>
+      </div>
+
+      <!-- Lightbox -->
+      <div id="breonna-lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Breonna Taylor Justice poster" style="display:none;">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <div class="lightbox-inner">
+          <img src="/breonna-taylor-justice.png" alt="Justice — Breonna Taylor poster" class="lightbox-img" />
+          <p class="lightbox-credit">
+            &ldquo;Justice&rdquo; poster by <strong>Amira Hb Talbi (AHT)</strong>, 2020.<br />
+            Released free for public use by the artist.<br />
+            <a href="https://www.reddit.com/r/blackladies/comments/hc1rvi/i_made_a_free_poster_for_breonna_taylor/" target="_blank" rel="noopener">Original post</a>
+          </p>
+        </div>
       </div>
       <div class="memorial-portrait reveal">
         <div class="memorial-photo-placeholder"><span class="memorial-candle">&#x1F56F;</span></div>
@@ -80,3 +96,82 @@
     </div>
   </div>
 </section>
+
+<style>
+  .breonna-portrait {
+    cursor: pointer; position: relative;
+  }
+  .breonna-photo img {
+    object-position: top center;
+    filter: none;
+  }
+  .breonna-hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(240, 237, 230, 0.35);
+    margin-top: 6px; transition: color 0.2s;
+  }
+  .breonna-portrait:hover .breonna-hint { color: #D4A843; }
+  .breonna-portrait:hover .memorial-photo {
+    border-color: #D4A843;
+    box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.2);
+  }
+
+  .lightbox {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(10, 8, 16, 0.92);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    animation: fadeIn 0.2s ease;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .lightbox-close {
+    position: fixed; top: 20px; right: 24px;
+    font-size: 32px; line-height: 1; color: rgba(240,237,230,0.6);
+    background: none; border: none; cursor: pointer;
+    transition: color 0.2s; z-index: 10000;
+  }
+  .lightbox-close:hover { color: #f0ede6; }
+  .lightbox-inner {
+    display: flex; flex-direction: column; align-items: center;
+    max-height: 90vh; gap: 20px;
+  }
+  .lightbox-img {
+    max-height: 75vh; max-width: min(500px, 90vw);
+    width: auto; object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  }
+  .lightbox-credit {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; color: rgba(240, 237, 230, 0.45);
+    text-align: center; line-height: 1.7;
+  }
+  .lightbox-credit strong { color: rgba(240, 237, 230, 0.7); }
+  .lightbox-credit a { color: #D4A843; text-decoration: none; }
+  .lightbox-credit a:hover { color: #f0ede6; }
+</style>
+
+<script>
+  const trigger = document.getElementById('breonna-trigger');
+  const lightbox = document.getElementById('breonna-lightbox');
+  const closeBtn = document.getElementById('lightbox-close');
+
+  function openLightbox() {
+    lightbox!.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    closeBtn!.focus();
+  }
+  function closeLightbox() {
+    lightbox!.style.display = 'none';
+    document.body.style.overflow = '';
+    trigger!.focus();
+  }
+
+  trigger!.addEventListener('click', openLightbox);
+  trigger!.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(); } });
+  closeBtn!.addEventListener('click', closeLightbox);
+  lightbox!.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lightbox!.style.display !== 'none') closeLightbox(); });
+</script>
