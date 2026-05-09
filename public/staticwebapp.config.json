@@ -1,0 +1,31 @@
+{
+  "globalHeaders": {
+    "Cache-Control": "public, max-age=0, must-revalidate"
+  },
+  "routes": [
+    {
+      "route": "/_astro/*",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/images/*",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/fonts/*",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/favicon.*",
+      "headers": {
+        "Cache-Control": "public, max-age=86400"
+      }
+    }
+  ]
+}

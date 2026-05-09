@@ -29,10 +29,17 @@ const doubled = [...speakers, ...speakers];
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const vh = window.innerHeight;
+          let ticking = false;
           window.addEventListener('scroll', () => {
-            const r = ticker.getBoundingClientRect();
-            const p = Math.max(0, Math.min(1, 1 - (r.top / vh)));
-            track.style.animationDuration = Math.max(30 - (p * 26), 4) + 's';
+            if (!ticking) {
+              requestAnimationFrame(() => {
+                const r = ticker.getBoundingClientRect();
+                const p = Math.max(0, Math.min(1, 1 - (r.top / vh)));
+                track.style.animationDuration = Math.max(30 - (p * 26), 4) + 's';
+                ticking = false;
+              });
+              ticking = true;
+            }
           }, { passive: true });
         }
       });

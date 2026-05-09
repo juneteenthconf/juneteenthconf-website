@@ -8,6 +8,9 @@ export default defineConfig({
     : 'https://juneteenthconf.com',
   base: process.env.DEPLOY_TARGET === 'ghpages' ? '/juneteenthconf-rc1' : '/',
   output: 'static',
+  build: {
+    inlineStylesheets: 'always',
+  },
   integrations: [
     tailwind(),
     sitemap(),
