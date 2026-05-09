@@ -70,7 +70,7 @@ body {
 .scroll-nav a:hover { color: #f0ede6; }
 .scroll-nav .nav-cta {
   background: #b53a39; padding: 6px 16px; border-radius: 4px; opacity: 1;
-  font-weight: 600; font-size: 12px;
+  font-weight: 600; font-size: 12px; color: #ffffff;
 }
 
 /* ── Fixed Social Links ── */
