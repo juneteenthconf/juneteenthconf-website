@@ -31,7 +31,7 @@ const programs = [
           <h2 class="type-outlined" style={`font-size: clamp(48px, 10vw, 120px); -webkit-text-stroke-color: ${prog.color}; flex-shrink: 0;`}>{prog.name}</h2>
           <div style="max-width: 400px;">
             <p style="font-family: 'Inter', sans-serif; font-size: clamp(14px, 1.5vw, 17px); color: rgba(255,255,255,0.5); line-height: 1.7; padding-bottom: 12px;">{prog.description}</p>
-            <a href={prog.href} style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.35); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;" onmouseover="this.style.color='{prog.color}'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Learn more &rarr;</a>
+            <a href={prog.href} style="font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.35); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;" onmouseover="this.style.color='{prog.color}'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Learn more about {prog.name} &rarr;</a>
           </div>
         </div>
         {i < programs.length - 1 && (
