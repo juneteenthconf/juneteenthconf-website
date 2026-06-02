@@ -12,6 +12,9 @@ const base = b.endsWith('/') ? b : b + '/';
     <p class="reveal font-display hero-date">
       June 19th &amp; 20th
     </p>
+    <p class="reveal hero-location">
+      Microsoft Chicago &bull; Aon Center &bull; Chicago, IL
+    </p>
 
     <div class="reveal hero-details">
       <div class="hero-detail-item">
@@ -22,11 +25,6 @@ const base = b.endsWith('/') ? b : b + '/';
       <div class="hero-detail-item">
         <span class="hero-detail-day">Day 2</span>
         <span class="hero-detail-desc">AI Workshop &amp; Hackathon</span>
-      </div>
-      <div class="hero-detail-divider" aria-hidden="true"></div>
-      <div class="hero-detail-item">
-        <span class="hero-detail-day">Venue</span>
-        <span class="hero-detail-desc">Microsoft Chicago &bull; Aon Center</span>
       </div>
     </div>
 
@@ -93,6 +91,15 @@ const base = b.endsWith('/') ? b : b + '/';
     letter-spacing: -1.5px;
     line-height: 1.1;
     margin-bottom: 48px;
+  }
+
+  .hero-location {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(240, 237, 230, 0.45);
+    margin-bottom: 32px;
+    margin-top: -20px;
   }
 
   .hero-details {
