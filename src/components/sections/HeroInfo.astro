@@ -13,7 +13,7 @@ const base = b.endsWith('/') ? b : b + '/';
       June 19th &amp; 20th
     </p>
     <p class="reveal hero-location">
-      Microsoft Chicago &bull; 200 E. Randolph Dr., Suite 200 &bull; Chicago, IL 60601
+      <a href="https://maps.google.com/?q=200+E+Randolph+Dr+Suite+200+Chicago+IL+60601" target="_blank" rel="noopener" class="hero-location-link">Microsoft Chicago &bull; 200 E. Randolph Dr., Suite 200 &bull; Chicago, IL 60601</a>
     </p>
 
     <div class="reveal hero-details">
@@ -101,6 +101,11 @@ const base = b.endsWith('/') ? b : b + '/';
     margin-bottom: 32px;
     margin-top: -20px;
   }
+  .hero-location-link {
+    color: inherit; text-decoration: none;
+    transition: color 0.2s;
+  }
+  .hero-location-link:hover { color: rgba(240, 237, 230, 0.8); }
 
   .hero-details {
     display: flex;
