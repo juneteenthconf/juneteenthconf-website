@@ -4,21 +4,29 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
 <InteriorLayout
   title="Venue — Juneteenth Conference 2026"
-  description="Juneteenth Conference 2026 takes place in Chicago, IL. Venue details coming soon."
+  description="Juneteenth Conference 2026 takes place at Microsoft Chicago, Aon Center — 200 E. Randolph Dr., Suite 200, Chicago, IL 60601. June 19–20, 2026."
   current="Venue"
   heroTitle="Venue"
-  heroSubtitle="Chicago, IL"
+  heroSubtitle="Microsoft Chicago &bull; Aon Center"
   heroAccent="green"
 >
   <section class="interior-section">
     <div class="interior-content">
       <div class="reveal-stagger">
-        <div class="reveal coming-soon-block">
-          <span class="coming-soon-badge">Coming Soon</span>
-          <h2 class="coming-soon-title">Venue details coming soon.</h2>
-          <p class="coming-soon-text">
-            We're finalizing the perfect space for Juneteenth Conference 2026 in Chicago. Stay tuned for the full venue announcement.
+        <div class="reveal venue-announce-block">
+          <span class="venue-badge">Venue Confirmed</span>
+          <h2 class="venue-name">Microsoft Chicago</h2>
+          <p class="venue-address">
+            200 E. Randolph Dr., Suite 200<br />
+            Chicago, IL 60601<br />
+            <span class="venue-building">Aon Center</span>
           </p>
+          <a
+            href="https://maps.google.com/?q=200+E+Randolph+Dr+Suite+200+Chicago+IL+60601"
+            target="_blank"
+            rel="noopener"
+            class="venue-map-link"
+          >View on Google Maps &rarr;</a>
         </div>
 
         <div class="reveal city-block">
@@ -45,13 +53,13 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
             </div>
             <div class="travel-card">
               <span class="travel-label">Accommodations</span>
-              <p class="travel-text">Hotel block information will be shared once the venue is confirmed. Chicago offers options at every price point.</p>
+              <p class="travel-text">The Aon Center is steps from several downtown hotels. Chicago offers options at every price point.</p>
             </div>
           </div>
         </div>
 
         <div class="reveal newsletter-block">
-          <p class="newsletter-prompt">Get notified when venue details are announced.</p>
+          <p class="newsletter-prompt">Get conference updates and announcements.</p>
           <form class="newsletter-form" id="newsletter-form-venue" aria-label="Newsletter signup">
             <label for="email-venue" class="sr-only">Email address</label>
             <input type="email" id="email-venue" name="email" class="newsletter-input" placeholder="your@email.com" required />
@@ -73,10 +81,10 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
   .interior-content {
     max-width: 750px; margin: 0 auto;
   }
-  .coming-soon-block {
+  .venue-announce-block {
     text-align: center; margin-bottom: 56px;
   }
-  .coming-soon-badge {
+  .venue-badge {
     display: inline-block;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 600; font-size: 12px;
@@ -85,16 +93,27 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     padding: 6px 16px; border-radius: 100px;
     margin-bottom: 24px;
   }
-  .coming-soon-title {
+  .venue-name {
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700; font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700; font-size: clamp(28px, 5vw, 48px);
     color: #f0ede6; margin-bottom: 16px;
   }
-  .coming-soon-text {
+  .venue-address {
     font-family: 'Inter', sans-serif;
-    font-size: 16px; color: rgba(240, 237, 230, 0.55);
-    line-height: 1.7;
+    font-size: 18px; color: rgba(240, 237, 230, 0.7);
+    line-height: 1.8; margin-bottom: 20px;
   }
+  .venue-building {
+    font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(240, 237, 230, 0.4);
+  }
+  .venue-map-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px; font-weight: 600;
+    color: #55ac64; text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .venue-map-link:hover { text-decoration: underline; }
   .city-block {
     margin-bottom: 56px;
     border-left: 4px solid rgba(85, 172, 100, 0.4);
