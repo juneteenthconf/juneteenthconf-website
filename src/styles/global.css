@@ -544,12 +544,18 @@ body {
   display: flex; align-items: center;
 }
 .marquee-track {
-  display: flex; white-space: nowrap; animation: marquee 30s linear infinite;
+  display: flex; white-space: nowrap; animation: marquee 60s linear infinite;
 }
-.marquee-track span {
+.marquee-track span,
+.marquee-track .marquee-link {
   font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600;
   letter-spacing: 0.15em; text-transform: uppercase; color: #fff; padding: 0 24px;
 }
+.marquee-track .marquee-link {
+  text-decoration: none; opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.marquee-track .marquee-link:hover { opacity: 1; text-decoration: underline; }
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }

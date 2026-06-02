@@ -13,6 +13,23 @@ const base = b.endsWith('/') ? b : b + '/';
       June 19th &amp; 20th
     </p>
 
+    <div class="reveal hero-details">
+      <div class="hero-detail-item">
+        <span class="hero-detail-day">Day 1</span>
+        <span class="hero-detail-desc">Conference Sessions</span>
+      </div>
+      <div class="hero-detail-divider" aria-hidden="true"></div>
+      <div class="hero-detail-item">
+        <span class="hero-detail-day">Day 2</span>
+        <span class="hero-detail-desc">AI Workshop &amp; Hackathon</span>
+      </div>
+      <div class="hero-detail-divider" aria-hidden="true"></div>
+      <div class="hero-detail-item">
+        <span class="hero-detail-day">Venue</span>
+        <span class="hero-detail-desc">Microsoft Chicago &bull; Aon Center</span>
+      </div>
+    </div>
+
     <div class="reveal hero-ctas">
       <a href={`${base}conference/register/`} class="cta-primary">Register</a>
       <a href={`${base}conference/sponsor/`} class="cta-outline">Sponsor</a>
@@ -34,7 +51,7 @@ const base = b.endsWith('/') ? b : b + '/';
   </div>
 
   <div class="scroll-prompt">
-    <p class="font-body" style="font-size: 12px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.4;">Scroll to begin</p>
+    <p class="font-body" style="font-size: 12px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.4;">Scroll down to learn more</p>
     <div style="margin-top: 12px; font-size: 20px; opacity: 0.4;">&#8595;</div>
   </div>
 </section>
@@ -76,6 +93,38 @@ const base = b.endsWith('/') ? b : b + '/';
     letter-spacing: -1.5px;
     line-height: 1.1;
     margin-bottom: 48px;
+  }
+
+  .hero-details {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+  .hero-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 0 20px;
+  }
+  .hero-detail-item:first-child { padding-left: 0; }
+  .hero-detail-day {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(240, 237, 230, 0.35);
+  }
+  .hero-detail-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; font-weight: 500;
+    color: rgba(240, 237, 230, 0.75);
+  }
+  .hero-detail-divider {
+    width: 1px; height: 32px;
+    background: rgba(240, 237, 230, 0.12);
+    flex-shrink: 0;
   }
 
   .hero-ctas {

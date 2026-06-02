@@ -1,10 +1,24 @@
 ---
-const items = ['June 19-20, 2026', 'Chicago', 'Juneteenth Conference', 'Building Our Own Table'];
+type MarqueeItem = { text: string; href?: string };
+const items: MarqueeItem[] = [
+  { text: 'June 19–20, 2026' },
+  { text: 'Microsoft Chicago' },
+  { text: 'Aon Center · Chicago, IL' },
+  { text: 'Juneteenth Conference' },
+  { text: 'Building Our Own Table' },
+  { text: 'Day 1: Conference Sessions' },
+  { text: 'Day 2: AI Workshop & Hackathon' },
+  { text: 'Register Now →', href: '/conference/register/' },
+];
 const repeated = [...items, ...items, ...items];
 ---
 
 <div class="marquee-container" role="marquee" aria-label="Conference details">
   <div class="marquee-track">
-    {repeated.map((text) => <span>{text}</span>)}
+    {repeated.map((item) =>
+      item.href
+        ? <a href={item.href} class="marquee-link">{item.text}</a>
+        : <span>{item.text}</span>
+    )}
   </div>
 </div>
