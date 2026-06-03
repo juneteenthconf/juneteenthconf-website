@@ -2,6 +2,7 @@
 import InteriorLayout from '../../layouts/InteriorLayout.astro';
 import { Image } from 'astro:assets';
 import madisonPhoto from '../../assets/images/madison-butler.jpeg';
+import michaelPhoto from '../../assets/images/michael-brown.jpeg';
 
 const placeholder = '/logo-square-color.png';
 
@@ -117,6 +118,24 @@ const speakers = [
               </div>
             </div>
           ))}
+        </div>
+
+        <!-- Day 2 Workshop -->
+        <h3 class="reveal section-heading" style="margin-top: 24px;">Day 2 Workshop</h3>
+        <div class="reveal speaker-row">
+          <div class="speaker-photo-wrap">
+            <Image src={michaelPhoto} alt="Michael Brown" width={200} height={200} class="speaker-photo" />
+          </div>
+          <div class="speaker-info">
+            <div class="speaker-meta">
+              <span class="speaker-time">Day 2 &bull; Saturday, June 20</span>
+              <span class="speaker-track">AI &amp; Engineering</span>
+            </div>
+            <h3 class="speaker-name">Michael Brown</h3>
+            <p class="speaker-title">Founder &amp; Executive Director, JuneteenthConf &bull; Co-founder &amp; CEO, Synaptic Weave</p>
+            <p class="speaker-talk">&ldquo;AI Assisted Coding Workshop&rdquo;</p>
+            <p class="speaker-bio">Michael Brown is a software engineer and technology leader with more than 30 years of experience building and scaling software systems. A former Microsoft engineer, he founded JuneteenthConf in June 2020 — filling a roster of brilliant Black speakers in just 16 days while the industry claimed it couldn't be done in a year. Over 20,000 people tuned in to that first event. What started as a two-day virtual conference has grown into a movement. Michael now leads JuneteenthConf as it expands beyond the conference into workforce development and mentorship programs designed to increase Black representation in technology. He is also Co-founder and CEO of Synaptic Weave, building Arachne — an AI agent deployment runtime. Featured in Business Insider.</p>
+          </div>
         </div>
 
         <!-- Past speakers -->

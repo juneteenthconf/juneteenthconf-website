@@ -61,7 +61,22 @@ const schedule = [
 
         <div class="reveal day2-note">
           <span class="day2-label">Day 2 — Saturday, June 20</span>
-          <p class="day2-desc">AI Workshop &amp; Hackathon. Details coming soon.</p>
+          <div class="day2-rows">
+            <div class="day2-row">
+              <span class="day2-time">Morning</span>
+              <div>
+                <p class="day2-session">AI Assisted Coding Workshop</p>
+                <p class="day2-speaker">Led by Michael Brown, Founder &amp; Executive Director</p>
+              </div>
+            </div>
+            <div class="day2-row">
+              <span class="day2-time">Afternoon</span>
+              <div>
+                <p class="day2-session">Community Hackathon</p>
+                <p class="day2-speaker">Details coming soon</p>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -170,11 +185,27 @@ const schedule = [
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700; font-size: 14px;
     color: #D4A843; text-transform: uppercase;
-    letter-spacing: 0.1em; display: block; margin-bottom: 8px;
+    letter-spacing: 0.1em; display: block; margin-bottom: 20px;
   }
-  .day2-desc {
+  .day2-rows { display: flex; flex-direction: column; gap: 16px; }
+  .day2-row {
+    display: grid; grid-template-columns: 80px 1fr; gap: 16px;
+  }
+  .day2-time {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px; font-weight: 600;
+    color: rgba(240, 237, 230, 0.35);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    padding-top: 2px;
+  }
+  .day2-session {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 16px;
+    color: #f0ede6; margin: 0 0 4px;
+  }
+  .day2-speaker {
     font-family: 'Inter', sans-serif;
-    font-size: 15px; color: rgba(240, 237, 230, 0.5);
+    font-size: 13px; color: rgba(240, 237, 230, 0.4);
     margin: 0;
   }
 
