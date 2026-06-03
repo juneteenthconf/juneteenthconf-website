@@ -13,6 +13,7 @@ const speakers = [
     time: '10:15 AM',
     track: 'Data & AI',
     photo: '/images/speakers/aaron-hunter.jpg',
+    bio: 'Aaron is a Principal Developer Advocate at AWS based in Frisco, TX. With over 15 years of experience spanning system administration, networking, and training, he brings more than a decade of cloud expertise to help engineers, developers, builders, and tech enthusiasts master AWS technologies. His philosophy is simple: always be learning something new, and have fun while doing it. Aaron shares his knowledge through workshops, online courses, mentoring, and live streaming — making complex cloud concepts accessible and enjoyable. When he\'s not building in the cloud, you\'ll find him exploring craft beer scenes in new cities or teaming up with friends in Marvel Rivals on his PlayStation, because even superheroes need good teammates.',
   },
   {
     name: 'Ramatu Kandakai',
@@ -21,6 +22,7 @@ const speakers = [
     time: '11:00 AM',
     track: 'Entrepreneurship',
     photo: null,
+    bio: 'Ramatu Kandakai is a brand marketer and branding speaker with more than a decade of experience across healthcare, consulting, consumer goods, and nonprofits. She has led brand strategies at Humana, SC Johnson, Ernst & Young, Korn Ferry, and more. Her work lives at the intersection of brand strategy, professional identity, and belonging. In 2020 she accidentally launched a personal branding consultancy, which opened doors to engagements with Salesforce Connections, Twitch, DoorDash, Northwestern University, and the University of Chicago. She also taught "The Psychology of Personal Brands in Media" at Johns Hopkins University, where she earned her MBA. Committed to expanding access for underrepresented communities, she has partnered with the National Black MBA Association, Chicago Urban League, and Black Woman Owned. Now, Ramatu is building My Hyphen, a platform helping people brand the space between their profession and passion. Her work has been featured in AfroTech, Yahoo Finance, and Canvas Rebel.',
   },
   {
     name: 'Hamdi Hassan Shahid Jr.',
@@ -29,6 +31,7 @@ const speakers = [
     time: '1:00 PM',
     track: 'Engineering',
     photo: null,
+    bio: 'Hamdi "Hassan" Shahid Jr. is the founder and CEO of Lamma+, an AI-powered influencer discovery platform serving faith-based creators and the brands trying to reach them. Before tech, Hassan spent years in youth work and community organizing in the Twin Cities while building a parallel life as a working musician and guitarist — earning a Cedar Commission Fellowship and Minnesota State Arts Board grants along the way. He then pivoted through a network engineering bootcamp and Prime Digital Academy, and has since shipped code at QBP, Storyforge, and Wells Fargo, where he worked on credit card technology with React, TypeScript, and serverless AWS. Today he splits his time between Lamma+ and contract test leadership at Meta. He believes the best engineers of the next decade won\'t all come from CS programs — and that\'s a good thing.',
   },
   {
     name: 'Pierre DeBois',
@@ -37,6 +40,7 @@ const speakers = [
     time: '1:45 PM',
     track: 'Data & AI',
     photo: '/images/speakers/pierre-debois.jpg',
+    bio: 'Pierre DeBois is the founder and CEO of Zimana, an analytics services firm helping organizations achieve profitability improvements in marketing, web development, and business operations. A prolific speaker and workshop facilitator, Pierre has presented at major conferences including O\'Reilly OSCON, Content Marketing World, CodeMash, and Black Is Tech. He has contributed to CMSWire for nearly a decade, with articles ranked among their top digital marketing pieces for 2018, 2020, 2021, and 2022. Pierre is co-author of The Entrepreneur Within Volume 3 and Faith, Failure & Success, and has been featured in the Chicago Sun Times. He holds a degree in mechanical engineering from Prairie View A&M University and an MBA from Georgia Tech. A native of Gary, Indiana, Pierre has been part of the JuneteenthConf community since 2021.',
   },
   {
     name: 'Ashley Janelle',
@@ -45,6 +49,7 @@ const speakers = [
     time: '2:30 PM',
     track: 'Entrepreneurship',
     photo: '/images/speakers/ashley-janelle.jpg',
+    bio: 'Ashley Janelle is an award-winning UX designer, founder of Empathive UX Bootcamp, and content creator based in Chicago. She has worked at companies including Amazon and Caterpillar, and has reviewed over 1,000 UX portfolios throughout her career. Ashley founded Empathive to help aspiring UX designers break into the field through personalized 1:1 mentorship, with students landing roles at companies like Amazon Games, Meta, and FiscalNote. She creates educational content across TikTok, Instagram, and YouTube, focusing on portfolio development, career strategy, and the evolving UX landscape. Ashley is passionate about making UX education accessible and preparing designers for the AI-integrated future of the field.',
   },
   {
     name: 'Clarene Mitchell',
@@ -53,6 +58,7 @@ const speakers = [
     time: '3:15 PM',
     track: 'Entrepreneurship',
     photo: null,
+    bio: 'Clarene Mitchell is the Founder/CEO of TCM Communications, a social media branding firm based in Tulsa, Oklahoma, focused on empowering entrepreneurs and corporate leaders to leverage LinkedIn for organic growth. She holds a B.A. in Interpersonal Communications from Cardinal Stritch University. Clarene began her entrepreneurial journey in 2017 and published Shine Online with LinkedIn in 2019. LinkedIn selected her for its Creator Accelerator Program\'s inaugural Technology & Innovation cohort and invited her to an exclusive event at their Chicago office. She has beta-tested several LinkedIn features and is featured on LinkedIn\'s website for her work on the Audio Events beta.',
   },
 ];
 ---
@@ -85,27 +91,30 @@ const speakers = [
           </div>
         </div>
 
-        <!-- Session speakers grid -->
+        <!-- Session speakers -->
         <h3 class="reveal section-heading">Session Speakers</h3>
-        <div class="reveal speakers-grid">
+        <div class="reveal speakers-list">
           {speakers.map((s) => (
-            <div class="speaker-card">
+            <div class="speaker-row">
               <div class="speaker-photo-wrap">
                 <img
                   src={s.photo ?? placeholder}
                   alt={s.name}
                   class={`speaker-photo${!s.photo ? ' speaker-photo--placeholder' : ''}`}
-                  width="300"
-                  height="300"
+                  width="200"
+                  height="200"
                 />
               </div>
-              <div class="speaker-meta">
-                <span class="speaker-time">{s.time}</span>
-                <span class="speaker-track">{s.track}</span>
+              <div class="speaker-info">
+                <div class="speaker-meta">
+                  <span class="speaker-time">{s.time}</span>
+                  <span class="speaker-track">{s.track}</span>
+                </div>
+                <h3 class="speaker-name">{s.name}</h3>
+                <p class="speaker-title">{s.title}</p>
+                <p class="speaker-talk">&ldquo;{s.talk}&rdquo;</p>
+                <p class="speaker-bio">{s.bio}</p>
               </div>
-              <h3 class="speaker-name">{s.name}</h3>
-              <p class="speaker-title">{s.title}</p>
-              <p class="speaker-talk">{s.talk}</p>
             </div>
           ))}
         </div>
@@ -180,25 +189,26 @@ const speakers = [
     font-weight: 600; font-size: 16px;
     color: rgba(240, 237, 230, 0.4);
     text-transform: uppercase; letter-spacing: 0.15em;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
   }
 
-  /* Speaker grid */
-  .speakers-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 72px;
+  /* Speaker rows */
+  .speakers-list {
+    display: flex; flex-direction: column;
+    gap: 0; margin-bottom: 72px;
   }
-  .speaker-card {
-    background: rgba(45, 36, 56, 0.4);
-    border: 1px solid rgba(240, 237, 230, 0.06);
-    border-radius: 10px;
-    overflow: hidden;
+  .speaker-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 36px;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(240, 237, 230, 0.07);
+    align-items: start;
   }
   .speaker-photo-wrap {
-    width: 100%; aspect-ratio: 1;
-    overflow: hidden; background: #1a1425;
+    width: 160px; height: 160px;
+    border-radius: 8px; overflow: hidden;
+    background: #1a1425; flex-shrink: 0;
   }
   .speaker-photo {
     width: 100%; height: 100%;
@@ -207,46 +217,47 @@ const speakers = [
   }
   .speaker-photo--placeholder {
     object-fit: contain;
-    padding: 24px;
-    opacity: 0.2;
+    padding: 20px;
+    opacity: 0.15;
+  }
+  .speaker-info {
+    display: flex; flex-direction: column; gap: 6px;
   }
   .speaker-meta {
-    display: flex; gap: 8px; align-items: center;
-    padding: 16px 20px 0;
+    display: flex; gap: 10px; align-items: center;
+    margin-bottom: 2px;
   }
   .speaker-time {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 11px; font-weight: 700;
+    font-size: 12px; font-weight: 700;
     color: #D4A843; letter-spacing: 0.08em;
   }
   .speaker-track {
     font-family: 'Inter', sans-serif;
     font-size: 11px; color: rgba(240, 237, 230, 0.35);
-    letter-spacing: 0.08em; text-transform: uppercase;
+    letter-spacing: 0.1em; text-transform: uppercase;
   }
-  .speaker-track::before { content: '·'; margin-right: 8px; }
+  .speaker-track::before { content: '·'; margin-right: 10px; }
   .speaker-name {
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700; font-size: 18px;
-    color: #f0ede6;
-    padding: 8px 20px 2px;
-    margin: 0;
+    font-weight: 700; font-size: 22px;
+    color: #f0ede6; margin: 0;
   }
   .speaker-title {
     font-family: 'Inter', sans-serif;
-    font-size: 13px; color: rgba(240, 237, 230, 0.4);
-    padding: 0 20px 12px;
+    font-size: 14px; color: rgba(240, 237, 230, 0.4);
     margin: 0;
   }
   .speaker-talk {
     font-family: 'Inter', sans-serif;
-    font-size: 13px; color: rgba(240, 237, 230, 0.6);
+    font-size: 15px; color: rgba(240, 237, 230, 0.65);
+    font-style: italic; margin: 4px 0 8px;
     line-height: 1.5;
-    padding: 0 20px 20px;
-    margin: 0;
-    border-top: 1px solid rgba(240, 237, 230, 0.06);
-    padding-top: 12px;
-    font-style: italic;
+  }
+  .speaker-bio {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; color: rgba(240, 237, 230, 0.5);
+    line-height: 1.8; margin: 0;
   }
 
   /* Past speakers */
@@ -275,9 +286,11 @@ const speakers = [
 
   @media (max-width: 768px) {
     .keynote-spread { grid-template-columns: 1fr; }
-    .speakers-grid { grid-template-columns: repeat(2, 1fr); }
+    .speaker-row { grid-template-columns: 120px 1fr; gap: 24px; }
+    .speaker-photo-wrap { width: 120px; height: 120px; }
   }
   @media (max-width: 480px) {
-    .speakers-grid { grid-template-columns: 1fr; }
+    .speaker-row { grid-template-columns: 1fr; }
+    .speaker-photo-wrap { width: 100px; height: 100px; }
   }
 </style>
