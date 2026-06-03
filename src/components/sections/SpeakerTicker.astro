@@ -16,36 +16,3 @@ const doubled = [...speakers, ...speakers];
   </div>
 </section>
 
-<script>
-  function initTickerAccel() {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
-    const ticker = document.getElementById('speakerTicker');
-    const track = document.getElementById('speakerTrack') as HTMLElement;
-    if (!ticker || !track) return;
-
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const vh = window.innerHeight;
-          let ticking = false;
-          window.addEventListener('scroll', () => {
-            if (!ticking) {
-              requestAnimationFrame(() => {
-                const r = ticker.getBoundingClientRect();
-                const p = Math.max(0, Math.min(1, 1 - (r.top / vh)));
-                track.style.animationDuration = Math.max(30 - (p * 26), 4) + 's';
-                ticking = false;
-              });
-              ticking = true;
-            }
-          }, { passive: true });
-        }
-      });
-    }, { threshold: 0.05 });
-    obs.observe(ticker);
-  }
-
-  initTickerAccel();
-</script>
