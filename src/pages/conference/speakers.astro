@@ -2,12 +2,65 @@
 import InteriorLayout from '../../layouts/InteriorLayout.astro';
 import { Image } from 'astro:assets';
 import madisonPhoto from '../../assets/images/madison-butler.jpeg';
+
+const placeholder = '/logo-square-color.png';
+
+const speakers = [
+  {
+    name: 'Aaron Hunter',
+    title: 'Principal Developer Advocate, AWS',
+    talk: 'My Kids Couldn\'t Spell "Because" So I Built an App That Couldn\'t Afford to Fail',
+    time: '10:15 AM',
+    track: 'Data & AI',
+    photo: '/images/speakers/aaron-hunter.jpg',
+  },
+  {
+    name: 'Ramatu Kandakai',
+    title: 'Founder, My Hyphen',
+    talk: 'Betting on Yourself: Don\'t Trade Your Values for a Seat at the Table',
+    time: '11:00 AM',
+    track: 'Entrepreneurship',
+    photo: null,
+  },
+  {
+    name: 'Hamdi Hassan Shahid Jr.',
+    title: 'Founder & CEO, Lamma+',
+    talk: 'No CS Degree, No Permission, No Problem',
+    time: '1:00 PM',
+    track: 'Engineering',
+    photo: null,
+  },
+  {
+    name: 'Pierre DeBois',
+    title: 'Founder & CEO, Zimana',
+    talk: 'TBA',
+    time: '1:45 PM',
+    track: 'Data & AI',
+    photo: '/images/speakers/pierre-debois.jpg',
+  },
+  {
+    name: 'Ashley Janelle',
+    title: 'Founder, Empathive UX Bootcamp',
+    talk: 'Building a Business When No One\'s Hiring',
+    time: '2:30 PM',
+    track: 'Entrepreneurship',
+    photo: '/images/speakers/ashley-janelle.jpg',
+  },
+  {
+    name: 'Clarene Mitchell',
+    title: 'Founder & CEO, TCM Communications',
+    talk: 'LinkedIn Power Moves to Grow Your Business',
+    time: '3:15 PM',
+    track: 'Entrepreneurship',
+    photo: null,
+  },
+];
 ---
 
 <InteriorLayout
   ogSlug="speakers"
   title="Speakers — Juneteenth Conference 2026"
-  description="Speaker lineup for Juneteenth Conference 2026. Madison Butler confirmed as keynote. Full lineup coming soon."
+  description="Speaker lineup for Juneteenth Conference 2026. Keynote by Madison Butler. Six sessions across engineering, data & AI, and entrepreneurship."
   current="Speakers"
   heroTitle="Speakers"
   heroSubtitle="The voices building our table"
@@ -16,19 +69,45 @@ import madisonPhoto from '../../assets/images/madison-butler.jpeg';
   <section class="interior-section">
     <div class="interior-content">
       <div class="reveal-stagger">
-        <!-- Keynote feature -->
+
+        <!-- Keynote -->
         <div class="reveal keynote-spread">
           <div class="keynote-photo-wrap">
             <Image src={madisonPhoto} alt="Madison Butler" width={400} height={500} class="keynote-photo" />
           </div>
           <div class="keynote-info">
-            <span class="keynote-label">Keynote Speaker</span>
+            <span class="keynote-label">Keynote Speaker &bull; 4:00 PM</span>
             <h2 class="keynote-name">Madison Butler</h2>
             <p class="keynote-title">Founder, Blue Haired Unicorn &amp; Black Speakers Collection</p>
             <p class="keynote-bio">
               Unapologetic advocate for authenticity and psychological safety. Featured in The New York Times, WSJ, and Rolling Stone. Author of <em>Let Them See You</em> (Fall 2025). LinkedIn Top Black Voice.
             </p>
           </div>
+        </div>
+
+        <!-- Session speakers grid -->
+        <h3 class="reveal section-heading">Session Speakers</h3>
+        <div class="reveal speakers-grid">
+          {speakers.map((s) => (
+            <div class="speaker-card">
+              <div class="speaker-photo-wrap">
+                <img
+                  src={s.photo ?? placeholder}
+                  alt={s.name}
+                  class={`speaker-photo${!s.photo ? ' speaker-photo--placeholder' : ''}`}
+                  width="300"
+                  height="300"
+                />
+              </div>
+              <div class="speaker-meta">
+                <span class="speaker-time">{s.time}</span>
+                <span class="speaker-track">{s.track}</span>
+              </div>
+              <h3 class="speaker-name">{s.name}</h3>
+              <p class="speaker-title">{s.title}</p>
+              <p class="speaker-talk">{s.talk}</p>
+            </div>
+          ))}
         </div>
 
         <!-- Past speakers -->
@@ -44,29 +123,6 @@ import madisonPhoto from '../../assets/images/madison-butler.jpeg';
           </div>
         </div>
 
-        <!-- Coming soon -->
-        <div class="reveal coming-soon-block">
-          <span class="coming-soon-badge">Coming Soon</span>
-          <h2 class="coming-soon-title">Full speaker lineup in progress.</h2>
-          <p class="coming-soon-text">
-            We're assembling a roster of brilliant Black voices in tech. Got expertise to share?
-            Submit a talk proposal — we'd love to hear from you.
-          </p>
-          <a href="/conference/cfp/" class="cta-outline" style="margin-top: 24px;">Submit a Talk Proposal</a>
-        </div>
-
-        <div class="reveal newsletter-block">
-          <p class="newsletter-prompt">Get notified when speakers are announced.</p>
-          <form class="newsletter-form" id="newsletter-form-speakers" aria-label="Newsletter signup">
-            <label for="name-speakers" class="sr-only">Your name</label>
-            <input type="text" id="name-speakers" name="name" class="newsletter-input" placeholder="Your name" required autocomplete="name" />
-            <label for="email-speakers" class="sr-only">Email address</label>
-            <input type="email" id="email-speakers" name="email" class="newsletter-input" placeholder="your@email.com" required autocomplete="email" />
-            <button type="submit" class="newsletter-btn">Notify Me</button>
-            <p class="newsletter-success" style="display:none; color: #55ac64; margin-top: 8px;">You're subscribed!</p>
-            <p class="newsletter-error" style="display:none; color: #c84342; margin-top: 8px;">Something went wrong. Please try again.</p>
-          </form>
-        </div>
       </div>
     </div>
   </section>
@@ -78,12 +134,14 @@ import madisonPhoto from '../../assets/images/madison-butler.jpeg';
     background: #231c2d;
   }
   .interior-content {
-    max-width: 900px; margin: 0 auto;
+    max-width: 960px; margin: 0 auto;
   }
+
+  /* Keynote */
   .keynote-spread {
     display: grid; grid-template-columns: 1fr 1.2fr;
     gap: 48px; align-items: center;
-    margin-bottom: 64px;
+    margin-bottom: 72px;
   }
   .keynote-photo-wrap {
     border-left: 4px solid rgba(212, 168, 67, 0.5);
@@ -115,8 +173,84 @@ import madisonPhoto from '../../assets/images/madison-butler.jpeg';
     font-size: 16px; color: rgba(240, 237, 230, 0.6);
     line-height: 1.7;
   }
+
+  /* Section heading */
+  .section-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600; font-size: 16px;
+    color: rgba(240, 237, 230, 0.4);
+    text-transform: uppercase; letter-spacing: 0.15em;
+    margin-bottom: 32px;
+  }
+
+  /* Speaker grid */
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 72px;
+  }
+  .speaker-card {
+    background: rgba(45, 36, 56, 0.4);
+    border: 1px solid rgba(240, 237, 230, 0.06);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .speaker-photo-wrap {
+    width: 100%; aspect-ratio: 1;
+    overflow: hidden; background: #1a1425;
+  }
+  .speaker-photo {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top;
+    display: block;
+  }
+  .speaker-photo--placeholder {
+    object-fit: contain;
+    padding: 24px;
+    opacity: 0.2;
+  }
+  .speaker-meta {
+    display: flex; gap: 8px; align-items: center;
+    padding: 16px 20px 0;
+  }
+  .speaker-time {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; font-weight: 700;
+    color: #D4A843; letter-spacing: 0.08em;
+  }
+  .speaker-track {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; color: rgba(240, 237, 230, 0.35);
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .speaker-track::before { content: '·'; margin-right: 8px; }
+  .speaker-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 18px;
+    color: #f0ede6;
+    padding: 8px 20px 2px;
+    margin: 0;
+  }
+  .speaker-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; color: rgba(240, 237, 230, 0.4);
+    padding: 0 20px 12px;
+    margin: 0;
+  }
+  .speaker-talk {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; color: rgba(240, 237, 230, 0.6);
+    line-height: 1.5;
+    padding: 0 20px 20px;
+    margin: 0;
+    border-top: 1px solid rgba(240, 237, 230, 0.06);
+    padding-top: 12px;
+    font-style: italic;
+  }
+
+  /* Past speakers */
   .past-speakers {
-    margin-bottom: 64px;
     border-top: 1px solid rgba(255,255,255,0.08);
     padding-top: 40px;
   }
@@ -138,69 +272,12 @@ import madisonPhoto from '../../assets/images/madison-butler.jpeg';
     border: 1px solid rgba(240, 237, 230, 0.1);
     border-radius: 6px;
   }
-  .coming-soon-block {
-    text-align: center; margin-bottom: 48px;
-  }
-  .coming-soon-badge {
-    display: inline-block;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600; font-size: 12px;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    color: #D4A843; border: 1px solid rgba(212, 168, 67, 0.3);
-    padding: 6px 16px; border-radius: 100px;
-    margin-bottom: 24px;
-  }
-  .coming-soon-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700; font-size: clamp(22px, 4vw, 32px);
-    color: #f0ede6; margin-bottom: 16px;
-  }
-  .coming-soon-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px; color: rgba(240, 237, 230, 0.55);
-    line-height: 1.7; max-width: 500px; margin: 0 auto;
-  }
-  .newsletter-block {
-    text-align: center; padding-top: 16px;
-  }
-  .newsletter-prompt {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px; color: rgba(255,255,255,0.4);
-    letter-spacing: 0.1em; text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  .newsletter-form {
-    display: flex; flex-wrap: wrap;
-    justify-content: center; gap: 12px;
-  }
 
   @media (max-width: 768px) {
     .keynote-spread { grid-template-columns: 1fr; }
+    .speakers-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .speakers-grid { grid-template-columns: 1fr; }
   }
 </style>
-
-<script>
-  document.getElementById('newsletter-form-speakers').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const name = (form.querySelector('input[name="name"]') as HTMLInputElement).value.trim();
-    const email = (form.querySelector('input[type="email"]') as HTMLInputElement).value.trim();
-    const success = form.querySelector('.newsletter-success') as HTMLElement;
-    const error = form.querySelector('.newsletter-error') as HTMLElement;
-    try {
-      const res = await fetch('https://mail.juneteenthconf.com/api/public/subscription', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, name, list_uuids: ['d869c36b-2f10-4872-ad82-13122485dac5', 'cf0242d2-c2d2-4b82-93c4-3fff34ee9d28'] })
-      });
-      if (res.ok) {
-        form.reset();
-        success.style.display = 'block';
-        error.style.display = 'none';
-      } else { throw new Error(); }
-    } catch {
-      error.style.display = 'block';
-      success.style.display = 'none';
-    }
-  });
-</script>
