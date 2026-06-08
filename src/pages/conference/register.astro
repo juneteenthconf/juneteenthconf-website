@@ -549,11 +549,16 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
   let cardComplete = false;
 
+  // Disable pay button until card details are entered
+  const payBtn = document.getElementById('pay-btn') as HTMLButtonElement;
+  payBtn.disabled = true;
+
   cardElement.on('focus', () => cardContainer.classList.add('focused'));
   cardElement.on('blur', () => cardContainer.classList.remove('focused'));
   cardElement.on('change', (e: any) => {
     cardErrors.textContent = e.error ? e.error.message : '';
     cardComplete = e.complete;
+    payBtn.disabled = !cardComplete;
   });
 
   // Pricing state
@@ -665,7 +670,6 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
   // Form submission
   const form = document.getElementById('register-form') as HTMLFormElement;
-  const payBtn = document.getElementById('pay-btn') as HTMLButtonElement;
   const errorMsg = document.getElementById('reg-error-msg') as HTMLElement;
   const successBlock = document.getElementById('reg-success') as HTMLElement;
   const paymentErrorBanner = document.getElementById('payment-error-banner') as HTMLElement;
