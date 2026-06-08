@@ -549,16 +549,35 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
   let cardComplete = false;
 
-  // Disable pay button until card details are entered
   const payBtn = document.getElementById('pay-btn') as HTMLButtonElement;
+  const nameEl  = document.getElementById('reg-name')    as HTMLInputElement;
+  const emailEl = document.getElementById('reg-email')   as HTMLInputElement;
+  const sizeEl  = document.getElementById('tshirt-size') as HTMLSelectElement;
+
+  function updatePayBtn() {
+    payBtn.disabled = !(
+      cardComplete &&
+      nameEl.value.trim() &&
+      emailEl.value.trim() &&
+      sizeEl.value
+    );
+  }
+
+  // Start disabled
   payBtn.disabled = true;
+
+  // Re-check on every field change
+  [nameEl, emailEl, sizeEl].forEach(el => {
+    el.addEventListener('input', updatePayBtn);
+    el.addEventListener('change', updatePayBtn);
+  });
 
   cardElement.on('focus', () => cardContainer.classList.add('focused'));
   cardElement.on('blur', () => cardContainer.classList.remove('focused'));
   cardElement.on('change', (e: any) => {
     cardErrors.textContent = e.error ? e.error.message : '';
     cardComplete = e.complete;
-    payBtn.disabled = !cardComplete;
+    updatePayBtn();
   });
 
   // Pricing state
@@ -682,10 +701,6 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-    const nameEl = document.getElementById('reg-name') as HTMLInputElement;
-    const emailEl = document.getElementById('reg-email') as HTMLInputElement;
-    const sizeEl = document.getElementById('tshirt-size') as HTMLSelectElement;
 
     let valid = true;
     [nameEl, emailEl, sizeEl].forEach(el => {
