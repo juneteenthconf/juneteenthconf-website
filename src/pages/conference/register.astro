@@ -547,10 +547,13 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
   const cardContainer = document.getElementById('card-element') as HTMLElement;
   const cardErrors = document.getElementById('card-errors') as HTMLElement;
 
+  let cardComplete = false;
+
   cardElement.on('focus', () => cardContainer.classList.add('focused'));
   cardElement.on('blur', () => cardContainer.classList.remove('focused'));
   cardElement.on('change', (e: any) => {
     cardErrors.textContent = e.error ? e.error.message : '';
+    cardComplete = e.complete;
   });
 
   // Pricing state
@@ -684,6 +687,13 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     [nameEl, emailEl, sizeEl].forEach(el => {
       if (!el.value.trim()) { el.classList.add('field-error'); valid = false; }
     });
+
+    // Card element must be complete before hitting the API
+    if (!cardComplete) {
+      cardErrors.textContent = 'Please enter your card details.';
+      cardContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
 
     // .edu validation for student promo
     if (studentPromoApplied && !emailEl.value.trim().toLowerCase().endsWith('.edu')) {
