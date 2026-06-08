@@ -15,6 +15,11 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     <div class="interior-content">
       <div class="reveal-stagger">
 
+        <div class="reveal student-callout">
+          <span class="callout-icon">🎓</span>
+          <p>College student? Use code <strong>BETHUNE</strong> at checkout with your <strong>.edu email</strong> to register for <strong>$25</strong>.</p>
+        </div>
+
         <div class="reveal includes-block">
           <h3 class="block-label">What's Included</h3>
           <div class="includes-grid">
@@ -420,6 +425,21 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     padding: 10px 24px; transition: color 0.2s, border-color 0.2s;
   }
   .back-link:hover { color: #f0ede6; border-color: rgba(240, 237, 230, 0.4); }
+
+  /* Student callout */
+  .student-callout {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: rgba(212, 168, 67, 0.07);
+    border: 1px solid rgba(212, 168, 67, 0.25);
+    border-radius: 10px; padding: 16px 20px;
+    margin-bottom: 24px;
+  }
+  .callout-icon { font-size: 20px; flex-shrink: 0; line-height: 1.4; }
+  .student-callout p {
+    font-family: 'Inter', sans-serif; font-size: 14px;
+    color: rgba(240, 237, 230, 0.7); line-height: 1.6; margin: 0;
+  }
+  .student-callout strong { color: #D4A843; }
 
   /* Ticket price block */
   .ticket-price-block { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
