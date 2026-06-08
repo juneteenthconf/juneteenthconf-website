@@ -292,7 +292,7 @@ schedule.forEach((item, idx) => {
     border: 1px solid rgba(240, 237, 230, 0.08);
     border-radius: 14px;
     padding: 36px;
-    max-width: 600px; width: 100%;
+    max-width: 660px; width: 100%;
     max-height: 85vh; overflow-y: auto;
   }
 
@@ -307,34 +307,45 @@ schedule.forEach((item, idx) => {
 
   /* Modal inner content (injected via JS) */
   .modal-header {
-    display: flex; gap: 20px; align-items: flex-start;
-    margin-bottom: 24px; padding-right: 32px;
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 28px;
+    margin-bottom: 24px;
+    padding-right: 32px;
   }
   .modal-photo {
-    width: 88px; height: 88px; border-radius: 50%;
-    object-fit: cover; object-position: top; flex-shrink: 0;
-    border: 2px solid rgba(212, 168, 67, 0.3);
+    width: 140px; height: 168px;
+    border-radius: 8px;
+    object-fit: cover; object-position: top;
+    border: 2px solid rgba(212, 168, 67, 0.25);
     background: #1a1425;
+    display: block;
   }
   .modal-photo-placeholder {
-    width: 88px; height: 88px; border-radius: 50%; flex-shrink: 0;
-    border: 2px solid rgba(212, 168, 67, 0.15);
+    width: 140px; height: 168px;
+    border-radius: 8px;
+    border: 2px solid rgba(212, 168, 67, 0.12);
     background: #1a1425;
     display: flex; align-items: center; justify-content: center;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 28px; font-weight: 700; color: rgba(212, 168, 67, 0.3);
+    font-size: 48px; font-weight: 700; color: rgba(212, 168, 67, 0.2);
   }
-  .modal-identity { display: flex; flex-direction: column; gap: 4px; }
+  .modal-identity {
+    display: flex; flex-direction: column; gap: 6px;
+    padding-top: 4px;
+  }
   .modal-name {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700; font-size: 22px; color: #f0ede6; margin: 0;
+    line-height: 1.2;
   }
   .modal-role {
     font-family: 'Inter', sans-serif;
     font-size: 14px; color: rgba(240, 237, 230, 0.45); margin: 0;
   }
   .modal-meta {
-    display: flex; gap: 8px; align-items: center; margin-top: 4px;
+    display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+    margin-top: 2px;
   }
   .modal-track {
     font-family: 'Space Grotesk', sans-serif;
@@ -349,15 +360,22 @@ schedule.forEach((item, idx) => {
     font-family: 'Inter', sans-serif;
     font-size: 12px; color: rgba(240, 237, 230, 0.3);
   }
+  .modal-talk {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 15px;
+    color: #f0ede6;
+    line-height: 1.45; margin: 12px 0 0;
+  }
   .modal-divider {
     border: none; border-top: 1px solid rgba(240, 237, 230, 0.07);
-    margin: 0 0 20px;
+    margin: 20px 0;
   }
-  .modal-talk {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px; color: rgba(240, 237, 230, 0.75);
-    font-style: italic; line-height: 1.5;
-    margin: 0 0 20px;
+  .modal-section-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(240, 237, 230, 0.25);
+    display: block; margin-bottom: 10px;
   }
   .modal-bio {
     font-family: 'Inter', sans-serif;
@@ -365,11 +383,16 @@ schedule.forEach((item, idx) => {
     line-height: 1.8; margin: 0;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 560px) {
     .schedule-row { grid-template-columns: 70px 1fr; gap: 16px; }
     .session-panel { padding: 24px 20px; }
-    .modal-header { flex-direction: column; gap: 14px; }
-    .modal-photo, .modal-photo-placeholder { width: 72px; height: 72px; }
+    .modal-header { grid-template-columns: 110px 1fr; gap: 18px; }
+    .modal-photo, .modal-photo-placeholder { width: 110px; height: 132px; }
+    .modal-name { font-size: 18px; }
+  }
+  @media (max-width: 400px) {
+    .modal-header { grid-template-columns: 1fr; }
+    .modal-photo, .modal-photo-placeholder { width: 100%; height: 180px; }
   }
 </style>
 
@@ -390,7 +413,7 @@ schedule.forEach((item, idx) => {
 
     const trackClass = s.type === 'keynote' ? 'modal-track modal-track--keynote' : 'modal-track';
     const talkHtml = s.talk && s.talk !== 'Keynote'
-      ? `<hr class="modal-divider" /><p class="modal-talk">&ldquo;${s.talk}&rdquo;</p>`
+      ? `<p class="modal-talk">${s.talk}</p>`
       : '';
 
     content.innerHTML = `
@@ -403,11 +426,11 @@ schedule.forEach((item, idx) => {
             <span class="${trackClass}">${s.track}</span>
             <span class="modal-time">${s.time}</span>
           </div>
+          ${talkHtml}
         </div>
       </div>
       <hr class="modal-divider" />
-      ${talkHtml}
-      <hr class="modal-divider" />
+      <span class="modal-section-label">About the Speaker</span>
       <p class="modal-bio">${s.bio}</p>
     `;
 
