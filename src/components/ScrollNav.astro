@@ -1,6 +1,16 @@
 ---
 const b = import.meta.env.BASE_URL;
 const base = b.endsWith('/') ? b : b + '/';
+
+const links = [
+  { href: `${base}about/`, label: 'About' },
+  { href: `${base}conference/`, label: 'Conference' },
+  { href: `${base}conference/speakers/`, label: 'Speakers' },
+  { href: `${base}conference/schedule/`, label: 'Schedule' },
+  { href: `${base}conference/sponsor/`, label: 'Sponsor' },
+  { href: `${base}juneteenth/`, label: 'Juneteenth' },
+  { href: `${base}volunteer/`, label: 'Volunteer' },
+];
 ---
 
 <nav class="scroll-nav visible" id="scrollNav" aria-label="Primary navigation">
@@ -8,16 +18,22 @@ const base = b.endsWith('/') ? b : b + '/';
     <img src="/images/logo-white.webp" alt="JuneteenthConf" class="scroll-nav-logo" width="140" height="50" />
   </a>
   <div style="display: flex; gap: 20px; align-items: center;">
-    <a href={`${base}about/`} class="scroll-nav-link">About</a>
-    <a href={`${base}conference/`} class="scroll-nav-link">Conference</a>
-    <a href={`${base}conference/speakers/`} class="scroll-nav-link">Speakers</a>
-    <a href={`${base}conference/schedule/`} class="scroll-nav-link">Schedule</a>
-    <a href={`${base}conference/sponsor/`} class="scroll-nav-link">Sponsor</a>
-    <a href={`${base}juneteenth/`} class="scroll-nav-link">Juneteenth</a>
-    <a href={`${base}volunteer/`} class="scroll-nav-link">Volunteer</a>
+    {links.map(link => (
+      <a href={link.href} class="scroll-nav-link">{link.label}</a>
+    ))}
     <a href={`${base}conference/register/`} class="nav-cta">Register</a>
   </div>
+  <button class="hamburger-btn" id="hamburger-scroll" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu-scroll" hidden>
+  {links.map(link => (
+    <a href={link.href}>{link.label}</a>
+  ))}
+  <a href={`${base}conference/register/`} class="mobile-menu-cta">Register</a>
+</div>
 
 <style>
   .scroll-nav-brand { display: flex; align-items: center; text-decoration: none; }
@@ -26,6 +42,54 @@ const base = b.endsWith('/') ? b : b + '/';
   .scroll-nav-link { display: none; }
   @media (min-width: 769px) {
     .scroll-nav-link { display: inline; }
+  }
+
+  /* Hamburger */
+  .hamburger-btn {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 6px;
+    width: 36px; height: 36px;
+  }
+  .hamburger-btn span {
+    display: block; width: 22px; height: 2px;
+    background: rgba(240, 237, 230, 0.75);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .hamburger-btn.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger-btn.is-open span:nth-child(2) { opacity: 0; }
+  .hamburger-btn.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile menu */
+  .mobile-menu {
+    position: fixed; top: 65px; left: 0; right: 0; z-index: 996;
+    background: rgba(35, 28, 45, 0.98); backdrop-filter: blur(16px);
+    padding: 8px 24px 24px;
+    display: flex; flex-direction: column;
+    border-bottom: 1px solid rgba(212, 168, 67, 0.15);
+  }
+  .mobile-menu[hidden] { display: none; }
+  .mobile-menu a {
+    color: rgba(240, 237, 230, 0.65); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: color 0.15s;
+  }
+  .mobile-menu a:hover { color: #f0ede6; }
+  .mobile-menu-cta {
+    margin-top: 16px;
+    background: #b53a39 !important; color: #fff !important;
+    text-align: center; padding: 13px 0 !important;
+    border-radius: 6px; border: none !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 700 !important; font-size: 14px !important;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .mobile-menu-cta:hover { background: #a33231 !important; }
+
+  @media (max-width: 768px) {
+    .hamburger-btn { display: flex; }
   }
 </style>
 
@@ -36,13 +100,10 @@ const base = b.endsWith('/') ? b : b + '/';
   function updateNav() {
     const y = window.scrollY;
     if (y < 80) {
-      // At the top — always show
       scrollNav.classList.add('visible');
     } else if (y > lastScrollY + 4) {
-      // Scrolling down — hide
       scrollNav.classList.remove('visible');
     } else if (y < lastScrollY - 5) {
-      // Scrolling up — show
       scrollNav.classList.add('visible');
     }
     lastScrollY = y;
@@ -55,4 +116,21 @@ const base = b.endsWith('/') ? b : b + '/';
       ticking = true;
     }
   }, { passive: true });
+
+  const btn = document.getElementById('hamburger-scroll') as HTMLButtonElement;
+  const menu = document.getElementById('mobile-menu-scroll') as HTMLElement;
+
+  btn.addEventListener('click', () => {
+    const open = !menu.hidden;
+    menu.hidden = open;
+    btn.setAttribute('aria-expanded', String(!open));
+    btn.classList.toggle('is-open', !open);
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.hidden = true;
+    btn.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }));
 </script>

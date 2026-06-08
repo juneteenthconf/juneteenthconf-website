@@ -1,26 +1,58 @@
 ---
 import InteriorLayout from '../../layouts/InteriorLayout.astro';
+import madisonPhoto from '../../assets/images/madison-butler.jpeg';
 
 const schedule = [
   { time: '9:00 AM',  label: 'Networking',                    type: 'break' },
   { time: '9:30 AM',  label: 'Welcome & Opening',              type: 'special', speaker: 'Michael Brown', role: 'Founder & Executive Director' },
   { time: '10:00 AM', label: 'Break',                          type: 'break' },
-  { time: '10:15 AM', label: 'My Kids Couldn\'t Spell "Because" So I Built an App That Couldn\'t Afford to Fail', type: 'session', speaker: 'Aaron Hunter', role: 'Principal Developer Advocate, AWS', track: 'Data & AI' },
+  { time: '10:15 AM', label: 'My Kids Couldn\'t Spell "Because" So I Built an App That Couldn\'t Afford to Fail', type: 'session', speaker: 'Aaron Hunter', role: 'Principal Developer Advocate, AWS', track: 'Data & AI',
+    photo: '/images/speakers/aaron-hunter.jpg',
+    bio: 'Aaron is a Principal Developer Advocate at AWS based in Frisco, TX. With over 15 years of experience spanning system administration, networking, and training, he brings more than a decade of cloud expertise to help engineers, developers, builders, and tech enthusiasts master AWS technologies. His philosophy is simple: always be learning something new, and have fun while doing it. Aaron shares his knowledge through workshops, online courses, mentoring, and live streaming — making complex cloud concepts accessible and enjoyable. When he\'s not building in the cloud, you\'ll find him exploring craft beer scenes in new cities or teaming up with friends in Marvel Rivals on his PlayStation, because even superheroes need good teammates.' },
   { time: '10:45 AM', label: 'Break',                          type: 'break' },
-  { time: '11:00 AM', label: 'Betting on Yourself: Don\'t Trade Your Values for a Seat at the Table', type: 'session', speaker: 'Ramatu Kandakai', role: 'Founder, My Hyphen', track: 'Entrepreneurship' },
+  { time: '11:00 AM', label: 'Betting on Yourself: Don\'t Trade Your Values for a Seat at the Table', type: 'session', speaker: 'Ramatu Kandakai', role: 'Founder, My Hyphen', track: 'Entrepreneurship',
+    photo: '/images/speakers/ramatu-kandakai.jpg',
+    bio: 'Ramatu Kandakai is a brand marketer and branding speaker with more than a decade of experience across healthcare, consulting, consumer goods, and nonprofits. She has led brand strategies at Humana, SC Johnson, Ernst & Young, Korn Ferry, and more. Her work lives at the intersection of brand strategy, professional identity, and belonging. In 2020 she accidentally launched a personal branding consultancy, which opened doors to engagements with Salesforce Connections, Twitch, DoorDash, Northwestern University, and the University of Chicago. She also taught "The Psychology of Personal Brands in Media" at Johns Hopkins University, where she earned her MBA. Committed to expanding access for underrepresented communities, she has partnered with the National Black MBA Association, Chicago Urban League, and Black Woman Owned. Now, Ramatu is building My Hyphen, a platform helping people brand the space between their profession and passion. Her work has been featured in AfroTech, Yahoo Finance, and Canvas Rebel.' },
   { time: '11:30 AM', label: 'Break',                          type: 'break' },
   { time: '12:00 PM', label: 'Lunch',                          type: 'break' },
-  { time: '1:00 PM',  label: 'No CS Degree, No Permission, No Problem', type: 'session', speaker: 'Hamdi Hassan Shahid Jr.', role: 'Founder & CEO, Lamma+', track: 'Engineering' },
+  { time: '1:00 PM',  label: 'No CS Degree, No Permission, No Problem', type: 'session', speaker: 'Hamdi Hassan Shahid Jr.', role: 'Founder & CEO, Lamma+', track: 'Engineering',
+    photo: null,
+    bio: 'Hamdi "Hassan" Shahid Jr. is the founder and CEO of Lamma+, an AI-powered influencer discovery platform serving faith-based creators and the brands trying to reach them. Before tech, Hassan spent years in youth work and community organizing in the Twin Cities while building a parallel life as a working musician and guitarist — earning a Cedar Commission Fellowship and Minnesota State Arts Board grants along the way. He then pivoted through a network engineering bootcamp and Prime Digital Academy, and has since shipped code at QBP, Storyforge, and Wells Fargo, where he worked on credit card technology with React, TypeScript, and serverless AWS. Today he splits his time between Lamma+ and contract test leadership at Meta. He believes the best engineers of the next decade won\'t all come from CS programs — and that\'s a good thing.' },
   { time: '1:30 PM',  label: 'Break',                          type: 'break' },
-  { time: '1:45 PM',  label: 'TBA',                            type: 'session', speaker: 'Pierre DeBois', role: 'Founder & CEO, Zimana', track: 'Data & AI' },
+  { time: '1:45 PM',  label: 'TBA',                            type: 'session', speaker: 'Pierre DeBois', role: 'Founder & CEO, Zimana', track: 'Data & AI',
+    photo: '/images/speakers/pierre-debois.jpg',
+    bio: 'Pierre DeBois is the founder and CEO of Zimana, an analytics services firm helping organizations achieve profitability improvements in marketing, web development, and business operations. A prolific speaker and workshop facilitator, Pierre has presented at major conferences including O\'Reilly OSCON, Content Marketing World, CodeMash, and Black Is Tech. He has contributed to CMSWire for nearly a decade, with articles ranked among their top digital marketing pieces for 2018, 2020, 2021, and 2022. Pierre is co-author of The Entrepreneur Within Volume 3 and Faith, Failure & Success, and has been featured in the Chicago Sun Times. He holds a degree in mechanical engineering from Prairie View A&M University and an MBA from Georgia Tech. A native of Gary, Indiana, Pierre has been part of the JuneteenthConf community since 2021.' },
   { time: '2:15 PM',  label: 'Break',                          type: 'break' },
-  { time: '2:30 PM',  label: 'Building a Business When No One\'s Hiring', type: 'session', speaker: 'Ashley Janelle', role: 'Founder, Empathive UX Bootcamp', track: 'Entrepreneurship' },
+  { time: '2:30 PM',  label: 'Building a Business When No One\'s Hiring', type: 'session', speaker: 'Ashley Janelle', role: 'Founder, Empathive UX Bootcamp', track: 'Entrepreneurship',
+    photo: '/images/speakers/ashley-janelle.jpg',
+    bio: 'Ashley Janelle is an award-winning UX designer, founder of Empathive UX Bootcamp, and content creator based in Chicago. She has worked at companies including Amazon and Caterpillar, and has reviewed over 1,000 UX portfolios throughout her career. Ashley founded Empathive to help aspiring UX designers break into the field through personalized 1:1 mentorship, with students landing roles at companies like Amazon Games, Meta, and FiscalNote. She creates educational content across TikTok, Instagram, and YouTube, focusing on portfolio development, career strategy, and the evolving UX landscape. Ashley is passionate about making UX education accessible and preparing designers for the AI-integrated future of the field.' },
   { time: '3:00 PM',  label: 'Break',                          type: 'break' },
-  { time: '3:15 PM',  label: 'LinkedIn Power Moves to Grow Your Business', type: 'session', speaker: 'Clarene Mitchell', role: 'Founder & CEO, TCM Communications', track: 'Entrepreneurship' },
+  { time: '3:15 PM',  label: 'LinkedIn Power Moves to Grow Your Business', type: 'session', speaker: 'Clarene Mitchell', role: 'Founder & CEO, TCM Communications', track: 'Entrepreneurship',
+    photo: null,
+    bio: 'Clarene Mitchell is the Founder/CEO of TCM Communications, a social media branding firm based in Tulsa, Oklahoma, focused on empowering entrepreneurs and corporate leaders to leverage LinkedIn for organic growth. She holds a B.A. in Interpersonal Communications from Cardinal Stritch University. Clarene began her entrepreneurial journey in 2017 and published Shine Online with LinkedIn in 2019. LinkedIn selected her for its Creator Accelerator Program\'s inaugural Technology & Innovation cohort and invited her to an exclusive event at their Chicago office. She has beta-tested several LinkedIn features and is featured on LinkedIn\'s website for her work on the Audio Events beta.' },
   { time: '3:45 PM',  label: 'Break',                          type: 'break' },
-  { time: '4:00 PM',  label: 'Keynote',                        type: 'keynote', speaker: 'Madison Butler', role: 'Founder, Blue Haired Unicorn & Black Speakers Collection' },
+  { time: '4:00 PM',  label: 'Keynote',                        type: 'keynote', speaker: 'Madison Butler', role: 'Founder, Blue Haired Unicorn & Black Speakers Collection',
+    photo: madisonPhoto.src,
+    bio: 'Unapologetic advocate for authenticity and psychological safety in the workplace. Featured in The New York Times, The Wall Street Journal, and Rolling Stone. Author of Let Them See You (Fall 2025). LinkedIn Top Black Voice. Founder of Blue Haired Unicorn and the Black Speakers Collection, a curated directory of Black speakers across every industry.' },
   { time: '5:00 PM',  label: 'Close',                          type: 'break' },
 ];
+
+// Build session map for JS (only sessions + keynote)
+const sessionModalData: Record<number, object> = {};
+schedule.forEach((item, idx) => {
+  if (item.type === 'session' || item.type === 'keynote') {
+    sessionModalData[idx] = {
+      name: item.speaker,
+      role: item.role,
+      track: item.track || 'Keynote',
+      time: item.time,
+      photo: item.photo || null,
+      bio: item.bio,
+      talk: item.label,
+      type: item.type,
+    };
+  }
+});
 ---
 
 <InteriorLayout
@@ -41,22 +73,32 @@ const schedule = [
         </div>
 
         <div class="reveal schedule-list">
-          {schedule.map((item) => (
-            <div class={`schedule-row schedule-row--${item.type}`}>
-              <span class="schedule-time">{item.time}</span>
-              <div class="schedule-body">
-                {item.type === 'keynote' && <span class="schedule-badge schedule-badge--keynote">Keynote</span>}
-                {item.type === 'session' && <span class="schedule-badge schedule-badge--track">{item.track}</span>}
-                <p class="schedule-label">{item.label}</p>
-                {item.speaker && (
-                  <p class="schedule-speaker">
-                    {item.speaker}
-                    {item.role && <span class="schedule-role"> &mdash; {item.role}</span>}
-                  </p>
-                )}
+          {schedule.map((item, idx) => {
+            const clickable = item.type === 'session' || item.type === 'keynote';
+            return (
+              <div
+                class={`schedule-row schedule-row--${item.type}${clickable ? ' has-modal' : ''}`}
+                data-idx={clickable ? idx : undefined}
+                role={clickable ? 'button' : undefined}
+                tabindex={clickable ? 0 : undefined}
+                aria-label={clickable ? `View details for ${item.speaker}` : undefined}
+              >
+                <span class="schedule-time">{item.time}</span>
+                <div class="schedule-body">
+                  {item.type === 'keynote' && <span class="schedule-badge schedule-badge--keynote">Keynote</span>}
+                  {item.type === 'session' && <span class="schedule-badge schedule-badge--track">{item.track}</span>}
+                  <p class="schedule-label">{item.label}</p>
+                  {item.speaker && (
+                    <p class="schedule-speaker">
+                      {item.speaker}
+                      {item.role && <span class="schedule-role"> &mdash; {item.role}</span>}
+                    </p>
+                  )}
+                  {clickable && <span class="view-details">View details &rarr;</span>}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div class="reveal day2-note">
@@ -82,6 +124,14 @@ const schedule = [
       </div>
     </div>
   </section>
+
+  <!-- Modal overlay -->
+  <div id="session-overlay" class="session-overlay" hidden aria-modal="true" role="dialog">
+    <div id="session-panel" class="session-panel">
+      <button class="session-close" id="session-close" aria-label="Close">&times;</button>
+      <div id="session-panel-content"></div>
+    </div>
+  </div>
 </InteriorLayout>
 
 <style>
@@ -128,6 +178,17 @@ const schedule = [
     padding-left: 16px;
     margin-left: -19px;
   }
+  .has-modal {
+    cursor: pointer;
+    transition: background 0.15s;
+    border-radius: 6px;
+    padding-left: 12px; padding-right: 12px;
+    margin-left: -12px; margin-right: -12px;
+  }
+  .has-modal:hover { background: rgba(255, 255, 255, 0.03); }
+  .schedule-row--keynote.has-modal { margin-left: -19px; padding-left: 16px; }
+  .schedule-row--keynote.has-modal:hover { background: rgba(212, 168, 67, 0.07); }
+
   .schedule-time {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 13px; font-weight: 600;
@@ -174,6 +235,13 @@ const schedule = [
     color: rgba(240, 237, 230, 0.35);
     font-size: 13px;
   }
+  .view-details {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; color: rgba(212, 168, 67, 0.5);
+    margin-top: 2px;
+    transition: color 0.15s;
+  }
+  .has-modal:hover .view-details { color: #D4A843; }
 
   /* Day 2 note */
   .day2-note {
@@ -209,7 +277,164 @@ const schedule = [
     margin: 0;
   }
 
+  /* Modal overlay */
+  .session-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0, 0, 0, 0.78);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .session-overlay[hidden] { display: none; }
+
+  .session-panel {
+    position: relative;
+    background: #2d2438;
+    border: 1px solid rgba(240, 237, 230, 0.08);
+    border-radius: 14px;
+    padding: 36px;
+    max-width: 600px; width: 100%;
+    max-height: 85vh; overflow-y: auto;
+  }
+
+  .session-close {
+    position: absolute; top: 16px; right: 18px;
+    background: none; border: none; cursor: pointer;
+    font-size: 24px; color: rgba(240, 237, 230, 0.4);
+    line-height: 1; padding: 4px;
+    transition: color 0.15s;
+  }
+  .session-close:hover { color: #f0ede6; }
+
+  /* Modal inner content (injected via JS) */
+  .modal-header {
+    display: flex; gap: 20px; align-items: flex-start;
+    margin-bottom: 24px; padding-right: 32px;
+  }
+  .modal-photo {
+    width: 88px; height: 88px; border-radius: 50%;
+    object-fit: cover; object-position: top; flex-shrink: 0;
+    border: 2px solid rgba(212, 168, 67, 0.3);
+    background: #1a1425;
+  }
+  .modal-photo-placeholder {
+    width: 88px; height: 88px; border-radius: 50%; flex-shrink: 0;
+    border: 2px solid rgba(212, 168, 67, 0.15);
+    background: #1a1425;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px; font-weight: 700; color: rgba(212, 168, 67, 0.3);
+  }
+  .modal-identity { display: flex; flex-direction: column; gap: 4px; }
+  .modal-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 22px; color: #f0ede6; margin: 0;
+  }
+  .modal-role {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; color: rgba(240, 237, 230, 0.45); margin: 0;
+  }
+  .modal-meta {
+    display: flex; gap: 8px; align-items: center; margin-top: 4px;
+  }
+  .modal-track {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(240, 237, 230, 0.4);
+    border: 1px solid rgba(240, 237, 230, 0.12);
+    padding: 2px 8px; border-radius: 100px;
+  }
+  .modal-track--keynote { color: #D4A843; border-color: rgba(212, 168, 67, 0.3); }
+  .modal-time {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; color: rgba(240, 237, 230, 0.3);
+  }
+  .modal-divider {
+    border: none; border-top: 1px solid rgba(240, 237, 230, 0.07);
+    margin: 0 0 20px;
+  }
+  .modal-talk {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; color: rgba(240, 237, 230, 0.75);
+    font-style: italic; line-height: 1.5;
+    margin: 0 0 20px;
+  }
+  .modal-bio {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; color: rgba(240, 237, 230, 0.55);
+    line-height: 1.8; margin: 0;
+  }
+
   @media (max-width: 480px) {
     .schedule-row { grid-template-columns: 70px 1fr; gap: 16px; }
+    .session-panel { padding: 24px 20px; }
+    .modal-header { flex-direction: column; gap: 14px; }
+    .modal-photo, .modal-photo-placeholder { width: 72px; height: 72px; }
   }
 </style>
+
+<script define:vars={{ sessionModalData }}>
+  const SESSIONS = sessionModalData;
+  const overlay = document.getElementById('session-overlay');
+  const panel = document.getElementById('session-panel');
+  const content = document.getElementById('session-panel-content');
+  const closeBtn = document.getElementById('session-close');
+
+  function openModal(idx) {
+    const s = SESSIONS[idx];
+    if (!s) return;
+
+    const photoHtml = s.photo
+      ? `<img src="${s.photo}" alt="${s.name}" class="modal-photo" />`
+      : `<div class="modal-photo-placeholder">${s.name.charAt(0)}</div>`;
+
+    const trackClass = s.type === 'keynote' ? 'modal-track modal-track--keynote' : 'modal-track';
+    const talkHtml = s.talk && s.talk !== 'Keynote'
+      ? `<hr class="modal-divider" /><p class="modal-talk">&ldquo;${s.talk}&rdquo;</p>`
+      : '';
+
+    content.innerHTML = `
+      <div class="modal-header">
+        ${photoHtml}
+        <div class="modal-identity">
+          <p class="modal-name">${s.name}</p>
+          <p class="modal-role">${s.role}</p>
+          <div class="modal-meta">
+            <span class="${trackClass}">${s.track}</span>
+            <span class="modal-time">${s.time}</span>
+          </div>
+        </div>
+      </div>
+      <hr class="modal-divider" />
+      ${talkHtml}
+      <hr class="modal-divider" />
+      <p class="modal-bio">${s.bio}</p>
+    `;
+
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.has-modal').forEach(row => {
+    row.addEventListener('click', () => openModal(Number(row.dataset.idx)));
+    row.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(Number(row.dataset.idx)); }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !overlay.hidden) closeModal();
+  });
+</script>

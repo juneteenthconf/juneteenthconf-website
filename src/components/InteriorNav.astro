@@ -29,7 +29,17 @@ const links = [
     ))}
     <a href={`${base}conference/register/`} class="interior-nav-cta">Register</a>
   </div>
+  <button class="hamburger-btn" id="hamburger-interior" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu-interior" hidden>
+  {links.map(link => (
+    <a href={link.href} class={link.label === current ? 'mobile-menu-current' : ''}>{link.label}</a>
+  ))}
+  <a href={`${base}conference/register/`} class="mobile-menu-cta">Register</a>
+</div>
 
 <style>
   .interior-nav {
@@ -65,9 +75,74 @@ const links = [
   }
   .interior-nav-cta:hover { background: #a33231 !important; }
 
+  /* Hamburger */
+  .hamburger-btn {
+    display: none; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 6px;
+    width: 36px; height: 36px;
+  }
+  .hamburger-btn span {
+    display: block; width: 22px; height: 2px;
+    background: rgba(240, 237, 230, 0.75);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .hamburger-btn.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger-btn.is-open span:nth-child(2) { opacity: 0; }
+  .hamburger-btn.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile menu */
+  .mobile-menu {
+    position: fixed; top: 65px; left: 0; right: 0; z-index: 996;
+    background: rgba(35, 28, 45, 0.98); backdrop-filter: blur(16px);
+    padding: 8px 24px 24px;
+    display: flex; flex-direction: column;
+    border-bottom: 1px solid rgba(212, 168, 67, 0.15);
+  }
+  .mobile-menu[hidden] { display: none; }
+  .mobile-menu a {
+    color: rgba(240, 237, 230, 0.65); text-decoration: none;
+    font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: color 0.15s;
+  }
+  .mobile-menu a:hover { color: #f0ede6; }
+  .mobile-menu-current { color: #D4A843 !important; font-weight: 600 !important; }
+  .mobile-menu-cta {
+    margin-top: 16px;
+    background: #b53a39 !important; color: #fff !important;
+    text-align: center; padding: 13px 0 !important;
+    border-radius: 6px; border: none !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 700 !important; font-size: 14px !important;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .mobile-menu-cta:hover { background: #a33231 !important; }
+
   @media (max-width: 768px) {
     .interior-nav-links a:not(.interior-nav-cta),
     .interior-nav-current { display: none; }
     .interior-nav-links { gap: 12px; }
+    .hamburger-btn { display: flex; }
   }
 </style>
+
+<script>
+  const btn = document.getElementById('hamburger-interior') as HTMLButtonElement;
+  const menu = document.getElementById('mobile-menu-interior') as HTMLElement;
+
+  btn.addEventListener('click', () => {
+    const open = !menu.hidden;
+    menu.hidden = open;
+    btn.setAttribute('aria-expanded', String(!open));
+    btn.classList.toggle('is-open', !open);
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.hidden = true;
+    btn.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }));
+</script>
