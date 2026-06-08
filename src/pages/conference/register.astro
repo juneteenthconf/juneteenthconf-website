@@ -5,7 +5,7 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 <InteriorLayout
   ogSlug="register"
   title="Register — Juneteenth Conference 2026"
-  description="Register for Juneteenth Conference 2026. June 19–20, Chicago, IL. $75 general admission."
+  description="Register for Juneteenth Conference 2026. June 19–20, Chicago, IL. $50 through June 14 · $75 after."
   current="Conference"
   heroTitle="Register"
   heroSubtitle="June 19&ndash;20, 2026 &bull; Chicago, IL"
@@ -32,8 +32,14 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
               <div class="ticket-info">
                 <span class="ticket-name">General Admission</span>
                 <span class="ticket-dates">June 19&ndash;20, 2026 &bull; Chicago, IL</span>
+                <span class="sale-note" id="sale-note" style="display:none;">
+                  Sale ends June 14 &mdash; <span id="original-price-note">regular price $75</span>
+                </span>
               </div>
-              <span class="ticket-price">$75</span>
+              <div class="ticket-price-block">
+                <span class="ticket-price" id="ticket-price-display">$75</span>
+                <span class="student-badge" id="student-badge" style="display:none;">Student rate</span>
+              </div>
             </div>
 
             <div class="scholarship-block">
@@ -67,6 +73,15 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
               </div>
             </div>
 
+            <div class="promo-block">
+              <label class="block-label">Promo Code <span class="optional">(optional)</span></label>
+              <div class="promo-row">
+                <input type="text" id="promo-input" class="field-input promo-input" placeholder="Enter code" autocomplete="off" />
+                <button type="button" class="promo-apply-btn" id="promo-apply-btn">Apply</button>
+              </div>
+              <p class="promo-message" id="promo-message" style="display:none;"></p>
+            </div>
+
             <div class="total-line">
               <span class="total-label">Total</span>
               <span class="total-value" id="total-display">$75</span>
@@ -83,7 +98,7 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
                 <input type="text" id="reg-name" name="name" class="field-input" required autocomplete="name" />
               </div>
               <div class="field-group">
-                <label for="reg-email" class="field-label">Email <span class="required">*</span></label>
+                <label for="reg-email" class="field-label">Email <span class="required">*</span><span class="edu-required" id="edu-required" style="display:none;"> &mdash; must be a .edu address</span></label>
                 <input type="email" id="reg-email" name="email" class="field-input" required autocomplete="email" />
               </div>
             </div>
@@ -133,6 +148,11 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
             See you in Chicago on June 19th.
           </p>
           <a href="/conference/" class="back-link">Back to Conference</a>
+        </div>
+
+        <div id="sold-out-banner" class="sold-out-banner" style="display:none;" role="alert">
+          <strong>Tickets are sold out.</strong> We've hit our 150-attendee cap.
+          Email <a href="mailto:info@juneteenthconf.com">info@juneteenthconf.com</a> to be added to the waitlist.
         </div>
 
         <div id="payment-error-banner" class="submit-error-banner" style="display:none;" role="alert">
@@ -401,6 +421,54 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
   }
   .back-link:hover { color: #f0ede6; border-color: rgba(240, 237, 230, 0.4); }
 
+  /* Ticket price block */
+  .ticket-price-block { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .student-badge {
+    font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600;
+    color: #D4A843; background: rgba(212, 168, 67, 0.12);
+    border: 1px solid rgba(212, 168, 67, 0.3);
+    border-radius: 4px; padding: 2px 8px; text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .sale-note {
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    color: rgba(240, 237, 230, 0.35); display: block; margin-top: 4px;
+  }
+
+  /* Promo code */
+  .promo-block { margin-bottom: 24px; }
+  .promo-row { display: flex; gap: 8px; margin-top: 8px; }
+  .promo-input { flex: 1; font-size: 14px; padding: 10px 14px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .promo-apply-btn {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13px;
+    color: rgba(240, 237, 230, 0.6);
+    background: transparent; border: 1px solid rgba(240, 237, 230, 0.15);
+    border-radius: 6px; padding: 10px 20px; cursor: pointer; transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .promo-apply-btn:hover { border-color: rgba(212, 168, 67, 0.4); color: #D4A843; }
+  .promo-message {
+    font-family: 'Inter', sans-serif; font-size: 13px; margin-top: 8px; line-height: 1.5;
+  }
+  .promo-message.success { color: #55ac64; }
+  .promo-message.error { color: #c84342; }
+
+  /* .edu label note */
+  .edu-required {
+    font-size: 11px; color: #D4A843; font-weight: 400;
+  }
+
+  /* Sold out banner */
+  .sold-out-banner {
+    margin-top: 16px; padding: 20px 24px;
+    background: rgba(85, 172, 100, 0.06);
+    border: 1px solid rgba(85, 172, 100, 0.2);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif; font-size: 15px;
+    color: rgba(240, 237, 230, 0.7); line-height: 1.7;
+  }
+  .sold-out-banner strong { color: #f0ede6; }
+  .sold-out-banner a { color: #D4A843; }
+
   .submit-error-banner {
     margin-top: 16px; padding: 16px 20px;
     background: rgba(200, 67, 66, 0.08);
@@ -421,6 +489,8 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
 <script>
   const STRIPE_PK = 'pk_live_51Rq1vARt87CC0VqEUJSjddl797ATQbjem6eokxB5896du81is4JZp0i5NmZxSvFpIHKTsZPYWspTN5x6Cdsa6mj600pkkJm7Tf';
+  const STUDENT_CODE = 'BETHUNE';
+  const SALE_ENDS = new Date('2026-06-15T05:00:00Z');
 
   // Load Stripe.js dynamically
   async function loadStripeJs(): Promise<void> {
@@ -463,6 +533,26 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     cardErrors.textContent = e.error ? e.error.message : '';
   });
 
+  // Pricing state
+  const isSale = new Date() < SALE_ENDS;
+  let basePrice = isSale ? 50 : 75;
+  let studentPromoApplied = false;
+  let appliedPromoCode = '';
+
+  // Show sale note if active
+  const saleNote = document.getElementById('sale-note') as HTMLElement;
+  const ticketPriceDisplay = document.getElementById('ticket-price-display') as HTMLElement;
+  if (isSale) {
+    saleNote.style.display = 'block';
+    ticketPriceDisplay.textContent = '$50';
+  }
+
+  function updateTotal() {
+    const total = basePrice + (scholarshipQty * 75) + Math.max(0, Math.floor(contribution));
+    document.getElementById('total-display')!.textContent = `$${total}`;
+    document.getElementById('btn-total')!.textContent = `$${total}`;
+  }
+
   // Scholarship + contribution logic
   let contribution = 0;
   let scholarshipQty = 0;
@@ -470,12 +560,6 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
   const scholarshipQtyEl = document.getElementById('scholarship-qty') as HTMLElement;
   const minusBtn = document.getElementById('scholarship-minus') as HTMLButtonElement;
   const plusBtn = document.getElementById('scholarship-plus') as HTMLButtonElement;
-
-  function updateTotal() {
-    const total = 75 + (scholarshipQty * 75) + Math.max(0, Math.floor(contribution));
-    document.getElementById('total-display')!.textContent = `$${total}`;
-    document.getElementById('btn-total')!.textContent = `$${total}`;
-  }
 
   minusBtn.addEventListener('click', () => {
     if (scholarshipQty > 0) {
@@ -513,12 +597,56 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     updateTotal();
   });
 
+  // Promo code logic
+  const promoInput = document.getElementById('promo-input') as HTMLInputElement;
+  const promoApplyBtn = document.getElementById('promo-apply-btn') as HTMLButtonElement;
+  const promoMessage = document.getElementById('promo-message') as HTMLElement;
+  const studentBadge = document.getElementById('student-badge') as HTMLElement;
+  const eduRequired = document.getElementById('edu-required') as HTMLElement;
+
+  function applyPromo() {
+    const code = promoInput.value.trim().toUpperCase();
+    promoMessage.className = 'promo-message';
+    promoMessage.style.display = 'none';
+
+    if (code === STUDENT_CODE) {
+      basePrice = 25;
+      studentPromoApplied = true;
+      appliedPromoCode = code;
+      ticketPriceDisplay.textContent = '$25';
+      studentBadge.style.display = 'block';
+      saleNote.style.display = 'none';
+      eduRequired.style.display = 'inline';
+      promoMessage.textContent = 'Student rate applied — $25. Your email must end in .edu.';
+      promoMessage.classList.add('success');
+      promoMessage.style.display = 'block';
+      promoInput.disabled = true;
+      promoApplyBtn.disabled = true;
+    } else if (code === '') {
+      promoMessage.textContent = 'Enter a promo code.';
+      promoMessage.classList.add('error');
+      promoMessage.style.display = 'block';
+    } else {
+      promoMessage.textContent = 'That code isn\'t valid.';
+      promoMessage.classList.add('error');
+      promoMessage.style.display = 'block';
+    }
+
+    updateTotal();
+  }
+
+  promoApplyBtn.addEventListener('click', applyPromo);
+  promoInput.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Enter') { e.preventDefault(); applyPromo(); }
+  });
+
   // Form submission
   const form = document.getElementById('register-form') as HTMLFormElement;
   const payBtn = document.getElementById('pay-btn') as HTMLButtonElement;
   const errorMsg = document.getElementById('reg-error-msg') as HTMLElement;
   const successBlock = document.getElementById('reg-success') as HTMLElement;
   const paymentErrorBanner = document.getElementById('payment-error-banner') as HTMLElement;
+  const soldOutBanner = document.getElementById('sold-out-banner') as HTMLElement;
 
   document.querySelectorAll<HTMLElement>('.field-input, .field-select').forEach(el => {
     el.addEventListener('input', () => el.classList.remove('field-error'));
@@ -537,6 +665,15 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
       if (!el.value.trim()) { el.classList.add('field-error'); valid = false; }
     });
 
+    // .edu validation for student promo
+    if (studentPromoApplied && !emailEl.value.trim().toLowerCase().endsWith('.edu')) {
+      emailEl.classList.add('field-error');
+      promoMessage.textContent = 'Student rate requires a .edu email address.';
+      promoMessage.className = 'promo-message error';
+      promoMessage.style.display = 'block';
+      valid = false;
+    }
+
     if (!valid) {
       errorMsg.style.display = 'block';
       form.querySelector<HTMLElement>('.field-error')?.focus();
@@ -547,9 +684,10 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     payBtn.disabled = true;
     payBtn.textContent = 'Processing…';
     paymentErrorBanner.style.display = 'none';
+    soldOutBanner.style.display = 'none';
 
     try {
-      const total = 75 + (scholarshipQty * 75) + Math.max(0, Math.floor(contribution));
+      const total = basePrice + (scholarshipQty * 75) + Math.max(0, Math.floor(contribution));
 
       const res = await fetch('/api/create-payment-intent', {
         method: 'POST',
@@ -561,13 +699,22 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
           tshirtSize: sizeEl.value,
           scholarshipTickets: scholarshipQty,
           contribution: Math.max(0, Math.floor(contribution)),
+          promoCode: appliedPromoCode,
         }),
       });
 
-      const { clientSecret, error: apiError } = await res.json();
-      if (apiError) throw new Error(apiError);
+      const data = await res.json();
 
-      const { error: stripeError } = await stripe.confirmCardPayment(clientSecret, {
+      if (data.error === 'SOLD_OUT') {
+        form.style.display = 'none';
+        soldOutBanner.style.display = 'block';
+        soldOutBanner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
+      if (data.error) throw new Error(data.error);
+
+      const { error: stripeError } = await stripe.confirmCardPayment(data.clientSecret, {
         payment_method: {
           card: cardElement,
           billing_details: {
@@ -586,9 +733,12 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
     } catch (err: any) {
       payBtn.disabled = false;
-      payBtn.innerHTML = `Pay <span id="btn-total">$${75 + Math.max(0, Math.floor(contribution))}</span>`;
+      payBtn.innerHTML = `Pay <span id="btn-total">$${basePrice + (scholarshipQty * 75) + Math.max(0, Math.floor(contribution))}</span>`;
       paymentErrorBanner.style.display = 'block';
       if (err.message) cardErrors.textContent = err.message;
     }
   });
+
+  // Initialize total display
+  updateTotal();
 </script>
