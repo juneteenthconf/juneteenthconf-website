@@ -15,7 +15,12 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     <div class="interior-content">
       <div class="reveal-stagger">
 
-        <div class="reveal student-callout">
+        <div class="reveal info-callout">
+          <span class="callout-icon">🎟️</span>
+          <p>Is the ticket price preventing your attendance? We have scholarship tickets available! <a href="/conference/scholarship">Apply for a scholarship here</a>.</p>
+        </div>
+
+        <div class="reveal info-callout">
           <span class="callout-icon">🎓</span>
           <p>College student? Use code <strong>BETHUNE</strong> at checkout with your <strong>.edu email</strong> to register for <strong>$25</strong>.</p>
         </div>
@@ -426,8 +431,8 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
   }
   .back-link:hover { color: #f0ede6; border-color: rgba(240, 237, 230, 0.4); }
 
-  /* Student callout */
-  .student-callout {
+  /* Callouts */
+  .info-callout {
     display: flex; align-items: flex-start; gap: 12px;
     background: rgba(212, 168, 67, 0.07);
     border: 1px solid rgba(212, 168, 67, 0.25);
@@ -435,11 +440,13 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     margin-bottom: 24px;
   }
   .callout-icon { font-size: 20px; flex-shrink: 0; line-height: 1.4; }
-  .student-callout p {
+  .info-callout p {
     font-family: 'Inter', sans-serif; font-size: 14px;
     color: rgba(240, 237, 230, 0.7); line-height: 1.6; margin: 0;
   }
-  .student-callout strong { color: #D4A843; }
+  .info-callout strong { color: #D4A843; }
+  .info-callout a { color: #D4A843; text-decoration: underline; }
+  .info-callout a:hover { color: #f0ede6; }
 
   /* Ticket price block */
   .ticket-price-block { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }

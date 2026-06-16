@@ -1,0 +1,278 @@
+---
+import InteriorLayout from '../../layouts/InteriorLayout.astro';
+---
+
+<InteriorLayout
+  ogSlug="scholarship"
+  title="Scholarship Application — Juneteenth Conference 2026"
+  description="Apply for a scholarship ticket to Juneteenth Conference 2026."
+  current="Conference"
+  heroTitle="Scholarship"
+  heroSubtitle="Apply for a free conference pass"
+  heroAccent="yellow"
+>
+  <section class="interior-section">
+    <div class="interior-content">
+      <div class="reveal-stagger">
+
+        <p class="reveal section-lede">
+          We want everyone to have the opportunity to attend Juneteenth Conference. If the cost of a ticket is preventing your attendance, please apply for a scholarship pass.
+        </p>
+
+        <form id="scholarship-form" novalidate>
+
+          <div class="reveal form-section">
+            <h2 class="form-section-title">Application Info</h2>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label for="app-name" class="field-label">Full Name <span class="required">*</span></label>
+                <input type="text" id="app-name" name="name" class="field-input" required autocomplete="name" />
+              </div>
+              <div class="field-group">
+                <label for="app-email" class="field-label">Email <span class="required">*</span></label>
+                <input type="email" id="app-email" name="email" class="field-input" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label for="app-link" class="field-label">Link (GitHub, LinkedIn, Blog, etc.) <span class="required">*</span></label>
+                <input type="url" id="app-link" name="link" class="field-input" required placeholder="https://" />
+              </div>
+              <div class="field-group tshirt-group">
+                <label for="tshirt-size" class="field-label">T-Shirt Size <span class="required">*</span></label>
+                <select id="tshirt-size" name="tshirtSize" class="field-select" required>
+                  <option value="">Select a size</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="2XL">2XL</option>
+                  <option value="3XL">3XL</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="checkbox-group" style="margin-top: 16px;">
+              <label class="checkbox-label">
+                <input type="checkbox" id="app-student" name="student" class="checkbox-input" />
+                <span class="checkbox-custom"></span>
+                I am currently a student
+              </label>
+            </div>
+
+          </div>
+
+          <div class="reveal form-footer">
+            <div id="app-error-msg" class="form-error-msg" style="display:none;" role="alert">
+              Please fill in all required fields.
+            </div>
+            <button type="submit" class="submit-btn" id="submit-btn">
+              Submit Application
+            </button>
+          </div>
+
+        </form>
+
+        <div id="app-success" class="success-block" style="display:none;" role="status">
+          <div class="success-icon">&#10003;</div>
+          <h2 class="success-title">Application generated!</h2>
+          <p class="success-text">
+            Your email client should have opened with your application details. 
+            If not, please email your info to 
+            <a href="mailto:info@juneteenthconf.com" style="color: #D4A843; text-decoration: none;">info@juneteenthconf.com</a>.
+          </p>
+          <a href="/conference/" class="back-link">Back to Conference</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</InteriorLayout>
+
+<style>
+  .interior-section {
+    padding: 60px 24px 100px;
+    background: #231c2d;
+  }
+  .interior-content {
+    max-width: 680px; margin: 0 auto;
+  }
+  .section-lede {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(17px, 2vw, 21px);
+    color: rgba(240, 237, 230, 0.7);
+    line-height: 1.8; margin-bottom: 40px;
+  }
+
+  /* Form sections */
+  .form-section {
+    background: rgba(45, 36, 56, 0.3);
+    border: 1px solid rgba(240, 237, 230, 0.06);
+    border-radius: 12px; padding: 32px;
+    margin-bottom: 16px;
+  }
+  .form-section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700; font-size: 18px;
+    color: #D4A843; margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(212, 168, 67, 0.12);
+  }
+
+  /* Fields */
+  .field-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-bottom: 16px;
+  }
+  .field-group { display: flex; flex-direction: column; gap: 8px; }
+  .field-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 500;
+    color: rgba(240, 237, 230, 0.6);
+    display: flex; gap: 6px; align-items: center;
+  }
+  .required { color: #c84342; }
+  .field-input, .field-select {
+    font-family: 'Inter', sans-serif; font-size: 15px; color: #f0ede6;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(240, 237, 230, 0.12);
+    border-radius: 6px; padding: 11px 14px;
+    transition: border-color 0.2s; outline: none;
+    width: 100%; box-sizing: border-box; -webkit-appearance: none;
+  }
+  .field-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(240,237,230,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center;
+    padding-right: 36px; cursor: pointer;
+  }
+  .field-select option { background: #231c2d; color: #f0ede6; }
+  .field-input:focus, .field-select:focus { border-color: #D4A843; background: rgba(255,255,255,0.07); }
+  .field-input.field-error, .field-select.field-error { border-color: #c84342; }
+  
+  /* Checkbox */
+  .checkbox-label {
+    display: flex; align-items: center; gap: 10px; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 15px; color: #f0ede6;
+    user-select: none;
+  }
+  .checkbox-input {
+    position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0;
+  }
+  .checkbox-custom {
+    height: 18px; width: 18px; background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(240, 237, 230, 0.12); border-radius: 4px;
+    display: inline-block; position: relative; transition: all 0.2s;
+  }
+  .checkbox-input:checked ~ .checkbox-custom {
+    background-color: #D4A843; border-color: #D4A843;
+  }
+  .checkbox-custom:after {
+    content: ""; position: absolute; display: none;
+    left: 6px; top: 2px; width: 4px; height: 10px;
+    border: solid #231c2d; border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .checkbox-input:checked ~ .checkbox-custom:after { display: block; }
+  .checkbox-input:focus ~ .checkbox-custom { border-color: #D4A843; }
+
+  /* Form footer */
+  .form-footer { display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
+  .form-error-msg {
+    font-family: 'Inter', sans-serif; font-size: 13px; color: #c84342;
+  }
+  .submit-btn {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: #fff; background: #D4A843; border: none; border-radius: 6px;
+    padding: 16px 48px; cursor: pointer; transition: background 0.2s, transform 0.1s;
+    align-self: flex-start;
+  }
+  .submit-btn:hover { background: #b08a32; }
+  .submit-btn:active { transform: scale(0.98); }
+
+  /* Success */
+  .success-block {
+    text-align: center; padding: 64px 32px;
+    background: rgba(45, 36, 56, 0.3);
+    border: 1px solid rgba(85, 172, 100, 0.2);
+    border-radius: 12px; margin-top: 24px;
+  }
+  .success-icon { font-size: 48px; color: #55ac64; margin-bottom: 20px; }
+  .success-title {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: 28px; color: #f0ede6; margin-bottom: 16px;
+  }
+  .success-text {
+    font-family: 'Inter', sans-serif; font-size: 17px;
+    color: rgba(240, 237, 230, 0.6); line-height: 1.7; margin-bottom: 32px;
+  }
+  .back-link {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(240, 237, 230, 0.5); text-decoration: none;
+    border: 1px solid rgba(240, 237, 230, 0.15); border-radius: 6px;
+    padding: 10px 24px; transition: color 0.2s, border-color 0.2s;
+  }
+  .back-link:hover { color: #f0ede6; border-color: rgba(240, 237, 230, 0.4); }
+
+  @media (max-width: 640px) {
+    .field-row { grid-template-columns: 1fr; }
+    .form-section { padding: 24px 20px; }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('scholarship-form') as HTMLFormElement;
+  const nameEl = document.getElementById('app-name') as HTMLInputElement;
+  const emailEl = document.getElementById('app-email') as HTMLInputElement;
+  const linkEl = document.getElementById('app-link') as HTMLInputElement;
+  const sizeEl = document.getElementById('tshirt-size') as HTMLSelectElement;
+  const studentEl = document.getElementById('app-student') as HTMLInputElement;
+  
+  const errorMsg = document.getElementById('app-error-msg') as HTMLElement;
+  const successBlock = document.getElementById('app-success') as HTMLElement;
+
+  document.querySelectorAll<HTMLElement>('.field-input, .field-select').forEach(el => {
+    el.addEventListener('input', () => el.classList.remove('field-error'));
+    el.addEventListener('change', () => el.classList.remove('field-error'));
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let valid = true;
+    [nameEl, emailEl, linkEl, sizeEl].forEach(el => {
+      if (!el.value.trim()) { 
+        el.classList.add('field-error'); 
+        valid = false; 
+      }
+    });
+
+    if (!valid) {
+      errorMsg.style.display = 'block';
+      form.querySelector<HTMLElement>('.field-error')?.focus();
+      return;
+    }
+    errorMsg.style.display = 'none';
+
+    // Construct Mailto
+    const subject = encodeURIComponent(`Scholarship Application - ${nameEl.value.trim()}`);
+    const body = encodeURIComponent(
+`Scholarship Application
+
+Name: ${nameEl.value.trim()}
+Email: ${emailEl.value.trim()}
+Link: ${linkEl.value.trim()}
+T-Shirt Size: ${sizeEl.value}
+Student: ${studentEl.checked ? 'Yes' : 'No'}
+`);
+
+    window.location.href = `mailto:info@juneteenthconf.com?subject=${subject}&body=${body}`;
+
+    form.style.display = 'none';
+    successBlock.style.display = 'block';
+    successBlock.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+</script>
