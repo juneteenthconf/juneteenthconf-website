@@ -26,71 +26,20 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
           fiscal sponsor, YPOC Harrisburg (501(c)(3)). The remaining 40% covers direct sponsor benefits.
         </p>
 
-        <!-- Featured tiers -->
-        <div class="reveal featured-grid">
-          <div class="tier-card tier-presented">
-            <span class="tier-badge">Presented By</span>
-            <span class="tier-price">$50,000</span>
-            <ul class="tier-perks">
-              <li>"Presented By" naming on all conference branding</li>
-              <li>Logo on all conference materials &amp; website</li>
-              <li>Premium booth in central hall</li>
-              <li>90-second video during session transitions</li>
-              <li>10-minute opening address</li>
-              <li>VIP + general networking access</li>
-              <li>10 full-access tickets</li>
-              <li>Social media spotlight</li>
-              <li>Newsletter feature</li>
-              <li>2027 first right of refusal</li>
-            </ul>
-            <a href="mailto:info@juneteenthconf.com?subject=Presented%20By%20Sponsorship" class="tier-cta">Get in Touch</a>
-          </div>
-
-          <div class="tier-card tier-title">
-            <span class="tier-badge">Title</span>
-            <span class="tier-price">$25,000</span>
-            <ul class="tier-perks">
-              <li>Logo on all conference materials &amp; website</li>
-              <li>Premium booth in central hall</li>
-              <li>60-second video during session transitions</li>
-              <li>5-minute opening address</li>
-              <li>VIP + general networking access</li>
-              <li>8 full-access tickets</li>
-              <li>Social media spotlight</li>
-              <li>Newsletter feature</li>
-              <li>2027 first right of refusal</li>
-            </ul>
-            <a href="mailto:info@juneteenthconf.com?subject=Title%20Sponsorship" class="tier-cta">Get in Touch</a>
-          </div>
-
-          <div class="tier-card tier-signature">
-            <span class="tier-badge">Signature</span>
-            <span class="tier-price">$12,500</span>
-            <ul class="tier-perks">
-              <li>Logo on all conference materials &amp; website</li>
-              <li>Booth in central hall</li>
-              <li>60-second video during session transitions</li>
-              <li>General networking access</li>
-              <li>6 full-access tickets</li>
-              <li>Social media spotlight</li>
-              <li>Newsletter feature</li>
-            </ul>
-            <a href="mailto:info@juneteenthconf.com?subject=Signature%20Sponsorship" class="tier-cta">Get in Touch</a>
-          </div>
-        </div>
-
-        <!-- Supporting tiers -->
+        <!-- Sponsorship Tiers -->
         <div class="reveal supporting-grid">
           <div class="tier-card tier-community">
             <span class="tier-badge">Community</span>
             <span class="tier-price">$5,000</span>
             <ul class="tier-perks">
               <li>Logo on conference materials &amp; website</li>
+              <li>Logo displayed during session transitions</li>
               <li>Booth in central hall</li>
-              <li>General networking access</li>
+              <li>Access to all networking events</li>
               <li>4 full-access tickets</li>
-              <li>Social media spotlight</li>
+              <li>Social media mention</li>
             </ul>
+            <a href="mailto:info@juneteenthconf.com?subject=Community%20Sponsorship" class="tier-cta">Get in Touch</a>
           </div>
 
           <div class="tier-card tier-stage">
@@ -99,28 +48,33 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
             <ul class="tier-perks">
               <li>Logo on conference materials &amp; website</li>
               <li>Booth in central hall</li>
-              <li>General networking access</li>
+              <li>Access to networking events</li>
               <li>2 full-access tickets</li>
             </ul>
+            <a href="mailto:info@juneteenthconf.com?subject=Stage%20Sponsorship" class="tier-cta">Get in Touch</a>
           </div>
 
           <div class="tier-card tier-contributing">
             <span class="tier-badge">Contributing</span>
             <span class="tier-price">$1,250</span>
             <ul class="tier-perks">
-              <li>Logo on conference materials &amp; website</li>
-              <li>General networking access</li>
+              <li>Logo on conference website</li>
+              <li>Recognition from the stage during opening remarks</li>
+              <li>Access to networking events</li>
               <li>1 full-access ticket</li>
             </ul>
+            <a href="mailto:info@juneteenthconf.com?subject=Contributing%20Sponsorship" class="tier-cta">Get in Touch</a>
           </div>
 
           <div class="tier-card tier-friend">
             <span class="tier-badge">Friend</span>
             <span class="tier-price">$500</span>
             <ul class="tier-perks">
-              <li>Logo on conference website</li>
+              <li>Name or logo on website supporters page</li>
+              <li>Recognition in post-event communications</li>
               <li>1 full-access ticket</li>
             </ul>
+            <a href="mailto:info@juneteenthconf.com?subject=Friend%20Sponsorship" class="tier-cta">Get in Touch</a>
           </div>
         </div>
 
@@ -132,9 +86,6 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
               <thead>
                 <tr>
                   <th class="col-benefit">Benefit</th>
-                  <th>Presented By<br/><span class="th-price">$50k</span></th>
-                  <th>Title<br/><span class="th-price">$25k</span></th>
-                  <th>Signature<br/><span class="th-price">$12.5k</span></th>
                   <th>Community<br/><span class="th-price">$5k</span></th>
                   <th>Stage<br/><span class="th-price">$2.5k</span></th>
                   <th>Contributing<br/><span class="th-price">$1.25k</span></th>
@@ -143,20 +94,7 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
               </thead>
               <tbody>
                 <tr>
-                  <td>"Presented By" naming</td>
-                  <td class="yes">✓</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                </tr>
-                <tr>
                   <td>Logo on materials</td>
-                  <td class="yes">✓</td>
-                  <td class="yes">✓</td>
-                  <td class="yes">✓</td>
                   <td class="yes">✓</td>
                   <td class="yes">✓</td>
                   <td class="yes">✓</td>
@@ -164,9 +102,6 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
                 </tr>
                 <tr>
                   <td>Booth in central hall</td>
-                  <td class="note">Premium</td>
-                  <td class="note">Premium</td>
-                  <td class="yes">✓</td>
                   <td class="yes">✓</td>
                   <td class="yes">✓</td>
                   <td class="no">—</td>
@@ -174,29 +109,13 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
                 </tr>
                 <tr>
                   <td>Video during transitions</td>
-                  <td class="note">90 sec</td>
-                  <td class="note">60 sec</td>
-                  <td class="note">60 sec</td>
                   <td class="note">Logo</td>
                   <td class="no">—</td>
                   <td class="no">—</td>
                   <td class="no">—</td>
                 </tr>
                 <tr>
-                  <td>Opening address</td>
-                  <td class="note">10 min</td>
-                  <td class="note">5 min</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                </tr>
-                <tr>
                   <td>Networking events</td>
-                  <td class="note">VIP + All</td>
-                  <td class="note">VIP + All</td>
-                  <td class="note">All</td>
                   <td class="note">All</td>
                   <td class="note">All</td>
                   <td class="note">All</td>
@@ -204,9 +123,6 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
                 </tr>
                 <tr>
                   <td>Full-access tickets</td>
-                  <td class="note">10</td>
-                  <td class="note">8</td>
-                  <td class="note">6</td>
                   <td class="note">4</td>
                   <td class="note">2</td>
                   <td class="note">1</td>
@@ -215,35 +131,80 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
                 <tr>
                   <td>Social media spotlight</td>
                   <td class="yes">✓</td>
-                  <td class="yes">✓</td>
-                  <td class="yes">✓</td>
-                  <td class="yes">✓</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                </tr>
-                <tr>
-                  <td>Newsletter feature</td>
-                  <td class="yes">✓</td>
-                  <td class="yes">✓</td>
-                  <td class="yes">✓</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
-                </tr>
-                <tr>
-                  <td>2027 first right of refusal</td>
-                  <td class="yes">✓</td>
-                  <td class="yes">✓</td>
-                  <td class="no">—</td>
-                  <td class="no">—</td>
                   <td class="no">—</td>
                   <td class="no">—</td>
                   <td class="no">—</td>
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+
+        <!-- Programs Your Sponsorship Supports -->
+        <div class="reveal section-group" style="margin-top: 80px;">
+          <h2 class="table-heading" style="margin-bottom: 12px;">Programs Your Sponsorship Supports</h2>
+          <p class="section-lede" style="font-size: 16px; margin-bottom: 30px;">
+            Sponsorships do more than just fund the conference—they actively support our ongoing community programs. By partnering with us, you are directly investing in the future of Black professionals and students in technology.
+          </p>
+          <div class="programs-grid">
+            <div class="tier-card">
+              <h3 style="color: #D4A843; font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin-bottom: 12px;">Tech Accelerator</h3>
+              <p style="color: rgba(240, 237, 230, 0.7); font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6;">A comprehensive program designed to help early-career Black professionals rapidly build skills, develop their portfolios, and find mentorship. The accelerator provides access to premium resources, hands-on project experience, and direct coaching from industry leaders to accelerate their career trajectories.</p>
+            </div>
+            <div class="tier-card">
+              <h3 style="color: #D4A843; font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin-bottom: 12px;">Mentorship Program</h3>
+              <p style="color: rgba(240, 237, 230, 0.7); font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6;">Our year-round mentorship program pairs experienced technology professionals with career-changers and students. This direct, one-on-one guidance helps mentees navigate the tech industry, prepare for interviews, and build lasting professional networks.</p>
+            </div>
+            <div class="tier-card">
+              <h3 style="color: #D4A843; font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin-bottom: 12px;">Student Tech Outreach</h3>
+              <p style="color: rgba(240, 237, 230, 0.7); font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6;">Our initiative dedicated to bridging the digital divide for high school students. This program provides access to technology, coding workshops, and career exploration sessions to spark interest in STEM fields and create early pathways to technology careers.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hackathon Prizes -->
+        <div class="reveal section-group" style="margin-top: 40px;">
+          <h2 class="table-heading" style="margin-bottom: 12px;">Hackathon Prize Sponsorships</h2>
+          <p class="section-lede" style="font-size: 16px; margin-bottom: 30px;">
+            The Juneteenth Conference Hackathon is a high-energy event where attendees build innovative solutions to community challenges. Sponsoring a prize is a great way to engage directly with participants and highlight your platform or services.
+          </p>
+          <div class="hackathon-grid">
+            <div class="tier-card">
+              <h3 style="color: #D4A843; font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin-bottom: 12px;">Cash Prize Sponsor</h3>
+              <ul class="tier-perks">
+                <li>Provide a cash prize for the winning teams (e.g., $1,000, $5,000)</li>
+                <li>Opportunity to judge the hackathon and present the award</li>
+                <li>Logo placement on hackathon materials</li>
+              </ul>
+              <a href="mailto:info@juneteenthconf.com?subject=Cash%20Prize%20Sponsorship" class="tier-cta">Get in Touch</a>
+            </div>
+            <div class="tier-card">
+              <h3 style="color: #D4A843; font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin-bottom: 12px;">Platform Credits Sponsor</h3>
+              <ul class="tier-perks">
+                <li>Provide platform credits for participants (e.g., AWS, GCP, Azure, or your own API credits)</li>
+                <li>Your technology featured as an option for participants to use</li>
+                <li>Direct developer adoption of your platform</li>
+              </ul>
+              <a href="mailto:info@juneteenthconf.com?subject=Platform%20Credits%20Sponsorship" class="tier-cta">Get in Touch</a>
+            </div>
+            <div class="tier-card">
+              <h3 style="color: #D4A843; font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin-bottom: 12px;">Hardware / Gear Sponsor</h3>
+              <ul class="tier-perks">
+                <li>Sponsor high-end gear for winners (laptops, monitors, premium keyboards)</li>
+                <li>High visibility during the prize announcement</li>
+                <li>Great brand association with top-tier developer tools</li>
+              </ul>
+              <a href="mailto:info@juneteenthconf.com?subject=Hardware%20Gear%20Sponsorship" class="tier-cta">Get in Touch</a>
+            </div>
+            <div class="tier-card">
+              <h3 style="color: #D4A843; font-family: 'Space Grotesk', sans-serif; font-size: 20px; margin-bottom: 12px;">Custom Challenge Sponsor</h3>
+              <ul class="tier-perks">
+                <li>Create a specific challenge for participants using your API/tools</li>
+                <li>Dedicated prize category just for your challenge</li>
+                <li>Direct interaction and feedback from developers using your product</li>
+              </ul>
+              <a href="mailto:info@juneteenthconf.com?subject=Custom%20Challenge%20Sponsorship" class="tier-cta">Get in Touch</a>
+            </div>
           </div>
         </div>
 
@@ -294,6 +255,20 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
   .supporting-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+  
+  .hackathon-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     margin-bottom: 56px;
   }
@@ -426,9 +401,10 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
   @media (max-width: 900px) {
     .featured-grid { grid-template-columns: 1fr; }
-    .supporting-grid { grid-template-columns: repeat(2, 1fr); }
+    .supporting-grid, .hackathon-grid { grid-template-columns: repeat(2, 1fr); }
+    .programs-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 560px) {
-    .supporting-grid { grid-template-columns: 1fr; }
+    .supporting-grid, .hackathon-grid { grid-template-columns: 1fr; }
   }
 </style>
