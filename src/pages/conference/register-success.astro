@@ -1,0 +1,108 @@
+---
+import InteriorLayout from '../../layouts/InteriorLayout.astro';
+---
+
+<InteriorLayout
+  ogSlug="register"
+  title="Registration Successful — Juneteenth Conference 2026"
+  description="Your registration has been confirmed for the Juneteenth Conference 2026."
+  current="Conference"
+  heroTitle="Success"
+  heroSubtitle="Thank you for registering!"
+  heroAccent="green"
+>
+  <section class="interior-section">
+    <div class="interior-content">
+      <div class="reveal-stagger">
+        <div class="success-block" role="status">
+          <div class="success-icon">&#10003;</div>
+          <h2 class="success-title">You're registered!</h2>
+          <p class="success-text">
+            A confirmation and receipt has been sent to your email.
+            We look forward to seeing you in Chicago on June 19th!
+          </p>
+          <a href="/conference/" class="back-link">Back to Conference</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</InteriorLayout>
+
+<!-- Pixel and Insight Tag Success Tracking -->
+<script is:inline>
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const amount = parseFloat(urlParams.get('amount') || '75');
+    const qty = parseInt(urlParams.get('qty') || '1', 10);
+
+    // Track Meta Pixel Purchase event with actual conversion value
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'Purchase', {
+        value: amount,
+        currency: 'USD',
+        content_name: 'Juneteenth Conference Ticket',
+        num_items: qty
+      });
+      console.log('Meta Pixel Purchase tracked successfully:', { amount, qty });
+    }
+
+    // Track LinkedIn Insight Tag conversion event if configured
+    if (typeof window.lintrk === 'function') {
+      // If the user sets up an Event conversion on LinkedIn, it will fire here
+      console.log('LinkedIn Insight Tag loaded on success page');
+    }
+  } catch (e) {
+    console.error('Error in conversion tracking script:', e);
+  }
+</script>
+
+<style>
+  .interior-section {
+    padding: 60px 24px 100px;
+    background-color: #0b0c10;
+    display: flex;
+    justify-content: center;
+  }
+  .interior-content {
+    width: 100%;
+    max-width: 600px;
+  }
+  .success-block {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    border-top: 4px solid #55ac64;
+  }
+  .success-icon {
+    font-size: 48px;
+    color: #55ac64;
+    margin-bottom: 20px;
+  }
+  .success-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
+  .success-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(240, 237, 230, 0.8);
+    margin-bottom: 30px;
+  }
+  .back-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #d13030;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  .back-link:hover {
+    background-color: #b02424;
+  }
+</style>
