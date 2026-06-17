@@ -782,6 +782,16 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
       if (stripeError) throw new Error(stripeError.message);
 
+      // Track purchase event with total amount (includes base tickets, donations, scholarships)
+      if (typeof (window as any).fbq === 'function') {
+        (window as any).fbq('track', 'Purchase', {
+          value: total,
+          currency: 'USD',
+          content_name: 'Juneteenth Conference Ticket',
+          num_items: 1 + scholarshipQty
+        });
+      }
+
       (document.getElementById('success-email') as HTMLElement).textContent = emailEl.value.trim();
       form.style.display = 'none';
       successBlock.style.display = 'block';
@@ -797,4 +807,13 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
   // Initialize total display
   updateTotal();
+
+  // Track InitiateCheckout event on page load
+  if (typeof (window as any).fbq === 'function') {
+    (window as any).fbq('track', 'InitiateCheckout', {
+      value: basePrice,
+      currency: 'USD',
+      content_name: 'Juneteenth Conference Ticket'
+    });
+  }
 </script>
