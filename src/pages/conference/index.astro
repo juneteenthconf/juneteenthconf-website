@@ -17,61 +17,68 @@ const base = b.endsWith('/') ? b : b + '/';
     <div class="interior-content">
       <div class="reveal-stagger">
         <p class="reveal section-lede">
-          <strong style="color: #D4A843;">Building Our Own Table.</strong> Juneteenth Conference returns in 2026 with two days of curated sessions across engineering, data, security, entrepreneurship, and tech leadership.
+          <strong style="color: #D4A843;">Building Our Own Table.</strong> Thank you to everyone who joined us in Chicago! Our speakers delivered in spades, offering profound insights, actionable advice, and the inspiration needed to navigate today’s professional landscape.
         </p>
 
-        <div class="reveal conference-grid">
-          <div class="conference-card">
-            <span class="conference-card-label">Dates</span>
-            <span class="conference-card-value">June 19&ndash;20, 2026</span>
+        <div class="reveal recap-grid">
+          <div class="recap-card">
+            <h3 class="recap-name">Pierre Debois</h3>
+            <p class="recap-desc">Reprised his powerful "Owning our History" talk from 2021, brilliantly updating it to address the new frontiers and challenges of AI.</p>
           </div>
-          <div class="conference-card">
-            <span class="conference-card-label">Location</span>
-            <span class="conference-card-value">Microsoft Chicago</span>
-            <span class="conference-card-sub">200 E. Randolph Dr. &bull; Aon Center</span>
+          <div class="recap-card">
+            <h3 class="recap-name">Ashley Janelle</h3>
+            <p class="recap-desc">Shared her inspiring founder journey, discussing the reality and power of building your own table when no one else is hiring.</p>
           </div>
-          <div class="conference-card">
-            <span class="conference-card-label">Sessions</span>
-            <span class="conference-card-value">6 sessions + workshop</span>
+          <div class="recap-card">
+            <h3 class="recap-name">Hassan Shahid</h3>
+            <p class="recap-desc">Shared his tech journey with "No CS Degree, No Permission, No Problem," discussing how he navigated a tech career from network support to an engineer at Meta.</p>
           </div>
-          <div class="conference-card">
-            <span class="conference-card-label">Format</span>
-            <span class="conference-card-value">In-person</span>
+          <div class="recap-card">
+            <h3 class="recap-name">Clarene Mitchell</h3>
+            <p class="recap-desc">Came through with practical, high-impact strategies on how to leverage LinkedIn to support and grow your business.</p>
+          </div>
+          <div class="recap-card">
+            <h3 class="recap-name">Ramatu Kandakai</h3>
+            <p class="recap-desc">Spoke passionately about the importance of staying true to yourself and not compromising your identity just for a "seat at the table."</p>
+          </div>
+          <div class="recap-card">
+            <h3 class="recap-name">Madison Butler</h3>
+            <p class="recap-desc">Closed out the day sitting down with our Executive Director for a candid, unforgettable interview about identity, resilience, and self-care in corporate America.</p>
           </div>
         </div>
 
-        <div class="reveal keynote-feature">
-          <span class="keynote-label">Keynote Speaker</span>
-          <h2 class="keynote-name">Madison Butler</h2>
-          <p class="keynote-bio">
-            Unapologetic advocate for authenticity and psychological safety. Featured in The New York Times, WSJ, and Rolling Stone. Author of <em>Let Them See You</em> (Fall 2025). LinkedIn Top Black Voice.
-          </p>
-        </div>
+        <h2 class="reveal section-heading" style="color: #55ac64; margin-top: 64px;">Event Highlights</h2>
+        <div class="reveal highlights-grid">
+          <div class="highlight-wrap">
+            <img src={`${base}images/recap-hassan.png`} alt="Hassan delivers his talk" class="highlight-image" style="object-position: top center;" loading="lazy" />
+            <div class="highlight-caption">Hassan delivers his talk</div>
+          </div>
+          <div class="highlight-wrap">
+            <img src={`${base}images/recap-group.jpg`} alt="Black Girl Magic at Juneteenth Conference" class="highlight-image" loading="lazy" />
+            <div class="highlight-caption">Black Girl Magic at Juneteenth Conference</div>
+          </div>
+          <div class="highlight-wrap">
+            <img src={`${base}images/recap-selfie.jpg`} alt="Some of our board members take a selfie" class="highlight-image" loading="lazy" />
+            <div class="highlight-caption">Some of our board members take a selfie</div>
+          </div>
+          
+          <div class="highlight-wrap" style="background: rgba(45, 36, 56, 0.5); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; border: 1px solid rgba(212, 168, 67, 0.1);">
+            <h3 style="color: #D4A843; font-family: 'Space Grotesk', sans-serif; font-size: 22px; margin-bottom: 16px;">Don't miss 2027</h3>
+            <a href={`${base}conference/register/`} class="cta-outline cta-speak" style="font-size: 14px; padding: 10px 20px; text-decoration: none;">Join Our Community</a>
+          </div>
 
-        <h2 class="reveal section-heading" style="color: #55ac64;">What to Expect</h2>
-        <div class="reveal expect-grid">
-          <div class="expect-item">
-            <h3>Technical Depth</h3>
-            <p>Sessions spanning engineering, data science, cybersecurity, AI, and cloud architecture.</p>
+          <div class="highlight-wrap highlight-full">
+            <img src={`${base}images/recap-madison.png`} alt="Fireside Chat with Madison and Michael" class="highlight-image" loading="lazy" />
+            <div class="highlight-caption">Fireside Chat with Madison and Michael</div>
           </div>
-          <div class="expect-item">
-            <h3>Leadership</h3>
-            <p>Candid conversations about navigating tech as a Black professional, building teams, and scaling careers.</p>
-          </div>
-          <div class="expect-item">
-            <h3>Entrepreneurship</h3>
-            <p>Founders sharing real stories about building companies, raising capital, and creating opportunity.</p>
-          </div>
-          <div class="expect-item">
-            <h3>Community</h3>
-            <p>Networking with 2,500+ members of the JuneteenthConf community &mdash; professionals, students, and allies.</p>
+          <div class="highlight-wrap highlight-full">
+            <img src={`${base}images/speakers-chicago-backdrop.png`} alt="Michael joins our speakers" class="highlight-image fix-washout" loading="lazy" />
+            <div class="highlight-caption">Michael joins our speakers</div>
           </div>
         </div>
 
         <div class="reveal cta-block">
-          <a href={`${base}conference/register/`} class="cta-primary">Register</a>
-          <a href={`${base}conference/sponsor/`} class="cta-outline">Become a Sponsor</a>
-          <a href={`${base}conference/cfp/`} class="cta-outline cta-speak">Submit a Talk</a>
+          <a href={`${base}conference/register/`} class="cta-primary">Join Our Community</a>
         </div>
       </div>
     </div>
@@ -92,52 +99,24 @@ const base = b.endsWith('/') ? b : b + '/';
     color: rgba(240, 237, 230, 0.7);
     line-height: 1.8; margin-bottom: 48px;
   }
-  .conference-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 16px; margin-bottom: 56px;
+  .recap-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; margin-bottom: 56px;
   }
-  .conference-card {
+  .recap-card {
     background: rgba(45, 36, 56, 0.5);
     border: 1px solid rgba(212, 168, 67, 0.1);
     border-radius: 8px; padding: 24px;
   }
-  .conference-card-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px; color: rgba(255,255,255,0.4);
-    letter-spacing: 0.15em; text-transform: uppercase;
-    display: block; margin-bottom: 8px;
-  }
-  .conference-card-value {
+  .recap-name {
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700; font-size: 20px; color: #f0ede6;
-    display: block;
+    font-weight: 700; font-size: 20px; color: #D4A843;
+    margin-bottom: 12px;
   }
-  .conference-card-sub {
+  .recap-desc {
     font-family: 'Inter', sans-serif;
-    font-size: 12px; color: rgba(240, 237, 230, 0.4);
-    display: block; margin-top: 4px;
-  }
-  .keynote-feature {
-    background: rgba(45, 36, 56, 0.4);
-    border-left: 4px solid #D4A843;
-    padding: 32px; margin-bottom: 56px;
-    border-radius: 0 8px 8px 0;
-  }
-  .keynote-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 12px; color: rgba(255,255,255,0.4);
-    letter-spacing: 0.15em; text-transform: uppercase;
-    display: block; margin-bottom: 12px;
-  }
-  .keynote-name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700; font-size: clamp(28px, 5vw, 48px);
-    color: #D4A843; margin-bottom: 12px;
-  }
-  .keynote-bio {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px; color: rgba(240, 237, 230, 0.6);
-    line-height: 1.7;
+    font-size: 15px; color: rgba(240, 237, 230, 0.7);
+    line-height: 1.6;
   }
   .section-heading {
     font-family: 'Space Grotesk', sans-serif;
@@ -145,19 +124,41 @@ const base = b.endsWith('/') ? b : b + '/';
     text-transform: uppercase; letter-spacing: 0.05em;
     margin-bottom: 32px;
   }
-  .expect-grid {
+  .highlights-grid {
     display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 24px; margin-bottom: 56px;
+    gap: 16px; margin-bottom: 56px;
   }
-  .expect-item h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600; font-size: 17px; color: #f0ede6;
-    margin-bottom: 8px;
+  .highlight-wrap {
+    border-radius: 8px; overflow: hidden;
+    aspect-ratio: 4/3;
+    position: relative;
   }
-  .expect-item p {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px; color: rgba(240, 237, 230, 0.55);
-    line-height: 1.7;
+  .highlight-image {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block; transition: transform 0.3s ease;
+  }
+  .highlight-wrap:hover .highlight-image {
+    transform: scale(1.05);
+  }
+  .highlight-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    color: #f0ede6; font-family: 'Inter', sans-serif;
+    font-size: 15px; padding: 16px;
+    background: transparent;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .highlight-full {
+    grid-column: 1 / -1;
+    aspect-ratio: auto; /* Let the image dictate the height to prevent cropping */
+  }
+  .highlight-full .highlight-image {
+    height: auto;
+  }
+  .fix-washout {
+    /* The original file is inherently desaturated, so we can use CSS filters to restore the contrast and color punch */
+    filter: contrast(1.25) saturate(1.3);
   }
   .cta-block {
     display: flex; gap: 20px; flex-wrap: wrap;
@@ -167,6 +168,6 @@ const base = b.endsWith('/') ? b : b + '/';
   .cta-speak:hover { border-color: #D4A843; color: #f0ede6; }
 
   @media (max-width: 640px) {
-    .conference-grid, .expect-grid { grid-template-columns: 1fr; }
+    .highlights-grid { grid-template-columns: 1fr; }
   }
 </style>

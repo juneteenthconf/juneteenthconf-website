@@ -7,7 +7,7 @@ const links = [
   { href: `${base}conference/`, label: 'Conference' },
   { href: `${base}conference/speakers/`, label: 'Speakers' },
   { href: `${base}conference/schedule/`, label: 'Schedule' },
-  { href: `${base}conference/sponsor/`, label: 'Sponsor' },
+  { href: `${base}about/board/`, label: 'Board' },
   { href: `${base}juneteenth/`, label: 'Juneteenth' },
   { href: `${base}volunteer/`, label: 'Volunteer' },
 ];
@@ -21,7 +21,7 @@ const links = [
     {links.map(link => (
       <a href={link.href} class="scroll-nav-link">{link.label}</a>
     ))}
-    <a href={`${base}conference/register/`} class="nav-cta">Register</a>
+    <!-- Register CTA removed -->
   </div>
   <button class="hamburger-btn" id="hamburger-scroll" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -32,7 +32,7 @@ const links = [
   {links.map(link => (
     <a href={link.href}>{link.label}</a>
   ))}
-  <a href={`${base}conference/register/`} class="mobile-menu-cta">Register</a>
+  <!-- Register CTA removed -->
 </div>
 
 <style>

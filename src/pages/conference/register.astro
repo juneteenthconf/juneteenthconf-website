@@ -4,172 +4,59 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
 <InteriorLayout
   ogSlug="register"
-  title="Register — Juneteenth Conference 2026"
-  description="Register for Juneteenth Conference 2026. June 19–20, Chicago, IL. $50 through June 14 · $75 after."
+  title="Join Our Community — Juneteenth Conference"
+  description="Join the Juneteenth Conference community to be informed about upcoming events, programs, and our community portal."
   current="Conference"
-  heroTitle="Register"
-  heroSubtitle="June 19&ndash;20, 2026 &bull; Chicago, IL"
+  heroTitle="Join Our Community"
   heroAccent="red"
 >
   <section class="interior-section">
     <div class="interior-content">
       <div class="reveal-stagger">
-
-        <div class="reveal info-callout">
-          <span class="callout-icon">🎟️</span>
-          <p>Is the ticket price preventing your attendance? We have scholarship tickets available! <a href="/conference/scholarship">Apply for a scholarship here</a>.</p>
+        <div class="reveal info-callout" style="margin-bottom: 40px; border-color: #c84342; background: rgba(200, 67, 66, 0.08);">
+          <span class="callout-icon" style="color: #c84342;">🌟</span>
+          <p><strong>Stay connected with JuneteenthConf.</strong> Join our community mailing list to be the first to know about upcoming events, new programs, and gain early access to our upcoming community portal.</p>
         </div>
 
-        <div class="reveal info-callout">
-          <span class="callout-icon">🎓</span>
-          <p>College student? Use code <strong>BETHUNE</strong> at checkout with your <strong>.edu email</strong> to register for <strong>$25</strong>.</p>
-        </div>
-
-        <div class="reveal includes-block">
-          <h3 class="block-label">What's Included</h3>
-          <div class="includes-grid">
-            <div class="include-item"><span class="include-star">✦</span> Day 1: Keynote + 6 curated sessions</div>
-            <div class="include-item"><span class="include-star">✦</span> Day 2: AI Assisted Coding Workshop + hackathon</div>
-            <div class="include-item"><span class="include-star">✦</span> JuneteenthConf t-shirt</div>
-          </div>
-        </div>
-
-        <form id="register-form" novalidate>
-
-          <div class="reveal form-section">
-
-            <div class="ticket-line">
-              <div class="ticket-info">
-                <span class="ticket-name">General Admission</span>
-                <span class="ticket-dates">June 19&ndash;20, 2026 &bull; Chicago, IL</span>
-                <span class="sale-note" id="sale-note" style="display:none;">
-                  Sale ends June 14 &mdash; <span id="original-price-note">regular price $75</span>
-                </span>
-              </div>
-              <div class="ticket-price-block">
-                <span class="ticket-price" id="ticket-price-display">$75</span>
-                <span class="student-badge" id="student-badge" style="display:none;">Student rate</span>
-              </div>
-            </div>
-
-            <div class="scholarship-block">
-              <div class="scholarship-header">
-                <div>
-                  <label class="block-label">Scholarship Tickets <span class="optional">(optional)</span></label>
-                  <p class="contribution-hint">Cover the cost of attendance for someone who can't afford a ticket. $75 each.</p>
+        <div class="reveal form-section">
+          <h2 class="form-section-title">Join Our Community</h2>
+          <!-- Begin Mailchimp Signup Form -->
+          <div id="mc_embed_signup">
+            <form
+              action="https://juneteenthconf.us10.list-manage.com/subscribe/post?u=07ef187a16bc5cd4f2375c824&amp;id=4d06862da4"
+              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+              target="_blank" aria-label="link text - new window" novalidate style="display: flex; flex-direction: column; gap: 16px;">
+              
+              <div class="field-row">
+                <div class="field-group">
+                  <label for="mce-FNAME" class="field-label">First Name </label>
+                  <input type="text" value="" name="FNAME" class="field-input" id="mce-FNAME">
                 </div>
-                <div class="qty-control">
-                  <button type="button" class="qty-btn" id="scholarship-minus">&#8722;</button>
-                  <span class="qty-display" id="scholarship-qty">0</span>
-                  <button type="button" class="qty-btn" id="scholarship-plus">&#43;</button>
+                <div class="field-group">
+                  <label for="mce-LNAME" class="field-label">Last Name </label>
+                  <input type="text" value="" name="LNAME" class="field-input" id="mce-LNAME">
                 </div>
               </div>
-            </div>
 
-            <div class="contribution-block">
-              <label class="block-label">
-                Additional Contribution <span class="optional">(optional)</span>
-              </label>
-              <p class="contribution-hint">Help cover scholarships and production costs for attendees who can't pay full price.</p>
-              <div class="preset-row">
-                <button type="button" class="preset-btn active" data-amount="0">None</button>
-                <button type="button" class="preset-btn" data-amount="25">+$25</button>
-                <button type="button" class="preset-btn" data-amount="50">+$50</button>
-                <button type="button" class="preset-btn" data-amount="100">+$100</button>
-              </div>
-              <div class="custom-contribution">
-                <span class="custom-prefix">$</span>
-                <input type="number" id="custom-amount" class="custom-input" placeholder="Custom amount" min="0" step="1" />
-              </div>
-            </div>
-
-            <div class="promo-block">
-              <label class="block-label">Promo Code <span class="optional">(optional)</span></label>
-              <div class="promo-row">
-                <input type="text" id="promo-input" class="field-input promo-input" placeholder="Enter code" autocomplete="off" />
-                <button type="button" class="promo-apply-btn" id="promo-apply-btn">Apply</button>
-              </div>
-              <p class="promo-message" id="promo-message" style="display:none;"></p>
-            </div>
-
-            <div class="total-line">
-              <span class="total-label">Total</span>
-              <span class="total-value" id="total-display">$75</span>
-            </div>
-
-          </div>
-
-          <div class="reveal form-section">
-            <h2 class="form-section-title">Your Info</h2>
-
-            <div class="field-row">
               <div class="field-group">
-                <label for="reg-name" class="field-label">Full Name <span class="required">*</span></label>
-                <input type="text" id="reg-name" name="name" class="field-input" required autocomplete="name" />
+                <label for="mce-EMAIL" class="field-label">Email Address <span class="required">*</span></label>
+                <input type="email" value="" name="EMAIL" class="field-input required email" id="mce-EMAIL" required>
               </div>
-              <div class="field-group">
-                <label for="reg-email" class="field-label">Email <span class="required">*</span><span class="edu-required" id="edu-required" style="display:none;"> &mdash; must be a .edu address</span></label>
-                <input type="email" id="reg-email" name="email" class="field-input" required autocomplete="email" />
+
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_07ef187a16bc5cd4f2375c824_4d06862da4" tabindex="-1" value="">
               </div>
-            </div>
-
-            <div class="field-group tshirt-group">
-              <label for="tshirt-size" class="field-label">T-Shirt Size <span class="required">*</span></label>
-              <select id="tshirt-size" name="tshirtSize" class="field-select" required>
-                <option value="">Select a size</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="2XL">2XL</option>
-                <option value="3XL">3XL</option>
-              </select>
-            </div>
+              
+              <div class="form-footer" style="margin-top: 16px;">
+                <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit-btn">
+                  Subscribe
+                </button>
+              </div>
+            </form>
           </div>
-
-          <div class="reveal form-section">
-            <h2 class="form-section-title">Payment</h2>
-            <div id="card-element" class="card-element"></div>
-            <div id="card-errors" class="card-errors" role="alert"></div>
-          </div>
-
-          <div class="reveal form-footer">
-            <p class="form-notice">
-              Payments processed securely by Stripe. Your statement will show a charge from
-              <strong style="color: rgba(240,237,230,0.5);">Synaptic Weave Inc.</strong>
-              By registering you agree to our <a href="/coc/">Code of Conduct</a>.
-            </p>
-            <div id="reg-error-msg" class="form-error-msg" style="display:none;" role="alert">
-              Please fill in all required fields before paying.
-            </div>
-            <button type="submit" class="submit-btn" id="pay-btn">
-              Pay <span id="btn-total">$75</span>
-            </button>
-          </div>
-
-        </form>
-
-        <div id="reg-success" class="success-block" style="display:none;" role="status">
-          <div class="success-icon">&#10003;</div>
-          <h2 class="success-title">You're registered!</h2>
-          <p class="success-text">
-            A confirmation and receipt is on its way to
-            <strong id="success-email" style="color: #D4A843;"></strong>.
-            See you in Chicago on June 19th.
-          </p>
-          <a href="/conference/" class="back-link">Back to Conference</a>
+          <!--End mc_embed_signup-->
         </div>
-
-        <div id="sold-out-banner" class="sold-out-banner" style="display:none;" role="alert">
-          <strong>Tickets are sold out.</strong> We've hit our 150-attendee cap.
-          Email <a href="mailto:info@juneteenthconf.com">info@juneteenthconf.com</a> to be added to the waitlist.
-        </div>
-
-        <div id="payment-error-banner" class="submit-error-banner" style="display:none;" role="alert">
-          Payment failed. Please try again or email
-          <a href="mailto:info@juneteenthconf.com">info@juneteenthconf.com</a>.
-        </div>
-
       </div>
     </div>
   </section>
@@ -515,293 +402,5 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 </style>
 
 <script>
-  const STRIPE_PK = 'pk_live_51Rq1vARt87CC0VqEUJSjddl797ATQbjem6eokxB5896du81is4JZp0i5NmZxSvFpIHKTsZPYWspTN5x6Cdsa6mj600pkkJm7Tf';
-  const STUDENT_CODE = 'BETHUNE';
-  const SALE_ENDS = new Date('2026-06-15T05:00:00Z');
-
-  // Load Stripe.js dynamically
-  async function loadStripeJs(): Promise<void> {
-    return new Promise((resolve) => {
-      if ((window as any).Stripe) { resolve(); return; }
-      const s = document.createElement('script');
-      s.src = 'https://js.stripe.com/v3/';
-      s.onload = () => resolve();
-      document.head.appendChild(s);
-    });
-  }
-
-  await loadStripeJs();
-
-  const stripe = (window as any).Stripe(STRIPE_PK);
-  const elements = stripe.elements();
-
-  const cardElement = elements.create('card', {
-    style: {
-      base: {
-        color: '#f0ede6',
-        fontFamily: '"Inter", sans-serif',
-        fontSize: '15px',
-        fontSmoothing: 'antialiased',
-        '::placeholder': { color: 'rgba(240, 237, 230, 0.25)' },
-        iconColor: 'rgba(240, 237, 230, 0.4)',
-      },
-      invalid: { color: '#c84342', iconColor: '#c84342' },
-    },
-  });
-
-  cardElement.mount('#card-element');
-
-  const cardContainer = document.getElementById('card-element') as HTMLElement;
-  const cardErrors = document.getElementById('card-errors') as HTMLElement;
-
-  let cardComplete = false;
-
-  const payBtn = document.getElementById('pay-btn') as HTMLButtonElement;
-  const nameEl  = document.getElementById('reg-name')    as HTMLInputElement;
-  const emailEl = document.getElementById('reg-email')   as HTMLInputElement;
-  const sizeEl  = document.getElementById('tshirt-size') as HTMLSelectElement;
-
-  function updatePayBtn() {
-    payBtn.disabled = !(
-      cardComplete &&
-      nameEl.value.trim() &&
-      emailEl.value.trim() &&
-      sizeEl.value
-    );
-  }
-
-  // Start disabled
-  payBtn.disabled = true;
-
-  // Re-check on every field change
-  [nameEl, emailEl, sizeEl].forEach(el => {
-    el.addEventListener('input', updatePayBtn);
-    el.addEventListener('change', updatePayBtn);
-  });
-
-  cardElement.on('focus', () => cardContainer.classList.add('focused'));
-  cardElement.on('blur', () => cardContainer.classList.remove('focused'));
-  cardElement.on('change', (e: any) => {
-    cardErrors.textContent = e.error ? e.error.message : '';
-    cardComplete = e.complete;
-    updatePayBtn();
-  });
-
-  // Pricing state
-  const isSale = new Date() < SALE_ENDS;
-  let basePrice = isSale ? 50 : 75;
-  let studentPromoApplied = false;
-  let appliedPromoCode = '';
-
-  // Show sale note if active
-  const saleNote = document.getElementById('sale-note') as HTMLElement;
-  const ticketPriceDisplay = document.getElementById('ticket-price-display') as HTMLElement;
-  if (isSale) {
-    saleNote.style.display = 'block';
-    ticketPriceDisplay.textContent = '$50';
-  }
-
-  function updateTotal() {
-    const total = basePrice + (scholarshipQty * 75) + Math.max(0, Math.floor(contribution));
-    document.getElementById('total-display')!.textContent = `$${total}`;
-    document.getElementById('btn-total')!.textContent = `$${total}`;
-  }
-
-  // Scholarship + contribution logic
-  let contribution = 0;
-  let scholarshipQty = 0;
-  const customInput = document.getElementById('custom-amount') as HTMLInputElement;
-  const scholarshipQtyEl = document.getElementById('scholarship-qty') as HTMLElement;
-  const minusBtn = document.getElementById('scholarship-minus') as HTMLButtonElement;
-  const plusBtn = document.getElementById('scholarship-plus') as HTMLButtonElement;
-
-  minusBtn.addEventListener('click', () => {
-    if (scholarshipQty > 0) {
-      scholarshipQty--;
-      scholarshipQtyEl.textContent = String(scholarshipQty);
-      minusBtn.disabled = scholarshipQty === 0;
-      updateTotal();
-    }
-  });
-  minusBtn.disabled = true;
-
-  plusBtn.addEventListener('click', () => {
-    scholarshipQty++;
-    scholarshipQtyEl.textContent = String(scholarshipQty);
-    minusBtn.disabled = false;
-    updateTotal();
-  });
-
-  document.querySelectorAll<HTMLButtonElement>('.preset-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      contribution = parseInt(btn.dataset.amount || '0');
-      customInput.value = contribution > 0 ? String(contribution) : '';
-      updateTotal();
-    });
-  });
-
-  customInput.addEventListener('input', () => {
-    const val = parseFloat(customInput.value) || 0;
-    contribution = val;
-    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
-    const match = document.querySelector<HTMLButtonElement>(`.preset-btn[data-amount="${Math.floor(val)}"]`);
-    if (match && val === Math.floor(val)) match.classList.add('active');
-    updateTotal();
-  });
-
-  // Promo code logic
-  const promoInput = document.getElementById('promo-input') as HTMLInputElement;
-  const promoApplyBtn = document.getElementById('promo-apply-btn') as HTMLButtonElement;
-  const promoMessage = document.getElementById('promo-message') as HTMLElement;
-  const studentBadge = document.getElementById('student-badge') as HTMLElement;
-  const eduRequired = document.getElementById('edu-required') as HTMLElement;
-
-  function applyPromo() {
-    const code = promoInput.value.trim().toUpperCase();
-    promoMessage.className = 'promo-message';
-    promoMessage.style.display = 'none';
-
-    if (code === STUDENT_CODE) {
-      basePrice = 25;
-      studentPromoApplied = true;
-      appliedPromoCode = code;
-      ticketPriceDisplay.textContent = '$25';
-      studentBadge.style.display = 'block';
-      saleNote.style.display = 'none';
-      eduRequired.style.display = 'inline';
-      promoMessage.textContent = 'Student rate applied — $25. Your email must end in .edu.';
-      promoMessage.classList.add('success');
-      promoMessage.style.display = 'block';
-      promoInput.disabled = true;
-      promoApplyBtn.disabled = true;
-    } else if (code === '') {
-      promoMessage.textContent = 'Enter a promo code.';
-      promoMessage.classList.add('error');
-      promoMessage.style.display = 'block';
-    } else {
-      promoMessage.textContent = 'That code isn\'t valid.';
-      promoMessage.classList.add('error');
-      promoMessage.style.display = 'block';
-    }
-
-    updateTotal();
-  }
-
-  promoApplyBtn.addEventListener('click', applyPromo);
-  promoInput.addEventListener('keydown', (e: KeyboardEvent) => {
-    if (e.key === 'Enter') { e.preventDefault(); applyPromo(); }
-  });
-
-  // Form submission
-  const form = document.getElementById('register-form') as HTMLFormElement;
-  const errorMsg = document.getElementById('reg-error-msg') as HTMLElement;
-  const successBlock = document.getElementById('reg-success') as HTMLElement;
-  const paymentErrorBanner = document.getElementById('payment-error-banner') as HTMLElement;
-  const soldOutBanner = document.getElementById('sold-out-banner') as HTMLElement;
-
-  document.querySelectorAll<HTMLElement>('.field-input, .field-select').forEach(el => {
-    el.addEventListener('input', () => el.classList.remove('field-error'));
-    el.addEventListener('change', () => el.classList.remove('field-error'));
-  });
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    let valid = true;
-    [nameEl, emailEl, sizeEl].forEach(el => {
-      if (!el.value.trim()) { el.classList.add('field-error'); valid = false; }
-    });
-
-    // Card element must be complete before hitting the API
-    if (!cardComplete) {
-      cardErrors.textContent = 'Please enter your card details.';
-      cardContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
-
-    // .edu validation for student promo
-    if (studentPromoApplied && !emailEl.value.trim().toLowerCase().endsWith('.edu')) {
-      emailEl.classList.add('field-error');
-      promoMessage.textContent = 'Student rate requires a .edu email address.';
-      promoMessage.className = 'promo-message error';
-      promoMessage.style.display = 'block';
-      valid = false;
-    }
-
-    if (!valid) {
-      errorMsg.style.display = 'block';
-      form.querySelector<HTMLElement>('.field-error')?.focus();
-      return;
-    }
-    errorMsg.style.display = 'none';
-
-    payBtn.disabled = true;
-    payBtn.textContent = 'Processing…';
-    paymentErrorBanner.style.display = 'none';
-    soldOutBanner.style.display = 'none';
-
-    try {
-      const total = basePrice + (scholarshipQty * 75) + Math.max(0, Math.floor(contribution));
-
-      const res = await fetch('/api/create-payment-intent', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          amount: total,
-          name: nameEl.value.trim(),
-          email: emailEl.value.trim(),
-          tshirtSize: sizeEl.value,
-          scholarshipTickets: scholarshipQty,
-          contribution: Math.max(0, Math.floor(contribution)),
-          promoCode: appliedPromoCode,
-        }),
-      });
-
-      const data = await res.json();
-
-      if (data.error === 'SOLD_OUT') {
-        form.style.display = 'none';
-        soldOutBanner.style.display = 'block';
-        soldOutBanner.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        return;
-      }
-
-      if (data.error) throw new Error(data.error);
-
-      const { error: stripeError } = await stripe.confirmCardPayment(data.clientSecret, {
-        payment_method: {
-          card: cardElement,
-          billing_details: {
-            name: nameEl.value.trim(),
-            email: emailEl.value.trim(),
-          },
-        },
-      });
-
-      if (stripeError) throw new Error(stripeError.message);
-
-      // Redirect to the success page with amount and qty parameters for bulletproof tracking
-      window.location.href = `/conference/register-success?amount=${total}&qty=${1 + scholarshipQty}`;
-
-    } catch (err: any) {
-      payBtn.disabled = false;
-      payBtn.innerHTML = `Pay <span id="btn-total">$${basePrice + (scholarshipQty * 75) + Math.max(0, Math.floor(contribution))}</span>`;
-      paymentErrorBanner.style.display = 'block';
-      if (err.message) cardErrors.textContent = err.message;
-    }
-  });
-
-  // Initialize total display
-  updateTotal();
-
-  // Track InitiateCheckout event on page load
-  if (typeof (window as any).fbq === 'function') {
-    (window as any).fbq('track', 'InitiateCheckout', {
-      value: basePrice,
-      currency: 'USD',
-      content_name: 'Juneteenth Conference Ticket'
-    });
-  }
+  // Add any client-side script needed for the newsletter form here if necessary
 </script>
