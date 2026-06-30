@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import illustration from '../../assets/images/illustration.png';
+
 const b = import.meta.env.BASE_URL;
 const base = b.endsWith('/') ? b : b + '/';
 ---
@@ -30,20 +33,20 @@ const base = b.endsWith('/') ? b : b + '/';
 
     <div class="reveal hero-ctas">
       <a href={`${base}conference/register/`} class="cta-primary">Join Our Community</a>
-      <a href={`${base}conference/schedule/`} class="cta-outline">View Schedule</a>
+      <a href={`${base}conference/`} class="cta-outline">View Recap</a>
     </div>
   </div>
 
   <!-- Right: full-bleed illustration -->
   <div class="hero-illustration-wrap" aria-hidden="true">
-    <img
-      src={`${base}illustration.png`}
+    <Image
+      src={illustration}
       alt=""
       fetchpriority="high"
       loading="eager"
       class="hero-illustration"
-      width="541"
-      height="1000"
+      width={541}
+      height={1000}
     />
   </div>
 

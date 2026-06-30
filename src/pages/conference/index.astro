@@ -1,5 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import InteriorLayout from '../../layouts/InteriorLayout.astro';
+import recapHassan from '../../assets/images/recap-hassan.png';
+import recapGroup from '../../assets/images/recap-group.jpg';
+import recapSelfie from '../../assets/images/recap-selfie.jpg';
+import recapMadison from '../../assets/images/recap-madison.png';
+import backdrop from '../../assets/images/speakers-chicago-backdrop.png';
+
 const b = import.meta.env.BASE_URL;
 const base = b.endsWith('/') ? b : b + '/';
 ---
@@ -50,15 +57,15 @@ const base = b.endsWith('/') ? b : b + '/';
         <h2 class="reveal section-heading" style="color: #55ac64; margin-top: 64px;">Event Highlights</h2>
         <div class="reveal highlights-grid">
           <div class="highlight-wrap">
-            <img src={`${base}images/recap-hassan.png`} alt="Hassan delivers his talk" class="highlight-image" style="object-position: top center;" loading="lazy" />
+            <Image src={recapHassan} alt="Hassan delivers his talk" class="highlight-image" style="object-position: top center;" loading="lazy" />
             <div class="highlight-caption">Hassan delivers his talk</div>
           </div>
           <div class="highlight-wrap">
-            <img src={`${base}images/recap-group.jpg`} alt="Black Girl Magic at Juneteenth Conference" class="highlight-image" loading="lazy" />
+            <Image src={recapGroup} alt="Black Girl Magic at Juneteenth Conference" class="highlight-image" loading="lazy" />
             <div class="highlight-caption">Black Girl Magic at Juneteenth Conference</div>
           </div>
           <div class="highlight-wrap">
-            <img src={`${base}images/recap-selfie.jpg`} alt="Some of our board members take a selfie" class="highlight-image" loading="lazy" />
+            <Image src={recapSelfie} alt="Some of our board members take a selfie" class="highlight-image" loading="lazy" />
             <div class="highlight-caption">Some of our board members take a selfie</div>
           </div>
           
@@ -68,11 +75,11 @@ const base = b.endsWith('/') ? b : b + '/';
           </div>
 
           <div class="highlight-wrap highlight-full">
-            <img src={`${base}images/recap-madison.png`} alt="Fireside Chat with Madison and Michael" class="highlight-image" loading="lazy" />
+            <Image src={recapMadison} alt="Fireside Chat with Madison and Michael" class="highlight-image" loading="lazy" />
             <div class="highlight-caption">Fireside Chat with Madison and Michael</div>
           </div>
           <div class="highlight-wrap highlight-full">
-            <img src={`${base}images/speakers-chicago-backdrop.png`} alt="Michael joins our speakers" class="highlight-image fix-washout" loading="lazy" />
+            <Image src={backdrop} alt="Michael joins our speakers" class="highlight-image" loading="lazy" />
             <div class="highlight-caption">Michael joins our speakers</div>
           </div>
         </div>
