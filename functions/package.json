@@ -1,0 +1,17 @@
+{
+  "name": "juneteenthconf-functions",
+  "version": "1.0.0",
+  "description": "Juneteenth Conference 2026 double opt-in email verification functions",
+  "main": "index.js",
+  "engines": {
+    "node": "22"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^7.2.5",
+    "resend": "^6.17.2",
+    "uuid": "^14.0.1"
+  },
+  "private": true
+}

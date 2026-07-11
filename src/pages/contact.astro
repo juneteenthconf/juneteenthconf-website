@@ -1,5 +1,6 @@
 ---
 import InteriorLayout from '../layouts/InteriorLayout.astro';
+import CommunitySignup from '../components/CommunitySignup.astro';
 ---
 
 <InteriorLayout
@@ -65,13 +66,7 @@ import InteriorLayout from '../layouts/InteriorLayout.astro';
 
         <div class="reveal newsletter-block">
           <p class="newsletter-prompt">Stay in the loop.</p>
-          <form class="newsletter-form" id="newsletter-form-contact" aria-label="Newsletter signup">
-            <label for="email-contact" class="sr-only">Email address</label>
-            <input type="email" id="email-contact" name="email" class="newsletter-input" placeholder="your@email.com" required />
-            <button type="submit" class="newsletter-btn">Subscribe</button>
-            <p class="newsletter-success" style="display:none; color: #55ac64; margin-top: 8px;">You're subscribed!</p>
-            <p class="newsletter-error" style="display:none; color: #c84342; margin-top: 8px;">Something went wrong. Please try again.</p>
-          </form>
+          <CommunitySignup layout="compact" buttonText="Subscribe" />
         </div>
       </div>
     </div>
@@ -174,28 +169,3 @@ import InteriorLayout from '../layouts/InteriorLayout.astro';
     .contact-grid, .social-links { grid-template-columns: 1fr; }
   }
 </style>
-
-<script>
-  document.getElementById('newsletter-form-contact').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const email = (form.querySelector('input[type="email"]') as HTMLInputElement).value;
-    const success = form.querySelector('.newsletter-success') as HTMLElement;
-    const error = form.querySelector('.newsletter-error') as HTMLElement;
-    try {
-      const res = await fetch('https://mail.juneteenthconf.com/api/public/subscription', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, list_uuids: ['d869c36b-2f10-4872-ad82-13122485dac5'] })
-      });
-      if (res.ok) {
-        (form.querySelector('input[type="email"]') as HTMLInputElement).value = '';
-        success.style.display = 'block';
-        error.style.display = 'none';
-      } else { throw new Error(); }
-    } catch {
-      error.style.display = 'block';
-      success.style.display = 'none';
-    }
-  });
-</script>

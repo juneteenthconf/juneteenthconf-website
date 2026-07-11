@@ -1,5 +1,6 @@
 ---
 import InteriorLayout from '../../layouts/InteriorLayout.astro';
+import CommunitySignup from '../../components/CommunitySignup.astro';
 ---
 
 <InteriorLayout
@@ -20,42 +21,7 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
 
         <div class="reveal form-section">
           <h2 class="form-section-title">Join Our Community</h2>
-          <!-- Begin Mailchimp Signup Form -->
-          <div id="mc_embed_signup">
-            <form
-              action="https://juneteenthconf.us10.list-manage.com/subscribe/post?u=07ef187a16bc5cd4f2375c824&amp;id=4d06862da4"
-              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-              target="_blank" aria-label="link text - new window" novalidate style="display: flex; flex-direction: column; gap: 16px;">
-              
-              <div class="field-row">
-                <div class="field-group">
-                  <label for="mce-FNAME" class="field-label">First Name </label>
-                  <input type="text" value="" name="FNAME" class="field-input" id="mce-FNAME">
-                </div>
-                <div class="field-group">
-                  <label for="mce-LNAME" class="field-label">Last Name </label>
-                  <input type="text" value="" name="LNAME" class="field-input" id="mce-LNAME">
-                </div>
-              </div>
-
-              <div class="field-group">
-                <label for="mce-EMAIL" class="field-label">Email Address <span class="required">*</span></label>
-                <input type="email" value="" name="EMAIL" class="field-input required email" id="mce-EMAIL" required>
-              </div>
-
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_07ef187a16bc5cd4f2375c824_4d06862da4" tabindex="-1" value="">
-              </div>
-              
-              <div class="form-footer" style="margin-top: 16px;">
-                <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="submit-btn">
-                  Subscribe
-                </button>
-              </div>
-            </form>
-          </div>
-          <!--End mc_embed_signup-->
+          <CommunitySignup layout="full" buttonText="Subscribe" />
         </div>
       </div>
     </div>
@@ -399,8 +365,6 @@ import InteriorLayout from '../../layouts/InteriorLayout.astro';
     .form-section { padding: 24px 20px; }
     .tshirt-group { max-width: 100%; }
   }
-</style>
 
-<script>
-  // Add any client-side script needed for the newsletter form here if necessary
-</script>
+  /* Double Opt-In multi-step transitions and elements */
+</style>

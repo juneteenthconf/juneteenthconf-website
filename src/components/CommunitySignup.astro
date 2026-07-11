@@ -1,0 +1,490 @@
+---
+interface Props {
+  layout?: 'full' | 'compact';
+  buttonText?: string;
+}
+
+const { layout = 'compact', buttonText = 'Subscribe' } = Astro.props;
+---
+
+<div class="community-signup-container" data-layout={layout}>
+  <!-- Step 1: Info Form -->
+  <div class="subscription-step step-info active">
+    <form class="subscribe-form" novalidate>
+      {layout === 'full' ? (
+        <!-- Full Layout (Name & Email fields) -->
+        <div class="field-row">
+          <div class="field-group">
+            <label for="mce-FNAME" class="field-label">First Name</label>
+            <input type="text" name="FNAME" class="field-input mce-FNAME" id="mce-FNAME" placeholder="First Name" />
+          </div>
+          <div class="field-group">
+            <label for="mce-LNAME" class="field-label">Last Name</label>
+            <input type="text" name="LNAME" class="field-input mce-LNAME" id="mce-LNAME" placeholder="Last Name" />
+          </div>
+        </div>
+        <div class="field-group" style="margin-top: 16px;">
+          <label for="mce-EMAIL" class="field-label">Email Address <span class="required">*</span></label>
+          <input type="email" name="EMAIL" class="field-input required email mce-EMAIL" id="mce-EMAIL" required placeholder="your@email.com" />
+        </div>
+        <div class="form-footer" style="margin-top: 24px;">
+          <button type="submit" class="submit-btn subscribe-submit-btn">
+            <span class="btn-text">{buttonText}</span>
+            <span class="btn-spinner" style="display: none;">⌛</span>
+          </button>
+        </div>
+      ) : (
+        <!-- Compact Layout (Single horizontal line with Email & Button) -->
+        <div class="compact-row">
+          <div class="compact-input-wrapper">
+            <label class="sr-only">Email address</label>
+            <input type="email" name="EMAIL" class="newsletter-input mce-EMAIL" placeholder="your@email.com" autocomplete="email" required />
+          </div>
+          <button type="submit" class="newsletter-btn subscribe-submit-btn">
+            <span class="btn-text">{buttonText}</span>
+            <span class="btn-spinner" style="display: none;">⌛</span>
+          </button>
+        </div>
+      )}
+      
+      <div class="subscribe-error-msg submit-error-banner" style="display: none; margin-top: 16px; width: 100%;"></div>
+    </form>
+  </div>
+
+  <!-- Step 2: Verification Code Entry -->
+  <div class="subscription-step step-verify">
+    <p class="verify-prompt" style="font-family: 'Inter', sans-serif; font-size: 15px; color: rgba(240,237,230,0.6); line-height: 1.6; margin-bottom: 24px;">
+      We've sent a 6-digit verification code to <strong class="verify-email-display" style="color: #D4A843;"></strong>. Please enter the code below to complete your subscription.
+    </p>
+    
+    <div class="code-inputs-container">
+      <input type="text" maxlength="1" class="code-digit-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off" aria-label="Digit 1" />
+      <input type="text" maxlength="1" class="code-digit-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off" aria-label="Digit 2" />
+      <input type="text" maxlength="1" class="code-digit-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off" aria-label="Digit 3" />
+      <input type="text" maxlength="1" class="code-digit-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off" aria-label="Digit 4" />
+      <input type="text" maxlength="1" class="code-digit-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off" aria-label="Digit 5" />
+      <input type="text" maxlength="1" class="code-digit-input" inputmode="numeric" pattern="[0-9]*" required autocomplete="off" aria-label="Digit 6" />
+    </div>
+
+    <div class="verify-error-msg submit-error-banner" style="display: none; margin-top: 16px;"></div>
+
+    <div class="verify-footer" style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px;">
+      <button type="button" class="verify-submit-btn submit-btn" disabled>
+        <span class="btn-text">Verify & Complete Signup</span>
+        <span class="btn-spinner" style="display: none;">⌛</span>
+      </button>
+      
+      <div class="verify-actions" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 8px;">
+        <button type="button" class="resend-code-btn resend-btn" style="background: none; border: none; color: rgba(212,168,67,0.6); font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.15s; padding: 0;">
+          Resend Code (60s)
+        </button>
+        <button type="button" class="change-email-btn" style="background: none; border: none; color: rgba(240,237,230,0.4); font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.15s; padding: 0;">
+          Change Email
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step 3: Verification Success -->
+  <div class="subscription-step step-success">
+    <div class="success-block" style="border: 1px solid #D4A843; border-radius: 12px; background: rgba(212, 168, 67, 0.05); padding: 48px 24px; text-align: center;">
+      <div class="success-icon" style="color: #D4A843; font-size: 56px; margin-bottom: 24px; animation: scaleUp 0.4s ease-out;">🌟</div>
+      <h3 class="success-title" style="color: #D4A843; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 28px; margin-bottom: 16px;">You're subscribed!</h3>
+      <p class="success-text" style="font-family: 'Inter', sans-serif; font-size: 16px; color: rgba(240, 237, 230, 0.7); line-height: 1.6; margin-bottom: 32px; max-width: 440px; margin-left: auto; margin-right: auto;">
+        Your email address has been verified. Welcome to the Juneteenth Conference community!
+      </p>
+      <a href="/" class="back-link" style="border: 1px solid rgba(212, 168, 67, 0.3); border-radius: 8px; color: #D4A843; display: inline-block; padding: 12px 24px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; text-transform: uppercase; text-decoration: none; transition: all 0.2s;">Return Home</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Multi-step transitions */
+  .subscription-step {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .subscription-step:not(.active) {
+    display: none !important;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  .subscription-step.active {
+    display: block !important;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Compact layout row styling */
+  .compact-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .compact-input-wrapper {
+    flex: 1;
+    min-width: 240px;
+    max-width: 400px;
+  }
+
+  /* 6-digit boxes styling */
+  .code-inputs-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin: 28px 0;
+  }
+
+  .code-digit-input {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    color: #f0ede6;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(240, 237, 230, 0.12);
+    border-radius: 8px;
+    padding: 12px 0;
+    outline: none;
+    transition: border-color 0.15s, background-color 0.15s;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .code-digit-input:focus {
+    border-color: #D4A843;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 8px rgba(212, 168, 67, 0.2);
+  }
+
+  .resend-btn {
+    transition: color 0.15s;
+  }
+
+  .resend-btn:disabled {
+    color: rgba(240, 237, 230, 0.2) !important;
+    cursor: not-allowed;
+  }
+
+  .resend-btn:not(:disabled):hover {
+    color: #D4A843 !important;
+  }
+
+  /* Button spinner and animations */
+  .btn-spinner {
+    display: inline-block;
+    animation: spin-loader 1s linear infinite;
+    margin-left: 8px;
+  }
+
+  @keyframes spin-loader {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes scaleUp {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .back-link:hover {
+    background: rgba(212, 168, 67, 0.1);
+    border-color: #D4A843 !important;
+  }
+</style>
+
+<script>
+  // Self-contained, scoped, multi-instance script
+  function initCommunitySignups() {
+    document.querySelectorAll('.community-signup-container').forEach(container => {
+      // Avoid re-initialization if already loaded
+      if (container.getAttribute('data-initialized') === 'true') return;
+      container.setAttribute('data-initialized', 'true');
+
+      // Local elements relative to this container
+      const stepInfo = container.querySelector('.step-info');
+      const stepVerify = container.querySelector('.step-verify');
+      const stepSuccess = container.querySelector('.step-success');
+
+      const subscribeForm = container.querySelector('.subscribe-form');
+      const subscribeSubmitBtn = container.querySelector('.subscribe-submit-btn');
+      const subscribeErrorMsg = container.querySelector('.subscribe-error-msg');
+
+      const verifySubmitBtn = container.querySelector('.verify-submit-btn');
+      const verifyErrorMsg = container.querySelector('.verify-error-msg');
+      const verifyEmailDisplay = container.querySelector('.verify-email-display');
+      const resendCodeBtn = container.querySelector('.resend-code-btn');
+      const changeEmailBtn = container.querySelector('.change-email-btn');
+
+      const digits = container.querySelectorAll('.code-digit-input');
+
+      // Local State Variables
+      let userEmail = '';
+      let userFirstName = '';
+      let userLastName = '';
+      let countdownInterval = null;
+
+      // Helper: Determine API endpoint based on host
+      function getApiUrl(endpoint) {
+        if (window.location.port === '4321') {
+          return `http://localhost:5001/juneteenthconf-2026/us-central1/${endpoint}`;
+        }
+        return `/api/${endpoint}`;
+      }
+
+      // Helper: transition between steps
+      function transitionToStep(targetStep) {
+        const steps = [stepInfo, stepVerify, stepSuccess];
+        steps.forEach(step => {
+          if (step === targetStep) {
+            step.classList.add('active');
+          } else {
+            step.classList.remove('active');
+          }
+        });
+      }
+
+      // Helper: start resend code cooldown
+      function startCountdown() {
+        let seconds = 60;
+        resendCodeBtn.disabled = true;
+        resendCodeBtn.textContent = `Resend Code (${seconds}s)`;
+
+        if (countdownInterval) clearInterval(countdownInterval);
+
+        countdownInterval = setInterval(() => {
+          seconds--;
+          if (seconds <= 0) {
+            clearInterval(countdownInterval);
+            resendCodeBtn.disabled = false;
+            resendCodeBtn.textContent = 'Resend Code';
+          } else {
+            resendCodeBtn.textContent = `Resend Code (${seconds}s)`;
+          }
+        }, 1000);
+      }
+
+      // Input autofocus jumping logic for 6-digit boxes
+      digits.forEach((digit, index) => {
+        digit.addEventListener('input', (e) => {
+          const val = e.target.value;
+          e.target.value = val.replace(/[^0-9]/g, '');
+
+          if (e.target.value.length === 1 && index < 5) {
+            digits[index + 1].focus();
+          }
+
+          checkDigitCompletion();
+        });
+
+        digit.addEventListener('keydown', (e) => {
+          if (e.key === 'Backspace') {
+            if (e.target.value.length === 0 && index > 0) {
+              digits[index - 1].value = '';
+              digits[index - 1].focus();
+              e.preventDefault();
+            } else {
+              e.target.value = '';
+            }
+            checkDigitCompletion();
+          }
+        });
+
+        digit.addEventListener('focus', (e) => {
+          e.target.select();
+        });
+      });
+
+      function checkDigitCompletion() {
+        const allFilled = Array.from(digits).every(input => input.value.trim().length === 1);
+        verifySubmitBtn.disabled = !allFilled;
+      }
+
+      function getVerificationCode() {
+        return Array.from(digits).map(input => input.value.trim()).join('');
+      }
+
+      // Step 1: Info Form Submit Handler
+      if (subscribeForm) {
+        subscribeForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const btnText = subscribeSubmitBtn.querySelector('.btn-text');
+          const btnSpinner = subscribeSubmitBtn.querySelector('.btn-spinner');
+
+          // Local input selectors relative to this container
+          const emailInput = subscribeForm.querySelector('.mce-EMAIL');
+          const fnameInput = subscribeForm.querySelector('.mce-FNAME');
+          const lnameInput = subscribeForm.querySelector('.mce-LNAME');
+
+          userEmail = emailInput ? emailInput.value.trim() : '';
+          userFirstName = fnameInput ? fnameInput.value.trim() : '';
+          userLastName = lnameInput ? lnameInput.value.trim() : '';
+
+          if (!userEmail) {
+            subscribeErrorMsg.textContent = 'Email address is required.';
+            subscribeErrorMsg.style.display = 'block';
+            return;
+          }
+
+          // Trigger loader
+          subscribeSubmitBtn.disabled = true;
+          const originalBtnText = btnText.textContent;
+          btnText.textContent = 'Sending code...';
+          if (btnSpinner) btnSpinner.style.display = 'inline-block';
+          subscribeErrorMsg.style.display = 'none';
+
+          try {
+            const response = await fetch(getApiUrl('subscribe'), {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                email: userEmail,
+                firstName: userFirstName,
+                lastName: userLastName
+              })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              verifyEmailDisplay.textContent = userEmail;
+              transitionToStep(stepVerify);
+              startCountdown();
+              verifyErrorMsg.style.display = 'none';
+              setTimeout(() => digits[0].focus(), 100);
+            } else {
+              subscribeErrorMsg.textContent = result.error || 'Something went wrong. Please try again.';
+              subscribeErrorMsg.style.display = 'block';
+            }
+          } catch (err) {
+            console.error('[SUBSCRIBE CLIENT ERROR]', err);
+            subscribeErrorMsg.textContent = 'Network error. Please check your connection and try again.';
+            subscribeErrorMsg.style.display = 'block';
+          } finally {
+            subscribeSubmitBtn.disabled = false;
+            btnText.textContent = originalBtnText;
+            if (btnSpinner) btnSpinner.style.display = 'none';
+          }
+        });
+      }
+
+      // Step 2: Verification Submit Handler
+      if (verifySubmitBtn) {
+        verifySubmitBtn.addEventListener('click', async () => {
+          const code = getVerificationCode();
+          if (code.length !== 6) return;
+
+          const btnText = verifySubmitBtn.querySelector('.btn-text');
+          const btnSpinner = verifySubmitBtn.querySelector('.btn-spinner');
+
+          verifySubmitBtn.disabled = true;
+          btnText.textContent = 'Verifying...';
+          if (btnSpinner) btnSpinner.style.display = 'inline-block';
+          verifyErrorMsg.style.display = 'none';
+
+          try {
+            const response = await fetch(getApiUrl('verify'), {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                email: userEmail,
+                code: code
+              })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+              if (countdownInterval) clearInterval(countdownInterval);
+              transitionToStep(stepSuccess);
+            } else {
+              verifyErrorMsg.textContent = result.error || 'Invalid code. Please try again.';
+              verifyErrorMsg.style.display = 'block';
+              digits.forEach(input => {
+                input.value = '';
+              });
+              checkDigitCompletion();
+              digits[0].focus();
+            }
+          } catch (err) {
+            console.error('[VERIFY CLIENT ERROR]', err);
+            verifyErrorMsg.textContent = 'Network error. Please try again.';
+            verifyErrorMsg.style.display = 'block';
+          } finally {
+            verifySubmitBtn.disabled = false;
+            btnText.textContent = 'Verify & Complete Signup';
+            if (btnSpinner) btnSpinner.style.display = 'none';
+          }
+        });
+      }
+
+      // Resend Code handler
+      if (resendCodeBtn) {
+        resendCodeBtn.addEventListener('click', async () => {
+          resendCodeBtn.disabled = true;
+          resendCodeBtn.textContent = 'Sending...';
+
+          try {
+            const response = await fetch(getApiUrl('subscribe'), {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                email: userEmail,
+                firstName: userFirstName,
+                lastName: userLastName
+              })
+            });
+
+            if (response.ok) {
+              verifyErrorMsg.style.display = 'none';
+              startCountdown();
+              digits.forEach(input => {
+                input.value = '';
+              });
+              checkDigitCompletion();
+              digits[0].focus();
+            } else {
+              const result = await response.json();
+              verifyErrorMsg.textContent = result.error || 'Failed to resend code. Please try again.';
+              verifyErrorMsg.style.display = 'block';
+              resendCodeBtn.disabled = false;
+              resendCodeBtn.textContent = 'Resend Code';
+            }
+          } catch (err) {
+            console.error('[RESEND CLIENT ERROR]', err);
+            verifyErrorMsg.textContent = 'Network error during resend. Please check your connection.';
+            verifyErrorMsg.style.display = 'block';
+            resendCodeBtn.disabled = false;
+            resendCodeBtn.textContent = 'Resend Code';
+          }
+        });
+      }
+
+      // Change Email / Back Handler
+      if (changeEmailBtn) {
+        changeEmailBtn.addEventListener('click', () => {
+          if (countdownInterval) clearInterval(countdownInterval);
+          transitionToStep(stepInfo);
+          digits.forEach(input => {
+            input.value = '';
+          });
+          checkDigitCompletion();
+        });
+      }
+    });
+  }
+
+  // Initialize on load and on Astro view transitions
+  document.addEventListener('DOMContentLoaded', initCommunitySignups);
+  document.addEventListener('astro:page-load', initCommunitySignups);
+</script>
